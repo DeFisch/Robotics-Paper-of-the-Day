@@ -1,0 +1,90 @@
+{
+  "adrian piedra": {
+    "citations": 24,
+    "h_index": 2,
+    "name": "Adrian Piedra",
+    "papers": 4
+  },
+  "antonio alvarez valdivia": {
+    "citations": 52,
+    "h_index": 5,
+    "name": "Antonio Alvarez Valdivia",
+    "papers": 8
+  },
+  "christian llanes": {
+    "citations": 48,
+    "h_index": 4,
+    "name": "Christian Llanes",
+    "papers": 8
+  },
+  "davide ceriola": null,
+  "enrico simetti": {
+    "citations": 1725,
+    "h_index": 23,
+    "name": "E. Simetti",
+    "papers": 94
+  },
+  "giorgio grisetti": {
+    "citations": 16096,
+    "h_index": 43,
+    "name": "G. Grisetti",
+    "papers": 144
+  },
+  "guillaume sartoretti": {
+    "citations": 285,
+    "h_index": 11,
+    "name": "G. Sartoretti",
+    "papers": 57
+  },
+  "jingkun feng": {
+    "citations": 19,
+    "h_index": 1,
+    "name": "Jing Feng",
+    "papers": 7
+  },
+  "jun miyazaki": {
+    "citations": 549,
+    "h_index": 11,
+    "name": "Jun Miyazaki",
+    "papers": 91
+  },
+  "nathaniel hanson": {
+    "citations": 1,
+    "h_index": 1,
+    "name": "N. Hanson",
+    "papers": 2
+  },
+  "oussama khatib": {
+    "citations": 32716,
+    "h_index": 69,
+    "name": "O. Khatib",
+    "papers": 357
+  },
+  "peizhuo li": {
+    "citations": 10,
+    "h_index": 2,
+    "name": "Pei-zhuo Li",
+    "papers": 6
+  },
+  "reza sabzevari": {
+    "citations": 3,
+    "h_index": 1,
+    "name": "M. Sabzevari",
+    "papers": 2
+  },
+  "samuel coogan": {
+    "citations": 4800,
+    "h_index": 27,
+    "name": "S. Coogan",
+    "papers": 143
+  },
+  "yipeng yang": null,
+  "yongqiang yu": {
+    "citations": 175,
+    "h_index": 7,
+    "name": "Y. Yongqiang",
+    "papers": 90
+  },
+  "youssef attia": null,
+  "ziyang yu": null
+}

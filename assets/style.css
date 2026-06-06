@@ -48,6 +48,7 @@ input, select { background: var(--panel); color: var(--text); border: 1px solid 
 .chip { background: var(--chip); color: #b9d0ff; font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; }
 .chip.rep { background: #14361f; color: #7ee2a0; }
 .chip.cat { background: #2b2236; color: #d7b8ff; }
+.chip.flag { background: #3a2d12; color: #e8c266; text-transform: uppercase; letter-spacing: .03em; }
 .scores { display: flex; gap: 12px; font-size: 0.78rem; color: var(--muted); margin-left: auto; }
 .scores b { color: var(--text); }
 

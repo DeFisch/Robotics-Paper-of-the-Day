@@ -31,8 +31,29 @@ topics:
     keywords: [locomotion, navigation, humanoid, quadruped, sim2real, sim-to-real,
                reinforcement learning, motion planning, legged, whole-body]
 
+# Focus gating (keeps the feed on robot-arm / table-top manipulation).
+focus:
+  # A paper dominated by these humanoid/locomotion terms is dropped UNLESS it
+  # also hits a manipulation anchor below (so true tabletop+humanoid work stays).
+  humanoid_locomotion: [humanoid, locomotion, legged, quadruped, bipedal, gait,
+                        walking, loco-manipulation, whole-body, whole body,
+                        ladder, climbing, parkour, running, hopping]
+  # Arm / table-top manipulation anchors that confirm genuine manipulation focus.
+  # Also required for a reputable author to rescue an otherwise non-core paper.
+  manipulation_anchor: [grasp, grasping, dexterous, bimanual, in-hand, end-effector,
+                        manipulator, pick-and-place, pick and place, tabletop,
+                        table-top, peg, insertion, assembly, tool use, robot arm,
+                        robotic arm, deformable, cloth, fabric, fingertip, tactile,
+                        gripper, screw, object rearrangement, articulated object]
+
+# Survey/review papers are kept but flagged so they can be skimmed or skipped.
+survey:
+  keywords: [survey, "a review", "this review", "we review", literature review,
+             taxonomy, comprehensive overview]
+
 reputation:
   enabled: true
+  require_manipulation_adjacent: true   # reputable authors only rescue manipulation-adjacent papers
   h_index_threshold: 40        # author counts as "reputable" at/above this h-index
   citation_threshold: 8000     # ...or at/above this total citation count
   check_authors: [last, first] # which author positions to look up (last = usual PI)

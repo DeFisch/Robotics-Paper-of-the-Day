@@ -24,6 +24,12 @@ def build_matchers(topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
     ]
 
 
+def contains(paper: dict[str, Any], patterns: list[re.Pattern]) -> bool:
+    """True if any pattern matches the paper's title or abstract."""
+    haystack = f"{paper.get('title', '')} {paper.get('abstract', '')}".lower()
+    return any(p.search(haystack) for p in patterns)
+
+
 def tag(paper: dict[str, Any], matchers: list[dict[str, Any]]) -> tuple[list[str], bool]:
     """Return (matched_topic_names, is_core)."""
     haystack = f"{paper.get('title', '')} {paper.get('abstract', '')}".lower()

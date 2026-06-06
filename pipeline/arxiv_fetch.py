@@ -42,10 +42,8 @@ def fetch_recent(categories: list[str], lookback_days: int, max_results: int) ->
             "sortBy": "submittedDate",
             "sortOrder": "descending",
         }
-        resp = requests.get(API_URL, params=params, timeout=30)
-        resp.raise_for_status()
-        feed = feedparser.parse(resp.content)
-        if not feed.entries:
+        feed = _get_with_retry(params)
+        if feed is None or not feed.entries:
             break
 
         page_had_recent = False
@@ -84,6 +82,21 @@ def fetch_recent(categories: list[str], lookback_days: int, max_results: int) ->
         time.sleep(3)  # be polite to the arXiv API
 
     return papers
+
+
+def _get_with_retry(params: dict, attempts: int = 5):
+    """GET the arXiv API with exponential backoff on 429/5xx/network errors."""
+    for i in range(attempts):
+        try:
+            resp = requests.get(API_URL, params=params, timeout=30)
+            if resp.status_code == 429 or resp.status_code >= 500:
+                time.sleep(5 * (i + 1))
+                continue
+            resp.raise_for_status()
+            return feedparser.parse(resp.content)
+        except requests.RequestException:
+            time.sleep(5 * (i + 1))
+    return None
 
 
 def _parse_dt(value: str | None) -> dt.datetime | None:

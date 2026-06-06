@@ -48,29 +48,49 @@ def main() -> None:
     papers = arxiv_fetch.fetch_recent(acfg["categories"], acfg["lookback_days"], max_results)
     print(f"  fetched {len(papers)} recent papers")
 
-    # 2. Keyword tagging -------------------------------------------------------
+    # 2. Keyword tagging + focus gating ---------------------------------------
     matchers = keyword_filter.build_matchers(cfg["topics"])
     rep = Reputation(cfg["reputation"], CACHE_PATH)
+    focus = cfg.get("focus", {})
+    humanoid_pats = keyword_filter._compile(focus.get("humanoid_locomotion", []))
+    anchor_pats = keyword_filter._compile(focus.get("manipulation_anchor", []))
+    survey_pats = keyword_filter._compile(cfg.get("survey", {}).get("keywords", []))
+    require_adjacent = cfg["reputation"].get("require_manipulation_adjacent", True)
 
     candidates: list[dict[str, Any]] = []
+    dropped_offfocus = 0
     for p in papers:
         tags, is_core = keyword_filter.tag(p, matchers)
         p["topic_tags"] = tags
         p["is_core"] = is_core
-        # Hybrid pre-filter: only spend a reputation/LLM call on plausible papers.
         if not tags:
             continue  # nothing matched any topic group at all
+
+        has_anchor = keyword_filter.contains(p, anchor_pats)
+        is_humanoid = keyword_filter.contains(p, humanoid_pats)
+        p["flags"] = ["survey"] if keyword_filter.contains(p, survey_pats) else []
+
+        # Focus gate: drop humanoid/locomotion-dominated work that lacks a genuine
+        # arm/table-top manipulation anchor (applies even to reputable authors).
+        if is_humanoid and not has_anchor:
+            dropped_offfocus += 1
+            continue
+
         if is_core:
             # Core papers are kept regardless of reputation, so only the instant
             # curated-name check runs here (no Semantic Scholar API call).
             p["reputation"] = rep.assess(p["authors"], api=False)
             candidates.append(p)
         else:
-            # Non-core robotics: keep ONLY if by a reputable author.
+            # Non-core robotics: keep only if by a reputable author AND it is
+            # manipulation-adjacent (drops e.g. pure SLAM / medical by big names).
+            if require_adjacent and not has_anchor:
+                continue
             p["reputation"] = rep.assess(p["authors"])
             if p["reputation"].get("reputable"):
                 candidates.append(p)
     rep.save_cache()
+    print(f"  dropped {dropped_offfocus} off-focus (humanoid/locomotion w/o manipulation)")
     print(f"  {len(candidates)} candidates after keyword + reputation pre-filter")
 
     # 3. LLM scoring -----------------------------------------------------------
@@ -157,6 +177,7 @@ def _slim(p: dict[str, Any]) -> dict[str, Any]:
         "published": p["published"],
         "primary_category": p.get("primary_category", ""),
         "topic_tags": p.get("topic_tags", []),
+        "flags": p.get("flags", []),
         "reputation": p.get("reputation", {}),
         "scores": p.get("scores"),
         "verdict": p.get("verdict"),

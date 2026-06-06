@@ -75,6 +75,7 @@ function card(p) {
     .join(", ");
 
   const chips = [];
+  (p.flags || []).forEach((f) => chips.push(`<span class="chip flag">${escapeHTML(f)}</span>`));
   (p.topic_tags || []).forEach((t) => chips.push(`<span class="chip">${escapeHTML(t)}</span>`));
   if (p.primary_category) chips.push(`<span class="chip cat">${escapeHTML(p.primary_category)}</span>`);
   if (rep.reputable) {
