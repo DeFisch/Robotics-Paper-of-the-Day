@@ -30,26 +30,43 @@ Everything lives in **`config.yaml`** — no code changes needed:
 - `reputation.h_index_threshold` / `citation_threshold` — the reputable-author bar.
 - `reputation.curated_reputable` — always-include PI names.
 - `llm.core_min_relevance` / `broad_min_relevance` / `min_quality` — inclusion bar.
-- `llm.model` — `claude-haiku-4-5-20251001` (cheap) or `claude-sonnet-4-6` (sharper).
+- `llm.backend` — `claude_cli` (uses Claude Code on your subscription, no API
+  credits) or `api` (uses the Anthropic API + `ANTHROPIC_API_KEY`).
+- `llm.cli_model` — `haiku` / `sonnet` / `opus` for the `claude_cli` backend.
 - `output.max_per_day` — how many papers to keep per day.
+
+## LLM backend: subscription vs API
+
+The scoring step runs through one of two backends, set by `llm.backend`:
+
+- **`claude_cli` (default)** — shells out to the [Claude Code](https://claude.com/claude-code)
+  CLI (`claude -p`), authenticated by your **Claude Pro/Max subscription**. No
+  API credits are spent. The daily run uses Haiku (`llm.cli_model`) to stay light
+  on subscription usage limits.
+- **`api`** — calls the Anthropic API with `ANTHROPIC_API_KEY` (pay-as-you-go).
 
 ## Running locally
 
 ```bash
 pip install -r requirements.txt
 
-# Full run (needs an Anthropic API key for LLM scoring)
-export ANTHROPIC_API_KEY=sk-ant-...
+# claude_cli backend — install Claude Code and log in (or set CLAUDE_CODE_OAUTH_TOKEN)
+npm install -g @anthropic-ai/claude-code
 python -m pipeline.run
 
-# Preview candidates without the LLM (no key required)
+# Preview candidates without the LLM (no auth required)
 python -m pipeline.run --no-llm --limit 80 --dry-run
 ```
 
 ## Automation
 
 `.github/workflows/daily.yml` runs the pipeline daily at 13:00 UTC, commits the
-updated `data/papers.json`, and GitHub Pages serves the site.
+updated `data/papers.json`, and GitHub Pages serves the site. It installs Claude
+Code and runs the `claude_cli` backend.
 
-**Required repo secret:** `ANTHROPIC_API_KEY` (Settings → Secrets and variables →
-Actions). Optional: `SEMANTIC_SCHOLAR_API_KEY` for higher reputation-lookup rate limits.
+**Required repo secret (for `claude_cli`):** `CLAUDE_CODE_OAUTH_TOKEN` — generate
+it locally with `claude setup-token` (needs a Pro/Max plan), then add it under
+Settings → Secrets and variables → Actions.
+
+**If you switch to `backend: api`:** set `ANTHROPIC_API_KEY` instead. Optional:
+`SEMANTIC_SCHOLAR_API_KEY` for higher reputation-lookup rate limits.

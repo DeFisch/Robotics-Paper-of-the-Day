@@ -94,16 +94,19 @@ def main() -> None:
     print(f"  {len(candidates)} candidates after keyword + reputation pre-filter")
 
     # 3. LLM scoring -----------------------------------------------------------
-    use_llm = cfg["llm"].get("enabled", True) and not args.no_llm and llm_filter.available()
-    if cfg["llm"].get("enabled", True) and not args.no_llm and not llm_filter.available():
-        print("  ! ANTHROPIC_API_KEY not set — emitting candidates without LLM scores")
+    lcfg = cfg["llm"]
+    enabled = lcfg.get("enabled", True) and not args.no_llm
+    scorer = llm_filter.Scorer(lcfg) if enabled else None
+    use_llm = bool(scorer and scorer.available())
+    if enabled and not use_llm:
+        print(f"  ! LLM backend '{lcfg.get('backend', 'api')}' unavailable "
+              f"— emitting candidates without scores")
 
     kept: list[dict[str, Any]] = []
     if use_llm:
-        client = llm_filter._client()
-        lcfg = cfg["llm"]
+        print(f"  scoring {len(candidates)} candidates via '{lcfg.get('backend', 'api')}' backend ...")
         for p in candidates:
-            scores = llm_filter.score(p, lcfg["model"], client=client)
+            scores = scorer.score(p)
             p["scores"] = scores
             if not scores:
                 continue

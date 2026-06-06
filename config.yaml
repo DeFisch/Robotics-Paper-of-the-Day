@@ -84,7 +84,10 @@ reputation:
 
 llm:
   enabled: true                # set false to skip LLM scoring (keyword+reputation only)
-  model: claude-haiku-4-5-20251001   # switch to claude-sonnet-4-6 for sharper judgment
+  backend: claude_cli          # "claude_cli" = Claude Code CLI on your subscription (no API credits);
+                               # "api" = Anthropic API via ANTHROPIC_API_KEY
+  cli_model: haiku             # model for the claude_cli backend (haiku|sonnet|opus)
+  model: claude-haiku-4-5-20251001   # model for the "api" backend (claude-sonnet-4-6 for sharper judgment)
   # Inclusion thresholds on the LLM's 1-10 scale
   core_min_relevance: 6        # core-topic paper kept if relevance >= this
   broad_min_relevance: 7       # reputable non-core paper kept if relevance >= this
