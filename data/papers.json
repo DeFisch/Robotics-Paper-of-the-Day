@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-06T00:15:03Z",
+  "updated": "2026-06-06T00:40:53Z",
   "papers": [
     {
       "id": "2606.06491",
@@ -33,10 +33,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 7,
-        "novelty": 8,
-        "topic": "VLA",
-        "reason": "Adds controllable execution speed to VLAs via predicted action magnitude \u2014 simple, practically useful."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA speed control",
+        "reason": "Directly addresses a practical limitation of VLAs (fixed execution speed) with a sound two-part approach; well-motivated for table-top manipulation safety (transit vs contact phases); real-world validation demonstrates applicability."
       },
       "verdict": "include"
     },
@@ -68,11 +68,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
-        "quality": 6,
+        "relevance": 9,
+        "quality": 7,
         "novelty": 6,
-        "topic": "Imitation learning",
-        "reason": "Learns faster-than-demonstration manipulation by selectively downsampling demos; pragmatic finding."
+        "topic": "VLA trajectory segmentation for manipulation acceleration",
+        "reason": "Directly addresses practical policy execution by using vision-language reasoning to selectively accelerate trajectory segments\u2014solid imitation learning contribution with clear manipulation focus."
       },
       "verdict": "include"
     },
@@ -105,8 +105,8 @@
         "relevance": 7,
         "quality": 6,
         "novelty": 5,
-        "topic": "Bimanual manipulation",
-        "reason": "Synthetic-data wrinkle/keypoint perception driving bimanual cloth unfolding; solid but narrow."
+        "topic": "Bimanual Cloth Manipulation",
+        "reason": "Directly relevant cloth bimanual task with solid perception; lacks learned policy component and uses standard architectures."
       },
       "verdict": "include"
     },
@@ -142,8 +142,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Tactile manipulation",
-        "reason": "Fuses heterogeneous tactile sensors at multiple temporal resolutions for contact-rich manipulation; strong group."
+        "topic": "Tactile-Visual Imitation Learning",
+        "reason": "Strong multi-modal policy learning achieving 80% success on contact-rich manipulation tasks; well-executed multi-resolution sensor fusion with convincing ablations and attention analysis."
       },
       "verdict": "include"
     },
@@ -172,10 +172,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 6,
-        "novelty": 7,
-        "topic": "VLA",
-        "reason": "Reward-guided multi-path latent reasoning to make VLA policies more robust on long-horizon control."
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA long-horizon reasoning",
+        "reason": "Direct VLA manipulation work with practical inference-time improvements; strong benchmark evaluation (LIBERO/CALVIN) and thoughtful design avoiding text bottlenecks, but novelty appears incremental within emerging VLA reasoning literature."
       },
       "verdict": "include"
     },
@@ -208,11 +208,11 @@
         "reason": "curated (Dieter Fox)"
       },
       "scores": {
-        "relevance": 7,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Sim2real / manipulation",
-        "reason": "Learned torque-adaptation module for robust cross-robot motion transfer in contact-rich tasks."
+        "topic": "Domain Adaptation",
+        "reason": "Clever approach to robust cross-robot manipulation transfer without policy retraining; strong experimental validation, though conceptually incremental relative to RMA-style baselines."
       },
       "verdict": "include"
     },
@@ -246,11 +246,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
-        "quality": 7,
+        "relevance": 8,
+        "quality": 8,
         "novelty": 7,
-        "topic": "Manipulation pretraining",
-        "reason": "Recovers active-perception camera/wrist motion from egocentric video to close the human-to-robot pretraining gap."
+        "topic": "Egocentric pretraining",
+        "reason": "Directly addresses scalable pretraining for table-top manipulation by modeling active perception from human video; clever insight with strong empirical validation matching robot-pretrained baselines."
       },
       "verdict": "include"
     },
@@ -292,10 +292,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 7,
+        "quality": 8,
         "novelty": 7,
-        "topic": "VLA",
-        "reason": "Structured affordance forecasting as an intermediate representation to sharpen VLA perception-action mapping."
+        "topic": "VLA affordance prediction",
+        "reason": "Directly addresses the VLM-to-policy semantic gap in VLAs through structured affordance-aware intermediate representations, with a principled three-component architecture and real-world validation on table-top manipulation."
       },
       "verdict": "include"
     },
@@ -333,9 +333,9 @@
       "scores": {
         "relevance": 8,
         "quality": 7,
-        "novelty": 7,
-        "topic": "Dexterous manipulation",
-        "reason": "Wearable universal manipulation interface with in-hand vision + fingertip tactile for scalable dexterous data."
+        "novelty": 6,
+        "topic": "Dexterous Manipulation Interface",
+        "reason": "Direct contribution to dexterous manipulation policy learning through a practical zero-gap data collection platform; strong real-robot results on contact-rich, bimanual tasks, but primarily an engineering tool rather than new learning methodology."
       },
       "verdict": "include"
     },
@@ -374,10 +374,46 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 8,
-        "novelty": 8,
-        "topic": "Embodied foundation model",
-        "reason": "Unifies world modeling, language reasoning, and action synthesis in one autoregressive backbone \u2014 ambitious."
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA / Embodied Foundation Models",
+        "reason": "Directly addresses VLA + world modeling for robot manipulation with strong simulation results (92.94% RoboTwin2.0), though real-world performance (56.5% RMBench) indicates maturation in progress; cross-embodiment learning is promising but method clarity (meta-queries, implicit world-action coupling) is opaque in abstract."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.05960",
+      "title": "Towards a Data Flywheel for Embodied Intelligence in Logistics",
+      "authors": [
+        "Anlan Yu",
+        "Zaishu Chen",
+        "Zhiqing Hong",
+        "Daqing Zhang"
+      ],
+      "abstract": "Embodied intelligence is moving from laboratory demonstrations toward industrial deployment, with the logistics industry serving as a key application scenario. Learning-based policies offer a promising path beyond traditional perception-planning-control pipelines, but their scalability depends on how embodied data can be collected, organized, and reused. This research studies a data-centric framework for industrial embodied intelligence by constructing a logistics data flywheel. Our framework converts daily operations into reusable data assets, uses World Models to generate reliable supervision for long-tail parcel manipulation, and feeds deployment feedback back into policy improvement. As an initial result, \\textit{WM-DAgger} introduces a World-Model-based data aggregation framework that synthesizes out-of-distribution recovery data for robust imitation learning. Building on this result, ongoing work explores how large-scale in-the-wild multimodal data, including labeled human demonstrations, unlabeled operational videos, and system-level robot logs, can be aligned for policy learning and transformed into feedback for continual system improvement.",
+      "url": "https://arxiv.org/abs/2606.05960",
+      "pdf": "https://arxiv.org/pdf/2606.05960",
+      "published": "2026-06-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA / Robot policy for manipulation",
+        "reason": "Directly addresses scaling policy learning for table-top manipulation in industrial settings through a data-centric framework (WM-DAgger), but presented as preliminary/ongoing work."
       },
       "verdict": "include"
     },
@@ -411,11 +447,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 7,
-        "topic": "World model / VLA eval",
-        "reason": "Chunk-wise world model enabling closed-loop policy-in-the-loop evaluation of VLA policies."
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "VLA evaluation / world models",
+        "reason": "Directly addresses closed-loop VLA policy evaluation on dual-arm manipulation tasks; world-model approach reduces simulation-to-real error from 63% to 12%, enabling offline policy iteration."
       },
       "verdict": "include"
     },
@@ -447,10 +483,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 7,
+        "quality": 8,
         "novelty": 7,
-        "topic": "VLA",
-        "reason": "Argues VLA action generation differs from image generation; strong one-step policies without distillation."
+        "topic": "VLA / Action Generation",
+        "reason": "Strong empirical work showing one-step action generation can match multi-step diffusion policies in VLA, with real bimanual robot validation on LIBERO benchmarks."
       },
       "verdict": "include"
     },
@@ -486,11 +522,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
+        "relevance": 9,
+        "quality": 8,
         "novelty": 7,
-        "topic": "Bimanual dexterous",
-        "reason": "Hierarchical future-state visuomotor targeting for bimanual dexterous tool use without privileged demos."
+        "topic": "Bimanual Dexterous Tool Use",
+        "reason": "Directly tackles bimanual dexterous manipulation with a hierarchical visuomotor policy achieving 90% oracle performance\u2014core to learned manipulation for arm control."
       },
       "verdict": "include"
     },
@@ -525,11 +561,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 6,
+        "relevance": 7,
         "quality": 6,
-        "novelty": 4,
-        "topic": "Survey",
-        "reason": "Cross-layer survey of safety for long-horizon robotic manipulation; good for orientation, not new method."
+        "novelty": 3,
+        "topic": "Long-horizon manipulation safety",
+        "reason": "Well-organized survey of safety mechanisms across planning/policy/execution layers for table-top manipulation, but lacks novel VLA methods and policy insights characteristic of top-relevance work."
       },
       "verdict": "include"
     }
