@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotics Paper of the Day</title>
+  <meta name="description" content="A daily, filtered feed of the best new robotics papers from arXiv — VLA policies, robot manipulation, and high-impact work." />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="preconnect" href="https://arxiv.org" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>🤖 Robotics Paper of the Day</h1>
+      <p class="tagline">A daily, filtered feed of new arXiv robotics papers — VLA policies, robot-arm manipulation, and high-impact work from leading labs.</p>
+      <p class="meta" id="meta"></p>
+    </div>
+  </header>
+
+  <section class="controls wrap">
+    <input type="search" id="search" placeholder="Search title, author, abstract…" />
+    <select id="topic"><option value="">All topics</option></select>
+    <label class="check"><input type="checkbox" id="reputableOnly" /> Reputable authors only</label>
+    <select id="sort">
+      <option value="date">Newest first</option>
+      <option value="relevance">Top relevance</option>
+      <option value="quality">Top quality</option>
+    </select>
+  </section>
+
+  <main id="feed" class="wrap"></main>
+
+  <footer class="site-footer wrap">
+    <p>Auto-curated from <a href="https://arxiv.org/list/cs.RO/recent">arXiv cs.RO</a>. Filter criteria live in <code>config.yaml</code>.</p>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>

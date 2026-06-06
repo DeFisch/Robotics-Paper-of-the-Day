@@ -1,0 +1,73 @@
+# Robotics Paper of the Day — filter configuration
+# Edit this file to refine what counts as a "good" paper. No code changes needed.
+
+arxiv:
+  categories: [cs.RO]        # arXiv categories to scan (cs.RO = Robotics)
+  lookback_days: 2           # include papers submitted within this many days of the run
+  max_results: 300           # max papers to pull per run (sorted newest first)
+
+# Topic keyword groups. A paper is tagged with every group whose keywords appear
+# in its title/abstract. Groups marked `core: true` make a paper a candidate on
+# topic alone. Non-core robotics is only kept if written by a reputable author.
+topics:
+  - name: VLA / robot policy
+    core: true
+    keywords: [vla, vision-language-action, vision language action, robot policy,
+               manipulation policy, generalist policy, robot foundation model,
+               imitation learning, diffusion policy, behavior cloning, action chunking,
+               openvla, "rt-2", "rt-1", "pi-0", pi0, world model]
+  - name: Table-top manipulation
+    core: true
+    keywords: [manipulation, grasping, grasp, pick-and-place, pick and place,
+               dexterous, bimanual, tabletop, table-top, tool use, peg insertion,
+               assembly, robot arm, robotic arm, end-effector, in-hand]
+  - name: Perception / vision
+    core: false
+    keywords: [perception, point cloud, 6-dof pose, pose estimation, scene
+               understanding, nerf, gaussian splatting, segmentation, slam,
+               visual representation]
+  - name: General robotics
+    core: false
+    keywords: [locomotion, navigation, humanoid, quadruped, sim2real, sim-to-real,
+               reinforcement learning, motion planning, legged, whole-body]
+
+reputation:
+  enabled: true
+  h_index_threshold: 40        # author counts as "reputable" at/above this h-index
+  citation_threshold: 8000     # ...or at/above this total citation count
+  check_authors: [last, first] # which author positions to look up (last = usual PI)
+  curated_reputable:           # always-reputable name substrings (case-insensitive)
+    - sergey levine
+    - chelsea finn
+    - pieter abbeel
+    - dieter fox
+    - shuran song
+    - jitendra malik
+    - abhinav gupta
+    - ken goldberg
+    - russ tedrake
+    - leslie kaelbling
+    - yuke zhu
+    - dorsa sadigh
+    - song han
+    - fei-fei li
+    - jeannette bohg
+    - marc toussaint
+    - animesh garg
+    - deepak pathak
+    - oier mees
+    - danny driess
+    - cewu lu
+    - hao dong
+    - xiaolong wang
+
+llm:
+  enabled: true                # set false to skip LLM scoring (keyword+reputation only)
+  model: claude-haiku-4-5-20251001   # switch to claude-sonnet-4-6 for sharper judgment
+  # Inclusion thresholds on the LLM's 1-10 scale
+  core_min_relevance: 6        # core-topic paper kept if relevance >= this
+  broad_min_relevance: 7       # reputable non-core paper kept if relevance >= this
+  min_quality: 5
+
+output:
+  max_per_day: 15              # cap papers shown per day (keep the best)
