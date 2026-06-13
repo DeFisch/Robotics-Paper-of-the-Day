@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T14:13:26Z",
+  "updated": "2026-06-13T13:40:47Z",
   "papers": [
     {
       "id": "2606.13677",
@@ -30,9 +30,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 7,
-        "topic": "Dexterous manipulation, Articulated tool use",
-        "reason": "Novel sim-to-real framework for dexterous articulated tool manipulation with efficient data generation and zero-shot transfer; directly addresses underexplored problem at core of learned manipulation."
+        "novelty": 8,
+        "topic": "Dexterous articulated tool manipulation",
+        "reason": "Directly addresses learned dexterous manipulation of articulated tools with a novel animation-inspired framework achieving zero-shot sim-to-real transfer\u2014highly relevant to core interests."
       },
       "verdict": "include"
     },
@@ -65,10 +65,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 8,
+        "quality": 9,
         "novelty": 8,
-        "topic": "Generalist policy steering",
-        "reason": "Flow reversal steering leverages VLM guidance to improve generalist manipulation policies on challenging tasks with minimal training, directly addressing core VLA challenges with real-world validation."
+        "topic": "Generalist manipulation policies",
+        "reason": "Novel flow-based steering method directly improving generalist robot policies with VLM guidance; strong empirical gains on real manipulation from Finn/Levine\u2014core to learned policy deployment."
       },
       "verdict": "include"
     },
@@ -103,8 +103,40 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "World models for manipulation",
-        "reason": "Directly addresses learned simulators for long-horizon manipulation tasks with strong hardware validation (38% improvement over foundation models, 0.870 real-world correlation); key enabling technology for policy learning and test-time planning."
+        "topic": "World Models for Robot Manipulation",
+        "reason": "Directly addresses learned simulators for robotic manipulation with strong hardware validation and clear improvements in policy learning; technical novelty is incremental but empirical results are substantial."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.13601",
+      "title": "MCR-Bionic Hand: Anatomical Structural Priors for Dexterous Manipulation",
+      "authors": [
+        "Haosen Yang",
+        "Guowu Wei"
+      ],
+      "abstract": "Dexterous robotic hands are usually formulated as high dimensional active control systems governed by degrees of freedom, actuation, and algorithms. Human hand dexterity, however, is partly encoded in the physical architecture of bones, ligaments, tendons, aponeuroses, and intrinsic muscles. This work describes that contribution as two linked forms of structural intelligence: structural prior generation, in which wrist to finger tenodesis, FDS/FDP routing, and the dorsal extensor hood transform low dimensional posture inputs into default grasp configurations and PIP to DIP coordination; and muscle mediated modulation, in which extrinsic muscles, lumbricals, and interossei regulate MCP posture, distal stability, fingertip force paths, and contact states around that default state. Based on this framework, MCR-Bionic Hand is developed as a 1:1 musculoskeletal biomimetic hand integrating a two row eight bone wrist, cross wrist tendons, anatomical flexor routing, volar plate and collateral ligament constraints, the dorsal extensor hood, and intrinsic muscle pathways within one body. Functional demonstrations and geometric mechanical models show that wrist posture induces multi joint pre shaping, the extensor hood maps PIP posture to a coupled DIP response, and intrinsic plus pathways modulate distal stability and fingertip action direction after grasp formation. Contact rich tasks, including coin rotation, pen transfer, dorsal coin flipping, and cube manipulation, show that MCR-Bionic links low dimensional state generation with fine post contact modulation. These results suggest that anatomical biomimetics is valuable not for visual similarity, but for identifying human hand structures that perform part of control.",
+      "url": "https://arxiv.org/abs/2606.13601",
+      "pdf": "https://arxiv.org/pdf/2606.13601",
+      "published": "2026-06-11",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Dexterous hand hardware design",
+        "reason": "Biomimetic hand design encoding anatomical structure to enable contact-rich dexterous manipulation; directly relevant to table-top manipulation, though hardware-focused rather than learning/control-policy focused."
       },
       "verdict": "include"
     },
@@ -151,9 +183,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 6,
-        "topic": "VLA for Lab Automation",
-        "reason": "Directly addresses VLA and multi-embodiment robot manipulation in an underserved domain with solid data engineering, but technical novelty is primarily compositional rather than methodologically novel."
+        "novelty": 7,
+        "topic": "VLA for Lab Robotics",
+        "reason": "Directly addresses VLA for tabletop arm manipulation in scientific labs with a practical simulation-based data engine and two-stage training approach showing strong in/out-of-distribution results."
       },
       "verdict": "include"
     },
@@ -188,11 +220,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
         "novelty": 6,
-        "topic": "Data annotation & labeling",
-        "reason": "Infrastructure work directly enabling better VLA/policy training\u2014automatically generates high-quality spatial annotations with reliability scores, addressing the practical bottleneck of noisy labels in large-scale robot demonstration datasets."
+        "topic": "Data annotation & spatial grounding",
+        "reason": "Practical infrastructure for generating calibrated spatial annotations from robot demonstrations; directly enables better policy training but is engineering/data work rather than novel methodology."
       },
       "verdict": "include"
     },
@@ -227,10 +259,47 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "VLA / Gesture-Grounded Manipulation",
-        "reason": "Directly addresses gesture understanding in VLA models for manipulation with substantial real-world improvements, though the technical approach (skeleton overlays + semantic descriptions) is relatively straightforward."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA + Gesture Grounding for Human-Robot Interaction",
+        "reason": "Directly extends VLA for manipulation by incorporating human gestures\u2014a natural and underexplored modality for HRI\u2014with strong real-world validation and substantial empirical gains in object recognition and task success."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.13394",
+      "title": "GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation",
+      "authors": [
+        "Xiangyu Zhu",
+        "Renjun Wu",
+        "Luzhou Ge",
+        "Jinyan Liu",
+        "Xuesong Li"
+      ],
+      "abstract": "Whole-body mobile manipulation requires coordinating mobile base and manipulator under shifting viewpoints, posing challenges in geometric perception and action generation. Current policies either rely on 2D features or sparse 3D representations that lack dense spatial structure, and typically encode arm and base within one action vector that ignores their distinct control demands. Moreover, existing dense fusion strategies risk corrupting pretrained representations under noisy depth while incurring heavy computational overhead. We present GeoHAT, an end-to-end diffusion-based framework built on a simple principle: geometry should be injected only where reliable and attended to only where needed. GeoHAT employs a lightweight Fourier spatial encoder that maps dense per-pixel 3D coordinates into geometric tokens without an additional 3D vision backbone. These tokens are then selectively injected into vision foundation model features through per-token gated fusion modulated by depth validity, preserving the semantic prior while enriching spatial understanding. For action generation, a Hybrid Whole-Body Action Decoder decomposes arm and base into distinct subspaces and lets each action modality attend to its task-relevant visual context through sparse cross-attention, while causal temporal modeling captures intra-timestep coordination and inter-timestep dependencies. Experiments on the ManiSkill-HAB simulation benchmark demonstrate that GeoHAT achieves a 79.3% mean success rate, surpassing the strongest baseline by 23.7%. Furthermore, real-world experiments on diverse tasks also confirm consistent improvements over all baselines.",
+      "url": "https://arxiv.org/abs/2606.13394",
+      "pdf": "https://arxiv.org/pdf/2606.13394",
+      "published": "2026-06-11",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Mobile manipulation",
+        "reason": "Strong geometry-adaptive fusion and hybrid action decomposition for coordinated arm-base control, but mobile manipulation sits adjacent to the curator's table-top arm focus; solid empirical results on sim and real tasks."
       },
       "verdict": "include"
     },
@@ -263,11 +332,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 9,
         "quality": 7,
-        "novelty": 7,
-        "topic": "Real-time autoregressive VLA execution",
-        "reason": "Directly addresses real-time deployment of autoregressive VLA policies, a critical gap since existing work focuses primarily on diffusion; demonstrates autoregressive remains competitive despite slower inference."
+        "novelty": 6,
+        "topic": "VLA real-time execution",
+        "reason": "Directly addresses a critical deployment challenge for VLA models with solid empirical validation; demonstrates autoregressive policies remain competitive for real-time execution, though individual techniques (tokenization, constrained decoding) are straightforward applications rather than conceptually novel."
       },
       "verdict": "include"
     },
