@@ -1,6 +1,682 @@
 {
-  "updated": "2026-06-15T15:07:28Z",
+  "updated": "2026-06-16T14:48:17Z",
   "papers": [
+    {
+      "id": "2606.17055",
+      "title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+      "authors": [
+        "Dantong Niu",
+        "Zhuoyang Liu",
+        "Zekai Wang",
+        "Boning Shao",
+        "Zhao-Heng Yin",
+        "Anirudh Pai",
+        "Yuvan Sharma",
+        "Stefano Saravalle",
+        "Ruijie Zheng",
+        "Jing Wang",
+        "Ryan Punamiya",
+        "Mengda Xu",
+        "Yuqi Xie",
+        "Yunfan Jiang",
+        "Letian Fu",
+        "Konstantinos Kallidromitis",
+        "Matteo Gioia",
+        "Junyi Zhang",
+        "Jiaxin Ge",
+        "Haiwen Feng",
+        "Fabio Galasso",
+        "Wei Zhan",
+        "David M. Chan",
+        "Yutong Bai",
+        "Roei Herzig",
+        "Jiahui Lei",
+        "Fei-Fei Li",
+        "Ken Goldberg",
+        "Jitendra Malik",
+        "Pieter Abbeel",
+        "Yuke Zhu",
+        "Danfei Xu",
+        "Jim",
+        "Fan",
+        "Trevor Darrell"
+      ],
+      "abstract": "The ability to react dynamically to tactile signals has long been considered crucial to agile human-level dexterity. Yet contemporary learning-based Vision-Language-Action (VLA) models for robotic manipulation generally either overlook the tactile modality or are limited to encoders with static cues, due in part to the scarcity of diverse training data and standardized evaluation, architectural constraints in current VLA models, and limitations of static tactile encoders. In this paper, we push the frontier of tactile-reactive manipulation by addressing all of these limitations. We propose a large-scale, 100-hour tactile-rich dataset collected via a novel, data-efficient recipe that prioritizes elementary motor primitives. To effectively exploit naturally high-frequency touch signals without sacrificing the existing capabilities of existing VLAs, we introduce a variable-rate Mixture-of-Transformers (MoT) architecture equipped with a novel temporal tactile VQ-VAE encoder. We demonstrate the effectiveness of tactile-reactive policies on 12 manipulation tasks requiring delicate force control and deformable object manipulation, achieving over 30% higher average success rate than the strongest baseline.",
+      "url": "https://arxiv.org/abs/2606.17055",
+      "pdf": "https://arxiv.org/pdf/2606.17055",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Fei-Fei Li",
+        "reason": "curated (Fei-Fei Li)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Tactile-Reactive VLA",
+        "reason": "Directly advances VLA models for dexterous manipulation by effectively integrating tactile signals with novel MoT architecture; addresses genuine gap in existing methods with strong empirical gains."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.17054",
+      "title": "Human Universal Grasping",
+      "authors": [
+        "Kevin Yuanbo Wu",
+        "Tianxing Zhou",
+        "Isaac Tu",
+        "Billy Yan",
+        "Irmak Guzey",
+        "David Fouhey",
+        "Dandan Shan",
+        "Lerrel Pinto"
+      ],
+      "abstract": "Humans can grasp objects effortlessly, whereas multi-fingered robots are far from this level of generality. We argue that the most natural source of robot grasping data is from humans, who pick up thousands of objects every day. We present HUG, a flow-matching model that generates diverse human grasps for any user-specified object in a single RGB-D image captured from a stereo camera. Using smart glasses, we first collect 1M-HUGs, an egocentric dataset of human grasps spanning 1M frames (27.8 hrs) and 6,707 object instances across 41 buildings. Next, to model the distribution of natural human grasps, our novel flow-matching model fuses RGB and depth observations to output a grasp parameterized by wrist translation, wrist rotation, and MANO hand pose. Predicted grasps can be retargeted to various robot hands, enabling zero-shot grasping in everyday scenes. To standardize evaluation, we build a new simulated benchmark, HUG-Bench, of 90 unseen objects from five geometric categories and various sizes, with metric-scale 3D meshes. We evaluate HUG in the real world on the 30-object test set of HUG-Bench across multiple stereo cameras, robot embodiments, and household environments. HUG outperforms the state-of-the-art grasping baselines by +23% and +34% on our challenging object set. Code, data, benchmark, checkpoints, and an interactive demo are released on our website: https://grasping.io/",
+      "url": "https://arxiv.org/abs/2606.17054",
+      "pdf": "https://arxiv.org/pdf/2606.17054",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Grasping from human demonstrations",
+        "reason": "Strong execution on learning generalizable grasping from 1M human demonstrations with real-world validation across embodiments; directly relevant to learned manipulation but incremental in core ideas."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.17046",
+      "title": "Geometric Action Model for Robot Policy Learning",
+      "authors": [
+        "Jisang Han",
+        "Seonghu Jeon",
+        "Jaewoo Jung",
+        "Ren\u00e9 Zurbr\u00fcgg",
+        "Honggyu An",
+        "Tifanny Portela",
+        "Marco Hutter",
+        "Marc Pollefeys",
+        "Seungryong Kim",
+        "Sunghwan Hong"
+      ],
+      "abstract": "Generalist robot policies must follow user instructions while reasoning about how objects, cameras, and robot actions interact in the 3D physical world. Recent vision-language-action models (VLAs) and video world-action models (WAMs) inherit strong semantic or temporal priors from large-scale foundation models, but they still operate primarily on 2D image frames or 2D-derived latent spaces, leaving implicit the 3D geometry required for contact-rich manipulation. We propose the Geometric Action Model (GAM), a language-conditioned manipulation policy that directly repurposes a pretrained geometric foundation model (GFM) as a shared substrate for perception, temporal prediction, and action decoding. GAM splits the GFM at an intermediate layer: the shallow layers serve as an observation encoder, and a causal future predictor inserted at the split layer forecasts future latent tokens conditioned on language, proprioception, and action history. The predicted future tokens are then routed through the remaining GFM blocks for feature propagation and decoding, allowing a single backbone to produce both future geometry and actions. This design equips the GFM with language-conditioned temporal world modeling through minimal architectural modification while preserving its rich geometric priors. Across a broad suite of simulation and real-robot manipulation benchmarks, GAM is more accurate, more robust, faster, and lighter than current foundation-model-scale baselines.",
+      "url": "https://arxiv.org/abs/2606.17046",
+      "pdf": "https://arxiv.org/pdf/2606.17046",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Language-conditioned geometric manipulation policy",
+        "reason": "Novel geometric-grounding approach leverages GFM priors for contact-rich table-top manipulation, directly addressing core VLA limitations in 3D reasoning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.17043",
+      "title": "Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes",
+      "authors": [
+        "Tongyan Fang",
+        "Siyuan Huang",
+        "Naiyu Fang",
+        "Ganlong Zhao",
+        "Zhongjin Luo",
+        "Jianbo Liu",
+        "Xiaogang Wang",
+        "Ying Dong",
+        "Hongsheng Li"
+      ],
+      "abstract": "When pretrained VLA policies are fine-tuned through online RL, each rollout episode produces only a single binary outcome (success or failure), yet the actor update requires per-transition supervision. Existing approaches commonly reduce this sparse outcome to a single scalar reward or advantage signal, which conflates distinct forms of transition-level feedback and provides limited guidance once basic task success becomes achievable. First, a single scalar signal conflates the two objectives of viability and efficiency; once basic success is achieved, the binary label provides no gradient to distinguish efficient completions from slow ones. Second, real-world rollouts mix autonomous and intervention segments; naively assigning episode outcomes across these boundaries introduces incorrect credit assignment. To address these issues, we propose Hierarchical Advantage-Weighted Behavior Cloning (HABC), which trains separate critic heads for these two objectives on different data subsets and combines their outputs with a state-adaptive balance. A state-adaptive gate $g_t$ merges their one-step advantages, prioritizing viability when success is uncertain and shifting to efficiency only when viability is high, and converts the result into per-transition weights on the actor loss. Intervention-aware credit assignment further restricts outcome labels to segments executed by the current policy, preventing supervision from leaking across intervention boundaries. In real-robot experiments on three contact-rich bimanual tasks, HABC raises success from supervised fine-tuning (SFT) baselines of 36%, 44%, and 12% to 92%, 88%, and 38%.",
+      "url": "https://arxiv.org/abs/2606.17043",
+      "pdf": "https://arxiv.org/pdf/2606.17043",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA fine-tuning with online RL",
+        "reason": "Directly addresses practical VLA fine-tuning via RL with well-motivated solutions (viability-efficiency separation, intervention-aware credit assignment) and substantial real-robot improvements on contact-rich bimanual manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.17040",
+      "title": "R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies",
+      "authors": [
+        "Xiuwei Xu",
+        "Haowen Sun",
+        "Angyuan Ma",
+        "Yiwei Zhang",
+        "Zhenyu Wu",
+        "Xiaofeng Wang",
+        "Bingyao Yu",
+        "Zheng Zhu",
+        "Jie Zhou",
+        "Jiwen Lu"
+      ],
+      "abstract": "Spatial generalization is critical for imitation-learned manipulation policies, but achieving it typically requires scaling demonstrations across diverse object poses, robot configurations, and camera viewpoints. Data augmentation from a few source demonstrations offers a practical alternative to costly real-world collection. Simulation-based augmentation can create controllable variation, but requires complex environment and object setup and may introduce a sim-to-real gap. Recent real-to-real methods avoid these issues by jointly editing 3D observations and action trajectories from real demonstrations, yet they still rely on strong 3D scene parsing and geometry completion, and often produce observations tailored to 3D pointcloud policies rather than RGB-based 2D policies. We propose R2RDreamer, a real-to-real demonstration augmentation framework that preserves the geometric consistency of 3D action-observation editing while moving visual completion to 2D video space. Specifically, R2RDreamer first performs lightweight 3D augmentation by editing incomplete object pointclouds and end-effector trajectories in a shared 3D frame; it then projects the edited scene into masked image-space control videos with occlusion-aware reasoning and uses a dense-control image-to-video model to complete temporally coherent RGB observations. Experiments on spatially shifted manipulation tasks with both 2D diffusion-style policies and vision-language-action policies show that R2RDreamer improves spatial generalization from limited source demonstrations, with analyses validating the contributions of 3D editing, occlusion-aware projection, and video completion.",
+      "url": "https://arxiv.org/abs/2606.17040",
+      "pdf": "https://arxiv.org/pdf/2606.17040",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Real-to-real data augmentation",
+        "reason": "Directly addresses data-efficient spatial generalization for VLA and diffusion-based manipulation policies; solid engineering combining 3D editing with 2D video completion, but incremental over existing real-to-real methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16826",
+      "title": "ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies",
+      "authors": [
+        "Zenan Wu",
+        "Bingqing Wei",
+        "Lu Liu",
+        "Zheqi He",
+        "Xi Wang",
+        "Jiakang Liu",
+        "Zehui Li",
+        "Guocai Yao",
+        "Jing-Shu Zheng",
+        "Xi Yang",
+        "Yongtao Wang"
+      ],
+      "abstract": "Generalist manipulation policies are increasingly presented as foundation models for robotic control, but their real-world generalization remains difficult to diagnose. A policy may succeed on demonstrated tasks while still failing to execute fine-grained atomic skills or recombine learned skills in new task structures. We introduce \\textbf{ATOM-Bench}, a real-world benchmark for evaluating both atomic skills and compositional generalization in manipulation policies. ATOM-Bench factorizes tabletop manipulation into motor atoms and instruction atoms, and contains 30 atomic tasks and 24 held-out compositional tasks across paired single-arm and dual-arm robot tracks. We collect 3,000 human demonstrations for atomic fine-tuning and release both the demonstration data and evaluation rollout data to support reproducible real-world evaluation. Policies are fine-tuned on atomic tasks and evaluated on both atomic skill acquisition and held-out compositional tasks. We further introduce Atomic Score (AS) and Compositional Failure Share (CFS) to distinguish failures caused by weak atomic skills from failures caused by limited compositional reuse. Through 2,700 physical rollouts on five representative manipulation policies, we find that current policies can acquire simple instruction-grounding skills, but still struggle with fine-grained motor atoms, counting, and logical filtering. More importantly, strong atomic performance does not reliably transfer to held-out compositional tasks. ATOM-Bench provides a diagnostic testbed for studying whether failures arise from weak motor execution, poor instruction grounding, or limited compositional reuse.",
+      "url": "https://arxiv.org/abs/2606.16826",
+      "pdf": "https://arxiv.org/pdf/2606.16826",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Benchmark / Compositional Generalization",
+        "reason": "Real-world benchmark with 2,700 rollouts across 5 policies revealing that atomic skill acquisition doesn't reliably transfer to compositional tasks\u2014directly diagnostic for manipulation policy generalization."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16504",
+      "title": "APEX: Adaptive Policy Execution for Precise Manipulation",
+      "authors": [
+        "Mengfei Zhao",
+        "Chenxi Jiang",
+        "Tuo An",
+        "Jindou Jia",
+        "Jianfei Yang"
+      ],
+      "abstract": "Modern imitation learning methods, including visuomotor and Vision-Language-Action (VLA) policies, typically output high-level action references that are executed by low-level controllers. However, the absence of higher-order reference signals, together with the policy's lack of awareness of the underlying low-level control dynamics during training, inevitably induces an execution gap. As a result, realized actions deviate systematically from policy-commanded ones, with a critical impact on precision-sensitive manipulation. Prior work either modifies the policy architecture or the low-level controller, both requiring intrusive changes to the pretrained policy or packaged controller. This raises a natural question: when the policy and controller are both treated as inaccessible black boxes, can we bridge the execution gap? We propose Adaptive Policy Execution (APEX), a plug-and-play framework inserted between the policy and the controller that reconstructs a dynamically feasible reference from policy outputs and adapts at test-time according to low-level state feedback, with a provable convergence guarantee. Extensive empirical studies show that APEX reduces controller-induced tracking error by 41.2% on demonstration replay and improves manipulation success by 4.8--25.8 percentage points across four visuomotor and VLA policy classes.",
+      "url": "https://arxiv.org/abs/2606.16504",
+      "pdf": "https://arxiv.org/pdf/2606.16504",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Policy-Controller Adapter",
+        "reason": "Directly addresses execution gap in VLA/visuomotor policies with a principled, plug-and-play adapter showing significant empirical improvements across multiple policy types."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16490",
+      "title": "Robots that Collaborate: Sequential Asymmetric Imitation for Learning Coupled Robot Policies",
+      "authors": [
+        "Yincong Chen",
+        "Ranpeng Qiu",
+        "Zihao Li",
+        "Yanan Zhou",
+        "Guoqiang Ren",
+        "Weiming Zhi"
+      ],
+      "abstract": "Collaborative mobile manipulation requires robots to coordinate with a partially observed partner while physically interacting through shared objects. This is difficult because failures often arise not from poor local skills, but from mistimed waiting, yielding, pulling, releasing, or repositioning. We study this problem with two bimanual mobile manipulators coupled through rigid and deformable objects. We propose Sequential Asymmetric Imitation (SAI), a single-teleoperator curriculum for learning coupled multi-robot behaviors without synchronized dual-operator demonstrations or explicit inter-robot communication. SAI trains Robot A from unilateral demonstrations with a compliant human partner, trains Robot B against the deployed Robot A policy, and then refines Robot A using sparse interventions near coordination failures. This staged process exposes the policies to increasingly realistic partner behaviors, including delay, phase mismatch,insufficient yielding, and interaction conflict. Across real-world dual-robot manipulation tasks, SAI improves task success, phase synchronization, and partner-contingent yielding over independent imitation and curriculum-ablation baselines. These results suggest that physically coupled collaboration can be learned through the structure of the imitation curriculum, rather than through synchronized multi-operator demonstrations or explicit coordination mechanisms.Project page:http://cyc0429.github.io/sai-project-page/",
+      "url": "https://arxiv.org/abs/2606.16490",
+      "pdf": "https://arxiv.org/pdf/2606.16490",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Multi-robot collaborative manipulation",
+        "reason": "Novel curriculum for learning coupled bimanual manipulation policies without synchronized dual operators; directly relevant to learned manipulation and coordination, though focused on mobile manipulators rather than fixed tabletop arms."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16458",
+      "title": "RHO: Your Coding Agent is Secretly a Roboticist",
+      "authors": [
+        "Karim Elmaaroufi",
+        "Justin Svegliato",
+        "Sarunas Kalade",
+        "Graham Schelle",
+        "Sanjit A. Seshia",
+        "Matei Zaharia"
+      ],
+      "abstract": "Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file. RHO searches with reflective feedback from environment reward and execution rather than teleoperation demonstrations. It generalizes to perturbed pick-and-place settings like LIBERO-PRO, where OpenVLA scores 0.0% and $\u03c0_{0.5}$ averages 12.83%. Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $\u03c0_{0.5}$. On Robosuite, RHO sets a new state-of-the-art of 70.0%, exceeding the prior multi-turn record of 68.29% using single-turn execution with no corrective LLM code edits at deployment. When an LLM is used in the control loop, as on RAI's O3DE benchmark, RHO optimizes the deployed agent's multi-file harness of prompts, tools, and control code, improving held-out success from 23.5% to 44.3% with 20% less wall-clock time and 27% fewer tool calls.",
+      "url": "https://arxiv.org/abs/2606.16458",
+      "pdf": "https://arxiv.org/pdf/2606.16458",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "LLM-based manipulation policies",
+        "reason": "Directly targets code-as-policies for table-top manipulation with strong empirical results (45% on LIBERO-PRO perturbed, 70% on Robosuite) by training-time search over multi-file policy repositories, addressing the infeasibility of multi-turn LLM inference for real-time control."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16447",
+      "title": "Training and Evaluating Diffusion Policies with Long Context Lengths",
+      "authors": [
+        "Abhinav Agarwal",
+        "Adam Wei",
+        "Taylan Kargin",
+        "Michael Zeng",
+        "Cole Becker",
+        "Arif Kerem Dayi",
+        "Pablo Parrilo",
+        "Asuman Ozdaglar",
+        "Russ Tedrake"
+      ],
+      "abstract": "Imitation learning has enabled highly-dexterous robotic manipulation from RGB observations. Policies trained with these methods, however, typically condition robot actions on only a short history of observations. These policies cannot solve tasks that require memory and can get stuck repeatedly executing the same failing motions. In this work, we first benchmark policy performance as context length is incrementally increased from short to long, across a spectrum of tasks with varying local stability and memory requirements, and in multiple data regimes. To our knowledge, this is the first study to investigate context length in imitation learning at this level of detail. Our results challenge prior claims: naively scaling context length is not as brittle as advertised in literature. With an appropriate conditioning method and denoising backbone (UNet+Cross-Attention), single-task policies achieve high success rates on many tasks in the usual data regime even with naive scaling. Next, we propose a training algorithm to jointly train policies at multiple context lengths, further reducing the sample complexity of long-context learning. Finally, we apply our findings to re-evaluate some previously proposed solutions to long-context imitation learning.",
+      "url": "https://arxiv.org/abs/2606.16447",
+      "pdf": "https://arxiv.org/pdf/2606.16447",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Russ Tedrake",
+        "reason": "curated (Russ Tedrake)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Diffusion policy, table-top manipulation",
+        "reason": "First systematic benchmark of context length in imitation learning for manipulation; challenges prior scaling brittleness claims and proposes improved multi-context training algorithm."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16436",
+      "title": "V2P-Manip: Learning Dexterous Manipulation from Monocular Human Videos",
+      "authors": [
+        "Kaihan Chen",
+        "Yanming Shao",
+        "Haifeng Ji",
+        "Xiaokang Yang",
+        "Yao Mu"
+      ],
+      "abstract": "Achieving autonomous robotic dexterous manipulation requires precise, human-like action sequences at scale. As a scalable supplement to costly teleoperation data, extracting trajectories with both visual fidelity and physical plausibility from monocular videos represents a promising frontier in embodied AI. To this end, we introduce V2P-Manip, an efficient framework designed to learn dexterous manipulation policies directly from human demonstration videos. We establish an efficient, integrated pipeline encompassing 3D asset acquisition, trajectory estimation, and dexterous policy learning. To bridge the gap between visual perception and physical constraints, we introduce a two-stage refinement process to enforce spatial alignment and physical consistency. Evaluations on the TACO and OakInk benchmarks demonstrate that our approach significantly outperforms previous methods in pose accuracy, adaptability to unstructured environments, and training efficiency. Ultimately, experimental results confirm an average success rate of over 75% across multiple synthetic manipulation tasks and validate the adaptability of the extracted manipulation priors across diverse dexterous hand embodiments.",
+      "url": "https://arxiv.org/abs/2606.16436",
+      "pdf": "https://arxiv.org/pdf/2606.16436",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous manipulation from human video",
+        "reason": "Core relevance to dexterous manipulation policy learning from demonstrations, but the two-stage refinement approach is incremental and evaluation limited to synthetic tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16272",
+      "title": "TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation",
+      "authors": [
+        "Jielin Wu",
+        "Shenzhe Yao",
+        "Guanqi He",
+        "Xiaohan Liu",
+        "Zhaoqing Zeng",
+        "Xiangrui Jiang",
+        "Han Yang",
+        "Wentao Zhang",
+        "Hang Zhao"
+      ],
+      "abstract": "Human hand-object demonstrations provide dense reference motions for training dexterous manipulation reinforcement learning (RL) policies through reference tracking. However, to use such demonstrations for RL policy learning, retargeting must preserve hand pose and task-relevant hand-object contact structure. Otherwise, contact and feasibility artifacts can degrade downstream RL policy performance. We introduce TopoRetarget, an interaction-preserving retargeting framework that uses a single set of parameters across diverse retargeting conditions while maintaining task-relevant hand-object interaction and adapting human demonstrations to dexterous robot hands. The method constructs a sparse interaction graph over hand and object keypoints and optimizes distance-weighted Laplacian deformation with directional consistency, kinematic constraints, and penetration handling. Evaluations show that the generated references improve both interaction fidelity and policy learning: TopoRetarget achieves the best contact precision and alignment over all baselines on the ContactPose Dataset, improves Pen-Spin training success by 40.6 percentage points over the existing baseline methods, and enables zero-shot transfer to Wuji Hand hardware on cube reorientation and pen spinning.",
+      "url": "https://arxiv.org/abs/2606.16272",
+      "pdf": "https://arxiv.org/pdf/2606.16272",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous Manipulation from Human Demos",
+        "reason": "Directly addresses interaction-preserving retargeting for dexterous RL with strong empirical results and hardware transfer to real hands."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16208",
+      "title": "ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation",
+      "authors": [
+        "Tao Xu",
+        "Jiaxin Wang",
+        "Runhao Zhang",
+        "Jiayi Guan",
+        "Xianchao Zeng",
+        "Weixi Song",
+        "Xinyu Zhou",
+        "Zhetao Chen",
+        "Guang Chen",
+        "Yong-Lu Li"
+      ],
+      "abstract": "In robot imitation learning, influence functions provide a principled approach to quantify each demonstration's effect on robot task outcomes, yet scaling them to billion-parameter Vision-Language-Action (VLA) models is limited by computational and multitask bottlenecks. To this end, we propose ATHENA, an influence function framework tailored for multitask VLA data curation at a billion-parameter scale. Concretely, it leverages the Kronecker structure of linear-layer gradients to reduce projection cost, and approximates dense Hessian inversion with a rank-r Random Truncated Approximation, achieving about a 313.4x speedup in influence computation. Furthermore, ATHENA formulates global and local interactive influence to balance data curation across 50 jointly trained tasks. Extensive evaluations on RoboTwin 2.0 and real-robot deployment, covering 9.34 and 6.90 hours of demonstrations, respectively, show that ATHENA matches or exceeds full-data joint fine-tuning using only 50% of demonstrations in simulation and 66.7% of data across six real-robot tasks. Overall, ATHENA demonstrates its effectiveness for data curation in billion-parameter multitask VLA fine-tuning.",
+      "url": "https://arxiv.org/abs/2606.16208",
+      "pdf": "https://arxiv.org/pdf/2606.16208",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Data curation for VLA models",
+        "reason": "Directly addresses billion-parameter VLA efficiency with principled influence functions; strong real-robot validation showing 50\u201367% data sufficiency is valuable for scaling robot learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16202",
+      "title": "EgoPhys: Learning Generalizable Physics Models of Deformable Objects from Egocentric Video",
+      "authors": [
+        "Hyunjin Kim",
+        "Ri-Zhao Qiu",
+        "Guangqi Jiang",
+        "Xiaolong Wang"
+      ],
+      "abstract": "Humans naturally understand object physics through everyday interactions, but faithfully predicting complex deformable dynamics, such as elastic materials and fabrics, remains a major challenge for computer vision and robotics. We present EgoPhys, a framework that constructs deformable physical digital twins from egocentric RGB-only video using generalizable priors. EgoPhys overcomes the limitations of existing methods to enable controllable deformable digital twin generation from egocentric videos by distilling per-object inverse-physics solutions into a compact codebook, enabling prediction of dense spring stiffness fields for unseen objects without per-spring test-time optimization. Trained with generalizable priors from diverse egocentric interactions, EgoPhys outperforms baselines in reconstruction, future prediction, and zero-shot generalization. To support training and evaluation, we curate an egocentric interaction dataset covering diverse deformable objects, scenes, and manipulation styles. We deploy EgoPhys on a real xArm6 robot, demonstrating that a digital twin initialized from a single egocentric human play video can serve as an internal world representation to aid in deformable-object planning, highlighting egocentric RGB observations as a scalable path toward real-to-sim pipelines.",
+      "url": "https://arxiv.org/abs/2606.16202",
+      "pdf": "https://arxiv.org/pdf/2606.16202",
+      "published": "2026-06-15",
+      "primary_category": "cs.CV",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Xiaolong Wang",
+        "reason": "curated (Xiaolong Wang)"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Deformable object physics learning",
+        "reason": "Learns generalizable physics models of deformable objects from egocentric video with real robot deployment, filling a critical gap in manipulation perception for world models."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.16178",
+      "title": "Scaling Short-Term Memory of Visuomotor Policies for Long-Horizon Tasks",
+      "authors": [
+        "Rutav Shah",
+        "Rajat Kumar Jenamani",
+        "Xiaohan Zhang",
+        "Lingfeng Sun",
+        "Roberto Mart\u00edn-Mart\u00edn",
+        "Yuke Zhu",
+        "Deva Ramanan",
+        "Karl Schmeckpeper"
+      ],
+      "abstract": "Many robotic tasks require short-term memory, whether it's retrieving an object that's no longer visible or turning off an appliance after a set period. Yet, most visuomotor policies trained via imitation learning rely only on immediate sensory input without using past experiences to guide decisions. We present PRISM, a transformer-based architecture for visuomotor policies to effectively use short-term memory via two key components: (i) gated attention, which filters retrieved information to suppress irrelevant details, improving performance by reducing the spurious correlations between the history and current action prediction, (ii) a hierarchical architecture that first compresses local information into compact tokens and then integrates them to capture temporally extended dependencies, improving its compute and memory footprint. Together, these mechanisms enable us to scale short-term memory in visuomotor policies for up to two minutes. To systematically evaluate memory in visuomotor control, we introduce ReMemBench -- a benchmark of eight diverse household manipulation tasks spanning four categories of short-term memory -- designed to foster general memory mechanisms rather than siloed, task-specific solutions. PRISM consistently outperforms prior works, including recurrent architectures, transformers, and their variants -- achieving an absolute improvement of 5%--12% over the strongest baseline. On the RoboCasa and LIBERO benchmarks, it achieves absolute improvements of 11%--15% over its no-memory variant and fine-tuned Vision-Language-Action baselines such as GR00T-N1-3B and OpenVLA, despite not leveraging any large-scale pretraining. Together, PRISM and ReMemBench establish a foundation for developing and evaluating short-term memory-augmented visuomotor policies that scale to long-horizon tasks. Additional materials are available at https://shahrutav.github.io/short-term-memory",
+      "url": "https://arxiv.org/abs/2606.16178",
+      "pdf": "https://arxiv.org/pdf/2606.16178",
+      "published": "2026-06-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Yuke Zhu",
+        "reason": "curated (Yuke Zhu)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Visuomotor policy with temporal memory",
+        "reason": "Directly addresses memory bottleneck in visuomotor policies for long-horizon manipulation with novel gated attention + hierarchical architecture; comprehensive ReMemBench benchmark and strong empirical improvements."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.15918",
+      "title": "Energy-Efficient Arm Reaching for a Humanoid Robot via Deep Reinforcement Learning with Identified Power Models",
+      "authors": [
+        "Nestor N. Deniz",
+        "Simon Parsons",
+        "Fernando Auat Cheein"
+      ],
+      "abstract": "Humanoid robots performing in-field manipulation tasks, such as robotic apple harvesting, face severe energy constraints that directly limit the number of reaching motions that can be executed per battery charge. This paper presents an end-to-end, energy-aware reinforcement learning framework for the 7-degree-of-freedom left arm of the Unitree~G1 humanoid robot, combining a physics-based, experimentally identified electrical power model with a Soft Actor-Critic (SAC) policy trained in a Pinocchio-based rigid-body dynamics simulator. The RL policy operates on an incremental joint-position action space and is trained with a Hybrid Constellation Reward that combines a four-point end-effector constellation distance with a torque-norm energy proxy; after % $5\\times10^6$ training it reaches a $69.9\\%$ success rate over $1\\,000$ random targets in kinematic simulation, at a mean energy of \\SI{98.16}{\\joule} on successful episodes. Finally, on the physical Unitree~G1, the policy is validated over three independent 10-target batches, achieving a mean energy of $71.5 \\pm 48.3$\\,J, an end-effector position error of $2.64 \\pm 1.04$\\,cm, and an orientation error of $6.92 \\pm 1.33^\\circ$ -- within the \\SI{4}{\\centi\\metre}/$8.6^\\circ$ training tolerance. These results constitute a first step toward energy-aware reinforcement-learning-based arm reaching for humanoid robots.",
+      "url": "https://arxiv.org/abs/2606.15918",
+      "pdf": "https://arxiv.org/pdf/2606.15918",
+      "published": "2026-06-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Energy-Aware Arm Reaching",
+        "reason": "Relevant to learned arm control on humanoids, but addresses simple point-to-point reaching rather than complex manipulation; applies standard RL methods without notable novelty; limited experimental validation (30 test targets) and lacks baseline comparisons."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.15909",
+      "title": "GeoTLM: Geometry-aware Tactile-Language Models for Contact Motion Orientation Reasoning of Dynamic Objects",
+      "authors": [
+        "Qiutian Li",
+        "Zinan Liu",
+        "Lin Wang"
+      ],
+      "abstract": "Modern tactile-language models (TLMs) have shown potential for robot learning tasks, such as material and texture recognition. However, for contact-rich scenarios, these TLMs struggle to understand the physical properties of dynamic objects, such as rotation and sliding directions. For instance, our preliminary experiments reveal that popular TLMs, such as Sparsh and AnyTouch2, exhibit weak performance on basic rotation direction reasoning from GelSight Mini tactile data. This surprising gap inspires us to explore a novel research question: Can we inject physically grounded geometric priors into TLMs to enable reliable contact orientation reasoning of dynamic object properties? To this end, we propose GeoTLM, a novel geometric representation-guided TLM for the perception of dynamic contact events. Our key idea is to preserve and structure tactile shear-field geometry before language-level reasoning, rather than forcing low-resolution tactile tokens into fragile closed-form physics operators. To achieve this, we propose a lightweight (only 14k parameters) yet novel Differentiable Geometric Representation (DGR). Specifically, DGR learns a contact-mask-guided representation in the shear field and aggregates it through an antisymmetric seven-region pooling design, motivated by the physical intuition that rotational contact produces antisymmetric deformation patterns. We conduct experiments on two representative tasks: rotation direction and sliding direction reasoning. Extensive experiments show that GeoTLM improves novel-object rotation accuracy by +14.6% and real-sensor sliding accuracy by +16.2% over the same backbone without the geometric encoder. Overall, our work paves a new way for physically grounded tactile-language reasoning, with strong potential for dynamic object understanding and contact-rich robotic manipulation.",
+      "url": "https://arxiv.org/abs/2606.15909",
+      "pdf": "https://arxiv.org/pdf/2606.15909",
+      "published": "2026-06-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Tactile-Language Models / Contact Perception",
+        "reason": "Solid tactile-perception work addressing a real limitation in TLMs for dynamic object reasoning via physically-grounded geometric priors, relevant to manipulation but more tactile-focused than VLA-centric."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2606.13677",
       "title": "Mana: Dexterous Manipulation of Articulated Tools",
