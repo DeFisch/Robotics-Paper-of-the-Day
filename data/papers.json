@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T14:14:54Z",
+  "updated": "2026-06-20T13:40:26Z",
   "papers": [
     {
       "id": "2606.20562",
@@ -37,9 +37,45 @@
       "scores": {
         "relevance": 8,
         "quality": 7,
-        "novelty": 6,
-        "topic": "Memory-Efficient World Action Modeling",
-        "reason": "Directly addresses memory-dependent manipulation with practical efficiency gains; competent hybrid memory design combining gist tokens and event boundaries, but incremental in core novelty."
+        "novelty": 8,
+        "topic": "Memory-augmented World Action Models",
+        "reason": "Directly addresses the efficiency-vs-memory-capacity trade-off in WAMs for long-horizon manipulation with a novel hybrid memory architecture; demonstrates real-world effectiveness."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.20549",
+      "title": "Generating Robot Hands from Human Demonstrations",
+      "authors": [
+        "Sha Yi",
+        "Nicklas Hansen",
+        "Xueqian Bai",
+        "Carmelo Sferrazza",
+        "Michael T. Tolley",
+        "Xiaolong Wang"
+      ],
+      "abstract": "Robot learning has advanced rapidly in learning control, but learning the physical body of a robot remains much more difficult because jointly searching over design and control creates a very large combinatorial problem. Here, we present a data-driven framework for generating robot hands from human demonstrations. Instead of learning a complex controller together with each candidate design, we generate robot hand designs using the same simple control policy used after fabrication: matching fingertip positions through inverse kinematics. Using more than 4 million frames of human fingertip motion from everyday manipulation, our algorithm optimizes tree-structured robot hands to reproduce desired target motions. The framework produced both a 6-degree-of-freedom (DoF) general-purpose hand and lower-DoF task-specific hands with spatial four-bar mimic joints. To accelerate the search over designs, we trained a reinforcement-learning (RL) actor to propose good hand designs and joint angles, reducing search time from hours to minutes. We fabricated the mechanisms directly as one-piece articulated structures with print-in-place joints. In real-world experiments, the 6-DoF hand achieved highly accurate teleoperated fingertip tracking better than available commercial robot hands, whereas the specialized 3-DoF hands reproduced structured human and synthetic trajectories with reduced mechanical complexity. These results showed that large-scale human motion data can be used not only to train robot controllers but also as a reference for optimizing and generating the physical embodiment of robots.",
+      "url": "https://arxiv.org/abs/2606.20549",
+      "pdf": "https://arxiv.org/pdf/2606.20549",
+      "published": "2026-06-18",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Xiaolong Wang",
+        "reason": "curated (Xiaolong Wang)"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Robot hand morphology design",
+        "reason": "Well-executed morphology generation from human motion with fabrication validation; emphasizes design optimization over learned manipulation policies and perception."
       },
       "verdict": "include"
     },
@@ -76,10 +112,10 @@
       },
       "scores": {
         "relevance": 7,
-        "quality": 8,
-        "novelty": 6,
+        "quality": 7,
+        "novelty": 5,
         "topic": "Tactile simulation infrastructure",
-        "reason": "Physics-based tactile sensor simulator with multi-sensor support and strong real-world validation; valuable infrastructure for manipulation RL but infrastructure-focused rather than a learning/policy contribution."
+        "reason": "Strong engineering work enabling tactile-guided manipulation learning with solid physics validation (SSIM > 0.93), but primarily integrates existing methods into Isaac Sim rather than advancing learning algorithms or policies."
       },
       "verdict": "include"
     },
@@ -110,8 +146,8 @@
         "relevance": 6,
         "quality": 6,
         "novelty": 6,
-        "topic": "Continuum Robot Manipulation Platform",
-        "reason": "Solid systems contribution addressing reproducibility in continuum robotics with thoughtful hardware design and learning framework, but primarily a platform/tool paper with standard imitation learning rather than novel manipulation algorithms or VLA approaches."
+        "topic": "Continuum Robot Platform",
+        "reason": "Solid engineering contribution with simplified fabrication and learning support, but continuum robots are specialized and paper lacks algorithmic novelty in learning approaches."
       },
       "verdict": "include"
     },
@@ -151,9 +187,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 7,
-        "topic": "Structured Bimanual VLA",
-        "reason": "Directly addresses critical coordination limitations in dual-arm VLAs with substantial empirical gains (27% success boost, 2\u00d7 OOD improvement), though incremental relative to established VLA frameworks."
+        "novelty": 8,
+        "topic": "Bimanual VLA / Dual-arm coordination",
+        "reason": "Directly tackles coordination bottleneck in dual-arm VLAs with explicit structural priors; strong empirical gains (27% on tight tasks, 2x on OOD) and practical deployment strategy make this high-impact for dexterous manipulation."
       },
       "verdict": "include"
     },
@@ -200,11 +236,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
-        "novelty": 7,
-        "topic": "VLA Model Compression",
-        "reason": "Training-free layer pruning directly optimizes VLA fine-tuning and inference with thorough validation across simulations and real robot tasks; practical but methodologically incremental."
+        "novelty": 6,
+        "topic": "VLA model efficiency / Compression",
+        "reason": "Direct VLA focus with solid multi-embodiment real-world validation proving practical deployment value; CKA-based layer compression is methodologically straightforward but addresses a genuine bottleneck."
       },
       "verdict": "include"
     },
