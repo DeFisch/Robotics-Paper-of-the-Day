@@ -17,6 +17,12 @@
     "name": "Christian Llanes",
     "papers": 8
   },
+  "dandan zhang": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Zhang Dandan",
+    "papers": 34
+  },
   "davide ceriola": null,
   "enrico simetti": {
     "citations": 1725,
@@ -47,6 +53,12 @@
     "h_index": 11,
     "name": "Jun Miyazaki",
     "papers": 91
+  },
+  "lan wei": {
+    "citations": 19,
+    "h_index": 2,
+    "name": "Lan-lan Wei",
+    "papers": 3
   },
   "nathaniel hanson": {
     "citations": 1,
