@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T13:56:44Z",
+  "updated": "2026-06-27T13:39:42Z",
   "papers": [
     {
       "id": "2606.27375",
@@ -43,10 +43,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 8,
-        "novelty": 6,
-        "topic": "VLA behavior cloning, open-source dataset & infrastructure",
-        "reason": "Core VLA + table-top dexterous manipulation with 130K real-world episodes and comprehensive reproducible toolkit; strong community contribution despite incremental methods."
+        "quality": 9,
+        "novelty": 7,
+        "topic": "VLA / Behavior Cloning / Dataset",
+        "reason": "Large-scale open teleoperation dataset (130K episodes, 3.5k hours) with complete reproducible stack for behavior cloning; systematic comparison of VLA/DiT architectures validated on dexterous tasks, though core methodology is incremental."
       },
       "verdict": "include"
     },
@@ -78,11 +78,45 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
-        "novelty": 7,
-        "topic": "Continual imitation learning with world models",
-        "reason": "Directly addresses catastrophic forgetting in robot manipulation using world models for generative replay, with solid sim+real validation, though performance gaps to privileged methods suggest inherent limitations."
+        "novelty": 6,
+        "topic": "Continual imitation learning",
+        "reason": "Directly addresses catastrophic forgetting in robot manipulation through generative replay, with real-world validation and honest identification of bottlenecks; novelty is moderate (sensible combination of established techniques)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.27355",
+      "title": "RouterVLA: Turning Smoke Tests into Supervision for Heterogeneous VLA Selection",
+      "authors": [
+        "Xingyu Ren",
+        "Chugang Yi",
+        "Ge Ma",
+        "Youran Sun"
+      ],
+      "abstract": "We study whether pre-deployment evaluation rollouts can be reused to supervise policy selection. Robot teams routinely smoke test candidate vision-language-action (VLA) policies, then compress those trials into a global winner. RouterVLA evaluates this idea with outcome-disjoint cross-fitting: recorded probes build a profile for each frozen expert, and a separate trial scores the selected expert without entering its profile. Across 34,752 LIBERO-Plus rollout records, a transparent probe-success rule raises held-out success from 0.4686 to 0.6149, a +14.64pp gain. Under the scalar-only profiles studied here, learned scorers are statistically indistinguishable from this rule, showing that commissioning carries the routing value while extra scalar scorer capacity does not create it. Reusing the scored trial inflates the measured gain by $1.87\\times$, so credible ledger routing needs outcome separation; model scaling improves individual policies, while commissioning-aware routing improves the system built from them.",
+      "url": "https://arxiv.org/abs/2606.27355",
+      "pdf": "https://arxiv.org/pdf/2606.27355",
+      "published": "2026-06-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "VLA Policy Selection",
+        "reason": "Well-executed system for routing between frozen VLA policies using smoke test supervision with strong validation (34K rollouts), but incremental since it selects rather than improves policies."
       },
       "verdict": "include"
     },
@@ -114,11 +148,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Contact-rich dexterous manipulation",
-        "reason": "Directly addresses learned dexterous manipulation with novel vibrotactile sensing and proven sim-to-real transfer on contact-rich tasks."
+        "topic": "Dexterous manipulation with tactile sensing",
+        "reason": "Core work on learned policies for contact-rich dexterous manipulation with novel vibrotactile sensing and proven sim-to-real transfer across multiple manipulation tasks."
       },
       "verdict": "include"
     },
@@ -149,8 +183,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "World Model Robustness",
-        "reason": "Systematic characterization of visual world model hallucination modes with practical data-centric mitigation strategies essential for reliable robot policy learning."
+        "topic": "World Models / Robot Prediction",
+        "reason": "Systematically characterizes hallucination modes in world models and proposes practical detection/mitigation methods with 427-hour robot dataset; directly addresses core challenge in learned manipulation policies."
       },
       "verdict": "include"
     },
@@ -193,11 +227,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 9,
         "quality": 8,
-        "novelty": 7,
-        "topic": "VLA Pretraining",
-        "reason": "Directly addresses VLA's visual-language imbalance through intermediate language-action pretraining with substantial real-world validation (45% improvement)."
+        "novelance": 7,
+        "topic": "VLA Pretraining / Language-Action Learning",
+        "reason": "Directly addresses robust VLA learning for manipulation by proposing language-action pretraining that reduces reliance on visual shortcuts; systematic approach with strong real-world gains (45% improvement) makes this a solid contribution to core research interests."
       },
       "verdict": "include"
     },
@@ -234,11 +268,53 @@
         "reason": "not checked"
       },
       "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Robot Policy",
+        "reason": "Directly addresses test-time scaling for VLA models with a novel history-aware approach to joint reasoning-action refinement; comprehensive evaluation across 4 benchmarks and 3 embodiments with strong real-world gains (26.62%) makes this valuable work in embodied manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.27251",
+      "title": "Advancing Omnimodal Embodied Agents from Isolated Skills to Everyday Physical Autonomy",
+      "authors": [
+        "Junhao Shi",
+        "Zezheng Huai",
+        "Siyin Wang",
+        "Jia Chen",
+        "Yubang Wang",
+        "Zhaoye Fei",
+        "Hechang Chen",
+        "Jingjing Gong",
+        "Xipeng Qiu",
+        "Yu-Gang Jiang"
+      ],
+      "abstract": "Building persistent embodied agents in unstructured environments demands unified orchestration of heterogeneous tools spanning both cyber (APIs, IoT) and physical (manipulation, navigation) domains, coupled with autonomous recovery from physical failures that inevitably arise over extended operation. Existing systems treat these as separate problems: VLM-based planners lack a unified cyber-physical action space, agent frameworks accumulate unbounded context that degrades temporal coherence, and VLA policies execute open-loop without detecting their own failures. We argue that persistent autonomy requires not a monolithic model but a hierarchical asynchronous architecture with explicit separation of planning, memory, and verification. To this end, we present OmniAct, a framework integrating a multimodal semantic planner for skill routing across unified action spaces, an adaptive hierarchical memory with event-boundary-driven compression for sub-linear context growth, and an asynchronous visual preemption engine that closes the semantic loop during physical execution. Across 40 real-world long-horizon tasks on two robotic platforms coordinating four IoT devices, OmniAct achieves consistent improvements in end-to-end success across all complexity levels, maintains near-flat token consumption over under 100k+ accumulated interaction tokens, and elevates mid-scale open-weight models to proprietary-level performance.",
+      "url": "https://arxiv.org/abs/2606.27251",
+      "pdf": "https://arxiv.org/pdf/2606.27251",
+      "published": "2026-06-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
         "relevance": 8,
         "quality": 7,
-        "novelty": 7,
-        "topic": "Test-time scaling for VLA policies",
-        "reason": "Directly addresses reasoning-action scaling for VLA models with history-aware closed-loop refinement, showing substantial empirical improvements across multiple benchmarks and real robots without retraining."
+        "novelty": 6,
+        "topic": "Embodied Agents",
+        "reason": "Directly addresses core VLA challenges (long-horizon execution, failure detection, context scaling) with strong real-world eval across 40 tasks, but system-focused architecture rather than novel policy learning innovation."
       },
       "verdict": "include"
     },
@@ -269,9 +345,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 5,
-        "topic": "Bimanual VLA manipulation",
-        "reason": "Real-world competition validation of VLA-RL on complex garment folding; solid engineering and sim-to-real recipe, but methodologically incremental (explicit recombination of existing RL ideas)."
+        "novelty": 6,
+        "topic": "Bimanual manipulation / Garment folding",
+        "reason": "Direct VLA-based approach to bimanual robot manipulation validated by strong competition results (1st/2nd place); thoughtfully combines RL with practical sim-to-real and inference-time optimization for complex table-top task."
       },
       "verdict": "include"
     },
@@ -308,8 +384,8 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "VLA execution reliability",
-        "reason": "Directly targets VLA-based table-top manipulation with practical execution-time reliability; solid real-world validation and ablations, but 5.4% gains are moderate and approach is somewhat incremental."
+        "topic": "VLA / Robot Manipulation Policy",
+        "reason": "Directly addresses practical VLA limitations with a principled closed-loop approach (feasibility checks + LLM reflection), validated on real contact-rich tasks, but the contribution is primarily incremental engineering with modest 5.4% gains over baselines."
       },
       "verdict": "include"
     },
@@ -345,8 +421,8 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "VLA Multi-stage Manipulation",
-        "reason": "Directly addresses VLA reliability for multi-stage manipulation with sensible phase-aware MoE routing, but gains are incremental (9.2%) and confined to simulation without real-robot validation."
+        "topic": "Phase-aware VLA with MoE",
+        "reason": "Directly addresses multi-stage manipulation reliability in flow-matching VLA policies through phase-aware expert routing; solid incremental contribution with clear ablations and modest empirical gains (9.2%), but applies existing MoE techniques to an existing paradigm rather than introducing fundamentally new mechanisms."
       },
       "verdict": "include"
     },
@@ -384,10 +460,49 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Safety Benchmark",
+        "reason": "Directly addresses critical safety gap in VLA evaluation; systematic taxonomy and process-level metrics reveal safety depends on perception/control competence, essential for real-world deployment."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2606.27036",
+      "title": "RelAfford6D: Relational 6D Affordance Graphs for Constraint-Driven Robotic Manipulation",
+      "authors": [
+        "Guodong Zhang",
+        "Qichen He",
+        "Wenyuan Xie",
+        "Shaokai Wu",
+        "Yanbiao Ji",
+        "Qiuchang Li",
+        "Bayram Bayramli",
+        "Yue Ding",
+        "Hongtao Lu"
+      ],
+      "abstract": "Bridging abstract semantics and precise physical control remains a fundamental challenge in open-world robotic manipulation. While recent data-driven policies show promise, their reliance on isolated contact points or latent affordance embeddings lacks the rigorous kinematic constraints necessary for complex articulated objects.To overcome the limitation, we introduce RelAfford6D, a novel training-free framework centered on a Relational 6D Affordance Graph. Given a free-form instruction, our system deduces a semantic topology linking a primary interacting part to its physical anchor. By elevating these topological nodes into precise metric $SE(3)$ poses via vision foundation models, we analytically formulate downstream execution as a kinematic constraint satisfaction problem. The robot synthesizes continuous trajectories by tracking strictly defined physical manifolds (e.g., revolute or prismatic orbits). Coupled with a closed-loop tracking mechanism for dynamic replanning against disturbances, our physically grounded approach achieves superior zero-shot success rates, cross-category generalization and execution robustness in both simulation and the real world environments, outperforming existing data-driven baselines.",
+      "url": "https://arxiv.org/abs/2606.27036",
+      "pdf": "https://arxiv.org/pdf/2606.27036",
+      "published": "2026-06-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
         "novelty": 7,
-        "topic": "VLA Safety Benchmarking",
-        "reason": "Directly addresses a critical safety evaluation gap for VLAs with structured diagnostics and reveals that perception/control failures dominate language variation, but is primarily an evaluation contribution rather than proposing novel policy methods."
+        "topic": "Articulated object manipulation",
+        "reason": "Directly addresses table-top manipulation of complex articulated objects via structured affordance graphs and kinematic constraints; solid approach but training-free design may limit generalization despite vision foundation model integration."
       },
       "verdict": "include"
     },
