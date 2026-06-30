@@ -5,6 +5,12 @@
     "name": "Adrian Piedra",
     "papers": 4
   },
+  "alexis lussier desbiens": {
+    "citations": 69,
+    "h_index": 4,
+    "name": "Alexis Lussier Desbiens",
+    "papers": 7
+  },
   "antonio alvarez valdivia": {
     "citations": 52,
     "h_index": 5,
@@ -60,6 +66,13 @@
     "name": "Lan-lan Wei",
     "papers": 3
   },
+  "louis petit": {
+    "citations": 29,
+    "h_index": 1,
+    "name": "L. Petit",
+    "papers": 23
+  },
+  "mohammed abusadeh": null,
   "nathaniel hanson": {
     "citations": 1,
     "h_index": 1,
