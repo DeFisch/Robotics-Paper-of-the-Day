@@ -48,6 +48,12 @@
     "name": "G. Sartoretti",
     "papers": 57
   },
+  "jingbo he": {
+    "citations": 15,
+    "h_index": 2,
+    "name": "Jingbo He",
+    "papers": 2
+  },
   "jingkun feng": {
     "citations": 19,
     "h_index": 1,
@@ -98,6 +104,12 @@
     "h_index": 1,
     "name": "M. Sabzevari",
     "papers": 2
+  },
+  "roberto calandra": {
+    "citations": 7,
+    "h_index": 2,
+    "name": "R. Calandra",
+    "papers": 35
   },
   "samuel coogan": {
     "citations": 4800,
