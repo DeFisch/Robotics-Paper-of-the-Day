@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T15:18:53Z",
+  "updated": "2026-07-04T14:41:33Z",
   "papers": [
     {
       "id": "2607.02503",
@@ -36,8 +36,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Visual-Tactile Contact Manipulation",
-        "reason": "Directly tackles tactile dynamics modeling for contact-rich manipulation with novel architectural components and strong real-world results, addressing a key challenge in learned manipulation policies."
+        "topic": "Visual-Tactile Manipulation",
+        "reason": "Directly addresses contact-rich manipulation by modeling tactile deformation dynamics in a unified visual-tactile-action framework with novel architectural components (MoT attention, contact-gated AVTAG) and strong real-world validation."
       },
       "verdict": "include"
     },
@@ -72,11 +72,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
-        "novelty": 6,
-        "topic": "VLA Deployment Runtime",
-        "reason": "Infrastructure enabling efficient closed-loop VLA deployment on heterogeneous robots with strong empirical validation, but systems engineering rather than advancing core methodology."
+        "novelty": 5,
+        "topic": "VLA deployment runtime",
+        "reason": "Infrastructure enabling practical VLA deployment on robots; sound engineering with real closed-loop results, but incremental system design rather than algorithmic advances."
       },
       "verdict": "include"
     },
@@ -110,9 +110,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 6,
-        "topic": "VLA pretraining / data efficiency",
-        "reason": "Directly tackles critical data-scarcity bottleneck in VLAs with systematic two-stage pretraining; strong real-world manipulation results, though core decomposition (motor learning vs. task learning) is intuitive rather than surprising."
+        "novelty": 7,
+        "topic": "VLA / Robot Manipulation",
+        "reason": "Directly tackles core VLA challenge of expert demonstration scarcity through task-agnostic motor pretraining; demonstrates strong results on benchmarks and real WidowX arm with improved robustness."
       },
       "verdict": "include"
     },
@@ -149,10 +149,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Robot manipulation RL with world models",
-        "reason": "Directly addresses real-robot manipulation learning via grounded world-model augmentation; demonstrates solid practical improvements (28% success rate gain, 59% fewer steps) with policy-paced learning for synthetic data quality, though approach is moderately incremental."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Real-robot RL with world models",
+        "reason": "Directly addresses practical learned manipulation policy improvement through grounded world models and policy-paced learning, with concrete gains on contact-rich tasks; not VLA-specific but core to efficient real-robot manipulation learning."
       },
       "verdict": "include"
     },
@@ -182,11 +182,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
+        "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "World model planning",
-        "reason": "Addresses trajectory realizability in action-conditioned world models via inverse dynamics consistency; solid experimental breadth, but contribution is incremental rather than transformative."
+        "topic": "World Models & Planning",
+        "reason": "Principled approach to improving action-conditioned world model planning via inverse dynamics consistency; directly applicable to learned manipulation policies and addresses real trajectory realizability problem, though incremental rather than foundational."
       },
       "verdict": "include"
     },
@@ -218,11 +218,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
         "topic": "VLA spatial generalization",
-        "reason": "Directly addresses shortcut learning and spurious correlations in VLA spatial generalization with a pragmatic data-centric solution validated across multiple architectures; practical but somewhat incremental."
+        "reason": "Directly addresses fragile spatial generalization in VLAs through data-centric insights on shortcut learning, with practical hybrid strategy validated across multiple architectures."
       },
       "verdict": "include"
     },
