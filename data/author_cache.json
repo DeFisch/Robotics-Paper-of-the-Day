@@ -78,11 +78,23 @@
     "name": "Lan-lan Wei",
     "papers": 3
   },
+  "long cheng": {
+    "citations": 7,
+    "h_index": 1,
+    "name": "Chengchao Long",
+    "papers": 5
+  },
   "louis petit": {
     "citations": 29,
     "h_index": 1,
     "name": "L. Petit",
     "papers": 23
+  },
+  "luoyang bian": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Luoyang Bian",
+    "papers": 1
   },
   "mohammed abusadeh": null,
   "nathaniel hanson": {
