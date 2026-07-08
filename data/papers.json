@@ -1,6 +1,589 @@
 {
-  "updated": "2026-07-07T15:50:15Z",
+  "updated": "2026-07-08T15:28:44Z",
   "papers": [
+    {
+      "id": "2607.06564",
+      "title": "Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation",
+      "authors": [
+        "Jiaming Liu",
+        "Qingpo Wuwu",
+        "Nuowei Han",
+        "Hao Chen",
+        "Zhuoyang Liu",
+        "Fan Fei",
+        "Yueru Jia",
+        "Chenyang Gu",
+        "Yandong Guo",
+        "Boxin Shi",
+        "Shanghang Zhang"
+      ],
+      "abstract": "Recently, Vision-Language-Action (VLA) models have demonstrated strong generalization across diverse tasks. However, effective robotic manipulation in physical environments fundamentally requires geometric understanding and spatial reasoning. While some VLA approaches attempt to incorporate 3D information, they are constrained by limited data availability and geometric information loss in current 3D encoding pipelines, and fail to jointly capture 3D geometry and temporally structured actions in dynamic environments. To address these limitations, we introduce Lift3D-VLA, a unified VLA framework that equips models with explicit 3D point cloud reasoning and enables temporally coherent action generation. First, building upon our previous work Lift3D, an enhanced 2D model-lifting strategy is proposed to geometrically align 3D points with pretrained 2D positional embeddings. This design enables direct point-cloud encoding within the VLA vision encoder while minimizing spatial information loss. Based on explicit 3D inputs, we propose Geometry-Centric Masked Autoencoding (GC-MAE), a dual-objective self-supervised framework that reconstructs the current point cloud while predicting its future geometric evolution. This formulation allows the 2D vision encoder to internalize both 3D structure and physical dynamics. To fully exploit 3D representations, we further design layer-wise temporal action modeling, which leverages multiple layers of the LLM to collaboratively predict action chunks, enabling temporally consistent predictions. Across 22 simulated tasks and 8 real-world manipulation tasks, Lift3D-VLA achieves 10.8% and 11.1% higher mean success rates on MetaWorld and RLBench than the best-performing prior VLA methods, and outperforms the strongest real-world baseline by 4 percentage points, while exhibiting stronger generalization to out-of-distribution perturbations.",
+      "url": "https://arxiv.org/abs/2607.06564",
+      "pdf": "https://arxiv.org/pdf/2607.06564",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / 3D-aware robot manipulation",
+        "reason": "Directly addresses a core VLA limitation\u2014geometric reasoning in dynamic scenes\u2014with point cloud encoding and geometry-aware self-supervised learning, demonstrating consistent gains on MetaWorld, RLBench, and real-world manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06559",
+      "title": "RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation",
+      "authors": [
+        "Haoyu Zhao",
+        "Xingyue Zhao",
+        "Siteng Huang",
+        "Xin Li",
+        "Deli Zhao",
+        "Zhongyu Li"
+      ],
+      "abstract": "Robotic manipulation in the open world requires not only recognizing what a scene looks like, but also anticipating how its 3D structure moves under interaction. We argue that synchronized RGB, depth, and optical flow, namely RGB-DF, provide a physically grounded representation that captures the underlying 4D dynamics of a scene. Compared to 2D pixel videos, this multi-modal synergy aligns visual appearance with geometric structure and temporal motion, creating a representation space significantly closer to the low-level end-effector actions demanded by robotic systems, thereby narrowing the gap between world prediction and policy learning. Building on this insight, we introduce RynnWorld-4D, a generative model that co-produces future RGB frames, depth maps, and optical flow from a single RGB-D image and a language instruction within one unified diffusion process. This 4D world model features a tri-branch architecture that integrates cross-modal attention with frame-wise 3D RoPE, ensuring that appearance, geometry, and motion evolve consistently. To supply training data at scale, we curate Rynn4DDataset 1.0, a massive dataset of over 254.4 million frames across egocentric human and robotic manipulation videos with high-quality pseudo-labels for depth and optical flow. We further propose RynnWorld-4D-Policy, an inverse dynamics head that consumes the internal 4D representations of RynnWorld-4D in a single forward pass, bypassing expensive multi-step denoising, to output robot actions in a closed-loop manner. Experiments show that RynnWorld-4D produces temporally and spatially coherent 4D predictions, and that RynnWorld-4D-Policy achieves state-of-the-art performance on real-world dexterous bimanual manipulation tasks, particularly excelling in tasks demanding spatial precision and temporal coordination.",
+      "url": "https://arxiv.org/abs/2607.06559",
+      "pdf": "https://arxiv.org/pdf/2607.06559",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "4D World Models for Robot Manipulation",
+        "reason": "Directly addresses VLA and manipulation policy learning with a well-motivated multi-modal representation (RGB-DF) and demonstrates real-world dexterous bimanual task performance; solid execution with large-scale dataset, though novelty is incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06558",
+      "title": "RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation",
+      "authors": [
+        "Haoyu Zhao",
+        "Xingyue Zhao",
+        "Hangyu Li",
+        "Biao Gong",
+        "Kehan Li",
+        "Siteng Huang",
+        "Xin Li",
+        "Deli Zhao",
+        "Zhongyu Li"
+      ],
+      "abstract": "Scaling robot learning requires massive, diverse trajectory data, yet collection is currently bottlenecked by physical teleoperation, where every demonstration binds operator time to specific hardware and workspaces. We introduce digital teleoperation, a paradigm that decouples data collection from physical constraints by replacing the real robot with a generative world model. In this framework, an operator's hand-pose stream drives a robot-centric generative world model to synthesize high-fidelity egocentric videos from a single reference image. The recorded pose stream serves as an embodiment-agnostic action label transferable to any target robot via standard retargeting, yielding complete state-action trajectories for imitation learning independent of physical hardware. We instantiate this paradigm in RynnWorld-Teleop, a system that integrates depth-aware skeletal conditioning, progressive human-to-robot training on a video Diffusion Transformer, and streaming autoregressive distillation. This pipeline compresses the generative process into a single-pass inference, enabling 40+ FPS, real-time interactive generation on a single H100 GPU. Policies trained exclusively on RynnWorld-Teleop-generated data achieve effective zero-shot Sim2Real transfer across dexterous and diverse bimanual tasks. Moreover, augmenting real-world datasets with our digitally teleoperated data consistently improves success rates, demonstrating that RynnWorld-Teleop serves as a high-fidelity, scalable data engine for the next generation of robotic agents.",
+      "url": "https://arxiv.org/abs/2607.06558",
+      "pdf": "https://arxiv.org/pdf/2607.06558",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Generative World Models",
+        "reason": "Tackles the critical data-collection bottleneck in robot learning via embodiment-agnostic synthetic trajectory generation, demonstrating zero-shot Sim2Real transfer on dexterous bimanual tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06537",
+      "title": "UniLM-Nav: A Unified Framework for Zero-Shot Last-Mile Navigation",
+      "authors": [
+        "Zhuofan Zhang",
+        "Tianxu Wang",
+        "Guoxi Zhang",
+        "Yixiong Lin",
+        "Xilin Wang",
+        "Hongming Xu",
+        "Qing Li",
+        "Song-Chun Zhu",
+        "Lifeng Fan"
+      ],
+      "abstract": "Mobile manipulation requires a robot to navigate to a target object or receptacle and then perform intended manipulation. However, reaching the vicinity of the target does not guarantee a manipulation-ready base pose, a problem known as last-mile navigation. Prior methods for last-mile navigation either rely on manual pose annotation or task-specific training, limiting their scalability to open-vocabulary settings with fine-grained spatial constraints. We propose UniLM-Nav, a unified framework for zero-shot open-vocabulary last-mile navigation. UniLM-Nav decomposes last-mile navigation into view selection, task-conditioned affordance grounding, and geometry-aware base-pose reasoning, all resolved with a shared multimodal large language model (MLLM) backend. Specifically, UniLM-Nav first selects a reference view that best captures the target object or receptacle from recently collected observations. It then grounds task-relevant affordance point in the selected view and lifts the result into the robot-centric coordinate frame. Finally, conditioned on the grounded affordance, task context, and robot geometry, it infers a manipulation-ready base pose for the robot. We evaluate UniLM-Nav on the OVMM benchmark, where it outperforms the previous state-of-the-art method, MoTo, by 3.13 percentage points. Analyses show that the components of our method are crucial to final performance, and that the choice of MLLM also has a substantial effect. We further deploy UniLM-Nav on a Unitree B2 quadruped robot with a 6-DoF Unitree Z1 manipulator, validating its applicability to real-world mobile manipulation tasks.",
+      "url": "https://arxiv.org/abs/2607.06537",
+      "pdf": "https://arxiv.org/pdf/2607.06537",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Mobile Manipulation Navigation",
+        "reason": "Demonstrates MLLM-based zero-shot navigation positioning for mobile manipulation, but the focus on pose reaching rather than manipulation policy limits direct relevance to table-top manipulation researchers."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06442",
+      "title": "SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models",
+      "authors": [
+        "Changti Wu",
+        "Bin Yu",
+        "Zhaolong Shen",
+        "Shijie Lian",
+        "Xiaopeng Lin",
+        "Cong Huang",
+        "Zhirui Zhang",
+        "Lei Zhang",
+        "Kai Chen"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models are typically trained by imitation learning on large-scale robot demonstration datasets, but more data does not necessarily yield better policies due to redundancy, noise, and uneven coverage. Existing data selection methods often assess demonstrations at either the trajectory or state-action level, missing the reusable structures that compose long-horizon behaviors. In this paper, we propose SIEVE, a structure-aware data selection method for VLA imitation learning. SIEVE views demonstrations as compositions of reusable primitives and transition interfaces. It first discovers visuo-motor primitives from segmented trajectories, then allocates selection budgets to composition patterns by maximizing reuse-aware structural exposure under diminishing returns. Finally, it selects medoid trajectories within each composition-pattern bucket to retain central, stable, and imitation-friendly demonstrations. Experiments across multiple datasets, benchmarks, and VLA models show that SIEVE consistently outperforms competitive data selection baselines. Notably, SIEVE can surpass full-data training while using only 50% of demonstrations and 50% of training steps, suggesting that reusable structure, captured through primitives and transitions, is an important signal for efficient VLA imitation learning.",
+      "url": "https://arxiv.org/abs/2607.06442",
+      "pdf": "https://arxiv.org/pdf/2607.06442",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "VLA data selection & efficiency",
+        "reason": "Structure-aware data selection for VLA imitation learning achieving 50% data reduction\u2014directly addresses efficiency in robot policy learning with novel insights on reusable primitives."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06438",
+      "title": "WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation",
+      "authors": [
+        "Wongyun Yu",
+        "Youngwoon Kim",
+        "Minsu Cho"
+      ],
+      "abstract": "Retargeting human object interaction demonstrations to physics based simulation requires reproducing not only body motion but also the object motion and contacts that make manipulation succeed. However, position only hand trajectories do not specify the contact forces needed to manipulate objects, and directly tracking them can overconstrain contact rich finger behavior. We introduce WristMimic, a wrist guided whole body control framework that explicitly separates contact free body motion from contact rich hand manipulation. The contact free body and wrist are guided by kinematic pose targets, whereas the fingers are not directly supervised by human hand pose. Instead, they learn grasping and manipulation behaviors from object tracking and contact outcomes. Our key insight is that the wrist is the natural gate between these two regimes. It is largely free from contact and can be tracked kinematically, yet it determines the global hand configuration and places the fingers within reachable grasp affordances. To ensure reliable wrist placement during interaction, we introduce wrist specific reset constraints and reward prioritization. Experiments show that WristMimic matches or surpasses methods using full finger pose supervision while enabling finger agnostic retargeting across diverse hand embodiments.",
+      "url": "https://arxiv.org/abs/2607.06438",
+      "pdf": "https://arxiv.org/pdf/2607.06438",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous manipulation retargeting",
+        "reason": "Solid technical contribution to humanoid dexterous manipulation via demonstration retargeting, but somewhat incremental and humanoid-focused rather than addressing general arm/table-top manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06403",
+      "title": "From Foundation to Application: Improving VLA Models in Practice",
+      "authors": [
+        "Wei Wu",
+        "Fangjing Wang",
+        "Fan Lu",
+        "He Sun",
+        "Shi Liu",
+        "Yunnan Wang",
+        "Yibin Yan",
+        "Yong Wang",
+        "Shuailei Ma",
+        "Xinyang Wang",
+        "Yibin Liu",
+        "Shuai Yang",
+        "Tianxiang Zhou",
+        "Kejia Zhang",
+        "Lei Zhou",
+        "Cheng Su",
+        "Nan Xue",
+        "Bin Tan",
+        "Han Zhang",
+        "Youchao Zhang",
+        "Fei Liao",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Kecheng Zheng"
+      ],
+      "abstract": "Despite recent progress of VLA foundation models, the disparity between laboratory conditions and real-world applications continues to impede their practical implementation. To bridge this gap, we present LingBot-VLA 2.0, which advances LingBot-VLA through improvements in three functional domains. (1) Generalization across tasks and embodiments. Compared to the previous version, we revamp the data processing pipeline and curate around 60,000 hours of data for pretraining, including 50,000 hours of robot trajectories spanning 20 robot configurations and 10,000 hours of egocentric human videos. (2) Expanded action space in addition to dual-arm hardware platforms. In particular, our system accommodates degrees of freedom for the heads, waists, mobile bases, and dexterous hands, thereby empowering the robots to tackle more complex tasks in practical scenarios. (3) Predictive dynamics modeling for improved temporal reasoning. Specifically, we formulate future prediction as a proxy task, facilitated by a video representation model for semantic priors and a depth estimation model for geometric cues. Evaluations on the GM-100 benchmark, conducted in a generalist setting, validate the beneficial impact of these proposed modifications. Furthermore, benefiting from the expanded pretraining data that covers whole-body degrees of freedom, LingBot-VLA-2.0 demonstrates strong cross-embodiment long-horizon mobile manipulation capability across the two robotic platforms.",
+      "url": "https://arxiv.org/abs/2607.06403",
+      "pdf": "https://arxiv.org/pdf/2607.06403",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA with Mobile Manipulation",
+        "reason": "Solid practical advancement scaling LingBot-VLA with diverse embodiments and 60k-hour pretraining, but incremental iteration with emphasis on whole-body locomotion over pure tabletop arm manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06370",
+      "title": "Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement",
+      "authors": [
+        "Ryuji Oi",
+        "Hikari Otsuka",
+        "Kosuke Matsushima",
+        "Yuki Ichikawa",
+        "Masato Motomura",
+        "Tatsuya Kaneko",
+        "Daichi Fujiki"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a promising approach for generalizable robotic manipulations. In particular, flow matching-based VLA models have shown remarkable success due to their capability to generate precise and smooth action sequences and capture multimodal distributions. However, the iterative denoising process in the action head acts as a major computational bottleneck, posing a critical challenge for real-time deployment. To address this challenge, we propose ActionCache, a plug-and-play external cache that opportunistically reuses past intermediate actions to warm-start generations from the vicinity of target actions, thereby drastically reducing the inference latency. Specifically, ActionCache stores the intermediate actions with compact multimodal keys, which enables retrieval from similar past contexts across different episodes or even different tasks. Experimental results in simulation and real-world environments demonstrate that ActionCache maintains high task success rates in a low-latency regime, achieving inference acceleration of up to $11.75\\times$ and $34.43\\times$ for representative flow-based VLA models, $\u03c0_{0.5}$ and GR00T-N1.6, respectively.",
+      "url": "https://arxiv.org/abs/2607.06370",
+      "pdf": "https://arxiv.org/pdf/2607.06370",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Inference Optimization",
+        "reason": "Training-free acceleration for flow-based VLA models achieving significant speedups (11.75-34.43x) with maintained task success, directly addressing a key real-time deployment constraint."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06323",
+      "title": "LAMP: Latent Motion Prior-Guided Real-World Learning for Dexterous Hand Manipulation",
+      "authors": [
+        "Xinye Yang",
+        "Zhiyuan Ma",
+        "Hongze Yu",
+        "Yuanpei Chen",
+        "Yaodong Yang",
+        "Xiaojie Chai",
+        "Xinlei Chen",
+        "Chao Yu"
+      ],
+      "abstract": "Real-world learning for dexterous hands remains brittle because high-dimensional hand actions amplify imitation errors and make reinforcement-learning exploration prone to contact-breaking motion. While combining imitation learning (IL) with online reinforcement learning (RL) can reduce manual supervision, unconstrained exploration in raw hand-action spaces is sample-inefficient and risky for physical hardware. We introduce a latent motion prior module (\\prior{}) that maps recent hand-action histories to a compact, history-conditioned latent prior and decodes continuous latent commands into executable high-dimensional hand targets. Built on this prior, \\method{} is a three-stage real-world dexterous learning framework: it pretrains \\prior{} from demonstrations, trains a visuomotor policy that predicts native arm commands and latent hand-action offsets, and improves the policy with online residual RL in the same latent hand-action space. This shared, decodable interface lets residual exploration make local corrections near demonstrated, contact-consistent hand motions rather than perturbing every finger joint independently. We evaluate \\method{} on four real-robot dexterous manipulation tasks against raw, linear, and discrete hand-action interfaces. Starting from small task-specific demonstration sets, \\method{} achieves a 56.25\\% average IL success rate and raises it to 98.75\\% after online RL, reaching 100\\% final success on three tasks and 95\\% on the remaining task.",
+      "url": "https://arxiv.org/abs/2607.06323",
+      "pdf": "https://arxiv.org/pdf/2607.06323",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous Hand Manipulation",
+        "reason": "Directly addresses real-world dexterous manipulation with a sound approach combining learned motion priors and residual RL, achieving strong empirical results (98.75% success after online learning)"
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06262",
+      "title": "Optimal Transport Q-Learning for Flow Policy Steering and Acceleration",
+      "authors": [
+        "Andreas Sochopoulos",
+        "Esmeralda S. Whitammer",
+        "Nikolaos Tsagkas",
+        "Jo\u00e3o Moura",
+        "Michael Gienger",
+        "Sethu Vijayakumar"
+      ],
+      "abstract": "Diffusion and flow policies have recently demonstrated remarkable performance in robotic applications by accurately capturing multimodal robot trajectory distributions, especially in the context of vision language action (VLA) models. However, high quality policy performance also requires fast inference and high quality demonstrations, which are often hard to get. Lack of these leads to suboptimal policy behaviors and failure under distribution shifts. In this work we address the problem of fine-tuning and accelerating suboptimal flow-based policies using the robot's experience through RL post-training. We introduce Optimal Transport Q-Learning (OTQL), a new method for finetuning flow policies using advantage weighted conditional optimal transport flow matching. OTQL can finetune and accelerate flows with an interaction budget of 50-60 episodes while avoiding computationally expensive distillation in simulation and real-world robot tasks. Our results show that OTQL post-trains flow policies using the robot's own experience, increasing average success percentage of single-task policies from 36% to 86% and of a pre-trained VLA from 38% to 76% while reducing the number of inference steps per action generation by 70%.",
+      "url": "https://arxiv.org/abs/2607.06262",
+      "pdf": "https://arxiv.org/pdf/2607.06262",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Flow Policy Post-Training",
+        "reason": "Directly addresses VLA + flow policy acceleration with strong empirical gains (36%\u219286% single-task, 38%\u219276% VLA) in a practical low-interaction budget; core contribution to learned robot manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06256",
+      "title": "Diagnosing Semantic Handoff Failures in Agent-Orchestrated Vision-Language-Action Skill Composition",
+      "authors": [
+        "Ke Rui",
+        "Yushen Zuo",
+        "Jiawei Wang",
+        "Haoran Jia",
+        "Jinming Ma",
+        "Weitao Zhou",
+        "Minglei Li"
+      ],
+      "abstract": "Long-horizon household tasks require robots to compose many language-conditioned skills, yet the boundary between consecutive skills is rarely explicit. A skill may satisfy its own postcondition while leaving the robot, objects, or camera views in a state from which the next skill cannot reliably start. We study this semantic handoff problem in BEHAVIOR-1K through an agent-orchestrated vision-language-action execution harness. The harness invokes $\u03c0_{0.5}$-based skill checkpoints trained from cleaned BEHAVIOR-1K demonstrations, assigns each skill typed arguments and a step budget, and uses multi-view vision-language model verification to decide whether execution should advance, retry, or replan. To separate isolated skill competence from long-horizon compositional robustness, we evaluate the same checkpoints under two initial-state distributions: clean skill-boundary snapshots and chained terminal states produced by previous skills. Selected navigation, grasping, placement, and door-opening skills achieve 77--100% success from clean snapshots under human-reviewed verification, yet composed rollouts still frequently stall from chained states. Execution traces attribute these failures to next-skill readiness, target grounding, and low-level control execution, revealing a substantial gap between single-skill success and reliable long-horizon task completion. These findings turn near-zero end-to-end task success into actionable diagnostics, showing that future VLA skill libraries must learn robustness to the messy chained-state distribution that clean demonstrations systematically underrepresent.",
+      "url": "https://arxiv.org/abs/2607.06256",
+      "pdf": "https://arxiv.org/pdf/2607.06256",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA skill composition",
+        "reason": "Directly addresses a critical bottleneck in composed VLA manipulation\u2014the semantic handoff gap between single-skill success (77\u2013100%) and chained-state compositional failure\u2014with systematic diagnostics that separate skill competence from robustness."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06186",
+      "title": "Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation",
+      "authors": [
+        "Yan Pan",
+        "Yuanchuan Ren",
+        "Chipui Chan",
+        "Jingcheng Sun",
+        "Chengxu Zhou"
+      ],
+      "abstract": "Most quadruped loco-manipulation designs trade manipulation capability against stance. A trunk-mounted arm sits high and usually carries a single arm; using the legs as manipulators lifts the manipulating leg off the ground; and even leg-mounted grippers reach two-handed tasks only by rearing onto the hind legs. This paper integrates a manipulator with a prismatic slider, two revolute joints, and a gripper into each front calf of a Unitree Go2. The two arms grasp objects at ground level and manipulate with both hands while all four feet stay planted, without rearing. With one arm carrying, the base stays free to walk. A vision-language model sequences skills from a predefined library at each skill boundary, conditioned on the head-camera image and task state, for long-horizon autonomy. In simulation, the design performs three bimanual tasks: a long-horizon cabinet task under autonomous skill selection, a cooperative two-handed lift, and an inter-arm handover.",
+      "url": "https://arxiv.org/abs/2607.06186",
+      "pdf": "https://arxiv.org/pdf/2607.06186",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 5,
+        "novelty": 6,
+        "topic": "Quadruped Bimanual Manipulation",
+        "reason": "Novel calf-integrated arm design enables ground-level bimanual table-top manipulation with VLM skill sequencing, but lacks real-world validation and focuses more on hardware engineering than advancing learned manipulation policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.06018",
+      "title": "RoboTALES: Learning Reasoning-Guided Robot Policies via Task-Aligned Simulated Futures",
+      "authors": [
+        "Hanan Gani",
+        "Tejal Kulkarni",
+        "Madhoolika Chodavarapu",
+        "Nicklas Hansen",
+        "Manmohan Chandraker"
+      ],
+      "abstract": "Pretrained video generative models are promising backbones for visuomotor control, but their imagined futures often drift from task intent and are not reliably action-conditional. As a result, these models can be difficult to use for planning or policy extraction. To address these limitations, we propose RoboTALES, a single-stage framework that learns task-aligned simulated futures and uses them to train robot policies. Our approach introduces two key innovations: (1) a hierarchical LLM-based planner that breaks complex tasks into a sequence of subgoals to guide the model's imagination; and (2) a VLM-based critic that evaluates these ``imagined'' futures and uses reward-based feedback to keep the model's internal representations focused on the goal. By anchoring the video generator in abstract reasoning, we produce temporally consistent rollouts and more coherent actions. We evaluate RoboTALES on diverse manipulation tasks from RoboCasa and LIBERO10, and show that our method consistently outperforms existing methods, especially in long-horizon tasks. Our code and models are publicly available at https://github.com/hananshafi/RoboTALES.",
+      "url": "https://arxiv.org/abs/2607.06018",
+      "pdf": "https://arxiv.org/pdf/2607.06018",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA Policy Learning for Manipulation",
+        "reason": "Directly tackles drift of generative models in visuomotor control via hierarchical LLM planning and VLM-based feedback, with solid evaluation on RoboCasa/LIBERO10 especially for long-horizon tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.05883",
+      "title": "DexTele: A Dual-Arm Dexterous Teleoperation System Based on Motion Retargeting and Adaptive Force Control",
+      "authors": [
+        "Yuanchuan Lai",
+        "Qing Gao",
+        "Ziyan Liang",
+        "Xianfeng Cheng",
+        "Junjie Hu",
+        "Zhaojie Ju"
+      ],
+      "abstract": "In dual-arm dexterous teleoperation, cross-platform generalization of motion retargeting and interactivity of grasping are crucial. However, the heterogeneity of robotic architectures and the wide variety of grasping objects pose significant challenges to achieving precise motion retargeting and compliant grasping in dual-arm dexterous teleoperation. To address these challenges, a dual-arm dexterous teleoperation system (DexTele) is proposed based on motion retargeting and adaptive force control. First, a vision-based motion retargeting module is designed to generate preliminary robot motions from human images. In this module, a motion-graph encoder and latent optimization are proposed for precise and convenient cross-platform motion retargeting. Second, an adaptive grasping module is designed to achieve compliant grasping. This module combines a vision-language model (VLM) with model predictive control (MPC), allowing the system to predict the required grasping force for a target object and perform gradient-based online optimization. Finally, extensive experiments demonstrate that the DexTele achieves precise motion retargeting and compliant grasping with generalization across multiple robot platforms.",
+      "url": "https://arxiv.org/abs/2607.05883",
+      "pdf": "https://arxiv.org/pdf/2607.05883",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dual-arm teleoperation",
+        "reason": "Well-engineered dual-arm system combining VLM-based grasping with MPC, but teleoperation and motion retargeting are orthogonal to learned autonomous policies; tangential to core VLA/policy focus."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.05869",
+      "title": "GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation",
+      "authors": [
+        "Paul Koch. Adem Karakurt",
+        "Andr\u00e9 Sers"
+      ],
+      "abstract": "Robust robotic grasping of novel objects requires datasets that simultaneously provide photorealistic RGB-D observations, physically validated grasp quality annotations, and a principled bridge between simulation and the real world, which existing datasets lack to provide jointly. \\textbf{GraspIT} addresses this gap: tabletop scenes in NVIDIA Isaac Sim are annotated via a four-stage physical slip-test on parallel Franka Panda instances, producing trajectory-reachability checks and continuous quality scores beyond force-closure.Of ${\\sim}$2.3M candidates, 83% pass as \\emph{good} ($s{\\geq}0.50$); the 17% that passed force-closure but failed the slip-test provide graded hard negatives. A Real$\\leftrightarrow$Sim loop back-projects these labels onto 100 real-world scenes. The release provides ${\\sim}$316k annotated RGBD frame sets across 1035 sim and 100 real scenes, with instance masks, 6-DoF poses, physical object properties, and scored 6-DoF grasps. All tools are open-source and Docker-containerized. The trajectory planning within Isaac Sim further allows streaming of high resolution demonstrations for tabletop manipulation policy learning and behavior cloning.",
+      "url": "https://arxiv.org/abs/2607.05869",
+      "pdf": "https://arxiv.org/pdf/2607.05869",
+      "published": "2026-07-07",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Robot Grasping Dataset",
+        "reason": "High-quality dataset with physical slip-test validation and bidirectional sim-to-real loop; directly supports grasping policy learning at scale."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2607.05396",
       "title": "From Fixed to Free Cameras: Calibration-Free View-Robust Vision-Language-Action Model",
@@ -33,9 +616,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelance": 7,
-        "topic": "VLA / Camera-Robust Manipulation",
-        "reason": "Directly tackles practical VLA deployment challenge through elegant decoupling of camera-centric actions from geometric grounding, enabling calibration-free view robustness."
+        "novelty": 7,
+        "topic": "View-Robust VLA",
+        "reason": "Tackles a critical real-world VLA deployment problem (camera calibration) with an elegant decoupling approach; strong practical impact but somewhat incremental relative to core VLA advances."
       },
       "verdict": "include"
     },
@@ -78,8 +661,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Deformable object world modeling & datasets",
-        "reason": "Large-scale visuotactile dataset addressing a critical benchmark gap for deformable manipulation; systematically compares 2D and 3D world models with real-world validation."
+        "topic": "Deformable object world modeling",
+        "reason": "High-quality, large-scale visuotactile dataset (215+ hours) with bimanual tactile grippers for deformable object manipulation; systematic benchmarking of 2D vs 3D world models and real-world robot planning demonstrations make it a valuable resource for learned manipulation policies."
       },
       "verdict": "include"
     },
@@ -121,9 +704,9 @@
       "scores": {
         "relevance": 9,
         "quality": 7,
-        "novelty": 6,
-        "topic": "Long-horizon VLA hierarchical control",
-        "reason": "Well-engineered hierarchical VLA for long-horizon manipulation with real-world validation, but benchmark improvements are modest and conceptual contributions are incremental."
+        "novelty": 7,
+        "topic": "Long-horizon Robot Manipulation / VLA",
+        "reason": "Directly addresses VLA's Markovian limitation in long-horizon tasks via hierarchical planning-execution alignment; backed by substantial data engineering (4k+ video hours), canonical skill primitives, and real-world validation on unseen tasks."
       },
       "verdict": "include"
     },
