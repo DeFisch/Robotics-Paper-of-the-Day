@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T15:37:53Z",
+  "updated": "2026-07-11T14:24:22Z",
   "papers": [
     {
       "id": "2607.08751",
@@ -43,7 +43,7 @@
         "quality": 8,
         "novelty": 6,
         "topic": "Dexterous Manipulation Benchmark",
-        "reason": "Comprehensive multi-embodiment benchmark with 100 diverse tasks and controlled visual variations; directly enables VLA and policy generalization research across embodiments and sensors."
+        "reason": "Comprehensive multi-embodiment benchmark with 100 diverse dexterous tasks directly supports VLA generalization research, but benchmark papers are inherently less novel than methods contributions."
       },
       "verdict": "include"
     },
@@ -99,10 +99,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 8,
+        "quality": 7,
         "novelty": 7,
-        "topic": "Video-Action Foundation Model",
-        "reason": "Purpose-built VLA foundation model with specific technical innovations (semantic tokenizer, causal pretraining, efficient MoE, async closed-loop inference) and real-world validated few-shot generalization on table-top manipulation."
+        "topic": "Foundation Models / Video-Action",
+        "reason": "Native video-action pretraining with well-motivated design choices (semantic tokenization, causal architecture, async inference) and real-world table-top manipulation validation; iterative on LingBot-VA but principled improvements warrant verification."
       },
       "verdict": "include"
     },
@@ -140,8 +140,8 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "Efficient VLA for table-top manipulation",
-        "reason": "Directly addresses VLA table-top manipulation with strong MT50 results (90%), but novelty is primarily engineering-focused (model compression) rather than conceptual innovation."
+        "topic": "VLA Model - Multi-Task Manipulation",
+        "reason": "Directly relevant lightweight VLA for table-top manipulation with strong Meta-World MT50 results, but methods appear primarily to be engineering combinations of existing techniques (InternVL + flow-matching) rather than fundamental innovations."
       },
       "verdict": "include"
     },
