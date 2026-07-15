@@ -1,6 +1,400 @@
 {
-  "updated": "2026-07-14T15:00:22Z",
+  "updated": "2026-07-15T14:57:54Z",
   "papers": [
+    {
+      "id": "2607.13033",
+      "title": "DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation",
+      "authors": [
+        "Yu Fang",
+        "Wanxi Dong",
+        "Jiaqi Liu",
+        "Yue Yang",
+        "Mingxiao Huo",
+        "Yao Mu",
+        "Huaxiu Yao",
+        "Li Erran Li",
+        "Daniel Szafir",
+        "Mingyu Ding"
+      ],
+      "abstract": "Reinforcement learning holds great promise for improving robot policies beyond the limits of imitation learning. However, its practical adoption remains bottlenecked by the lack of reliable vision-language reward models that provide dense and informative feedback. Two key challenges remain: acquiring diverse failure data at scale and obtaining fine-grained reward signals beyond sparse trajectory-level success labels. Collecting failure trajectories typically requires laborious human effort, while pseudo-failures constructed by relabeling successful demonstrations fail to capture the diverse physical failure modes that arise during robot execution. Meanwhile, existing reward models often predict sparse binary or trajectory-level rewards, which provide limited guidance for efficient policy optimization. We introduce DenseReward, a dense robotic reward model that addresses both challenges. To train DenseReward, we develop an automated failure data generation pipeline that synthesizes physically realistic failure trajectories in simulation without human labeling, covering diverse failure modes such as collisions, missed grasps, object drops, and recovery behaviors. DenseReward predicts dense frame-level reward scores from visual observations and language instructions, enabling fine-grained estimation of task progress throughout an episode. Experiments show that DenseReward outperforms general-purpose VLMs and existing robotic reward models in dense reward prediction across both simulated and real-world manipulation. We further demonstrate that DenseReward provides effective reward guidance for downstream model predictive control and reinforcement learning. We release the dataset, trained reward models, and evaluation suite to support the development of failure-aware dense reward modeling for robot learning.",
+      "url": "https://arxiv.org/abs/2607.13033",
+      "pdf": "https://arxiv.org/pdf/2607.13033",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLM Reward Learning",
+        "reason": "Directly addresses dense reward bottleneck for robot manipulation via vision-language models with automated failure synthesis; includes sim-to-real validation and community release."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.13017",
+      "title": "FlowWAM: Optical Flow as a Unified Action Representation for World Action Models",
+      "authors": [
+        "Yixiang Chen",
+        "Peiyan Li",
+        "Yuan Xu",
+        "Qisen Ma",
+        "Jiabing Yang",
+        "Kai Wang",
+        "Jianhua Yang",
+        "Dong An",
+        "He Guan",
+        "Gaoteng Liu",
+        "Jianlou Si",
+        "Jun Huang",
+        "Jing Liu",
+        "Nianfeng Liu",
+        "Yan Huang",
+        "Liang Wang"
+      ],
+      "abstract": "World Action Models (WAMs) are able to leverage pretrained video generators for both world modeling and action prediction. However, directly leveraging such video generators for control raises a new challenge: how to represent actions in a suitable form that aligns with pretrained video generators while carrying enough motion cues for accurate control. Existing numerical actions fail to satisfy the former, and prior visual action representations overlook the temporal motion structure across frames. We address this issue with FlowWAM, a dual-stream diffusion framework that adopts optical flow as a unified, video-native action representation. Flow videos share the same format as RGB videos and encode rich per-pixel displacement. By jointly modeling them within a shared pretrained video generator, FlowWAM can naturally implement two modes of WAMs. In policy mode, FlowWAM generates flow for action prediction, while in world-model mode, it uses target flow sequences to guide future video generation. Moreover, since flow can be easily extracted from raw videos without action labels, FlowWAM can leverage large-scale action-unlabeled video datasets for pretraining. We empirically find that our flow-based action representation delivers gains across both modes. On RoboTwin manipulation, FlowWAM raises the success rate to 92.94% on the Clean setting and 92.14% on Random, outperforming both VLA and WAM baselines. On WorldArena world modeling, it achieves the best overall EWMScore (63.71) with an 18.4% relative improvement in trajectory accuracy. More results can be found on our project website: https://flow-wam.github.io .",
+      "url": "https://arxiv.org/abs/2607.13017",
+      "pdf": "https://arxiv.org/pdf/2607.13017",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Flow-based Action Representation",
+        "reason": "Directly addresses robot manipulation policy learning with a clever video-native action representation; achieves strong empirical gains (92%+ on RoboTwin) by unifying action prediction and world modeling."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12992",
+      "title": "ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning",
+      "authors": [
+        "Zhao Yang",
+        "Yinan Shi",
+        "Mingyuan Yao",
+        "Wenyao Xue",
+        "Yawei Jueluo",
+        "Longjun Liu"
+      ],
+      "abstract": "Vision-language action (VLA) models increasingly adopt chunked action heads to satisfy real-time constraints; however, this introduces boundary jitter: overlapping regions between consecutive chunks often yield inconsistent predictions, degrading temporal coherence and the task success rate. Existing methods, such as inference-time blending, merely reweight mismatched proposals without correcting underlying errors, leading to residual accumulation under biased or noisy histories. We propose ChunkFlow, a seam-aware training-and-execution framework for chunked policies that aligns chunk structure with boundary execution. It partitions each chunk into frozen, editable, and future zones, applies deterministic overlap blending at execution, and trains raw predictions with seam and first- and second-order continuity losses. History corruption and scheduled sampling improve robustness to executed-history errors, while an AWAC fine-tuning stage adapts the policy without removing these structural regularizers. Under mild smoothness assumptions, pre-blending seam discrepancies provably decay with increasing overlap. Experiments on CALVIN, LIBERO, and real robots show an improved success-stability trade-off with low-latency inference. Project page: https://cytoderm-ai.github.io/chunkflow.",
+      "url": "https://arxiv.org/abs/2607.12992",
+      "pdf": "https://arxiv.org/pdf/2607.12992",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Chunked VLA policy continuity",
+        "reason": "Directly addresses boundary jitter in chunked policies with a principled seam-aware training framework; well-motivated practical problem with real-robot validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12931",
+      "title": "ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning",
+      "authors": [
+        "Yilun Kong",
+        "Yunpeng Qing",
+        "Guozheng Ma",
+        "Haoyu Wang",
+        "Li Shen",
+        "Zhi Hou",
+        "Dacheng Tao"
+      ],
+      "abstract": "Reinforcement Learning (RL) has demonstrated significant potential for improving Vision-Language-Action (VLA) models on complex manipulation tasks. However, its practical scalability remains severely limited by the substantial cost of environmental interactions. In this work, we first investigate the exploration stagnation bottleneck in current VLA-RL frameworks and reveal that trajectory diversity is fundamentally more important to sample efficiency than the sheer quantity of collected rollouts. Motivated by these insights, we introduce RL Exploration Token (ExToken), a simple yet general framework that condition VLA policies on discrete behavioral priors derived from offline demonstrations for structured exploration. By conditioning the policy on different tokens during rollout collection, ExToken encourages the agent to explore diverse behavioral modes, substantially improving state-action coverage and exploration efficiency. To bridge exploration during training with deterministic inference at deployment, ExToken further incorporates a state-conditioned token selector that adaptively predicts effective behavioral modes for unseen scenarios. Extensive experiments across simulated and real-world robotic manipulation tasks demonstrate that ExToken consistently accelerates convergence, improves task performance, and exhibits strong robustness under highly constrained interaction budgets.",
+      "url": "https://arxiv.org/abs/2607.12931",
+      "pdf": "https://arxiv.org/pdf/2607.12931",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA-RL Policy Learning",
+        "reason": "Directly tackles exploration efficiency in VLA-RL with a well-motivated approach; trajectory diversity insight is valuable; real-world robot manipulation validation demonstrates practical impact under sample constraints."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12892",
+      "title": "UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies",
+      "authors": [
+        "Lirui Zhao",
+        "Modi Shi",
+        "Li Chen",
+        "Qi Liu",
+        "Ping Luo",
+        "Hongyang Li"
+      ],
+      "abstract": "Modern robot learning systems increasingly rely on dense progress or value signals to evaluate intermediate states, guide policy learning, and detect task completion, making the quality of these signals critical. Since such dense labels are rarely available at scale, normalized time within a demonstration is often used as a scalable substitute: later frames are treated as higher progress. However, this time-derived label is only a noisy proxy for physical task progress. In contact-rich manipulation, a robot may make progress and then lose it through slips, failed grasps, or partial undoing, while the time-derived label continues to increase monotonically. We introduce Unsupervised Robotic Value Correction (UR-VC), an offline, training-free method for correcting time-derived progress labels. UR-VC exploits a simple regularity in demonstration data: similar states often recur across different episodes, but at different timestamps. Instead of trusting the timestamp from a single trajectory, UR-VC retrieves similar states from other episodes and aggregates their time-derived labels to obtain a corrected progress estimate. UR-VC requires no manual progress labels, reward annotations, or additional value model. We evaluate UR-VC on real bimanual cloth flatten-and-fold data, a long-horizon deformable-object manipulation task with visible intermediate progress. The corrected labels capture local regressions and non-uniform progress that normalized time cannot represent, while preserving the overall task trend. We further use the corrected signal to construct advantage labels for VLA training, following recent advantage-conditioned policy learning. UR-VC shows a positive trend in real-robot task success under matched data, model, and training settings.",
+      "url": "https://arxiv.org/abs/2607.12892",
+      "pdf": "https://arxiv.org/pdf/2607.12892",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Deformable object manipulation, Value estimation",
+        "reason": "Tackles a genuine problem in contact-rich manipulation with a practical, unsupervised approach, but method is straightforward and results remain preliminary\u2014'positive trend' lacks quantitative evidence."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12659",
+      "title": "Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference",
+      "authors": [
+        "Zebin Yang",
+        "Qi Wang",
+        "Yunhe Wang",
+        "Xiurui Guo",
+        "Bo Yu",
+        "Shaoshan Liu",
+        "Jiafeng Xu",
+        "Hao Dong",
+        "Meng Li"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have achieved impressive performance on diverse embodied tasks. However, deploying VLA models on low-power onboard devices, such as the Jetson Orin, remains challenging due to their high computational complexity, which leads to substantial inference latency and low control frequency. Asynchronous inference can partially mask this latency by parallelizing action execution and subsequent inference, but it introduces two critical issues: perception-execution misalignment and long reaction time. In this paper, we propose Jetson-PI, a method for efficient VLA deployment on onboard devices via Foresight-Aligned Asynchronous Correction. To address misalignment, we train a lightweight future correction module that predicts future environment representation conditioned on committed actions, enabling the action expert to directly predict actions from the future time step. To reduce reaction time, we introduce confidence-based scheduling optimization that adaptively balances VLM and action expert invocations, complemented by system-level accelerations including CUDA graph reuse, GPU-resident intermediate buffering, and flow unrolling. Extensive experiments demonstrate that Jetson-PI achieves 8.66x and 5.41x improvements in control frequency compared with naive PyTorch and vla.cpp on NVIDIA Jetson Orin, while outperforming VLASH by 14.8\\% in average success rate on the LIBERO benchmark. The code of our asynchronous algorithm is available on https://github.com/PKU-SEC-Lab/Jetson-PI, and our efficient llama.cpp-based inference engine is available on https://github.com/PKU-SEC-Lab/Jetson-PI-Edge.",
+      "url": "https://arxiv.org/abs/2607.12659",
+      "pdf": "https://arxiv.org/pdf/2607.12659",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Hao Dong",
+        "reason": "curated (Hao Dong)"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Deployment",
+        "reason": "Directly addresses efficient VLA inference on edge devices for robot manipulation with practical speedups and novel asynchronous correction; systems-focused rather than algorithmic advancement."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12571",
+      "title": "TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors",
+      "authors": [
+        "Pinhan Fu",
+        "Xianda Guo",
+        "Xuetao Li",
+        "Wenke Huang",
+        "Ruilin Wang",
+        "Weiheng Zhao",
+        "Wei Sui",
+        "Mang Ye"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models are deployed through pipelines that end users cannot audit, and a poisoned VLA can behave normally on clean observations while a small visual trigger redirects a long-horizon robot policy before any failure becomes observable. Existing vision or language defenses rarely explain what a triggered VLA representation looks like or how to recover behavior without retraining. We study this gap through two independently proposed VLA attacks from groups with distinct injection strategies, BadVLA and INFUSE; the latter persists after downstream clean adaptation. Across the evaluated poisoned models, we identify a recurring internal mechanism: a \\emph{compact causal footprint}, namely a small visual support that is attention-seeded, spatially compact, and \\emph{causal} in a precise sense -- masking it returns a clean-calibrated evidence-evolution score to the normal operating region. This footprint motivates TrustVLA, a mechanism-guided inference-time defense that adapts the Dirichlet evidence framework from trusted classification to monitor per-token, per-layer epistemic uncertainty in VLA policies. With only a small clean calibration set, TrustVLA (i)~detects abnormal evidence evolution, (ii)~localizes the compact support by counterfactual mechanism-score drop, and (iii)~recovers the observation by localized inpainting. Across OpenVLA/LIBERO and $\u03c0_{0.5}$ transfer evaluations, TrustVLA reduces attack success while preserving clean-task performance, providing a retraining-free, mechanism-guided defense for visual-triggered VLA backdoors.",
+      "url": "https://arxiv.org/abs/2607.12571",
+      "pdf": "https://arxiv.org/pdf/2607.12571",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA Security/Backdoor Defense",
+        "reason": "Well-motivated security contribution addressing underexplored VLA backdoor vulnerabilities with a mechanism-guided inference-time defense, but focuses on robustness rather than improving manipulation capability or policy learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12356",
+      "title": "VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation",
+      "authors": [
+        "Mohan Liu",
+        "Zhihao Gu",
+        "Xuanyu Chen",
+        "Haitian Zhang",
+        "Kaimin Mao",
+        "Yan Wu",
+        "Wei-Yun Yau",
+        "Lin Wang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a powerful end-to-end paradigm for robotic manipulation by mapping language instructions and 2D visual inputs directly to actions. However, these models lack an explicit, scene-level 3D representation, limiting their ability to reason over spatial layouts and geometric constraints. While recent efforts incorporate explicit 3D cues, such as depth maps or point clouds, to improve geometric awareness, they primarily capture low-level structures and lack high-level semantic grounding in 3D space. In human cognition, interaction with the physical world relies on a 3D semantic cognitive map - an internal mental model that integrates spatial layouts with semantic context to enable persistent, viewpoint-invariant reasoning. In light of this, we present VistaVLA, a novel two-stage framework that constructs a geometry- and semantics-aware 3D cognitive representation from 3D Gaussian primitives and grounds it as compact context tokens for VLA policy learning. Specifically, VistaVLA lifts multi-view vision-language features into 3D Gaussian primitives, forming geometry-anchored semantic tokens that align view-consistent spatial grounding with 2D visual feature spaces. To make this 3D representation computationally tractable for effective VLA control, we introduce Merge-then-Query (MtQ), a token summarization mechanism. MtQ compresses dense Gaussian primitives into a highly compact set of spatially informative tokens, achieving a 99% token reduction while preserving action-relevant 3D layouts and semantic context. Extensive evaluations in both simulated and real-world environments demonstrate the effectiveness of VistaVLA. Notably, in real-world scenarios, VistaVLA improves success rates by 22.8% across seven real-world tasks and by 30.0% over the VLA-Adapter baseline on challenging out-of-distribution tasks.",
+      "url": "https://arxiv.org/abs/2607.12356",
+      "pdf": "https://arxiv.org/pdf/2607.12356",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "3D-grounded VLA",
+        "reason": "Directly addresses VLA's lack of 3D semantic grounding via Gaussian primitives, with strong real-world improvements (22.8% gain across tasks) and practical efficiency gains (99% token reduction)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12287",
+      "title": "Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference",
+      "authors": [
+        "Yuzhou Wu",
+        "Yuxin Zheng",
+        "Muchun Niu",
+        "Yishan Yang",
+        "Tianhao Liu",
+        "hanwen kang",
+        "Jiajian Jing",
+        "Linfeng Zhang",
+        "Chuan Wen"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models exhibit strong generalization for robotic manipulation, yet their high inference latency limits real time deployment. We identify two primary sources of temporal redundancy in existing VLA pipelines: repeated visual encoding of highly similar consecutive frames and multi step iterative sampling in diffusion based policies. To address this, we propose a system level acceleration strategy that reduces computation in both perception and action generation. On the perception side, we incrementally update only tokens corresponding to dynamic scene regions instead of re-encoding entire frames. On the policy side, we compress diffusion sampling into a compact 2-step schedule through efficiency oriented training while preserving action precision. Experiments on Libero, RobotWin, and Real Robot Platforms demonstrate over 2 times speedup while maintaining high performance, achieving up to 98% success rate on general manipulation benchmarks. Our codes will be released on Github.",
+      "url": "https://arxiv.org/abs/2607.12287",
+      "pdf": "https://arxiv.org/pdf/2607.12287",
+      "published": "2026-07-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Efficiency / Diffusion Acceleration",
+        "reason": "Directly addresses inference latency in VLA models through system-level optimization of visual encoding and diffusion sampling, achieving 2x speedup on real manipulation tasks\u2014practical but technically incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.12105",
+      "title": "Robust In-Hand Manipulation via Priors in Reinforcement Learning and Mechanical Design",
+      "authors": [
+        "Yifei Chen",
+        "Shihan Lu",
+        "Ed Colgate",
+        "Kevin Lynch"
+      ],
+      "abstract": "In-hand manipulation without external sensing is challenging due to uncertainties from finger-object contacts and disturbances by gravity. While reinforcement learning has shown promise in learning complex finger gaiting, existing approaches do not prioritize maintaining well-conditioned grasps for sustained manipulation. We introduce two complementary physics priors for robust in-hand rolling: a global grasp-quality prior derived from classical grasp analysis and a local contact-geometry prior based on fingertip curvature. The grasp-quality prior is used as a dense reward-shaping term that encourages well-distributed contacts with improved worst-case wrench resistance. The contact-geometry prior is expressed in the fingertip geometry that mechanically shapes the contact interface toward task-aligned rolling while reducing off-axis drift. We evaluate the effect of these priors on learning in-hand rolling manipulation for a multifingered robotic hand manipulating three different objects at four palm orientations. Results show significant improvement in rotation efficiency, grasp stability, and disturbance rejection, suggesting that physics priors embedded in both learning and fingertip morphology improve task robustness and sim-to-real transfer. An overview video can be found at https://youtu.be/pdd1wHxQnJM?si=dM-U5kiiPTYsk3Pk.",
+      "url": "https://arxiv.org/abs/2607.12105",
+      "pdf": "https://arxiv.org/pdf/2607.12105",
+      "published": "2026-07-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous Manipulation",
+        "reason": "Directly addresses robust in-hand manipulation by integrating physics priors into RL and mechanical design; solid methodology with real hardware validation on multi-fingered hand."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2607.11884",
       "title": "Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation",
@@ -34,8 +428,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 8,
-        "topic": "Bimanual Mobile Manipulation",
-        "reason": "Principled diffusion policy framework that elegantly addresses multi-frame action representation in bimanual manipulation through synchronized denoising; strong authors, real-world validation, and solid technical contribution with column-based 6D rotation handling."
+        "topic": "Bimanual Manipulation Policy",
+        "reason": "Multi-frame action denoising directly solves a real problem in diffusion policies for bimanual manipulation, with strong empirical validation on simulated and real tasks."
       },
       "verdict": "include"
     },
@@ -71,8 +465,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Dexterous manipulation learning",
-        "reason": "Directly addresses dexterous manipulation with multi-fingered hands using learned policies; hardware-validated pipeline with systematic analysis of sim-to-real transfer in contact-rich settings."
+        "topic": "Dexterous manipulation & tool use",
+        "reason": "Learns dexterous manipulation policies from human demonstrations via retargeting-guided residual RL with zero-shot sim-to-real transfer on contact-rich tool-use tasks; strong hardware validation and systematic analysis of transfer factors."
       },
       "verdict": "include"
     },
@@ -105,11 +499,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
+        "relevance": 8,
         "quality": 6,
-        "novelty": 5,
-        "topic": "VLA/world models framework",
-        "reason": "Well-articulated roadmap for VLA and world action models with proposed embodied-brain framework, but primarily a review/position paper rather than novel methodology or empirical advances."
+        "novelty": 7,
+        "topic": "World Action Models / Physical Intelligence Architecture",
+        "reason": "Directly addresses VLA/robot policy fragmentation via proposed WAM architectures and embodied-brain framework, but is a position paper lacking empirical validation or specific technical contributions."
       },
       "verdict": "include"
     },
@@ -159,11 +553,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 9,
+        "relevance": 6,
+        "quality": 7,
         "novelty": 7,
-        "topic": "Foundation world models for embodied synthesis",
-        "reason": "Large-scale world model serving as training data engine for manipulation policies, achieving significant real-world task improvements (36.9%\u219263.2% for pi_0.5); highest value as data generator rather than direct policy learning."
+        "topic": "Embodied generation / World models",
+        "reason": "Novel multi-view, multi-embodiment scene generation framework with concrete 36.9%\u219263.2% manipulation task improvement; valuable for VLA data generation but focuses on synthesis rather than direct policy learning."
       },
       "verdict": "include"
     },
