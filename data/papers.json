@@ -1,6 +1,83 @@
 {
-  "updated": "2026-07-17T14:47:54Z",
+  "updated": "2026-07-18T14:22:07Z",
   "papers": [
+    {
+      "id": "2607.15275",
+      "title": "RoboTTT: Context Scaling for Robot Policies",
+      "authors": [
+        "Yunfan Jiang",
+        "Yevgen Chebotar",
+        "Ruijie Zheng",
+        "Fengyuan Hu",
+        "Yunhao Ge",
+        "Jimmy Wu",
+        "Tianyuan Dai",
+        "Scott Reed",
+        "Li Fei-Fei",
+        "Yuke Zhu",
+        "Linxi \"Jim\" Fan"
+      ],
+      "abstract": "Recent robot foundation models operate with single-step or short-history visuomotor context. We introduce Test-Time-Training Robot Policies (RoboTTT), a robot model and training recipe that scale visuomotor context to 8K timesteps, three orders of magnitude beyond state-of-the-art policies, without growing inference latency. At this context length, we unlock new robot capabilities: one-shot in-context imitation from human video demonstrations, on-the-fly policy improvement, robustness to perturbations, and stronger performance on multi-stage, long-horizon tasks. We also observe, for the first time, steady gains in closed-loop performance as pretraining context length scales. At its core, RoboTTT integrates Test-Time Training into robot foundation models such as Vision-Language-Action policies, yielding a sequence model whose recurrent state consists of fast weights, parameters updated by gradient descent during both training and inference, compressing histories into weight space and retrieving contextual information for long-context conditioning. To scale training context length, the recipe combines sequence action forcing with truncated backpropagation through time. On challenging real-robot manipulation tasks, RoboTTT improves overall performance by 87% over the single-step context baseline and fully completes a five-minute, ten-stage assembly task, which no baseline ever does. RoboTTT trained with 8K-timestep context outperforms the same model pretrained with 1K timesteps by 62%, suggesting context length as a new scaling axis for robot foundation models. Videos are available at https://research.nvidia.com/labs/gear/robottt/",
+      "url": "https://arxiv.org/abs/2607.15275",
+      "pdf": "https://arxiv.org/pdf/2607.15275",
+      "published": "2026-07-16",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Yuke Zhu",
+        "reason": "curated (Yuke Zhu)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "VLA / Long-Context Policy",
+        "reason": "Context scaling enables new capabilities in VLAs (one-shot imitation, assembly) with 87% performance gains\u2014a novel scaling axis for robot policies with real-robot validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.15065",
+      "title": "DriftWorld: Fast World Modeling through Drifting",
+      "authors": [
+        "Susie Lu",
+        "Haonan Chen",
+        "Weirui Ye",
+        "Yilun Du"
+      ],
+      "abstract": "Predictive world models enable robots to plan by imagining the outcomes of their actions, but their value for control hinges on generating many rollouts quickly. This creates a bottleneck for diffusion-based world models: multistep sampling makes each rollout expensive, limiting large-scale action search at inference time. We introduce DriftWorld, an action-conditioned world model based on drifting generative models. Rather than denoising iteratively at inference, DriftWorld learns an action-conditioned drift during training, allowing it to generate future frames from the current observation and a candidate action sequence in a single forward pass at 30+ fps, which is 17x faster on average than diffusion based baselines. We evaluate DriftWorld on standard vision-based robotic manipulation benchmarks, including Bridge-V2, RT-1, Language Table, Push-T, and Robomimic. By producing rollouts that are both accurate and fast, DriftWorld achieves state-of-the-art decision-making performance with far less inference time than diffusion-based world model baselines. Beyond online control, DriftWorld can also serve as an offline simulator for ranking real-world robot policies, with rollout-based scores correlating with ground truth at up to 0.99. These results show that drifting models are a strong fit for robot world modeling, where fast, high-quality imagination directly supports planning and policy evaluation.",
+      "url": "https://arxiv.org/abs/2607.15065",
+      "pdf": "https://arxiv.org/pdf/2607.15065",
+      "published": "2026-07-16",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "World Models for Manipulation",
+        "reason": "Directly addresses vision-based manipulation planning with comprehensive benchmark evaluation; novel drifting approach solves real inference bottleneck (17x speedup) while achieving SOTA performance."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2607.14047",
       "title": "PhysClaw-0: A Symbiotic Agentic System for Robot Autonomy via Language Corrections",
