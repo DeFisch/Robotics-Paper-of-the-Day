@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T15:00:39Z",
+  "updated": "2026-07-25T14:39:15Z",
   "papers": [
     {
       "id": "2607.21588",
@@ -42,8 +42,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA / Manipulation Dataset & Benchmark",
-        "reason": "Directly addresses scalable VLA policy learning with a substantial community-driven dataset (50K+ trajectories, 207 tasks), systematic evaluation, and consistent scaling results; contributions are primarily infrastructural rather than methodologically novel."
+        "topic": "Dataset & Benchmark Infrastructure",
+        "reason": "Community-driven VLA training infrastructure with 50K+ trajectories and systematic evaluation\u2014directly supports the core challenge of scaling robot manipulation learning, though contribution is infrastructure rather than algorithmic."
       },
       "verdict": "include"
     },
@@ -79,10 +79,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Language-grounded compositional generalization",
-        "reason": "Directly addresses compositional generalization in VLA policies with practical diagnostic framework; enables efficient real-robot learning by identifying and correcting instruction-factor bias, though conceptually incremental."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Language grounding & compositional generalization",
+        "reason": "Tackles genuine language-grounding failure modes in manipulation policies via diagnostic framework and bias-aware data collection; demonstrates real improvements on robot with half the data."
       },
       "verdict": "include"
     },
