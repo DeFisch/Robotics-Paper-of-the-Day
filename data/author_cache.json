@@ -72,6 +72,12 @@
     "name": "Erdi Sayar",
     "papers": 17
   },
+  "gahye lee": {
+    "citations": 22,
+    "h_index": 1,
+    "name": "Ga-Hui Lee",
+    "papers": 4
+  },
   "giorgio grisetti": {
     "citations": 16096,
     "h_index": 43,
@@ -188,6 +194,12 @@
     "h_index": 27,
     "name": "S. Coogan",
     "papers": 143
+  },
+  "seungyong lee": {
+    "citations": 82,
+    "h_index": 3,
+    "name": "Seung-Yong Lee",
+    "papers": 7
   },
   "wenzhen yuan": {
     "citations": 11,
