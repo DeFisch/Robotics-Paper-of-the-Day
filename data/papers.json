@@ -1,6 +1,522 @@
 {
-  "updated": "2026-07-30T15:17:21Z",
+  "updated": "2026-07-31T15:24:44Z",
   "papers": [
+    {
+      "id": "2607.28596",
+      "title": "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
+      "authors": [
+        "Lifeng Zhuo",
+        "Wendi Chen",
+        "Han Xue",
+        "Shirun Tang",
+        "Jun Lv",
+        "Cewu Lu",
+        "Chuan Wen"
+      ],
+      "abstract": "In contact-rich manipulation, action multimodality and reactivity dominate different stages of a single episode. Before contact, multiple trajectories might be equally valid, making it important to preserve diverse action modes. After contact, geometric constraints and force limits narrow the solution space, while successful execution demands rapid responses to force feedback. However, standard diffusion policies use a fixed inference frequency and sampling steps throughout the episode, forcing a fundamental compromise: low-frequency, multi-step sampling better preserves pre-contact multimodality but responds slowly to force feedback, whereas high-frequency sampling improves reactivity but tends to collapse distinct pre-contact modes. To resolve this tradeoff, we present FA-RDP, a frequency-adaptive reactive diffusion policy. A shared multi-frequency visual-force Transformer predicts action chunks at both low and high frequencies, while a learned multimodality indicator dynamically selects multi-step low-frequency sampling before contact and one-step high-frequency sampling as action ambiguity decreases. We further introduce Manifold Consistency Distillation (MCD), which reparameterizes the diffusion network to predict actions on the robot action manifold while retaining DDPM-based residual supervision. Experiments on three contact-rich manipulation tasks show that FA-RDP achieves the highest success rate while preserving diverse pre-contact trajectory modes. Code and videos are available at https://fa-rdp.github.io.",
+      "url": "https://arxiv.org/abs/2607.28596",
+      "pdf": "https://arxiv.org/pdf/2607.28596",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Cewu Lu",
+        "reason": "curated (Cewu Lu)"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Reactive diffusion policy",
+        "reason": "Well-motivated frequency-adaptive approach resolves the key tradeoff between preserving pre-contact multimodality and post-contact reactivity in diffusion policies for contact-rich manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.28416",
+      "title": "FasTac: A Curved Multispectral Vision-Based Tactile Sensor for High-Speed High-Precision 3D Shape and Force Perception",
+      "authors": [
+        "Xiaofan Lu",
+        "Kaiji Huang",
+        "Jiahui Chen",
+        "Yuankai Lin",
+        "Hua Yang",
+        "Zhouping Yin"
+      ],
+      "abstract": "Curved tactile fingertips for dexterous manipulation must resolve fine contact geometry, distinguish normal and tangential loads, and capture transient signals. Existing curved vision-based tactile sensors struggle to combine accurate 3D reconstruction, three-axis force estimation, and high-speed processing in a compact form. This article presents FasTac, a curved vision-based tactile sensor integrating multispectral photometric stereo, dynamic-convolution force estimation, and hardware acceleration on a field-programmable gate array (FPGA). Single-image-sensor simultaneous multispectral imaging provides spatially aligned observations for robust surface normal estimation, followed by boundary-prior fast Poisson depth reconstruction. HyperForce uses position-aware dynamic convolution to model the spatially nonuniform mechanical response of curved elastomers and estimate three-axis forces. The complete image-to-normal-force pipeline is deployed on an FPGA. Experiments show that near-infrared (NIR) illumination and the boundary prior decrease depth mean absolute error (MAE) from 0.2730 mm to 0.0415 mm; HyperForce achieves normalized mean absolute error (NMAE) values of 2.74% and 2.39% for normal and shear forces, respectively; and FPGA deployment shortens processing latency from 3.26 ms on the GPU to 1.09 ms. Multi-object reconstruction, feedback grasping, and vibration measurement validate fine geometric perception, stable force feedback, and dynamic contact sensing.",
+      "url": "https://arxiv.org/abs/2607.28416",
+      "pdf": "https://arxiv.org/pdf/2607.28416",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Tactile Sensing Hardware",
+        "reason": "Well-engineered sensor advancing tactile perception for dexterous manipulation, but is hardware-focused rather than addressing VLA models or learned policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.28415",
+      "title": "QQWorld: Quantile-Quantile Matching for World Model Regularization",
+      "authors": [
+        "Zhoushun Yu",
+        "Xiaoyu Hu",
+        "Xiangyu Xu"
+      ],
+      "abstract": "Latent world models enable efficient planning by predicting future states in a compact representation space, but their performance depends critically on the quality of the learned latent distribution. LeWorldModel (LeWM) regularizes its latents toward an isotropic Gaussian using the Epps-Pulley (EP) objective. We show that the corrective gradients of EP rapidly vanish for isolated tail samples, leaving heavy-tailed deviations insufficiently controlled. To address this limitation, we propose QQWorld, which replaces EP with a quantile-quantile matching objective that directly aligns projected latent samples with rank-matched Gaussian quantiles, thereby maintaining effective corrective gradients in the tails. We further develop cross-batch QQ, which enlarges the effective ranking pool using detached samples from previous batches, and characterize its bias-variance trade-off. Across four control environments, QQWorld effectively improves the average planning success rate of LeWM, while consistently yielding better Gaussian alignment and thinner latent tails.",
+      "url": "https://arxiv.org/abs/2607.28415",
+      "pdf": "https://arxiv.org/pdf/2607.28415",
+      "published": "2026-07-30",
+      "primary_category": "cs.LG",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "World Model Regularization",
+        "reason": "Solid incremental improvement to latent distribution regularization in world models; unclear if applied to robot manipulation or generic control, limiting direct relevance to arm learning policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.28391",
+      "title": "TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction",
+      "authors": [
+        "Lei Jin",
+        "Yiding Ma",
+        "Xin Zhang",
+        "Chen Gao",
+        "Wei Wu",
+        "Yong Li"
+      ],
+      "abstract": "World Action Models (WAMs) combine future-state prediction with robot action generation, but existing approaches largely rely on visual futures. Visual prediction captures scene structure and object motion, yet provides limited supervision for force, deformation, shear, and slip during contact-rich manipulation. This creates two design requirements: tactile futures should carry meaningful physical information, and they should not become privileged cues for action generation. We present TacWAM, a mechanics-aware tactile WAM that addresses this challenge in three steps. First, a Spatially Aligned Fusion (SAF) Tactile Encoder maps tactile appearance, dense force fields, and deformation flow into a shared latent prediction space, with bilateral force and torque reconstruction preserving global contact information. Second, a tactile history encoder provides temporal context so future tactile prediction reflects how force and deformation change beyond the current tactile observation. Third, Anchor-Guided Tri-Modal (AGT) Attention separates current visual and tactile anchors, future prediction tokens, and action tokens, allowing future tactile states to supervise training without being directly read by the action branch. We evaluate TacWAM on four real-world contact-rich manipulation tasks covering fragile grasping, sustained surface contact, and dynamic in-hand manipulation. TacWAM achieves an average success rate of 75.0%, exceeding the strongest evaluated baseline by 37.5 percentage points. Staged ablations show consistent degradation when tactile history is removed and access to future prediction targets is relaxed. These results indicate that future tactile supervision can improve contact-aware action learning when combined with informative tactile representations and deployment-consistent information constraints.",
+      "url": "https://arxiv.org/abs/2607.28391",
+      "pdf": "https://arxiv.org/pdf/2607.28391",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Tactile-aware world action models for manipulation",
+        "reason": "Directly addresses learned manipulation policies by integrating tactile prediction into WAMs; mechanics-aware design and strong empirical gains (75% success, 37.5pp over baseline) on contact-rich table-top tasks make this valuable despite author reputation not yet established."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.28382",
+      "title": "SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Transfer",
+      "authors": [
+        "Xiaoxiang Dong",
+        "William Baron",
+        "Hongyi Chen",
+        "Uksang Yoo",
+        "Jeffrey Ichnowski",
+        "Weiming Zhi"
+      ],
+      "abstract": "Transferring manipulation skills across object instances that share functionality but differ in geometry remains a fundamental challenge in robot learning. While recent correspondence methods leverage dense visual descriptors and 3D feature fields, nearest-neighbor feature matching often produces spatially incoherent correspondences that fail to recover the local geometric frames required for reliable skill transfer. We introduce SemAnCorr, a training-free framework that establishes dense correspondence by selecting semantically consistent anchor regions through joint pose-correspondence optimization and propagating these constraints over the object surface using functional maps. The resulting correspondences preserve both semantic consistency and geometric coherence, enabling object-centric manipulation skills to transfer across geometrically diverse instances. We evaluate SemAnCorr on a dense correspondence benchmark built on PartNet-Mobility, achieving 90.8% semantic accuracy in our benchmark evaluation while improving geometric coherence over recent state-of-the-art baselines. Finally, we show that these improvements translate directly into real-world manipulation performance: using a single demonstration, SemAnCorr enables substantially more reliable zero-shot manipulation skill transfer to previously unseen objects than existing correspondence methods. Videos and additional visualizations are available at [https://semancorr.github.io](https://semancorr.github.io) .",
+      "url": "https://arxiv.org/abs/2607.28382",
+      "pdf": "https://arxiv.org/pdf/2607.28382",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Correspondence & zero-shot skill transfer",
+        "reason": "Training-free semantic correspondence for zero-shot manipulation transfer with real-world validation\u2014directly aligned with core interests in object-centric skill transfer."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.28198",
+      "title": "UniCross: Unified Cross-Skill Dexterous Manipulation Synthesis",
+      "authors": [
+        "Hui Zhang",
+        "Julian Ferchow",
+        "Jie Song",
+        "Mirko Meboldt"
+      ],
+      "abstract": "Many dexterous manipulation tasks require the object to remain securely held throughout the interaction. From the perspective of hand-object relational motion, such manipulation comprises four canonical skills: grasping, relocation, in-hand rotation, and in-hand translation. Human hands flexibly compose these skills to accomplish complex tasks. Existing approaches, however, model these skills separately with skill-specific action constraints, objectives, or even dedicated hand morphologies, which breaks the compatibility and continuity required for long-horizon composition. In this work, we present a unified framework that models all four skills in a single formulation that shares the same state and action spaces and a common objective structure. This formulation enables straightforward distillation of a single cross-skill policy that performs strongly on every skill, generalizes to unseen objects, stays robust to disturbances, and chains skills seamlessly into long-horizon manipulation. The framework also transfers effectively across different hand morphologies. Overall, our results suggest that different dexterous manipulation skills can be viewed as instantiations of a shared task formulation, revealing the intrinsic consistency across different behaviors.",
+      "url": "https://arxiv.org/abs/2607.28198",
+      "pdf": "https://arxiv.org/pdf/2607.28198",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Dexterous Manipulation Policies",
+        "reason": "Core to learned dexterous manipulation\u2014unifying disparate skills into a single composable policy framework is a significant challenge; cross-morphology transfer and long-horizon composition claims are strong if supported, but abstract lacks technical depth on methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27924",
+      "title": "ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow",
+      "authors": [
+        "Dongxiu Liu",
+        "Haoyi Niu",
+        "Peng Cheng",
+        "Yuan Gao",
+        "Xirui Kang",
+        "Sangli Teng",
+        "Koushil Sreenath",
+        "Xianyuan Zhan"
+      ],
+      "abstract": "In the physical world we inhabit, space and time are fundamentally continuous. However, existing machine learning paradigms for world modeling are largely confined to discrete-time prediction, thereby exhibiting significant inefficiency in capturing the dynamics of physical world. We introduce Physical-Time Flow (\\textbf{PT-Flow}), a novel approach that learns a continuous latent velocity field operating in physical time. Crucially, the underlying dynamics of sequential data are parameterized by an ordinary differential equation (ODE) embedded in a well-structured representation space. Under this paradigm, the prediction of future can be recast as temporal integration via an ODE solver in the compressed latent space. Building upon PT-Flow, we construct \\textbf{ODEWorld}, a continuous-time latent world model that is both efficient and versatile. By extracting time-variant features and enforcing ODE properties on both the dynamical representation space and the latent velocity field, ODEWorld effectively addresses the long-standing representation collapse issue in latent world model literature. This also enables high-quality image reconstruction even after long-horizon prediction. Moreover, its continuous nature allows for arbitrary temporal resolution and even backward prediction, which is impossible for most discrete-time models. Lastly, ODEWorld can provide rich planning-oriented information to facilitate downstream policy learning. Comprehensive experiments demonstrate that ODEWorld successfully reconciles planning-conducive dynamics abstraction with visual realism, excelling in both video generation and robotic control. \\href{https://dstate.github.io/odeworld_website/}{Project Website}.",
+      "url": "https://arxiv.org/abs/2607.27924",
+      "pdf": "https://arxiv.org/pdf/2607.27924",
+      "published": "2026-07-30",
+      "primary_category": "cs.LG",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "World Model / Dynamics Learning",
+        "reason": "Continuous-time world model with ODE-based dynamics solves representation collapse and plans for robot control, but lacks manipulation or VLA-specific focus and is foundational rather than directly targeting learned policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27890",
+      "title": "Static In, Dynamic Out: Counterfactual Action Augmentation for Moving Object Manipulation",
+      "authors": [
+        "Woo Chul Shin",
+        "Zhenyang Chen",
+        "Alfred Cueva",
+        "Nadun Ranawaka Arachchige",
+        "Yingyan Celine Lin",
+        "Benjamin Joffe",
+        "Shreyas Kousik",
+        "Danfei Xu"
+      ],
+      "abstract": "Visuomotor policies have advanced on manipulation tasks where the target object stays static during execution, but real deployments break this assumption: parts drift on conveyors and fruits sway in the wind. We introduce Static In, Dynamic Out (SIDO), a counterfactual action augmentation that enables a policy trained only on static object demonstrations to adapt to unseen object motion at test time. Our key idea is to factorize moving object manipulation into two sub-problems: predicting where the object will be, and reaching that predicted pose. SIDO displaces the object to a counterfactual future position and morphs the demonstrated action chunk to preserve the hand-object relative pose, yielding a goal-conditioned policy. At deployment an object pose predictor supplies the future position. Across three simulated tasks (Mug, Square, Stack) under five object motion patterns and two real-world tasks (Gantry, Peachtree), SIDO improves moving object success over the baselines while preserving static object performance. Project website: https://sido-staticindynamicout.github.io/.",
+      "url": "https://arxiv.org/abs/2607.27890",
+      "pdf": "https://arxiv.org/pdf/2607.27890",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Robustness to Moving Objects",
+        "reason": "Directly addresses a real deployment gap in learned visuomotor policies; clever counterfactual augmentation approach with solid sim+real validation, though the factorization and morphing ideas are somewhat incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27881",
+      "title": "RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents",
+      "authors": [
+        "Sihyung Yoon",
+        "Minjong Yoo",
+        "Sanghyun Ahn",
+        "Seojeong Choi",
+        "Honguk Woo"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have attracted growing interest as a scalable approach to robotic manipulation. While these models are effective action predictors, deploying them as robotic agents exposes critical gaps: no mechanism for failure recovery, inconsistent execution over long horizons, and limited robustness to shifts in observations, tasks, or embodiments. Existing solutions address these limitations individually through model retraining or environment-specific modules, yet what is needed is a general framework that systematically transforms a pretrained VLA into a robotic agent. We present RoboBRIDGE, a modular framework that provides an orchestration layer over five coordinated modules, namely Monitor, Perceptor, Planner, Controller, and Robot Interface, to compose robust robotic agents from off-the-shelf components, including pretrained VLAs. The Monitor pairs rapid failure detection with hierarchical recovery to correct errors before they cascade. When the environment diverges from the current plan, the Planner triggers replanning while the Perceptor updates scene understanding asynchronously, avoiding execution stalls. Within the Controller, primitive skill fine-tuning factors manipulation into domain-invariant primitives with dedicated LoRA adapters, reducing sensitivity to domain shifts when a VLA is used. Across LIBERO, RoboCasa, and real-world case studies spanning multiple robot platforms and VLA backbones, RoboBRIDGE consistently outperforms both standalone policies and prior augmented VLA deployments. These results suggest that reliable robotic agency does not arise from scaling action predictors alone, but from structured orchestration around them.",
+      "url": "https://arxiv.org/abs/2607.27881",
+      "pdf": "https://arxiv.org/pdf/2607.27881",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA deployment & agent orchestration",
+        "reason": "Directly addresses practical deployment gaps of VLA models with a systematic orchestration framework validated across multiple platforms and real-world tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27784",
+      "title": "DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection",
+      "authors": [
+        "Beom Jun Kim",
+        "Shiu-Jen Wang",
+        "Jonathan Liu",
+        "Alvin Zhu",
+        "Quanyou Wang",
+        "Hanzhang Fang",
+        "Feng Xu",
+        "Mingzhang Zhu",
+        "Yuchen Cui",
+        "Dennis W. Hong"
+      ],
+      "abstract": "Scalable collection of dexterous manipulation demonstrations remains a major bottleneck for robot learning. High-fidelity interfaces often require costly hardware and extensive setup, while low-setup, low cost alternatives tend to provide less precise control and impose greater cognitive workload on operators. We present DexDirect, a direct kinesthetic arm guidance for efficient dexterous demonstration collection. The operator drags a 6-DoF gravity-compensated robot arm directly by a handle, while a single webcam retargets operator's other hand onto a 16 joints 13-DoF dexterous robot hand. User studies suggest DexDirect collects 17.2x and 3.2x more successful demonstrations compared to purely vision (AnyTeleop) and pose-tracking (TeleDex) baselines. An adapted NASA-TLX shows DexDirect greatly reduces mental demand, effort, and frustration, despite raising physical demand. A diffusion policy trained on DexDirect demonstrations reaches a 90% success rate on a cube pick-and-place task. These results suggest that direct kinesthetic arm guidance combined with vision-based hand retargeting provides an efficient low-setup and scalable interface for collecting dexterous manipulation demonstrations",
+      "url": "https://arxiv.org/abs/2607.27784",
+      "pdf": "https://arxiv.org/pdf/2607.27784",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous Manipulation - Demonstration Collection",
+        "reason": "Directly tackles demonstration collection efficiency for dexterous manipulation with 17x gains over vision-only baselines, user-validated, and practical results; addresses a core bottleneck for training manipulation policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27782",
+      "title": "RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy",
+      "authors": [
+        "Zhengyang Yan",
+        "Junhao Li",
+        "Fangqi Zhu",
+        "Zijun Wang",
+        "Quanxin Shou",
+        "Yikun Miao",
+        "Xiaoyi Pang",
+        "Zicong Hong",
+        "Song Guo"
+      ],
+      "abstract": "Flow-matching Vision-Language-Action (VLA) policies have shown strong potential for robotic manipulation but often suffer from compounding errors caused by distribution shifts during deployment. While offline reinforcement learning (RL) provides a practical way to improve deployed policies using rollout data, existing methods either ignore failure data or exploit it only at the trajectory level, resulting in low learning efficiency and persistent errors. We propose **RedFlow**, a fine-grained offline RL framework that redirects failure experiences into action-level corrective supervision for flow-matching VLA policies. RedFlow consists of two key components: (1) a **Context-Aware Corrective Matching** mechanism that identifies failure-inducing actions and retrieves successful alternatives from similar contexts as corrective targets, and (2) an **Adaptive Redirection Objective** that jointly reinforces successful actions, suppresses undesirable ones, and redirects recoverable failures toward corrective targets. By converting both successful and failed experiences into dense supervision, RedFlow enables robust recovery learning from mixed-quality data. Experiments on the LIBERO benchmark and three real-world manipulation tasks show that RedFlow consistently outperforms state-of-the-art offline RL baselines, improving the real-world success rate from 56.7% to 74.7%. It also matches strong on-policy methods (PPO, GRPO, and DDPO) while requiring roughly an order of magnitude fewer training samples.",
+      "url": "https://arxiv.org/abs/2607.27782",
+      "pdf": "https://arxiv.org/pdf/2607.27782",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA policy learning / Offline RL",
+        "reason": "Directly tackles VLA policy robustness via fine-grained action-level correction in offline RL, with strong real-world results (74.7% success rate) and efficient learning from deployment failures."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27599",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "authors": [
+        "Xiangcheng Zhang",
+        "Yilun Du"
+      ],
+      "abstract": "Building generalizable agents for diverse applications remains a fundamental challenge. While imitation learning-based policies succeed in specific training environments, they often fail to generalize to novel scenes and tasks. In this work, we propose World Action Planner, a robot planning system that leverages the reasoning capabilities of Vision-Language Models (VLMs) and the physical grounding of a multi-task pose-image conditioned world model. Our system enables an agent to propose initial action plans and iteratively refine them via optimization and search, reasoning over imagined world model rollouts. We demonstrate that our approach achieves superior performance across compositional tasks, new layouts, and zero-shot generalization scenarios, significantly outperforming state-of-the-art end-to-end policy models such as VLAs and WAMs. Project website at worldactionplanner.github.io",
+      "url": "https://arxiv.org/abs/2607.27599",
+      "pdf": "https://arxiv.org/pdf/2607.27599",
+      "published": "2026-07-30",
+      "primary_category": "cs.AI",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA-Adjacent Planning",
+        "reason": "Integrates VLMs with learned world models for iterative robot action planning, addressing generalization\u2014highly relevant but planning-based rather than end-to-end policy, somewhat incremental combination of existing methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27549",
+      "title": "Cross-Embodiment Transfer via Behavior-Aligned Representations",
+      "authors": [
+        "Ajay Sridhar",
+        "Jensen Gao",
+        "Jonathan Yang",
+        "Jean Mercat",
+        "Suneel Belkhale",
+        "Dorsa Sadigh"
+      ],
+      "abstract": "Recent progress in large-scale imitation learning for robot manipulation has been driven by leveraging datasets across a wide range of robot embodiments. However, achieving significant cross-embodiment transfer is often still challenging. In this work, we study the role of using behavior-aligned representations (e.g., object bounding boxes, language motions, end-effector traces of robot motion) in vision-language-action (VLA) models to promote cross-embodiment transfer. We hypothesize that by possessing invariances across embodiments while being predictive of robot actions, these representations can help unify large-scale cross-embodiment data to enhance transfer. To assess our hypothesis, we develop a simulation-based benchmark designed to assess transfer with diverse cross-embodiment data to new embodiments. Using this benchmark, we compare different representations and ways of incorporating them. We identify that end-effector traces can be particularly beneficial for transfer, representations are generally more useful with larger prior datasets, and can be used to benefit from action-free data. We also demonstrate that they can enhance sim-to-real cross-embodiment transfer, improving task completion progress of real robot policies pre-trained on simulation data by 28%. We provide videos of our evaluations at our website: https://ajaysridhar.com/barx/.",
+      "url": "https://arxiv.org/abs/2607.27549",
+      "pdf": "https://arxiv.org/pdf/2607.27549",
+      "published": "2026-07-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Dorsa Sadigh",
+        "reason": "curated (Dorsa Sadigh)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Cross-embodiment VLA transfer",
+        "reason": "Directly addresses VLA policy transfer across robot embodiments with systematic empirical study of behavior-aligned representations; real robot validation and 28% sim-to-real improvement demonstrate practical impact."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2607.27511",
+      "title": "Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling",
+      "authors": [
+        "Zhefeng Huang",
+        "Yilin Cai",
+        "Ankit Patel",
+        "Mohammad Hajiha",
+        "Brendan Browne",
+        "Yue Chen"
+      ],
+      "abstract": "Imitation learning has shown increasing promise for autonomous robotic surgery, yet safe deployment remains challenging due to the safety-critical nature of surgical tasks and the complexity and variability of surgical environments. Failure detection is therefore an essential safeguard, but its development remains difficult due to the challenges of scarce failure data, highly variable manipulation dynamics, and the need to balance missed detections against disruptive false alarms. To address these challenges, we introduce FoMo-FD (Flow-Matching World Model for Failure Detection), a failure detection method that learns nominal short-horizon visual dynamics with an action-conditioned flow-matching world model. FoMo-FD scores the inverse-transport nonconformity of observed endpoint latents, enabling window-level detection of visual-action inconsistencies without requiring failure demonstrations. Detection thresholds are obtained by conformal calibration on successful executions, yielding task-specific alarms without assuming future failure types. We evaluate FoMo-FD on four surgically relevant manipulation tasks with twenty failure modes across simulation and real-world experiments using the da Vinci Research Kit (dVRK). Results show that FoMo-FD outperforms observation-level anomaly baselines and a prediction-error variant of the same world model, with the wrist-camera view achieving the strongest performance, including a 96.6% failure detection rate (FDR) at a 1.3% false alarm rate (FAR).",
+      "url": "https://arxiv.org/abs/2607.27511",
+      "pdf": "https://arxiv.org/pdf/2607.27511",
+      "published": "2026-07-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Surgical manipulation safety",
+        "reason": "Well-executed failure detection for surgical imitation policies with strong real-world results; safety mechanisms are somewhat orthogonal to core VLA/policy learning focus."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2607.27205",
       "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
@@ -35,11 +551,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "VLA Efficiency",
-        "reason": "Practical contribution enabling real-time VLA inference on consumer hardware with strong LIBERO results, but the core insight (direct V+L\u2192A instead of LLM-routing) is methodologically straightforward."
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Efficient VLA / Robot Manipulation",
+        "reason": "Direct architectural innovation in VLA paradigm achieving competitive LIBERO performance with 0.2B parameters and 31ms inference on consumer hardware\u2014highly relevant for practical deployment."
       },
       "verdict": "include"
     },
@@ -79,11 +595,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Latent Action Learning / VLA Policy",
-        "reason": "Solid incremental work addressing data scarcity in robot learning by learning distributional latent actions from action-free videos with temporal consistency, evaluated on MetaWorld, LIBERO, and real manipulation tasks\u2014technically sound but methodologically modest."
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Learned Manipulation Policies",
+        "reason": "Directly addresses VLA models and policy learning from action-free videos; distributional latent-action approach with temporal constraints is sound; strong real-world tabletop manipulation validation."
       },
       "verdict": "include"
     },
