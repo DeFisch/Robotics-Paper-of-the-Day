@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T15:24:44Z",
+  "updated": "2026-08-01T14:29:56Z",
   "papers": [
     {
       "id": "2607.28596",
@@ -31,11 +31,11 @@
         "reason": "curated (Cewu Lu)"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Reactive diffusion policy",
-        "reason": "Well-motivated frequency-adaptive approach resolves the key tradeoff between preserving pre-contact multimodality and post-contact reactivity in diffusion policies for contact-rich manipulation."
+        "topic": "Adaptive Diffusion Policy / Contact Manipulation",
+        "reason": "Directly addresses a fundamental tradeoff in learned manipulation policies: preserving pre-contact action diversity while maintaining post-contact reactivity. Frequency-adaptive sampling with learned multimodality indication is a principled solution grounded in real task dynamics."
       },
       "verdict": "include"
     },
@@ -69,10 +69,10 @@
       },
       "scores": {
         "relevance": 6,
-        "quality": 8,
-        "novelty": 7,
-        "topic": "Tactile Sensing Hardware",
-        "reason": "Well-engineered sensor advancing tactile perception for dexterous manipulation, but is hardware-focused rather than addressing VLA models or learned policies."
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Tactile Sensor Hardware",
+        "reason": "Solid tactile sensor engineering for dexterous manipulation, but primarily a hardware contribution rather than learning or VLA-focused work."
       },
       "verdict": "include"
     },
@@ -102,10 +102,10 @@
       },
       "scores": {
         "relevance": 6,
-        "quality": 7,
-        "novelty": 6,
+        "quality": 6,
+        "novelty": 5,
         "topic": "World Model Regularization",
-        "reason": "Solid incremental improvement to latent distribution regularization in world models; unclear if applied to robot manipulation or generic control, limiting direct relevance to arm learning policies."
+        "reason": "Incremental optimization of latent regularization for planning with limited scope (4 environments); technically sound but orthogonal to VLA/manipulation specifics."
       },
       "verdict": "include"
     },
@@ -137,11 +137,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
+        "relevance": 8,
+        "quality": 7,
         "novelty": 7,
-        "topic": "Tactile-aware world action models for manipulation",
-        "reason": "Directly addresses learned manipulation policies by integrating tactile prediction into WAMs; mechanics-aware design and strong empirical gains (75% success, 37.5pp over baseline) on contact-rich table-top tasks make this valuable despite author reputation not yet established."
+        "topic": "Tactile Action Prediction",
+        "reason": "Mechanics-aware tactile prediction substantially improves contact-rich manipulation via principled world model architecture; strong real-world validation."
       },
       "verdict": "include"
     },
@@ -173,11 +173,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
-        "topic": "Correspondence & zero-shot skill transfer",
-        "reason": "Training-free semantic correspondence for zero-shot manipulation transfer with real-world validation\u2014directly aligned with core interests in object-centric skill transfer."
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Object correspondence for skill transfer",
+        "reason": "Directly addresses zero-shot manipulation transfer via improved geometric/semantic correspondence; real-world arm results are valuable, but combines existing techniques (pose optimization, functional maps) somewhat incrementally."
       },
       "verdict": "include"
     },
