@@ -1,6 +1,261 @@
 {
-  "updated": "2026-08-12T14:26:26Z",
+  "updated": "2026-08-13T14:25:09Z",
   "papers": [
+    {
+      "id": "2608.12122",
+      "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
+      "authors": [
+        "Zhenjie Yang",
+        "Xingyu Jiao",
+        "Guopeng Zhong",
+        "Shuzhe Yang",
+        "Shi Che",
+        "Chao Wu",
+        "Chenyu Jiang",
+        "Dongjie Zhang",
+        "Yideng Zhang",
+        "Zheng Zhang",
+        "Muyun Jiang",
+        "Haisheng Su",
+        "Shuang Jin",
+        "Donghang Zhang",
+        "Chao Yang",
+        "Li Chen",
+        "Hongyang Li",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+        "Xiaosong Jia",
+        "Junchi Yan"
+      ],
+      "abstract": "Robotic manipulation with dexterous hands is a cornerstone of Embodied AI, yet its progress is stifled by the high cost of collecting embodiment-aware teleoperation data. While abundant egocentric videos of human hands offer a scalable alternative, the profound discrepancies in appearance, articulation, and camera viewpoints between human and robotic data raise significant challenges for co-training. Though existing general image-editing models demonstrate strong capabilities, they lack necessary embodiment-specific priors to fully bridge this gap. In this work, we present HandEdit, a unified large-scale embodiment-aware image-editing dataset and benchmark specifically designed to transform human hands and arms into various dexterous robotic embodiments within egocentric frames. HandEdit comprises over 200M editing instances derived from five diverse source datasets, covering 26 distinct URDFs, including 13 hand-only and 13 hand-arm configurations. Alongside the dataset, we establish a unified benchmark protocol with two tracks: Hand-only and Hand-Arm, supporting URDF-conditioned evaluation. We conduct extensive evaluations of 11 representative image-editing baselines using a multi-dimensional metric suite, including generic similarity metrics, VLM-based judgment, and embodiment-aware metrics. HandEdit serves as a critical resource at the intersection of image editing and robotics: it advances embodiment-aware editing models while enabling scalable dexterous robotic learning from abundant human video data, paving the way for more generalizable Embodied AI.",
+      "url": "https://arxiv.org/abs/2608.12122",
+      "pdf": "https://arxiv.org/pdf/2608.12122",
+      "published": "2026-08-12",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous Manipulation Dataset",
+        "reason": "Addresses critical data bottleneck for dexterous manipulation via embodiment-aware image editing and provides large-scale benchmark (200M+ instances), but is primarily a resource/engineering contribution rather than a novel learning algorithm or policy approach."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.11870",
+      "title": "Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation",
+      "authors": [
+        "Zheyu Zhuang",
+        "Ruiyu Wang",
+        "Nils Ingelhag",
+        "Ville Kyrki",
+        "Danica Kragic"
+      ],
+      "abstract": "In vision-based behavior cloning (BC), conventional image augmentations such as Random Crop and Color Jitter often fall short under substantial visual domain shifts, including changes in shadows, distractors, and backgrounds. Superimposition-based augmentations, which blend in-domain and out-of-domain images, have shown promise for improving generalization in computer vision, but their suitability for BC remains uncertain because task-critical semantics, spatiotemporal relationships, and agent-target interactions must be preserved. To address this, we introduce RoboSaGA, a Saliency-Guided Augmentation method within the superimposition family tailored for vision-based BC. RoboSaGA dynamically adjusts augmentation intensity at the pixel level using policy-driven saliency, enabling aggressive augmentation in task-irrelevant regions while preserving task-critical information. It integrates seamlessly into existing architectures without requiring structural modifications or additional learning objectives. Experiments in both simulated and real-world settings show that RoboSaGA preserves in-domain performance while substantially improving robustness to visual domain shifts, including distractor and background changes, as well as lighting and shadow variations. Code is available at https://github.com/Zheyu-Zhuang/RoboSaGA.",
+      "url": "https://arxiv.org/abs/2608.11870",
+      "pdf": "https://arxiv.org/pdf/2608.11870",
+      "published": "2026-08-12",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Behavior Cloning / Visual Domain Robustness",
+        "reason": "Practical augmentation method for improving BC robustness to visual domain shifts in real robot settings, but somewhat incremental application of existing augmentation ideas."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.11739",
+      "title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action",
+      "authors": [
+        "Yicheng Liu",
+        "Zibin Dong",
+        "Baijun Ye",
+        "Tianyuan Yuan",
+        "Tao Jiang",
+        "Anqi Yang",
+        "Shicheng Cao",
+        "Haonan Liu",
+        "Yue Sun",
+        "Zihan Guo",
+        "Xiao Liu",
+        "Dong Ke",
+        "Changxun Pan",
+        "Chenru Wu",
+        "Tailai Cheng",
+        "Xiaoshu Ren",
+        "Xinlei Zhang",
+        "Jianning Cui",
+        "Zijie Zhao",
+        "Haoyu Zhang",
+        "Kaiming Xu",
+        "Haodong Yang",
+        "Bowen Zhang",
+        "Jiahui Niu",
+        "Shaoting Zhu",
+        "Shiduo Zhang",
+        "Hang Zhao"
+      ],
+      "abstract": "The prevailing recipe for Vision-Language-Action (VLA) models couples a pretrained VLM with a separately trained flow-matching action expert. This makes the VLM a context encoder rather than a decision-maker. We introduce G0.5, a pretrained autoregressive VLA in which a single transformer decoder emits reasoning and action tokens under a single objective. Three components make this tractable at foundation-model scale: a learnable cross-embodiment action tokenizer that maps heterogeneous robot actions into a shared vocabulary; a native chain-of-thought stream interleaving task decomposition, object grounding, and action hints with action tokens; and a visual memory module that injects multi-second history through the vision encoder. Because reasoning and action share a single set of weights, the pretrained VLM's capabilities carry over to physical behavior: the model follows instructions closely, and prompts directly steer action granularity, task horizon, and out-of-distribution scene handling without further training. Pretrained on a large collection of robot datasets together with VQA samples, G0.5 surpasses state-of-the-art models across 7 independent regimes: real-world fine-tuning on R1lite and R1pro robots (76.7\\% vs.\\ 53.3\\% for $\u03c0_{0.5}$ and 24.4\\% for GR00T-N1.7), the 2025 BEHAVIOR Challenge on 50 long-horizon household mobile manipulation tasks using a generalist policy (31.4\\% vs.\\ 26.3\\% for $\u03c0_{0.5}$ and 26.1\\% for the challenge winner), DROID post-training followed by zero-shot transfer to an unseen environment and objects (82.5\\%), a language-following Pick-and-Place benchmark, LIBERO (98.9\\%), RoboTwin 2.0 (93.3\\%), and SimplerEnv-Bridge (87.3\\%).",
+      "url": "https://arxiv.org/abs/2608.11739",
+      "pdf": "https://arxiv.org/pdf/2608.11739",
+      "published": "2026-08-12",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Unified autoregressive VLA with reasoning",
+        "reason": "Core VLA contribution unifying reasoning and action in single transformer stream with strong real-robot validation across 7 benchmarks; meaningful departure from decoupled VLM+expert pattern, though building on established techniques."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.11671",
+      "title": "StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models",
+      "authors": [
+        "Siyu Xu",
+        "Yunke Wang",
+        "Zijian Wang",
+        "Dihao Zhu",
+        "Chenghao Xia",
+        "Chengbin Du",
+        "Daochang Liu",
+        "Tao Huang",
+        "Chang Xu"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models can follow instructions and manipulate objects, but their performance often collapses out of distribution (OOD), when the scene, viewpoint, or object differs from training. Adapting to each new situation typically requires collecting more data and fine-tuning. We present StellaVLA, a framework that instead adapts at test time by conditioning on a single retrieved demonstration. The key idea is to move beyond imitating what an expert did and instead convey why: an automated offline pipeline converts each raw trajectory into a structured demonstration, e.g., a task plan, sub-goal descriptions, and verbalized 3D motion, at zero human-annotation cost. Provided as in-context guidance, this structured demonstration lets the policy reason about the task rather than mimic a pixel trajectory, which also makes it transferable across embodiments (real-robot, human-hand, or XR demonstrations). A parallel dual-training design internalizes this reasoning during training through a joint action-and-language objective, while inference uses the action expert alone, preserving real-time, high-frequency control with no added latency. On the VLA-Arena leaderboard(Aug 1, 2026), StellaVLA ranks first with an overall score of 0.63, versus 0.44 and 0.22 for the strong prior models ($\u03c0_{0.5}$ and LingBot-VLA), and it further leads on LIBERO with 98.8% average success rate and LIBERO-Plus with 85.1% success rate. Our real-robot benchmark demonstrates that StellaVLA can use both human/robot demos and human-to-robot (XR) demos as in-context structured demonstration to help VLA model adapt to OOD tasks.",
+      "url": "https://arxiv.org/abs/2608.11671",
+      "pdf": "https://arxiv.org/pdf/2608.11671",
+      "published": "2026-08-12",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 9,
+        "novelty": 7,
+        "topic": "VLA in-context learning",
+        "reason": "Direct VLA work addressing OOD generalization via structured in-context demonstrations; achieves top leaderboard results and demonstrates cross-embodiment transfer."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.11521",
+      "title": "Keep the Future, Drop the Rollout: RIFT for World Action Models",
+      "authors": [
+        "Chushan Zhang",
+        "Jinguang Tong",
+        "Xuesong Li",
+        "Yikai Wang",
+        "Hongdong Li"
+      ],
+      "abstract": "World action models (WAMs) condition robot actions on predicted futures, but iterative video rollout increases deployment latency. We ask whether action generation requires the evolving rollout trajectory or only its future representation. Across four WAMs on all 40 LIBERO tasks, paired closed-loop interventions show that masking or reassigning future-cache values changes execution and reduces success, indicating sensitivity to future values and their assigned positions. For Joint and Cosmos-2, however, replaying one fixed final-clean key/value (K/V) cache nearly preserves unmodified execution, with $1.7$ to $1.9$~cm end-effector average displacement error and $97.9\\%$ to $98.2\\%$ success. This separates cache consumption from production: these models can reuse a fixed cache but still require iterative rollout to construct it. We therefore propose RIFT (\\emph{Rollout-free Imagination via Future Tokens}), which uses learned anticipation tokens to construct a complete future K/V cache in one backbone pass while retaining the original future-read interface. On LIBERO, RIFT achieves $98.8\\%$ success, close to rollout-based Joint, IDM, and LingBot-VA at $98.4\\%$ to $98.6\\%$, while reducing action-chunk latency by $68.2\\%$ to $89.1\\%$. On RoboTwin~2.0, RIFT reaches $92.9/92.6\\%$ on clean/randomized scenes, the highest observed among the evaluated methods. These results support rollout-free future conditioning without iterative video generation at deployment.",
+      "url": "https://arxiv.org/abs/2608.11521",
+      "pdf": "https://arxiv.org/pdf/2608.11521",
+      "published": "2026-08-12",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Table-top Manipulation / Action Models",
+        "reason": "Directly addresses deployment efficiency in robot action models through a novel insight about K/V cache reuse; achieves comparable performance to rollout-based baselines with 68-89% latency reduction on LIBERO and top results on RoboTwin."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.11363",
+      "title": "Adaptation of Generalist Robot Policies with Minimal Data",
+      "authors": [
+        "Shreyas Kowshik",
+        "Sreyas Venkataraman",
+        "Leo Wang",
+        "Niharika Pant",
+        "Max Simchowitz",
+        "Aviral Kumar"
+      ],
+      "abstract": "A central goal in robot learning is to move beyond task-specific human data collection toward robots that improve through autonomous interaction. Yet fully autonomous learning remains difficult with current policies: sparse rewards and weak zero-shot exploration make it unlikely that a robot will discover successful behavior from scratch. We study minimal-data adaptation, a regime in which a pre-trained robot policy must learn a new task from as little as one demonstration followed by autonomous online interaction. This setting serves as the closest tractable proxy for fully autonomous improvement, allowing us to study whether minimal human guidance can bootstrap autonomous learning and what algorithmic ingredients make it feasible. We build MiDAS, a simple offline-to-online RL recipe that first anchors a pre-trained VLA to the target task with behavior cloning on single/few demonstrations, then improves it through value-based online RL on a residual policy parameterization. Across LIBERO and RoboCasa, MiDAS recovers strong task performance from as little as one demonstration, substantially outperforming baselines and generalizing beyond demonstrated conditions. We further evaluate MiDAS on a bimanual YAM platform. Starting from a fragile low-success policy obtained from a single demonstration, MiDAS improves its robustness and learns new successful behaviors over ~6 hours of online interaction. To the best of our knowledge, this is the first demonstration of reliable robot policy adaptation from a single task demonstration.",
+      "url": "https://arxiv.org/abs/2608.11363",
+      "pdf": "https://arxiv.org/pdf/2608.11363",
+      "published": "2026-08-11",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "VLA policy adaptation",
+        "reason": "Strong empirical results adapting VLA models from single demonstrations to real bimanual robots, but leverages established algorithmic components."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.11204",
       "title": "Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning",
@@ -29,11 +284,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
         "novelty": 6,
-        "topic": "Surgical robot manipulation",
-        "reason": "Directly addresses data-efficient learning for surgical arm manipulation through video pretraining plus limited action supervision, with solid gains on bimanual contact-rich tasks, though evaluation is simulation-only."
+        "topic": "Surgical arm manipulation, world models",
+        "reason": "Directly addresses data-efficient learned policies for bimanual surgical arm manipulation; strong empirical gains on contact-rich tasks, but simulation-only evaluation and surgical-specific focus limit broader impact."
       },
       "verdict": "include"
     },
@@ -62,11 +317,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "World Model Planning Diagnostics",
-        "reason": "Solid diagnostic work on latent space quality for planning, which is foundational to VLA. However, it's incremental analysis without new methods or direct robot manipulation demonstrations, and unclear if evaluation includes robot datasets."
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "World model evaluation",
+        "reason": "Diagnostic metric for latent world model quality in planning is tangentially relevant to planning-based robot policies, but lacks explicit robotics grounding and addresses evaluation rather than learning methodology."
       },
       "verdict": "include"
     },
