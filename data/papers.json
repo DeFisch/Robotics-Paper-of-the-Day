@@ -1,6 +1,333 @@
 {
-  "updated": "2026-08-13T14:25:09Z",
+  "updated": "2026-08-14T14:20:47Z",
   "papers": [
+    {
+      "id": "2608.13489",
+      "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
+      "authors": [
+        "DreamX Team",
+        "Rui Chen",
+        "Xiangxiang Chu",
+        "Geng Li",
+        "Jifan Li",
+        "Qingfeng Shi",
+        "Datao Tang",
+        "Jing Tang",
+        "Jun Wang",
+        "Pengfei Zhang"
+      ],
+      "abstract": "We present \\textbf{DreamX-Phi 1.0}, an action-conditioned video world model for robotic manipulation that, given an observed frame, a language instruction, and a prescribed action sequence comprising end-effector poses and gripper states, predicts the resulting future observations. Yet realism alone does not guarantee faithfulness: a convincing rollout can still move the wrong arm or lose the manipulated object. To ensure the prediction respects each arm's commanded path, we inject per-arm $\\mathrm{SE}(3)$ transformations into attention via \\textbf{PRoPE-style geometric encoding}, preserving arm identity and rigid-motion structure. Action control alone does not fully constrain scene geometry or the evolution of small manipulated objects. We therefore add a lightweight \\textbf{depth branch} for scene-level geometry and use \\textbf{SAM3 masks} with a frozen \\textbf{V-JEPA teacher} to maintain object consistency throughout grasping. We further distill the multi-step generator into a few-step student via distribution-matching distillation for efficient deployment. At the time of writing, \\model{} achieves first place on Track~1 and second place on Track~2 of the WorldArena~2.0 Challenge. Our model and code will be publicly available.",
+      "url": "https://arxiv.org/abs/2608.13489",
+      "pdf": "https://arxiv.org/pdf/2608.13489",
+      "published": "2026-08-13",
+      "primary_category": "cs.CV",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Action-Conditioned World Model",
+        "reason": "High-impact benchmark results with thoughtful engineering (geometric encoding, depth branch, object consistency), but novelty is primarily in combining existing techniques; value as foundation for downstream policy learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13474",
+      "title": "Decoding Task Progress from VLA Representations",
+      "authors": [
+        "Atiksh Bhardwaj",
+        "Edward Weiyi Duan",
+        "Prithwish Dan",
+        "Wei-Chiu Ma",
+        "Preston Culbertson"
+      ],
+      "abstract": "Vision-language-action models (VLAs) are moving rapidly towards deployment as general-purpose manipulation policies, but we currently lack basic tools for understanding what these models represent internally or for monitoring them at runtime. Leveraging ideas from mechanistic interpretability, we probe the residual stream of $\u03c0_{0.5}$ and find that task progress, the normalized time remaining in a trajectory, is linearly readable from the activations. We find that this signal is present in the pretrained PaliGemma backbone prior to training on any robot-specific data. A single linear probe generalizes to unseen tasks and varies under language counterfactuals when trained on multi-prompt data, but does not enable meaningful steering of the policy. These properties make the signal directly useful for instrumenting deployed VLAs. We use the probe as a simple label-free OOD detector, which detects stalled task progress, and find it competitive with state-of-the-art methods. Our results suggest that VLAs have rich, linearly readable internal representations of semantic quantities like task progress, and that learning to read these signals offers a lightweight, interpretable path toward monitoring deployed visuomotor policies.",
+      "url": "https://arxiv.org/abs/2608.13474",
+      "pdf": "https://arxiv.org/pdf/2608.13474",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA Interpretability",
+        "reason": "Mechanistic interpretability applied to VLAs reveals linearly-readable task progress signals, enabling practical monitoring and OOD detection for deployed visuomotor policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13438",
+      "title": "ContactGuard: Pre-Contact Execution Monitoring with Action-Conditioned Latent World Models",
+      "authors": [
+        "Gehan Zheng",
+        "Matthew Johnson-Roberson",
+        "Weiming Zhi"
+      ],
+      "abstract": "Contact-rich manipulation failures are often detected only after the robot has committed to contact. This is especially limiting in wrist-camera setups: close gripper--object views help observe contact, but a poor approach may already push, miss, slip, or disturb the object before conventional detectors react. We introduce \\emph{ContactGuard}, a pre-contact execution monitor for chunked visuomotor policies. Given the policy's planned action chunk, ContactGuard predicts its short-horizon consequence in latent visual space and aborts if the predicted future latent indicates likely failure. Its latent world model is trained from unlabelled robot trajectories to predict compact multi-view visual embeddings under planned actions, avoiding pixel-level video prediction. A lightweight failure probe is then trained from a small labelled set of pre-contact clips. At deployment, ContactGuard anchors prediction before an imminent contact event, rolls the model forward under the policy's own actions, and verifies the predicted post-contact latent. Across real-world contact-rich manipulation tasks, ContactGuard predicts failure more accurately than direct and corrupted-action ablations, and transfers to live robot as a pre-contact abort signal without modifying the underlying policy.",
+      "url": "https://arxiv.org/abs/2608.13438",
+      "pdf": "https://arxiv.org/pdf/2608.13438",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Execution monitoring, contact-rich manipulation",
+        "reason": "Practical failure detection for contact-rich manipulation using learned latent world models with real-robot validation and direct applicability to visuomotor policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13422",
+      "title": "Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning",
+      "authors": [
+        "Zheyu Zhuang",
+        "Ruiyu Wang",
+        "Nick Heppert",
+        "Johannes Fabian Hahn",
+        "Abhinav Valada",
+        "Florian T. Pokorny",
+        "Danica Kragic"
+      ],
+      "abstract": "Visual bottlenecks that focus policy inputs on regions of interest (ROIs) can improve data-efficient visuomotor learning by separating where to look from how to act. Many ROI interfaces rely on external spatial labels, such as gaze, object classes, or affordance annotations. Label-free alternatives often derive crops from trajectories by detecting gripper or motion events and centering a fixed crop at the projected end-effector. Such action-derived crops are useful spatial priors that require no additional labels, but they encode fixed choices about event timing, proxy points, and crop scale. When the visual evidence needed for control lies away from the end-effector or changes continuously with task progress, these crops can become misaligned. We propose Seeker, a task- and state-conditioned readout that learns attention from action. Starting from frozen DINOv3 features, Seeker iteratively updates a query with gathered visual evidence, producing progression-aware ROIs solely from action supervision. The learned ROI serves as a spatial interface for RGB cropping, mask-guided background augmentation, and point-cloud filtering. In simulation and the real world, Seeker improves data efficiency and robustness over no-crop, augmentation, and action-derived crop baselines. On real robots, Seeker raises average in-domain success from the best baseline's 48.3% to 76.7% and success under lighting/background shifts from 20.0% to 60.0%.",
+      "url": "https://arxiv.org/abs/2608.13422",
+      "pdf": "https://arxiv.org/pdf/2608.13422",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Learned Visual Attention for Visuomotor Control",
+        "reason": "Principled approach to learning task-aware visual attention from action supervision alone achieves substantial gains on real robot manipulation (48.3%\u219276.7% success, 20%\u219260% under distribution shift)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13415",
+      "title": "Deliberate Practice: Learning Robot Skills under a Budget",
+      "authors": [
+        "Shivam Vats",
+        "Sudarshan Harithas",
+        "Mete Tuluhan Akbulut",
+        "Arvind Raghunathan",
+        "George Konidaris"
+      ],
+      "abstract": "We consider the problem of autonomously learning robot skills under a limited practice budget for sequential tasks. We propose an active skill learning algorithm, \\emph{Deliberate Practice (DP)}, that computes a provably \\emph{budget-optimal} allocation---practicing skills that maximize expected cumulative reward while being learnable within the budget. DP estimates both the time needed to master skills and the cumulative reward of the task plans that the skills unlock. Computing a budget-optimal allocation is challenging as it requires reasoning about combinatorially many skill plans over a large practice budget. Our key contribution is a bilinear program that can compute this exactly using off-the-shelf solvers. Through simulated and real-world experiments on long-horizon manipulation tasks, we show that our approach allows robots to optimally use limited practice time to acquire useful policies and improve long-horizon planning.",
+      "url": "https://arxiv.org/abs/2608.13415",
+      "pdf": "https://arxiv.org/pdf/2608.13415",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Skill Learning",
+        "reason": "Solid practical approach to budget-constrained skill learning with principled optimization and real-world validation; incremental in methodology."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13362",
+      "title": "NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation",
+      "authors": [
+        "James Zhao",
+        "Jinhe Tang",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "abstract": "Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning. Video Demo are available at project website https://aus.bot/research/nestdex.",
+      "url": "https://arxiv.org/abs/2608.13362",
+      "pdf": "https://arxiv.org/pdf/2608.13362",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous manipulation",
+        "reason": "Directly addresses core challenge of dexterous manipulation policy learning through nested skill framework; real-world validated approach with VLA-assisted demonstration collection."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13103",
+      "title": "S2-HWM: Sparse Event-Structured Hierarchical World Model for Long-Horizon Surgical Robot Manipulation",
+      "authors": [
+        "Shuzhe Zhang",
+        "Xin Zhu",
+        "Yinling Qian",
+        "Qiong Wang"
+      ],
+      "abstract": "Long-horizon surgical robot manipulation is challenging because task rewards are sparse, while meaningful interaction changes occur at irregular intervals. Existing world-model agents typically imagine at primitive-step resolution, leaving variable-duration task progress implicit. Manually specified stages can provide intermediate structure, but their task specific boundaries are difficult to align with state-dependent interaction transitions. We propose S2-HWM, a Sparse Event-Structured Hierarchical World Model that learns sparse event evidence from primitive latent trajectories to coordinate an event-level manager and a primitive-step worker. The event evidence schedules manager goal updates, and each selected latent goal conditions the worker's primitive actions until the next update. The learned event evidence also forms variable-duration segments for an Event Transition Model (ETM), which predicts the next?boundary stochastic state, segment duration, and accumulated segment reward. Chaining these event-level predictions provides a variable-duration continuation beyond the primitive imagination horizon for manager learning, while the worker retains primitive-step actor-critic learning. On a SurRoL-based PegTransfer task, S2-HWM achieves a success rate of 98.7%, outperforming the flat GAS DreamerV3 baseline by 22.7 percentage points.",
+      "url": "https://arxiv.org/abs/2608.13103",
+      "pdf": "https://arxiv.org/pdf/2608.13103",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Hierarchical world models for surgical manipulation",
+        "reason": "Directly addresses long-horizon manipulation policy learning with a technically sound hierarchical approach and strong simulated results, but limited to single task evaluation and no real-world validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13049",
+      "title": "H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models",
+      "authors": [
+        "Dingyi Rong",
+        "Yue Shi",
+        "Chaofan Ma",
+        "Jiezhang Cao",
+        "Zongrui Wang",
+        "Zeyu Zhang",
+        "Yao Mu",
+        "Guangtao Zhai",
+        "Ning Liu"
+      ],
+      "abstract": "Large-scale manipulation data is essential for robot learning, yet collecting robot demonstrations remains expensive and difficult to scale. Meanwhile, abundant egocentric human manipulation videos provide rich behavioral experiences, but transferring them across embodiments remains challenging due to differences between human hands and robotic end-effectors. Recent advances in video world models offer a promising pathway to synthesize robot-centric manipulation videos from human observations, while their cross-embodiment transfer capability remains largely unexplored. Therefore, we introduce H2R-Bench, a benchmark for evaluating cross-embodiment human-to-robot manipulation video generation, where models transform egocentric human demonstrations into robot manipulation videos under specified embodiments. Each benchmark instance contains a human demonstration video, target embodiment constraints, and source-grounded annotations covering task goals, action events, functional contacts, and object responses. H2R-Bench evaluates generated videos through five dimensions, including goal-state completion, action-event completion, functional contact transfer, embodiment correctness, and general video quality. We benchmark eleven state-of-the-art video generation models across six manipulation families and two robot embodiments. Our evaluation reveals that current video world models remain limited in human-to-robot manipulation transfer: even leading models often fail in embodiment consistency, functional interaction, and task execution. H2R-Bench provides a systematic diagnostic framework for evaluating whether video world models can bridge the human-to-robot embodiment gap and convert human manipulation observations into robot-centric training resources.",
+      "url": "https://arxiv.org/abs/2608.13049",
+      "pdf": "https://arxiv.org/pdf/2608.13049",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Manipulation Video Synthesis & Benchmarking",
+        "reason": "Addresses data scarcity via human-to-robot video transfer, but is primarily a diagnostic benchmark for video generation rather than advancing policy learning or VLA methods directly."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.13026",
+      "title": "Temporal GRPO: Beyond Trajectory-Level Credit in Vision-Language-Action Reinforcement Learning",
+      "authors": [
+        "Yao Zhou",
+        "Hang Gao",
+        "Fengge Wu",
+        "Changwen Zheng",
+        "Wenwen Qiang"
+      ],
+      "abstract": "Outcome-driven reinforcement learning offers a scalable way to post-train vision-language-action (VLA) policies from sparse task-success feedback. In common GRPO-based VLA post-training, one rollout-level advantage is applied to every action in the trajectory. A rollout that completes several valid stages but fails later can therefore penalize the actions that produced its earlier progress. We call this trajectory-level credit aliasing. Temporal GRPO addresses this problem by constructing detectable task stages, aligning each rollout with stage-specific action intervals, and comparing only rollouts that have entered the same stage. The resulting stage advantages are applied to their corresponding intervals in a single policy update. On RoboTwin 2.0, Temporal GRPO improves task success and sample efficiency, with consistent gains across task horizons. Controlled updates on LIBERO-Long preserve shared prerequisite stages and concentrate improvement at the first stage where rollout outcomes diverge.",
+      "url": "https://arxiv.org/abs/2608.13026",
+      "pdf": "https://arxiv.org/pdf/2608.13026",
+      "published": "2026-08-13",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA credit assignment",
+        "reason": "Directly tackles credit assignment in VLA policy post-training with a targeted fix to trajectory-level credit aliasing; solid incremental improvement validated on standard manipulation benchmarks."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.12122",
       "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
@@ -45,10 +372,10 @@
       },
       "scores": {
         "relevance": 7,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Dexterous Manipulation Dataset",
-        "reason": "Addresses critical data bottleneck for dexterous manipulation via embodiment-aware image editing and provides large-scale benchmark (200M+ instances), but is primarily a resource/engineering contribution rather than a novel learning algorithm or policy approach."
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dataset/Benchmark - Dexterous Hand Manipulation",
+        "reason": "Large-scale benchmark enabling human-to-robot hand domain transfer for policy learning, but primarily applies existing image-editing techniques without novel algorithmic contributions."
       },
       "verdict": "include"
     },
