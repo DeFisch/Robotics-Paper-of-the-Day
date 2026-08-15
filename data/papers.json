@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T14:20:47Z",
+  "updated": "2026-08-15T13:34:25Z",
   "papers": [
     {
       "id": "2608.13489",
@@ -34,11 +34,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 9,
         "quality": 8,
-        "novelty": 6,
-        "topic": "Action-Conditioned World Model",
-        "reason": "High-impact benchmark results with thoughtful engineering (geometric encoding, depth branch, object consistency), but novelty is primarily in combining existing techniques; value as foundation for downstream policy learning."
+        "novelty": 7,
+        "topic": "Action-conditioned world model for manipulation",
+        "reason": "Directly tackles core manipulation challenges\u2014geometric fidelity in action-conditioned prediction, arm identity preservation, object tracking\u2014with coordinated technical contributions (PRoPE encoding, depth, SAM3/V-JEPA) and strong WorldArena results."
       },
       "verdict": "include"
     },
@@ -70,11 +70,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 8,
+        "relevance": 9,
+        "quality": 7,
         "novelty": 7,
         "topic": "VLA Interpretability",
-        "reason": "Mechanistic interpretability applied to VLAs reveals linearly-readable task progress signals, enabling practical monitoring and OOD detection for deployed visuomotor policies."
+        "reason": "Mechanistic interpretability approach revealing task progress is linearly readable from VLA internals; directly applicable to monitoring deployed policies and OOD detection."
       },
       "verdict": "include"
     },
@@ -106,9 +106,9 @@
       "scores": {
         "relevance": 8,
         "quality": 7,
-        "novelty": 7,
-        "topic": "Execution monitoring, contact-rich manipulation",
-        "reason": "Practical failure detection for contact-rich manipulation using learned latent world models with real-robot validation and direct applicability to visuomotor policies."
+        "novelty": 6,
+        "topic": "Execution monitoring",
+        "reason": "Core manipulation safety problem with practical latent-space solution and real-robot validation, but combines established techniques (latent models + monitoring) without broad methodological novelty."
       },
       "verdict": "include"
     },
@@ -141,11 +141,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Learned Visual Attention for Visuomotor Control",
-        "reason": "Principled approach to learning task-aware visual attention from action supervision alone achieves substantial gains on real robot manipulation (48.3%\u219276.7% success, 20%\u219260% under distribution shift)."
+        "topic": "Visual attention for manipulation",
+        "reason": "Task-conditioned visual attention from action supervision improves table-top manipulation efficiency and robustness with compelling real robot results; contribution is solid but somewhat incremental."
       },
       "verdict": "include"
     },
@@ -176,11 +176,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
-        "novelty": 6,
-        "topic": "Skill Learning",
-        "reason": "Solid practical approach to budget-constrained skill learning with principled optimization and real-world validation; incremental in methodology."
+        "novelty": 7,
+        "topic": "Active skill learning",
+        "reason": "Addresses practical constraint of limited practice time for sequential manipulation via budget-optimal skill allocation; solid theory and experiments but not VLA-focused."
       },
       "verdict": "include"
     },
@@ -210,11 +210,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
         "topic": "Dexterous manipulation",
-        "reason": "Directly addresses core challenge of dexterous manipulation policy learning through nested skill framework; real-world validated approach with VLA-assisted demonstration collection."
+        "reason": "Directly addresses the demonstration collection bottleneck for dexterous manipulation via nested policies with vision-language skill selection; real-world validation supports practical applicability."
       },
       "verdict": "include"
     },
