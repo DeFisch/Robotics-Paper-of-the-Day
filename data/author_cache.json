@@ -29,6 +29,12 @@
     "name": "Bernhard Schmitt",
     "papers": 16
   },
+  "bowen weng": {
+    "citations": 162,
+    "h_index": 8,
+    "name": "B. Weng",
+    "papers": 23
+  },
   "chenxi xiao": {
     "citations": 1,
     "h_index": 1,
@@ -138,6 +144,12 @@
     "name": "Jing Feng",
     "papers": 7
   },
+  "jun ma": {
+    "citations": 168,
+    "h_index": 2,
+    "name": "Junhua Ma",
+    "papers": 4
+  },
   "jun miyazaki": {
     "citations": 549,
     "h_index": 11,
@@ -185,6 +197,12 @@
     "h_index": 3,
     "name": "M. Hoffmann",
     "papers": 11
+  },
+  "meng guo": {
+    "citations": 13,
+    "h_index": 2,
+    "name": "Mengnan Guo",
+    "papers": 6
   },
   "mohammed abusadeh": null,
   "nathaniel hanson": {
@@ -281,6 +299,12 @@
     "papers": 90
   },
   "youssef attia": null,
+  "zaid mahboob": {
+    "citations": 36,
+    "h_index": 2,
+    "name": "Zaid Mahboob",
+    "papers": 6
+  },
   "zhengying zhu": {
     "citations": 50,
     "h_index": 2,
@@ -293,5 +317,17 @@
     "name": "Zicong Wu",
     "papers": 6
   },
-  "ziyang yu": null
+  "zili tang": {
+    "citations": 2,
+    "h_index": 1,
+    "name": "T. Zili",
+    "papers": 4
+  },
+  "ziyang yu": null,
+  "ziyun liu": {
+    "citations": 5,
+    "h_index": 1,
+    "name": "Ziyu Liu",
+    "papers": 2
+  }
 }
