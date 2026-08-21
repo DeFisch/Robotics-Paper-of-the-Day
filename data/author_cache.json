@@ -65,6 +65,12 @@
     "name": "Dakarai Crowder",
     "papers": 5
   },
+  "dan negrut": {
+    "citations": 3866,
+    "h_index": 32,
+    "name": "D. Negrut",
+    "papers": 303
+  },
   "dandan zhang": {
     "citations": 0,
     "h_index": 0,
@@ -113,6 +119,12 @@
     "h_index": 1,
     "name": "Chen Haofeng",
     "papers": 6
+  },
+  "harry zhang": {
+    "citations": 281,
+    "h_index": 7,
+    "name": "Harry X. Zhang",
+    "papers": 57
   },
   "hua chen": {
     "citations": 13,
@@ -225,6 +237,12 @@
     "name": "Pei-zhuo Li",
     "papers": 6
   },
+  "peng lu": {
+    "citations": 43,
+    "h_index": 3,
+    "name": "Lulu Peng",
+    "papers": 4
+  },
   "qingyi chen": {
     "citations": 126,
     "h_index": 3,
@@ -304,6 +322,12 @@
     "h_index": 2,
     "name": "Zaid Mahboob",
     "papers": 6
+  },
+  "zeren luo": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "\u7f57\u6cfd\u4ec1 Luo Zeren",
+    "papers": 2
   },
   "zhengying zhu": {
     "citations": 50,
