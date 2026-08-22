@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T13:52:37Z",
+  "updated": "2026-08-22T13:34:08Z",
   "papers": [
     {
       "id": "2608.20084",
@@ -31,8 +31,8 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "VLM-guided TAMP",
-        "reason": "Strong intersection of VLMs with table-top manipulation; addresses real hallucination problem through principled evidence acquisition, but relies on traditional TAMP rather than end-to-end learned policies."
+        "topic": "VLM-guided Task and Motion Planning",
+        "reason": "Directly addresses VLM hallucination in long-horizon manipulation via feasibility gating; solid work on real cooking tasks but the core idea is relatively intuitive."
       },
       "verdict": "include"
     },
