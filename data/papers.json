@@ -1,6 +1,337 @@
 {
-  "updated": "2026-08-24T13:53:46Z",
+  "updated": "2026-08-25T13:55:12Z",
   "papers": [
+    {
+      "id": "2608.23478",
+      "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+      "authors": [
+        "Sangoh Lee",
+        "Sangwoo Mo",
+        "Wook-Shin Han"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models can turn multimodal context into robot actions, but their action decoders are still trained largely by behavior cloning. This supervises which motor command was demonstrated while leaving implicit the local objective served by the behavior under the instruction. Future-based supervision enriches action learning with frames, latent observations, trajectories, or motion representations, but these signals capture particular realizations of what may happen rather than the shared semantic objective of the forthcoming behavior. We propose Intention Distillation (INDI), which distills behavior-level intent into the action decoder. During training, a frozen teacher VLM interprets a demonstrated segment from the current observation, instruction, coarse action summary, and corresponding execution video. From its standard inputs, the deployed VLA recovers the resulting multimodal intent representation at an intermediate decoder layer and uses it to organize action prediction together with representations of how the behavior unfolds and what it achieves. On SimplerEnv-Bridge, INDI improves GR00T-N1.7 from 64.3% to 84.7%, and on RoboCasa Kitchen it improves the controlled GR00T-N1.7 baseline from 64.1% to 70.3%, with consistent gains on $\u03c0_{0.5}$ across both benchmarks. In real-world tasks, INDI improves average success from 62.0% to 68.7%, with gains of up to 12.0 pp on longer-horizon tasks. Further analyses show that the recovered latent is used by the decoder, captures behavior objective and execution progress, and organizes downstream predictions in an objective-dependent manner. These results show that action decoders benefit from explicitly modeling the semantic objective of the behavior they generate.",
+      "url": "https://arxiv.org/abs/2608.23478",
+      "pdf": "https://arxiv.org/pdf/2608.23478",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Robot Manipulation",
+        "reason": "Direct VLA contribution addressing action decoder learning with intent distillation, showing substantial improvements (20pp SimplerEnv, 6pp RoboCasa, real-world gains) on standard manipulation benchmarks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23320",
+      "title": "ROS2SmolVLA: Enabling Small Vision-Language-Action Models for Integration into Industrial-Grade Lightweight Robots",
+      "authors": [
+        "Nils Mandischer",
+        "Noah B\u00f6ckmann",
+        "Ludwig Holl",
+        "Lars Mikelsons"
+      ],
+      "abstract": "Industrial demand changes the paradigms of production. Due to smaller batch sizes and more variations in products, companies face a growing challenge to adopt more adaptive production systems. In particular, robot-based automation is usually static and fails to respond to constantly changing processes. Vision-Language-Action (VLA) Models are a promising opportunity to mitigate this challenge by generating robot actions based on the observed system state. However, current research either focuses on large models that cannot be computed on premise, creating compliance and security challenges, or use lab-grade robot hardware that obscures exploitation in real industrial settings. In this work, we adapt Hugging Face's SmolVLA for Universal Robots lightweight robots. Further, we release the open-source repository ROS2SmolVLA that implements an interface for ROS 2 to SmolVLA, and makes it applicable for industrial-grade hardware. By this, we allow a lenient adoption into lab and industrial environments. We validate the functionality of SmolVLA for a Universal Robots UR10e using a pick-and-place task and give implementation guidelines. Our findings support that SmolVLA is a well-suited option for small-sized tasks that need to be computed on premise.",
+      "url": "https://arxiv.org/abs/2608.23320",
+      "pdf": "https://arxiv.org/pdf/2608.23320",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Industrial VLA deployment",
+        "reason": "Practical ROS 2 integration of SmolVLA for lightweight industrial robots, but primarily a systems contribution adapting existing models rather than advancing VLA or manipulation methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23224",
+      "title": "Think Only When Needed: Prompt-Authority Control for Selective Slow-Path Intervention in Vision-Language-Action Manipulation",
+      "authors": [
+        "Zhiruo Zhou",
+        "Zelin Li",
+        "Xiwen Chen",
+        "Jiazhuo Li",
+        "Chenwei Wang",
+        "Huiming Chen",
+        "Xiaojun Zhu"
+      ],
+      "abstract": "Retrieval can efficiently and effectively augment a frozen vision--language--action (VLA) policy without retraining, yet retrieved text becomes a control intervention once it enters the executed prompt. In a matched audit, raw appended text reduces mean success from 92.47\\% to 3.00\\%, while meaningful and length-matched meaningless appends both fail on all 500 states. This result identifies \\emph{prompt-form collapse}: changing the instruction form, rather than adding useful semantics, can dominate execution. We introduce TOWN-VLA (Think Only When Needed), a prompt-authority interface that separates candidate generation from permission to alter the policy input. A fixed compatibility rule authorizes a canonical compact instruction; otherwise, the interface restores the original Base prompt exactly. Across 900 audited routes, every route follows this contract: 525 routes recover Base with matching hashes, and all 375 authorized prompts preserve the task signature. On a matched $4\\times7$ LIBERO-Plus evaluation with 10{,}030 episodes per method, success rises from 69.5\\% to 73.1\\% ($+362$ episodes; 95\\% CI 1.89--5.45 points), improving on six perturbation axes and all four suites. On a physical PiPER arm with a frozen \\pizerofive{} checkpoint, success rises from 52.7\\% to 78.7\\% over 150 trials per method ($p=3.16\\times10^{-6}$). Prompt authority is enforceable for a frozen controller; oracle-free admission calibration is the next deployment target.",
+      "url": "https://arxiv.org/abs/2608.23224",
+      "pdf": "https://arxiv.org/pdf/2608.23224",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "VLA / Retrieval Augmentation",
+        "reason": "Identifies and addresses a critical failure mode (prompt-form collapse) in retrieval-augmented VLAs with a principled prompt-authority mechanism; demonstrates substantial real-robot improvements (52.7% \u2192 78.7%, p<0.001)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23138",
+      "title": "Pointing-VLA: Typed Spatial Grounding Interfaces for Vision-Language-Action Manipulation",
+      "authors": [
+        "Xiwen Chen",
+        "Zelin Li",
+        "Zhiruo Zhou",
+        "Huiming Chen",
+        "Chenwei Wang",
+        "Xiaojun Zhu"
+      ],
+      "abstract": "Vision-language-action (VLA) models often expose spatial grounding through autoregressive text coordinates or opaque action tokens, creating brittle interfaces between multimodal reasoning and robot execution. We present Pointing-VLA, a typed hidden-state spatial readout built on Embodied-R1. Geometry-specific heads predict normalized points, object-functional grounding (OFG) heatmaps, and visual trajectories without serializing geometry as text. For the evaluated Bridge/WidowX and physical pick-place deployments, an explicit execution contract assigns PICK to source-conditioned OFG and PLACE to Pointing, providing direct stage-aligned spatial targets. Pointing-VLA achieves SOTA performance on Bridge/WidowX, averaging 72.9\\% across the evaluated four-task set without Bridge-specific finetuning under collision-enabled CuRobo execution. Pointing and OFG show complementary strengths across native and cross-dataset evaluations. The OFG/contact readout transfers to NORA-1.5, preserving or improving success while reducing recorded controller time by more than 20$\\times$; typed heads are also 6.68--6.90$\\times$ faster than Embodied-R1 text decoding on a shared external suite. When integrated as spatial guidance for a $\u03c0_{0.5}$ action policy, Pointing-VLA raises autonomous real-robot success from 52.7\\% to 80.7\\% across three visual contexts. These results establish typed spatial readouts as an efficient, inspectable interface between embodied reasoning and robot execution.",
+      "url": "https://arxiv.org/abs/2608.23138",
+      "pdf": "https://arxiv.org/pdf/2608.23138",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA spatial grounding interface",
+        "reason": "Directly improves VLA spatial grounding via typed geometric readouts instead of brittle text coordinates, with SOTA Bridge/WidowX results and 52.7%\u219280.7% real-robot gains plus significant efficiency wins."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.22990",
+      "title": "InstructMove: A Text-Indispensable Benchmark for Instruction-Following Manipulation",
+      "authors": [
+        "Mengao Zhao",
+        "Ziang Li",
+        "Chaodong Huang",
+        "Mengchen Ma",
+        "Haoyi Jiang",
+        "Yiwei Jin",
+        "Xinjie Wang",
+        "Yun Du",
+        "Xuewu Lin",
+        "Taojun Ding",
+        "Hongyu Xie",
+        "Jackson Jiang",
+        "Chunlei Yu",
+        "Kaihua Zhang",
+        "Lichao Huang",
+        "Liu Liu",
+        "Tianwei Lin",
+        "Zhizhong Su"
+      ],
+      "abstract": "Vision-language-action (VLA) models have made general-purpose robot manipulation increasingly plausible by conditioning robot actions on natural-language instructions. A key test of such generality is whether policies actually follow language instructions. Yet many manipulation benchmarks leave this ability underdetermined: the intended object or destination is often visually salient or uniquely feasible, allowing policies to succeed without grounding the instruction. We argue that instruction-following evaluation should be text-indispensable: multiple actions should be visually and physically plausible, while only one should be consistent with the language instruction. We introduce InstructMove, a text-indispensable benchmark for instruction-following manipulation. InstructMove instantiates this principle in pick-and-place scenes with semantic distractors, decomposing instruction following into category identification, attribute discrimination, spatial reasoning, and compositional pick-and-place. InstructMove supports a train-eval protocol with InstructMove training data and held-out evaluation tasks, with additional diagnostics for language dependence. Experiments with representative VLA policies show that InstructMove provides a controlled testbed for diagnosing visual shortcuts and that InstructMove simulation data can improve real-world instruction-following manipulation performance. Code: https://github.com/HorizonRobotics/RoboOrchardSim",
+      "url": "https://arxiv.org/abs/2608.22990",
+      "pdf": "https://arxiv.org/pdf/2608.22990",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Benchmark / Evaluation",
+        "reason": "Critical contribution ensuring VLA models actually ground language instructions rather than relying on visual shortcuts; text-indispensable principle is well-motivated and the benchmark directly serves core evaluation needs in instruction-following manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.22869",
+      "title": "UniMem: Unifying Multimodal Memory and Control for Vision-Language-Action Models",
+      "authors": [
+        "Lars Osterberg",
+        "Maggie Wang",
+        "Mac Schwager"
+      ],
+      "abstract": "While Vision-Language-Action (VLA) models have leveraged internet-scale pretraining and task-focused finetuning to achieve strong performance on long-horizon tasks, they often struggle with non-Markovian tasks that require memory. Existing approaches to memory typically involve additional Vision-Language-Models (VLMs) for long-term memory management, introducing a memory bottleneck and a fractured training pipeline. Conditioning on multiple historical frames can provide the VLA with access to more descriptive features of past scenes, but can degrade performance if frames are chosen at arbitrary, fixed intervals. To address these limitations, we present UniMem, a framework that unifies high-level, multimodal memory and low-level control under one backbone. UniMem employs an event classifier for memory updates, a keyframe encoder for dense spatial memory, and a keyframe caching technique to minimize overhead during policy rollouts. We evaluate UniMem across five simulation and four hardware tasks targeting sequential and spatial memory, demonstrating that our unified, single-model system outperforms fixed-interval image sampling baselines (93.4% vs. 68.2%) in simulation and hierarchical baselines (80.0% vs. 43.5%) in hardware, while offering faster inference and a simple training pipeline for easy adoption. Project website: https://losterberg3.github.io/unimem-vla/",
+      "url": "https://arxiv.org/abs/2608.22869",
+      "pdf": "https://arxiv.org/pdf/2608.22869",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA Memory & Control",
+        "reason": "Directly addresses a core VLA limitation (memory for non-Markovian tasks) with a unified framework validated on hardware with strong empirical results\u2014high impact for long-horizon manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.22800",
+      "title": "Triplet2Track: A Hierarchical System with Object-Centric Representations for Reliable Long-Horizon Manipulation",
+      "authors": [
+        "Jianxiang Liu",
+        "Gaojing Zhang",
+        "Chuan Wen",
+        "Qipeng Liu",
+        "Yuxuan Zhao",
+        "Ning Guo",
+        "Wenzhao Lian"
+      ],
+      "abstract": "Ensuring reliability in uncertain environments remains difficult for long-horizon robotic manipulation. End-to-end VLA models are data-heavy and opaque, making diagnosis and verification difficult. Hierarchical pipelines are more interpretable, but their plans are often weakly grounded in observations, weakly aligned with low-level actions, and computed without online feedback, leading to open-loop behavior and hallucinations. To address these issues, we introduce the Triplet-to-Track System (TTS), a closed-loop long-horizon imitation learning system that uses human videos to reduce reliance on robot-collected data. TTS represents high-level subgoals as instance-grounded triplets, translates them into continuous track priors for execution, and monitors task progress from observations for online replanning. Across diverse real-world long-horizon tasks, TTS achieves a 74.8\\% average success rate and supports object-level and compositional generalization.",
+      "url": "https://arxiv.org/abs/2608.22800",
+      "pdf": "https://arxiv.org/pdf/2608.22800",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Hierarchical Long-Horizon Manipulation",
+        "reason": "Directly addresses long-horizon table-top manipulation with a closed-loop hierarchical approach that balances interpretability with real-world performance; leverages human videos for data efficiency and demonstrates compositional generalization\u2014key practical improvements for learned manipulation policies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.22591",
+      "title": "WorldToken: Time-First Sequence Modeling for Robotic Imitation Learning",
+      "authors": [
+        "Chunkai Yang",
+        "Andong Yang",
+        "Chao Gao"
+      ],
+      "abstract": "Robot policies receive heterogeneous observations at each decision step, yet sequence models differ in how they organize these inputs over time. We introduce WorldToken, a time-first policy instantiation that fuses multiview images, proprioception, and task conditioning within each policy timestep into one world token. A causal temporal Transformer models the resulting world-token sequence, and a diffusion action head generates action chunks. On 23 RoboCasa tasks, an 85.3M-parameter policy trained from scratch apart from a frozen pretrained CLIP text encoder achieves 59.45% mean closed-loop success using 2,900 generated demonstrations per task. A complete factorial sweep over five dataset sizes, five model sizes, and two training seeds shows consistent gains from additional target-domain data and diminishing returns beyond moderate model size. Under same-checkpoint history truncation, reducing visible history to one or two policy timesteps lowers closed-loop success for all 50 RoboCasa policies. On RMBench Blocks Ranking, reducing visible history from 146 to 8 seconds lowers evaluator success from 95% to 28%, while an exploratory extended rollout sustains the reference swap sequence for over 850 seconds. These results establish the empirical feasibility of the complete WorldToken instantiation and characterize its data-scaling and temporal-context behavior under the tested recipes. They do not establish superiority over alternative sequence organizations or isolate which components of the complete implementation drive the observed performance.",
+      "url": "https://arxiv.org/abs/2608.22591",
+      "pdf": "https://arxiv.org/pdf/2608.22591",
+      "published": "2026-08-23",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Robot manipulation policy",
+        "reason": "Directly addresses VLA sequence modeling for tabletop manipulation with thorough multi-task evaluation, but lacks component ablations and baseline comparisons, limiting novelty and impact claims."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.22449",
+      "title": "EMPIRE: Explicit Manipulation Planning as a Learnable Intermediate Representation for Egocentric Hand-Motion Forecasting",
+      "authors": [
+        "Wen Wang",
+        "Ruibing Hou",
+        "Hong Chang",
+        "Shiguang Shan",
+        "Xilin Chen"
+      ],
+      "abstract": "Forecasting dexterous hand motions from egocentric observations is fundamental to intelligent interactive systems. Existing VLM-based methods typically map observations directly to future motions, overlooking the underlying manipulation process that governs hand-object interactions. Moreover, end-to-end optimization couples manipulation learning with motion synthesis, causing motion-generation gradients to interfere with the pre-learned manipulation-aware representations. To overcome these limitations, we propose EMPIRE, a two-stage framework that introduces Explicit Manipulation Planning as an Intermediate Representation for Egocentric hand-motion forecasting. Stage I: Learn to Plan. EMPIRE first learns explicit manipulation plans from multimodal context to capture the progression of hand-object interactions. Stage II: Learn to Act. A motion generator synthesizes future bimanual hand motions conditioned on frozen planner representations, preventing motion-generation gradients from affecting manipulation planning. To support our method, we further construct EMPIRE-651K, a bimanual hand-motion forecasting dataset comprising 650,910 training windows across 111 tasks, each paired with an explicit per-hand manipulation plan. Under identical training and evaluation protocols, EMPIRE achieves state-of-the-art forecasting accuracy, with an MPJPE of 84.53 mm and a finger-relative error of 38.97mm. We release the code and dataset at https://github.com/wangwen-banban/EMPIRE.",
+      "url": "https://arxiv.org/abs/2608.22449",
+      "pdf": "https://arxiv.org/pdf/2608.22449",
+      "published": "2026-08-23",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous hand motion / Bimanual manipulation",
+        "reason": "Solid work on dexterous bimanual manipulation with explicit planning representations and a large dataset; however, it targets human hand forecasting rather than robot manipulation policies, limiting direct relevance despite conceptual overlap."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.20084",
       "title": "Evidence-Gated Task and Motion Planning with Vision-Language Models",
