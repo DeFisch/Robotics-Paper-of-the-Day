@@ -1,6 +1,540 @@
 {
-  "updated": "2026-08-25T13:55:12Z",
+  "updated": "2026-08-26T14:01:31Z",
   "papers": [
+    {
+      "id": "2608.24882",
+      "title": "Latent Action as Intention Enables Efficient Future Imagination for World Action Models",
+      "authors": [
+        "Xiang Li",
+        "Yupeng Zheng",
+        "Songen Gu",
+        "Huailiang Ma",
+        "Feng Yu",
+        "Xian Nie",
+        "Shanshuai Yuan",
+        "Yujie Zang",
+        "Weize Li",
+        "Shuai Tian",
+        "Moyang Liu",
+        "Ya-Qin Zhang",
+        "Wenchao Ding"
+      ],
+      "abstract": "World action models (WAMs) improve robot control by modeling how observations evolve, but generating future observations at test time incurs substantial latency. Fast-WAM removes this process for efficiency; however, our matched implementations show lower generalization for Fast-WAM than for future-aware alternatives, especially with scarce robot demonstrations and in out-of-distribution scenarios. To bridge this gap, we introduce **LAWA**, a WAM architecture that uses compact latent actions as an operational representation of future intentions, enabling efficient test-time future imagination without generating future observations. Specifically, a discrete tokenizer enhanced by action-free pre-training produces manipulation-centric codebook targets. LAWA jointly denoises a continuous latent state anchored to these targets with executable action chunks while omitting the future-video branch at inference. On RoboCasa, LAWA achieves state-of-the-art average success rates of 65.6% and 80.8% in the few-shot and full data settings, improving over the matched Fast-WAM baseline by 9.6 and 4.5 points, respectively. It also preserves the performance level of the matched Joint-WAM variant while requiring 42.9% lower inference latency. LAWA also demonstrates competitive zero-shot robustness on LIBERO-Plus and superior performance on real-world tasks. These results show that future imagination need not be discarded: retaining it with compact latent actions yields an effective trade-off among performance, generalization, and latency. Code and models will be released.",
+      "url": "https://arxiv.org/abs/2608.24882",
+      "pdf": "https://arxiv.org/pdf/2608.24882",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Efficient World Models for Manipulation",
+        "reason": "Core contribution to learned manipulation policies via efficient world action models with strong RoboCasa/LIBERO results; pragmatic latent-action design addresses real inference bottleneck but is somewhat incremental on prior WAM work."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24714",
+      "title": "GaussianWAM: Distilling Geometry and Semantics from 3D Gaussian Fields into World-Action Models",
+      "authors": [
+        "Zijian Zhang",
+        "Yuqing Jiang",
+        "Weitao Zhou",
+        "Minglei Li",
+        "Jinhao Zhang",
+        "Yao Mu",
+        "Xiaofan Li",
+        "Hao Zhao",
+        "Haibao Yu"
+      ],
+      "abstract": "World-Action Models (WAMs) jointly learn future visual prediction and action generation, using video dynamics as a representation-learning signal for robotic manipulation. However, their video latents are primarily optimized for visual prediction and are not explicitly encouraged to preserve cross-view geometric structure or spatially localized, object-relevant semantics. We propose \\textbf{GaussianWAM}, a training-time representation-enhancement framework that organizes geometric and semantic supervision through a 3D Gaussian field. Given synchronized multi-view observations, frozen geometry and vision foundation models provide depth, camera parameters, and dense semantic features. GaussianWAM binds these heterogeneous signals to shared Gaussian primitives and renders spatially aligned semantic, depth, and coverage targets, which are distilled into the current-observation representations of the WAM. All teacher models, Gaussian components, and auxiliary prediction heads are removed after training, leaving the original WAM inference path without additional modules or forward computation. On LIBERO-Plus, GaussianWAM improves FastWAM from 52.05\\% to 71.29\\% and Cosmos Policy from 71.52\\% to 77.30\\%. Direct CLIP and VGGT distillation already establishes a strong FastWAM baseline of 69.37\\%, while Gaussian-field unification further improves it to 71.29\\%, supporting the benefit of spatially organizing heterogeneous teacher signals. GaussianWAM also improves performance on standard LIBERO and shows positive transfer trends on RoboTwin and real-world manipulation. These results suggest that training-time Gaussian distillation provides a practical way to inject geometry- and semantics-related supervision into WAM representations without changing their deployment architecture.",
+      "url": "https://arxiv.org/abs/2608.24714",
+      "pdf": "https://arxiv.org/pdf/2608.24714",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "WAM Representation Distillation",
+        "reason": "Strong empirical improvements (19+ points on FastWAM) for table-top manipulation through Gaussian-organized multi-view supervision; solid contribution to learned policies, though primarily architectural/distillation rather than fundamental innovation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24603",
+      "title": "Gripper-aware Vision Language Action Models",
+      "authors": [
+        "Hanyi Zhang",
+        "Zihong Luo",
+        "Tianyu Li",
+        "Khang Nguyen",
+        "Basu Hela",
+        "Shreyas Kumar",
+        "Ngoc Duy Tran",
+        "Feng Dai",
+        "Charith Munasinghe",
+        "Jorge Pe\u00f1a Queralta",
+        "Giovanni Toffetti",
+        "Khoa Vo",
+        "Ngan Le",
+        "Ravi Prakash",
+        "Quan Vuong",
+        "Tung D. Ta",
+        "Long Hu",
+        "Anh Nguyen",
+        "Baoru Huang"
+      ],
+      "abstract": "Vision language action models (VLAs) have advanced general purpose robotic grasping and manipulation by enabling robots to interpret visual observations and natural language instructions to generate executable action sequences. However, existing VLAs often implicitly assume gripper invariance, despite grasping strategies being inherently embodiment-dependent. Different gripper types, such as parallel-jaw and suction, usually require distinct interaction strategies to achieve the same grasping objective. Moreover, current datasets for VLAs predominantly rely on parallel-jaw grippers, limiting gripper-aware learning. To address this gap, we introduce MiGA, a multi-gripper-aware dataset spanning five distinct gripper types across multiple robots with 103,000 demonstrations, explicitly capturing strategy divergence under shared task objectives. We further propose GVLA, which combines a new multi-gripper tokenizer with adapter-based policy routing. Our new gripper encoding induces structured embedding information that balances parameter sharing and strategy differentiation, while layer-wise probing confirms meaningful gripper-conditioned representations for VLAs. Intensive experiments in both simulation and real-world robots show that our GVLA outperforms the current baselines across evaluated settings. Our method also improves zero-shot generalization or few-shot adaptation to new objects or unseen tasks, and enable more efficient gripper adaptation.",
+      "url": "https://arxiv.org/abs/2608.24603",
+      "pdf": "https://arxiv.org/pdf/2608.24603",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Gripper-aware manipulation",
+        "reason": "Directly addresses embodiment-dependent grasping in VLAs with a substantial multi-gripper dataset and demonstrates clear improvements in simulation and real-robot experiments."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24572",
+      "title": "Fiber Optic Sensing Glove for High Performance Dexterous Manipulation Capture",
+      "authors": [
+        "J. D. Peiffer",
+        "Taylor Niehues",
+        "Li Guan",
+        "Ziyi Kou",
+        "Ergys Ristani"
+      ],
+      "abstract": "Capturing hand pose during dexterous manipulation remains difficult: vision-based methods degrade under occlusion and challenging lighting, while sensorized gloves, though occlusion-free, are prone to drift and magnetic interference and rarely match motion-capture accuracy. We introduce a fiber optic sensing glove for full hand pose tracking that targets these failure modes, using multi-core shape-sensing fibers that capture each fiber's full 3D shape rather than curvature alone. A novel pipeline registers each reconstructed fiber shape to a common hand reference frame, and a new inverse-kinematics solver reconstructs full hand pose at 60 Hz using curve constraints. Benchmarked on a 2-hour dataset of dexterous object manipulation tasks across 5 subjects, the glove achieves 7.2 mm mean fingertip position error against motion capture ground truth, reduced to 4.9 mm by a one-time factory calibration of the fiber routing hub that transfers across users and sessions. These capabilities enable high-fidelity data capture and bimanual virtual teleoperation - both essential to advancing the robotics field.",
+      "url": "https://arxiv.org/abs/2608.24572",
+      "pdf": "https://arxiv.org/pdf/2608.24572",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Hand Pose Sensing",
+        "reason": "Solid sensing contribution for capturing dexterous manipulation; useful for teleoperation-based data collection in manipulation learning, but not directly addressing robot arm control or policy learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24242",
+      "title": "A Durable Vision-Based Tactile Fingertip for Robotic Manipulation",
+      "authors": [
+        "F. Richard Cottrell",
+        "Megha H. Tippur",
+        "Edward H. Adelson"
+      ],
+      "abstract": "Currently available commercial vision-based tactile sensors provide rich contact information but remain vulnerable to abrasion and repeated concentrated loading, limiting their use in demanding robotic applications. This work presents a durable tactile fingertip comprising a soft silicone gel with a nonpigmented, textured, thin thermoplastic-polyurethane protective film and a replaceable sensing cartridge. Durability was evaluated using two accelerated laboratory procedures: a rotating-drum sanding test and a repetitive probe test applying 39.2 N (4.0 kgf) at 45 cycles per minute. Under the defined sanding conditions, the developed sensor reached the protective-film rupture endpoint after approximately 2-3 hours. During repetitive probe testing, all nine developed sensors remained functionally usable when testing was discontinued: seven after 5 days, one after 6 days, and one after 8 days. Commercial GelSight Mini and DIGIT specimens exhibited initial surface-film rupture after approximately 24-30 seconds of sanding and 25-35 minutes of repetitive loading. Damage to the developed sensor progressed gradually and produced little interference with tactile imaging at the test endpoints. These observations establish durability improvements of more than two orders of magnitude under the defined accelerated conditions. Combining increased durability, gradual degradation, and rapid cartridge replacement offers a practical approach to maintainable vision-based tactile sensing for demanding robotic applications.",
+      "url": "https://arxiv.org/abs/2608.24242",
+      "pdf": "https://arxiv.org/pdf/2608.24242",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Tactile Sensing Hardware",
+        "reason": "Practical durability improvements for vision-based tactile sensors critical to manipulation tasks, but primarily an engineering optimization rather than advancing manipulation methods or learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24162",
+      "title": "Robust Slip Detection and Material Classification via Spatiotemporal Transformers on a Uniformly-Illuminated Visuo-Tactile Sensor",
+      "authors": [
+        "Ziyang Ma",
+        "Yuhao Sun",
+        "Zichen Ai",
+        "Xiangyang Ji",
+        "Bin Fang"
+      ],
+      "abstract": "Tactile sensing is central to robotic manipulation, among which slip detection stands out as a quintessential and critical task. However, existing slip datasets are predominantly limited to binary classification, lacking fine-grained directional perception. To address this limitation, we propose a visuo-tactile sensor featuring customized uniform RGB illumination, alongside a unified perception framework. At the hardware level, the sensor achieves high-precision, sub-millimeter depth reconstruction. Based on this capability, we collect a multi-task visuo-tactile dataset encompassing 15 objects, synchronously generating depth information for each data sample. Algorithmically, we design a dual-head TimeSformer network to process dynamic spatiotemporal slip. On unseen objects, this network achieves robust accuracies of 95.5% and 91.5% for 3-class contact state prediction and fine-grained 8-class slip direction classification, respectively. Furthermore, static tactile-based object class recognition utilizing a ResNet-50 backbone yields an outstanding accuracy of 98.8% across 15 categories. The proposed hardware-software framework provides high-fidelity feedback and a powerful multi-modal perception baseline for complex robotic manipulation.",
+      "url": "https://arxiv.org/abs/2608.24162",
+      "pdf": "https://arxiv.org/pdf/2608.24162",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Tactile Perception / Slip Detection",
+        "reason": "Novel visuo-tactile hardware and fine-grained slip detection dataset strengthen perception for robotic manipulation, though primarily a perception contribution rather than policy learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24115",
+      "title": "PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control",
+      "authors": [
+        "Suhwan Choi",
+        "Jaeyoon Jung",
+        "Sungkyung Kim",
+        "Yunsung Lee",
+        "Youngjae Yu"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) can integrate long visual histories, reason under partial observability, and infer behavior from a few examples. Yet vision-language-action (VLA) models generally inherit pretrained representations without using this contextual capacity as episode memory. Memory-dependent policies address this gap through purpose-built history mechanisms. PonderPounce instead reuses an MLLM's native causal context as robot memory. Ponder, a System2 MLLM, accumulates episode observations, demonstrations, and prior cognition in its native causal context and can generate subgoal text and demonstration reasoning for internal use. Pounce, a System1 VLA, receives the current observation, instruction, and proprioception directly; through the Ponder--Pounce interface, it asynchronously receives only the newest continuous cognition token and its age. Both are jointly trained end to end without a purpose-built memory module or separate bridge pretraining. Optimized serving achieves p50 latencies of 78ms for cognition refresh and 25ms for action-model invocation, supporting 20Hz action playback. On RoboMME with base-scale training data, PonderPounce reaches 60.83% with 9B and 50.04% with 0.8B under the same Pounce architecture and interface, versus 44.51% for FrameSamp+Modul and 17.93% for the current-observation \u03c0_{0.5}. With 9x data, it reaches 75.54% versus 57.88% for FrameSamp+Modul. On RoboCasa-DC, the same interface learns from action supervision alone and reaches 12.5% versus 11.6% for the strongest published demonstration-conditioned baseline, falling to 8.6% when cognition is replaced by a learned null state.",
+      "url": "https://arxiv.org/abs/2608.24115",
+      "pdf": "https://arxiv.org/pdf/2608.24115",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA with MLLM Memory",
+        "reason": "Directly addresses how to leverage pretrained MLLMs' reasoning and memory for VLA; clever architectural design with solid empirical gains (60.83% on RoboMME vs 44.51% baseline) and practical latencies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24111",
+      "title": "Trajectory-Level Continuous Action Representation for Robotic Manipulation",
+      "authors": [
+        "Tong Yang",
+        "Jingkai Jia",
+        "Yuecheng Xu",
+        "Xueyao Chen",
+        "Chi Zhang",
+        "Wenqiang Zhang"
+      ],
+      "abstract": "We propose CAT, a trajectory-level continuous action representation framework for robotic manipulation. Existing visuomotor systems often entangle action representation with control frequency or rely on fixed temporal parameterizations. This leads to representational redundancy at high sampling rates and limits the modeling of critical motion. CAT instead encodes action trajectories within a fixed real-time interval into a set of continuous latent tokens. To ensure temporal consistency across varying control frequencies, we further incorporate a frequency-aware positional encoding that establishs a shared temporal coordinate system. Trajectory-level regularization further stabilizes the latent representation. This approach prevents representation growth with timestep density and avoids reliance on predefined temporal parameterizations. Extensive system-level evaluations on LIBERO, MimicGen, and real-world long-horizon manipulation tasks demonstrate that CAT-based policies consistently outperform both competitive VQ-based and continuous visuomotor baselines under matched training settings. Across various model backbones and control frequencies, CAT consistently improves success rates. These results highlight the advantages of trajectory-level continuous action modeling for scalable robotic manipulation across varying control rates.",
+      "url": "https://arxiv.org/abs/2608.24111",
+      "pdf": "https://arxiv.org/pdf/2608.24111",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Action Representation for Manipulation",
+        "reason": "Directly addresses control-frequency-agnostic action modeling in visuomotor policies with comprehensive evaluation on learned manipulation benchmarks and real systems."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24101",
+      "title": "TrAct: Bridging Robot Control and Visual Prediction with Visual Tracks",
+      "authors": [
+        "Zhi Cao",
+        "Howard Ji",
+        "Kevin Zhang",
+        "Kuangzhi Ge",
+        "Li Fei-Fei",
+        "Jiajun Wu",
+        "Huang Huang"
+      ],
+      "abstract": "Robot actions are inherently embodiment-specific and only weakly aligned with image-space visual changes, limiting their effectiveness as conditioning signals for robot world models. In contrast, visual tracks provide an embodiment-agnostic representation of how task-relevant points move through a scene, offering dense image-space guidance for accurate and spatially precise future video prediction. Building on this observation, we propose TrAct, a world-model-based robot decision-making framework that uses visual tracks as an intermediate interface between control and prediction. TrAct consists of three components: a Vision-Language-Action-and-Track model (VLAT) that jointly predicts candidate actions and corresponding visual tracks from the current observation and language instruction; a track-conditioned world model (TWM) that predicts future visual outcomes conditioned on the proposed tracks; and a vision-language reward model (VLAC) that scores the predicted outcomes. At inference time, VLAT generates candidate action-track pairs, TWM rolls out their visual consequences, and VLAC selects the track whose predicted outcome best satisfies the instruction; the action paired with the selected track is then executed by the robot. Experiments on the proposed LIBERO-INTEGRAL benchmark and real-world Franka manipulation show that TrAct improves success rates from 27% to 55% in simulation and from 49% to 76% on real-world tasks compared with the strong VLA baseline $\u03c0_{0.5}$. Furthermore, TWM consistently improves video prediction quality over the action-conditioned world model (AWM). These results demonstrate that visual tracks provide an effective shared interface between robot control and visual prediction, enabling more accurate world modeling and stronger robot generalization.",
+      "url": "https://arxiv.org/abs/2608.24101",
+      "pdf": "https://arxiv.org/pdf/2608.24101",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Track-guided robot manipulation",
+        "reason": "Directly addresses VLA+world-model challenge by using visual tracks as embodiment-agnostic interface; strong real-world validation on Franka manipulation with 55% (sim) and 76% (real) success rates vs \u03c0\u2080.5 baseline."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24042",
+      "title": "Hierarchical Skill Retrieval for Data-Efficient Adaptation of Vision-Language-Action Models",
+      "authors": [
+        "Haoran Hao",
+        "Shahram Najam Syed",
+        "Jeff Schneider",
+        "Jeffrey Ichnowski"
+      ],
+      "abstract": "While Vision-Language-Action (VLA) models pretrained on large-scale robot datasets provide a strong foundation for robot manipulation, their performance can degrade when adapted to new tasks with limited task-specific demonstrations. Retrieval offers a practical way to reuse existing demonstrations for data-efficient adaptation, but existing methods often rely on visual similarity, state-action representations, or task-level language matching. These approaches may overlook the hierarchical structure of long-horizon manipulation tasks, where complete task matches are rare but reusable skills are often abundant. To address this challenge, we propose Hierarchical Skill Retrieval (HSR), a retrieval framework for data-efficient VLA adaptation. Specifically, HSR first decomposes a target task into candidate skill sequences. It evaluates each plan based on both semantic plausibility and skill reliability estimated from the prior dataset. The selected decomposition is then used for hybrid retrieval. This combines subtask-level language retrieval with behavior-feature reranking to identify demonstrations that are both semantically relevant and compatible with the target task. Finally, we adapt the policy through a two-stage pretraining and finetuning pipeline, which separates general skill acquisition from task-specific adaptation. Experiments on the LIBERO benchmark and several real-world robot manipulation tasks show that HSR improves the average success rate by 10.3% and 21.3% over the strongest baseline, respectively. These results demonstrate the effectiveness of structured skill-level retrieval for data-efficient VLA adaptation. Videos and code are available at https://hoar012.github.io/HSR-Project.",
+      "url": "https://arxiv.org/abs/2608.24042",
+      "pdf": "https://arxiv.org/pdf/2608.24042",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA adaptation via hierarchical skill retrieval",
+        "reason": "Directly addresses data-efficient VLA adaptation through structured skill decomposition and hybrid retrieval, with strong empirical gains (10\u201321%) on benchmarks and real-world manipulation tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.24026",
+      "title": "NeurRAFT: Robot Motion Planning via Anchor-Level Flow Matching with Clearance-Aware Preference Tuning",
+      "authors": [
+        "Sibo Tian",
+        "Chang Liu",
+        "Minghui Zheng",
+        "Xiao Liang"
+      ],
+      "abstract": "Recent end-to-end neural motion planners generate trajectories from raw sensor observations, avoiding the privileged geometric models required by classical planners. However, collision-free planning in cluttered environments remains challenging. We present NeurRAFT, a generative planning framework based on anchor-level flow matching and clearance-aware preference tuning. Unlike prior neural planners that model dense waypoint sequences and spend capacity on redundant local details and smoothness, NeurRAFT operates on compact anchor waypoints. We train the planner using a Jacobian-weighted loss that accounts for the task-space impact of each anchor. At inference, the anchors are generated in two integration steps, followed by cubic-spline interpolation to recover a smooth, full-resolution trajectory. Since imitation learning from positive demonstrations cannot distinguish collision-free from near-collision trajectories, collision-prone behaviors persist at test time. Rather than relying on post-hoc corrections, we directly reshape the pretrained planner's distribution toward safer solutions without augmenting inference. Specifically, Direct Preference Optimization shifts probability mass toward trajectories with larger obstacle clearance, with the resulting improvement directly absorbed into the planner parameters. Experiments show substantial improvements over state-of-the-art planners, while real-world experiments demonstrate zero-shot transfer to a Franka robot under noisy and partially occluded depth observations. Video results available at https://neurraft.github.io/.",
+      "url": "https://arxiv.org/abs/2608.24026",
+      "pdf": "https://arxiv.org/pdf/2608.24026",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Motion Planning / Trajectory Generation",
+        "reason": "Solid neural planner for robot arms with real-world Franka validation, but motion planning is adjacent rather than core to VLA/manipulation; technique combination is competent but incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23983",
+      "title": "Sensorless damage-safe grasping",
+      "authors": [
+        "Yusei Shuto",
+        "Danilo Vasconcellos Vargas"
+      ],
+      "abstract": "Robotic fruit harvesting must hold produce securely without bruising it, yet compression stiffness varies several-fold with ripeness within a single species, so no fixed grip force spans the range. Rather than tune force, we bound deformation: a controller closes the gripper until the object's estimated compression strain reaches a user-specified limit $\\varepsilon$, using only the encoder position and motor-effort signal on every servo gripper---no tactile or force-torque sensor. Dividing an effort-based contact force by a lower bound on object stiffness makes the stop provably conservative---true compression stays at or below $\\varepsilon$---for any $\\varepsilon$ above a contact-detection strain floor we identify and quantify: robust detection itself spends compression, linearly in closing speed, making speed an explicit throughput--gentleness knob. Unlike a hand-tuned force threshold, $\\varepsilon$ is a certified, size-scaling, operator-interpretable damage limit, and a ready safe-action parameter for learned grasping policies. In MuJoCo simulation over a realistic fruit-stiffness range, under a sensor-noise model calibrated to the real servo, the controller holds $\\ge 98\\,\\%$ grasp at $0\\,\\%$ damage across all medium-to-firm stiffnesses for the entire certified $\\varepsilon$ range, which neither fixed-force baseline attains; on stiffness-graded 3D-printed TPU cubes it matches baseline grasp success at roughly half the grip force and cuts soft-object damage from $100\\,\\%$ to $40\\,\\%$.",
+      "url": "https://arxiv.org/abs/2608.23983",
+      "pdf": "https://arxiv.org/pdf/2608.23983",
+      "published": "2026-08-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Sensorless damage-aware grasping",
+        "reason": "Well-engineered solution for gentle object manipulation using only servo feedback; certified damage bounds are valuable for learned policies, but the approach is somewhat application-specific and incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23863",
+      "title": "DreamLedger: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops",
+      "authors": [
+        "Xianyao Li",
+        "Ruitong Tian",
+        "Rui Min",
+        "Fang Xu",
+        "Jing Du"
+      ],
+      "abstract": "Robots are beginning to act on world-model predictions, yet reliability is still expressed through instantaneous, model-internal signals. DreamLedger instead treats reliability as a persistent deployment object: an execution-settled credit file recording how often consumed predictions are borne out, indexed by operating condition, region, and prediction horizon, and consulted before each use. Each consumed prediction is registered as a claim; attributable outcomes are settled against arriving reality at zero labeling cost, an attribution stage excludes measurement-contaminated outcomes, and a settlement-supervised head complements sparse bins. The resulting credit gates consumption: low-credit predictions shorten the dependent horizon or trigger additional observation; every reliance event remains auditable via dependency tickets and replayable logs. We evaluate DreamLedger in three simulated domains (indoor flight, tabletop manipulation, 2D navigation), via mounts on unmodified DreamerV3, TD-MPC2, and V-JEPA 2-AC, and on a real Franka manipulator. Claim failure is dose-monotone in all 12 held-out condition-horizon cells. Credit-gated planning reduces burned imagination (consumed claims that later fail to redeem) by 62% (95% CI 43-81%) versus blind consumption, with equal success and comparable collision rates. At matched risk targets, persistent books cut verification probes from 1.00 to 0.36/episode in manipulation, at success 0.94 versus 0.98; settlement-grounded calibration retains moderate, seed-consistent operating points unlike raw instantaneous gates. The same trust layer operates across decoder-, latent-, and token-space interfaces, including V-JEPA 2-AC settled on real robot frames. On hardware, settlement remains operational under real sensing and contact noise, a deployment failure loop is re-priced online, and all 1,062 registered spends replay from the audit logs.",
+      "url": "https://arxiv.org/abs/2608.23863",
+      "pdf": "https://arxiv.org/pdf/2608.23863",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "World-Model Reliability & Deployment",
+        "reason": "Novel reliability-tracking framework for world-model predictions with real robot validation on Franka; 62% reduction in prediction failures directly improves learned manipulation policy robustness in deployment."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.23831",
+      "title": "Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency",
+      "authors": [
+        "Brian Zhu",
+        "Momen Khalil",
+        "E Harrison",
+        "Emanuele Poggi",
+        "Philipp Schmitt",
+        "Bernd Kast",
+        "Philine Meister",
+        "Pranav Atreya",
+        "Qiyang Li",
+        "Finn Ferchau",
+        "Cesar Colmenero",
+        "Yash Shahapurkar",
+        "Gokul Narayanan",
+        "Melih Erdogan",
+        "Kai Wurm",
+        "Georg von Wichert",
+        "Oier Mees",
+        "Eugen Solowjow",
+        "Andrew Wagenmaker",
+        "Sergey Levine"
+      ],
+      "abstract": "While reinforcement learning (RL) allows generalist robot policies to continually improve during deployment, the large model size of modern generalist policies, such as VLAs, poses a fundamental obstacle to effective RL improvement. In particular, their severe inference latency---which can lead to pauses or jerky movements---can alter the effective environment dynamics and, if not correctly accounted for, break the Markov assumption that RL relies on, causing standard RL algorithms to fail completely. In this work, we introduce a latency-aware framework, Asynchronous RL with Intermediate Information (ARLI), that enables RL-based improvement of generalist policies under inference delays. Our framework builds on asynchronous inference approaches, which interleave action generation with execution to hide latency, and addresses its incompatibility with RL by providing a low-latency RL policy design that maximizes reactivity within the inference window through two contributions: state augmentations that restore near-Markovian structure by incorporating committed actions and a mid-inference observation. We evaluate our approach across simulated and real-world manipulation tasks, and find that it enables effective finetuning under inference delays where standard RL fails entirely, even matching or exceeding the performance of standard RL in idealized no-latency settings.",
+      "url": "https://arxiv.org/abs/2608.23831",
+      "pdf": "https://arxiv.org/pdf/2608.23831",
+      "published": "2026-08-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Oier Mees",
+        "reason": "curated (Oier Mees)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA RL Finetuning under Latency",
+        "reason": "Directly tackles a critical practical problem in VLA deployment\u2014RL finetuning under inference latency\u2014with a principled framework (ARLI) that restores Markovian structure through state augmentations; real-world results on manipulation tasks."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.23478",
       "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
@@ -29,8 +563,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA / Robot Manipulation",
-        "reason": "Direct VLA contribution addressing action decoder learning with intent distillation, showing substantial improvements (20pp SimplerEnv, 6pp RoboCasa, real-world gains) on standard manipulation benchmarks."
+        "topic": "VLA action learning",
+        "reason": "Directly improves VLA action decoders via behavior intent distillation from teacher VLMs; shows substantial gains (84.7% on SimplerEnv-Bridge, +6.7pp real-world) with principled approach to richer action supervision."
       },
       "verdict": "include"
     },
@@ -61,11 +595,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
+        "relevance": 8,
         "quality": 6,
         "novelty": 5,
-        "topic": "Industrial VLA deployment",
-        "reason": "Practical ROS 2 integration of SmolVLA for lightweight industrial robots, but primarily a systems contribution adapting existing models rather than advancing VLA or manipulation methods."
+        "topic": "VLA deployment & industrial integration",
+        "reason": "Direct application of SmolVLA to UR robots with ROS2 tooling\u2014practical for deployment but limited methodological novelty; validation is narrow (single pick-and-place task)."
       },
       "verdict": "include"
     },
