@@ -1,6 +1,526 @@
 {
-  "updated": "2026-08-27T22:56:04Z",
+  "updated": "2026-08-28T23:00:41Z",
   "papers": [
+    {
+      "id": "2608.27406",
+      "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
+      "authors": [
+        "Kechen Liu",
+        "Ola Shorinwa"
+      ],
+      "abstract": "State-of-the-art action-conditioned video models are typically restricted to a single robot embodiment, preventing them from leveraging the vast corpus of heterogeneous video data that contains rich signals for learning generalizable physics. To bridge this gap, we introduce CLAP, a framework for cross-embodiment action-conditioned video generation capable of being trained on diverse, internet-scale videos across human and robotic agents. CLAP is grounded in the insight that universal physical laws govern spatiotemporal dynamics regardless of the actor. However, cross-embodiment learning is non-trivial because action representations vary sharply across robot platforms and are typically absent in human videos. CLAP addresses this fundamental challenge through the following core contributions. First, CLAP reconciles disparate action spaces using end-effector poses, language instructions, and latent actions. Second, to resolve their individual limitations, CLAP introduces a curriculum-based cross-embodiment learning recipe that first learns foundational physical priors across unlabeled video data using latent actions and subsequently grounds them in end-effector action spaces for zero-shot deployment to real-world tasks. Crucially, CLAP approaches or surpasses state-of-the-art single-embodiment video models in challenging environments like DROID. These performance advantages compound via few-shot adaptation to establish a novel paradigm for training single-embodiment video world models. Ultimately, CLAP delivers the most comprehensive suite of action-conditioned video world models to date - spanning diverse action-conditioning spaces (end-effector, language, and latent) and robot morphologies (including cross-embodiment, DROID, Bridge, bimanual YAM robots, and G1 humanoids). We open-source all code and models. Project Website at https://omni-clap.github.io .",
+      "url": "https://arxiv.org/abs/2608.27406",
+      "pdf": "https://arxiv.org/pdf/2608.27406",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Cross-embodiment Video World Models",
+        "reason": "Directly addresses VLA generalization across robot embodiments via physics-grounded video models; principled action-space reconciliation with strong SOTA-competitive empirical results on table-top manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.27384",
+      "title": "FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference",
+      "authors": [
+        "Zekai Li",
+        "Jiaming Tang",
+        "Zhijian Liu"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models are increasingly promising for robotic manipulation, yet their real-world deployment remains bottlenecked by high inference latency and unstable asynchronous execution. This challenge is particularly pronounced in flow-matching-based VLA models, where action decoding requires multiple iterative steps conditioned on the VLM context. While efficient inference methods improve control frequency and asynchronous methods reduce execution idle time, existing approaches often fail to jointly achieve low-latency inference and accurate, temporally consistent asynchronous execution. We introduce \\textbf{FlashVLA}, a streaming action decoding framework that addresses both challenges in a unified formulation. FlashVLA maintains a streaming action buffer with multiple chunks at different noise levels and decodes them using chunk-wise causal attention. This design allows FlashVLA to produce one executable action chunk per inference step. Moreover, its chunk-wise autoregressive formulation implicitly preserves action continuity, enabling smooth asynchronous execution without extra future-state conditioning. Across extensive simulated and real-world experiments, FlashVLA substantially improves inference speed while maintaining strong task performance. It can achieve $\\geq$30\\,Hz control frequency on a single GPU with smooth asynchronous inference in real-world deployment.",
+      "url": "https://arxiv.org/abs/2608.27384",
+      "pdf": "https://arxiv.org/pdf/2608.27384",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA Inference Optimization",
+        "reason": "Directly addresses a critical practical bottleneck (inference latency) in real-time VLA deployment for manipulation with concrete performance metrics and real-world validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.27225",
+      "title": "STEP: State-Aware Task Estimation and Planning with Multi-Modal LLMs for Human-Robot Collaboration",
+      "authors": [
+        "Maitrey Gramopadhye",
+        "Prakash Baskaran",
+        "Xiao Liu",
+        "Songpo Li",
+        "Soshi Iba"
+      ],
+      "abstract": "Effective human-robot collaboration in industrial settings requires robots to understand human intentions and assist with task planning, reducing workload. Recent works have explored the use of Multi-modal Large Language Models (MM-LLMs) for task planning in such data-scarce scenarios, leveraging in-context learning to interpret user actions and generate long-horizon action plans in natural language. However, MM-LLMs inherently lack an understanding of system states and do not track state transitions, often leading to hallucinated actions that deviate from the intended goal. Additionally, generating action plans in natural language tends to limit the generated plans to a high level, introducing ambiguity in action execution. To address these limitations, we propose the State-aware Task Estimator and Planner (STEP), which prompts a MM-LLM to explicitly estimate the state of the system and predict the state transitions resulting from executed actions. By forecasting future states alongside actions, STEP ensures task-convergent planning while also providing additional assistance parameters necessary for executing the predicted actions. We evaluate STEP in a simulated environment using a robot assembly task. Our approach outperforms the state-of-the-art by 32.8% in action executability and 14.8% in final-state error.",
+      "url": "https://arxiv.org/abs/2608.27225",
+      "pdf": "https://arxiv.org/pdf/2608.27225",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "State-Aware LLM Planning",
+        "reason": "Addresses real MM-LLM hallucination problems for assembly planning with explicit state tracking, but simulation-only evaluation and incremental contribution over standard planning approaches limit impact for learned manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.27079",
+      "title": "GRAFT: Grounded and Efficient Online Reinforcement Adaptation for Fine-Grained Robot Manipulation",
+      "authors": [
+        "Yibo Qiu",
+        "Haoliang Ye",
+        "Shu'ang Sun",
+        "Zan Huang",
+        "Ronald X Xu",
+        "Mingzhai Sun"
+      ],
+      "abstract": "Pretrained vision-language-action (VLA) policies provide strong priors for robot manipulation, yet adapting them online to fine-grained biomedical tasks remains challenging. Task success often hinges on subtle, view-dependent visual cues, while task-level rewards provide little guidance about which regions matter, making it difficult to learn task-relevant visual grounding from limited real-robot interaction. Online adaptation is further constrained by the computational cost of VLA inference and replay-based updates. We introduce GRAFT (Grounded Reinforcement Adaptation for Fast Task Learning), a framework for efficient online VLA adaptation through grounded perception. GRAFT uses region-level supervision to learn view-specific visual anchors that focus perception on task-relevant local cues without requiring region proposals at deployment. It further combines single-step action generation with cached visual-language prefix reuse to accelerate online learning. Across four biomedical manipulation tasks, GRAFT improves success rates by 25 percentage points under matched adaptation budgets, while reducing the computational overhead of online policy updates.",
+      "url": "https://arxiv.org/abs/2608.27079",
+      "pdf": "https://arxiv.org/pdf/2608.27079",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA Online Adaptation",
+        "reason": "Directly tackles online adaptation of pretrained VLA models for fine-grained table-top manipulation with limited real-robot interaction; combines grounded perception with computational efficiency."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.27033",
+      "title": "Riemann-1.0: An Embodied World Action Model for Physical AI",
+      "authors": [
+        "Haofeng Sun",
+        "Jiangbo Pei",
+        "Fei Kang",
+        "Zexiang Liu",
+        "Yaokun Li",
+        "Boyi Jiang",
+        "Hua Xue",
+        "Cindy Zhou",
+        "Wei Li",
+        "Yichen Wei",
+        "Mengyin An",
+        "Fanliang Zhao",
+        "Biao Jiang",
+        "Zile Wang",
+        "Yang Liu",
+        "Yangguang Li"
+      ],
+      "abstract": "We introduce Riemann-1.0, a fully causal autoregressive World Action Model for embodied intelligence. Riemann-1.0 jointly models multi-view visual observations, robot states, and embodiment-specific actions within a unified causal autoregressive sequence, representing robot actions and world evolution as causal state transitions. Unlike existing WAMs based on joint generation, video-first prediction, or decoupled modeling paradigms, Riemann-1.0 unifies online robot policy execution and action-conditioned world simulation within a single model, enabling it to function as both an executable robot policy and a multi-embodiment visual world simulator. To scale embodied experience across heterogeneous data sources, we further develop a progressive embodied pretraining framework that unifies learning from egocentric human videos, handheld-gripper demonstrations, and heterogeneous robot trajectories under a shared World Action Modeling objective. Built upon 200K+ hours of interaction data, Riemann-1.0 progressively transfers large-scale embodied experience into executable robot manipulation capabilities. Riemann-1.0 achieves state-of-the-art performance across both simulation benchmarks and real-world manipulation tasks. It achieves success rates of 94.3% on RoboTwin2.0, 99.0% on LIBERO, and 62.6% on the long-horizon compositional benchmark RoboCasa-365, outperforming the previous best method by 8.4% On long-horizon real-world manipulation tasks, Riemann-1.0 achieves a Success Rate (SR) of 85.0% and a Progress Success Rate (PSR) of 94.4%, exceeding the strongest open-source baseline by 15% in SR. These results demonstrate that unified World Action Modeling together with progressive embodied pretraining effectively transforms large-scale embodied experience into generalizable robot manipulation capabilities.",
+      "url": "https://arxiv.org/abs/2608.27033",
+      "pdf": "https://arxiv.org/pdf/2608.27033",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "World Action Models",
+        "reason": "Directly addresses embodied VLA with unified policy-world simulation achieving SOTA on multiple manipulation benchmarks; 200K+ hours of progressive pretraining demonstrates effective scaling of learned manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26883",
+      "title": "Active Surface-Driven Reconfigurable Gripper: Robust Grasping and Sequential Manipulation of Thin Objects",
+      "authors": [
+        "Ziyi Zheng",
+        "Keqi Zhu",
+        "Hao Wu",
+        "Yanzhe Wang",
+        "Huixu Dong"
+      ],
+      "abstract": "Robotic grippers face substantial challenges in grasping and manipulating thin objects. Most existing grippers rely on highly precise approach and grasp motions, which limits robustness and reduces applicability. This paper explores thin-object grasping using books as a representative example. Here, we propose a novel solution that integrates an active surface with underactuated compliance to achieve stable grasping of thin objects without complex control. First, an underactuated gripper with an active surface is designed. The active-surface thumb performs in-hand repositioning of the target book without requiring adjustments of the robot arm or the other fingers, while the underactuated fingers establish compliant contact conditions with the environment, and the reconfigurable structure enables reliable grasping of books under different configurations. Second, we establish a kinematic model of the gripper, and determine the initial grasp postures for two representative scenarios (books lying flat on a desktop and books vertically packed in a shelf). Third, by analyzing the physical model of a book lying on a table and its interaction with the gripper and the environment, we systematically optimize the structural parameters and grasping strategy. Finally, extensive experiments validate the effectiveness of the proposed gripper and strategy. The results demonstrate strong robustness and adaptability when grasping thin objects placed flat (including books, paper, fabric, plastic film, and mouse pad), as well as a high success rate when grasping vertically packed books. Moreover, the proposed gripper can reliably complete long sequential \"grasp-place\" tasks.",
+      "url": "https://arxiv.org/abs/2608.26883",
+      "pdf": "https://arxiv.org/pdf/2608.26883",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Gripper design & thin-object grasping",
+        "reason": "Solid hardware/control contribution for thin-object manipulation with systematic validation, but hardware-focused and lacks learned policy or VLA components central to our research direction."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26821",
+      "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+      "authors": [
+        "Jiarui Yang",
+        "Yehao Lu",
+        "Yuning Su",
+        "Yu Zhong",
+        "Yufeng Xie",
+        "Yazhou Zhang",
+        "Haiyu Lan",
+        "Kaixiang Lu",
+        "Peiwen Lin",
+        "Chuang Wang",
+        "Junwei Liang",
+        "Enyu Li"
+      ],
+      "abstract": "Vision-language-action (VLA) models leverage pretrained vision-language representations for robot control, yet simply adding historical frames does not reliably capture recent physical change. This is especially problematic in multi-stage manipulation, where visually similar states may require different actions depending on prior execution. To address this challenge, we present TemporalFlow-VLA, which learns compact execution history through physically grounded temporal supervision. Using recorded robot states, robot geometry, and calibrated cameras, we construct robot-surface temporal flow as a training-only target and supervise two execution-aligned temporal queries that provide structured history to the action expert. The geometric supervision path is not evaluated at deployment. TemporalFlow-VLA achieves 97.63 +/- 0.26% average success on LIBERO, including 96.60 +/- 0.87% on LIBERO Long, and 85.5%/84.2% Clean/Randomized success across 12 RoboTwin tasks. It shows its clearest advantage over prior methods on longer-horizon, multi-stage manipulation. Controlled history interventions show that action prediction depends on both historical content and temporal order. With asynchronous feature caching, temporal conditioning maintains single-frame-level server-side sampling latency without additional historical-encoding overhead. Overall, TemporalFlow-VLA provides a compact, physically grounded interface for exploiting ordered execution history without explicit motion estimation or geometric processing at deployment.",
+      "url": "https://arxiv.org/abs/2608.26821",
+      "pdf": "https://arxiv.org/pdf/2608.26821",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Temporal-aware VLA",
+        "reason": "Directly addresses temporal reasoning in VLAs for multi-stage table-top manipulation; novel physically grounded supervision yields strong LIBERO/RoboTwin results."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26800",
+      "title": "Rapid On-Robot Learning for Dynamic Manipulation Skills: Robot Juggling",
+      "authors": [
+        "Taeyoon Lee",
+        "Chunpeng Wang",
+        "Christopher G. Atkeson",
+        "Alfred A. Rizzi",
+        "Nicolas Rojas"
+      ],
+      "abstract": "We present an online learning framework that enables a bimanual robot to acquire diverse juggling patterns directly on physical hardware within minutes, even with a significant sim2real gap. One of the most important lessons from this work is that a model, even when far from reality, can be extremely useful for learning. This motivates a central philosophy of our approach: learning should build upon the robot's current knowledge rather than replace it. Our regularized memory-based learning puts this principle into practice by learning a local model from accumulated experience while retaining the global prior model to extrapolate where experience is sparse. This enables efficient and stable online learning from each new experience without resorting to uninformed exploration over a vast space of possible behaviors. Equally important to continual on-robot learning is safety, allowing the robot to repeatedly practice and improve in the real world. We construct a mutually reachable set that allows safe transitions between successive throws and catches, without driving either arm into a state from which its next action would require violating the robot's joint or actuator limits. Together, these ideas enable a bimanual robot with multi-fingered hands and onboard vision to safely learn and compose five canonical three-ball juggling patterns, including cascade, tennis, half-shower, shower, and box, within less than 5 minutes of real-world interaction. More broadly, this work points toward robots that build upon imperfect prior knowledge and continually refine their behavior through their own real-world experience.",
+      "url": "https://arxiv.org/abs/2608.26800",
+      "pdf": "https://arxiv.org/pdf/2608.26800",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous Bimanual Manipulation",
+        "reason": "Solid online learning system with pragmatic sim2real transfer, but juggling is a specialized application outside core focus areas (VLA, grasping, assembly, tool use)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26788",
+      "title": "Decoupling Planning and Control for Instructable Agents",
+      "authors": [
+        "Zineng Tang",
+        "Kelsey R. Allen",
+        "Sjoerd van Steenkiste",
+        "Ishita Dasgupta",
+        "Alane Suhr"
+      ],
+      "abstract": "Recent work shows that pre-trained, instruction-tuned vision-language models (VLMs) perform well at mapping from instructions and observations to high-level plans, but struggle to realize such plans as reliable low-latency action sequences in unfamiliar environments. At the same time, world-model controllers excel at fast observation-to-action control, but lack open-ended task guidance. In this work, we combine these strengths into a single system, Instruct-to-Act, where we train a world-model controller to act autonomously at high frequency when conditioned on sparse, higher-latency, and high-level text instructions generated by a VLM planner. To train controllers to be language-instructable, we relabel segments of controller policy rollouts with synthetic instructions and jointly optimize a behavior-cloning objective along with existing reward-maximizing and world-modeling objectives. We evaluate our proposed approach across seven embodied environments, including three multi-agent environments where VLM planners coordinate through language while trained controllers serve as their actuators. Under matched observation and action spaces, our decoupled approach consistently outperforms controller-only and direct VLM action-generation variants, preserves fast control, and lets us swap in different pretrained VLM planners without fine-tuning, while remaining competitive with strong vision-language-action and multi-agent RL baselines on six of seven tasks.",
+      "url": "https://arxiv.org/abs/2608.26788",
+      "pdf": "https://arxiv.org/pdf/2608.26788",
+      "published": "2026-08-27",
+      "primary_category": "cs.AI",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Hierarchical Control",
+        "reason": "Fundamental VLA work on planning-control decoupling, though domain scope appears to include non-manipulation embodied tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26766",
+      "title": "MeshPriorDiT: Hierarchical Modeling for Action-Conditioned Cloth Dynamics",
+      "authors": [
+        "Zihang Wang",
+        "Jianming Hu",
+        "Shang Su",
+        "Hao Huang",
+        "Mengkai Shi",
+        "Jun Gao",
+        "Shuo Feng"
+      ],
+      "abstract": "Action-conditioned cloth dynamics prediction requires both locally plausible deformation and long-range coordination. Existing approaches largely follow two paradigms. Mesh-based GNNs capture local physical responses through material connectivity. However, their finite message-passing range limits coordination between topologically distant regions, while autoregressive rollouts tend to accumulate prediction errors. Transformer-based dynamics models capture long-range interactions through global attention, but often operate without explicit material connectivity and must learn local topological responses directly from data. We propose MeshPriorDiT, a hierarchical dynamics model that decomposes future cloth motion into a structured mesh prior and a generative residual. An action-conditioned mesh GNN first predicts multi-step vertex displacements, yielding a reference trajectory that respects material topology and grasp constraints. Conditioned on historical states, planned actions, and the mesh prior, a Residual DiT then uses conditional flow matching to jointly generate the residual motion not captured by the prior. The generated residual is further rescaled and decoded using material adjacency to coordinate corrections across neighboring vertices. We evaluate MeshPriorDiT on 15-step autoregressive rollouts across three cloth manipulation tasks. Averaged over the three tasks, MeshPriorDiT reduces average Global MSE by 43.42% relative to the GNN-Only baseline and by 75.03% relative to the DiT-DDPM baseline, while maintaining a favorable Edge-strain MSE comparable to that of GNN-Only.",
+      "url": "https://arxiv.org/abs/2608.26766",
+      "pdf": "https://arxiv.org/pdf/2608.26766",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Cloth dynamics prediction",
+        "reason": "Directly applicable to learned manipulation policies; hierarchical mesh+residual architecture elegantly addresses GNN/Transformer tradeoffs with strong empirical gains, though cloth is a specialized manipulation domain."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26673",
+      "title": "PredVLA: A Sub-Million-Parameter Predictive-Coding Policy for Robot Manipulation",
+      "authors": [
+        "Hiroki Sawada",
+        "Shunichi Kasahara"
+      ],
+      "abstract": "Large pretrained vision-language-action models dominate modern robot-manipulation benchmarks, but it remains unclear how much model scale is necessary for strong language-conditioned control, or whether fundamentally different control architectures can remain competitive at much smaller parameter budgets. We present PredVLA, a language-conditioned predictive-coding policy with only 0.68 million trainable network parameters and no robot-data pretraining, whose hierarchical generative recurrent dynamics predict visual features and proprioception while observations influence latent state only through online inference from the resulting sensory prediction errors. On LIBERO, PredVLA achieves an 86.9% mean success rate across the three short-horizon suites and 75.4% when the long-horizon suite is included. Under a controlled comparison using the same frozen front end, demonstrations, action decoder, and evaluation protocol, PredVLA achieves 3.7x and 7.4x mean success rates of parameter-matched Transformer and LSTM policies, respectively. The predictive-coding formulation also makes the contribution of observation-driven correction directly measurable: because observations influence the recurrent state only through prediction-error-based latent inference, disabling this inference yields an exact open-loop control condition. Together, these results show that a sub-million-parameter recurrent generative policy can achieve strong performance on modern language-conditioned manipulation benchmarks while providing an explicit mechanism for prediction-error-driven online state correction.",
+      "url": "https://arxiv.org/abs/2608.26673",
+      "pdf": "https://arxiv.org/pdf/2608.26673",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Efficient VLA Architecture",
+        "reason": "Predictive-coding policy achieves competitive LIBERO performance with 0.68M parameters through architecture over scale, with rigorous controlled comparisons\u2014valuable for efficiency but single-benchmark evaluation limits generalization claims."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26645",
+      "title": "FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation",
+      "authors": [
+        "Ganlong Zhao",
+        "Zijia Tang",
+        "Xingping Chen",
+        "Zhanghui Kuang",
+        "Ye Tian",
+        "Guanbin Li"
+      ],
+      "abstract": "Vision-Language-Action Models~(VLAs) have demonstrated significant promise in generalizing to complex, long-horizon robotic manipulation tasks. However, their performance remains brittle, as they are typically trained on trajectory-monotonic, failure-free demonstrations. This reliance on ``perfect\" data leaves them unable to recover from common execution errors, such as a missed grasp, a dropped object, or an unexpected collision. In this paper, we propose FLARE, a novel framework that endows VLAs with robust error recovery capabilities through a ``Retry\" and ``Reset\" paradigm. First, we introduce a ``Retry\" mechanism by injecting perturbation and bridging segments that decouple robot pose from environment state into demonstrations, enabling the policy to autonomously handle execution deviations. Second, to address critical, state-breaking (OOD) failures, we introduce a ``Reset\" pipeline. We leverage an MLLM for offline failure analysis to automatically identify OOD states from execution videos. This analysis enables the efficient, targeted collection of a small library of object-centric ``Reset\" skills, which are trained to restore the environment to a task-valid state. Our full framework integrates these learned policies. At inference, an online MLLM monitor arbitrates between task execution and ``Reset\" skills. Experiments on challenging, contact-rich manipulation tasks show our approach significantly improves task success and robustness.",
+      "url": "https://arxiv.org/abs/2608.26645",
+      "pdf": "https://arxiv.org/pdf/2608.26645",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA failure recovery",
+        "reason": "Directly tackles VLA brittleness in table-top manipulation through Retry and Reset mechanisms, but combines relatively standard techniques (data augmentation, MLLM analysis, skill learning) without clear breakthrough\u2014solid engineering, incremental novelty."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26622",
+      "title": "Relaxation-Aware Multimodal Sensing of Soft Gripper Driven by Structure-Perception-Learning",
+      "authors": [
+        "Yanzhe Wang",
+        "Hao Wu",
+        "Ziyi Zheng",
+        "Huixu Dong"
+      ],
+      "abstract": "Achieving stable, sustained grasping with soft robotic hands remains a fundamental challenge. Compliance enables safe and adaptive contact, yet the intrinsic viscoelasticity of soft polymers leads to stress relaxation and a continuous decay of grasping force during holding. Inspired by human grasping, which combines phase-dependent stiffness regulation with continuous sensing and feedback, this paper presents an integrated structure--perception--learning framework. We develop a variable-stiffness soft gripper that uses onboard vision and infrared thermography to track deformation and the temperature field in real time, preserving continuous tracking of the interaction state. To mitigate relaxation-induced force decay, we propose a temperature-coupled viscoelastic force representation, together with a physics-informed learning model, to reconstruct the force trend and provide explicit compensation during holding. Experiments show that, in a 280s force-controlled grasp-and-hold task, the proposed method maintains the desired force with a mean absolute error of 0.066N, outperforming fixed-aperture and instantaneous-only baselines by 80% and 95%, respectively. Overall, the results support a mechanism--AI co-design view: mechanisms shape feasible interactions, while learning compensates remaining uncertainty in viscoelastic dynamics, together enabling stable, sustained grasping.",
+      "url": "https://arxiv.org/abs/2608.26622",
+      "pdf": "https://arxiv.org/pdf/2608.26622",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Soft gripper force control",
+        "reason": "Well-engineered solution to soft gripper relaxation via multimodal sensing and physics-informed learning, but incremental novelty and narrow scope outside VLA models and dexterous manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.26578",
+      "title": "TrapVLA: Trapping Vision-Language-Action Models in Configured Failure Modes",
+      "authors": [
+        "Jun-Hui Liu",
+        "Kun-Yu Lin",
+        "Yi-Lin Wei",
+        "Xu-Han Chen",
+        "Yinghao Li",
+        "Zhuohao Li",
+        "Yuan-Ming Li",
+        "Qing Zhang",
+        "Xiaoyi Fan",
+        "Dongmei Jiang",
+        "Yan Li",
+        "Wei-Shi Zheng"
+      ],
+      "abstract": "This work introduces Configured Failure Trapping, a novel backdoor attack task against Vision-Language-Action (VLA) models, which aims to activate attacks through stealthy textual triggers and induce configured failure modes. Unlike prior backdoor attacks that treat any task failure as a successful attack, Configured Failure Trapping requires the attacker to control how the robot fails (e.g., causing the robot to grasp with a specified positional offset), making it substantially more challenging and hard to detect. To support the new task, we propose an effective data engine for synthesizing high-quality target trajectories and an automated suite for measuring configured-failure fidelity. Then, based on this foundation, we construct two new benchmarks, namely Trap-LIBERO and Trap-RoboTwin, that instantiate Configured Failure Trapping across four representative failure modes. To address this task, we identify sparse action deviation as a critical challenge and accordingly propose a novel method named TrapVLA, which explicitly learns trigger-induced action residuals to steer the policy toward the configured failure behavior. Extensive experiments across simulation benchmarks and real-world robotic settings show that TrapVLA effectively injects configured failure modes into VLA models while largely preserving performance on clean data. Project page: https://john-liua.github.io/TrapVLA/",
+      "url": "https://arxiv.org/abs/2608.26578",
+      "pdf": "https://arxiv.org/pdf/2608.26578",
+      "published": "2026-08-27",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Robustness",
+        "reason": "Introduces realistic backdoor threat model for VLA systems; directly relevant but security-focused rather than capability-advancing."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.26103",
       "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",

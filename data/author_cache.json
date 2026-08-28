@@ -228,6 +228,12 @@
     "name": "Mengnan Guo",
     "papers": 6
   },
+  "michele grimaldi": {
+    "citations": 3,
+    "h_index": 1,
+    "name": "M. Grimaldi",
+    "papers": 4
+  },
   "mohammed abusadeh": null,
   "nathaniel hanson": {
     "citations": 1,
@@ -302,6 +308,12 @@
     "h_index": 2,
     "name": "Tleukhan Mussin",
     "papers": 5
+  },
+  "tomoya inoue": {
+    "citations": 1189,
+    "h_index": 18,
+    "name": "Tomoyasu Inoue",
+    "papers": 97
   },
   "wenzhen yuan": {
     "citations": 11,
