@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T23:00:41Z",
+  "updated": "2026-08-29T17:02:20Z",
   "papers": [
     {
       "id": "2608.27406",
@@ -27,9 +27,9 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 8,
-        "topic": "Cross-embodiment Video World Models",
-        "reason": "Directly addresses VLA generalization across robot embodiments via physics-grounded video models; principled action-space reconciliation with strong SOTA-competitive empirical results on table-top manipulation."
+        "novelty": 7,
+        "topic": "Cross-embodiment world models",
+        "reason": "Cross-embodiment video world models unlock scaling of manipulation policies via universal physics priors; directly addresses core challenge of generalizing learned manipulation across robot platforms."
       },
       "verdict": "include"
     },
@@ -62,8 +62,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA Inference Optimization",
-        "reason": "Directly addresses a critical practical bottleneck (inference latency) in real-time VLA deployment for manipulation with concrete performance metrics and real-world validation."
+        "topic": "VLA efficiency / inference optimization",
+        "reason": "Practical streaming action decoding method for real-time VLA inference with smooth asynchronous execution; achieves 30Hz control frequency on single GPU with maintained task performance."
       },
       "verdict": "include"
     },
