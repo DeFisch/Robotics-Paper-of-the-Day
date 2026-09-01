@@ -1,6 +1,432 @@
 {
-  "updated": "2026-08-31T19:25:52Z",
+  "updated": "2026-09-01T17:16:13Z",
   "papers": [
+    {
+      "id": "2608.31167",
+      "title": "SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies",
+      "authors": [
+        "Weiqi Wang",
+        "Zhi Li",
+        "Yudong Lei",
+        "David Martinez",
+        "Xiaofeng Gao",
+        "Yuxin Jiang",
+        "Chenfanfu Jiang",
+        "Yingnian Wu",
+        "Demetri Terzopoulos",
+        "Ran Gong"
+      ],
+      "abstract": "Bridging model-based control and learned policies in long-horizon manipulation has harbored a silent disagreement: control executes specified objectives, learning amortizes that behavior into a reactive policy, yet existing protocols discard task semantics, leaving rewards hand-crafted and behavior drifting from what control verified.We introduce Semantically UNified (SUN) Programs, typed executables where geometric and contact relations are defined once and compiled into aligned Model Predictive Control (MPC) costs, satisfaction predicates, RL rewards, transition guards, and diagnostics. Our system, Kuafu, driven by large vision language systems, automatically synthesizes SUN Programs from language and scene semantics, screens feasibility via MPC, and retains semantics while training stage-conditioned policies. Across nine tasks, Kuafu achieves 82.03% macro-success, outperforming sparse-reward (35.67%) and Stage-BC (24.75%) baselines. At 8192-way scale, it generates 10.57x the successful trajectory time per hour of human teleoperation. With 500 trajectories per task, Kuafu data trains DP3 policies to 46.0% simulation success (vs. 22.4% for alternatives) and 34.7% on physical Franka and Kinova robots. These results establish that simulation-screened task semantics can effectively amortize control into robust policies, without demonstrations or manual dense rewards, unifying symbolic planning and data-driven execution.",
+      "url": "https://arxiv.org/abs/2608.31167",
+      "pdf": "https://arxiv.org/pdf/2608.31167",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Language-Grounded Manipulation Policy Learning",
+        "reason": "Directly addresses VLA-driven learned policies for table-top manipulation by unifying control semantics across MPC, RL rewards, and guards; validated on physical Franka and Kinova robots with 82% success rate and strong data efficiency."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.31002",
+      "title": "DARP: A Calibrated Dual-Arm RGB-D-IR Dataset for Multi-View Robotic Perception",
+      "authors": [
+        "Manish Kansana",
+        "Mohammed Yusuf Mujawar",
+        "Sudip Mittal",
+        "Shahram Rahimi",
+        "Noorbakhsh Amiri Golilarz"
+      ],
+      "abstract": "Robotic perception from a single viewpoint is often limited by self-occlusion and incomplete surface visibility. This paper presents DARP(Dual-Arm Robotic Perception) https://doi.org/10.21227/rmv3-be47, a calibrated dual-arm RGB-D-IR dataset for object-centered robotic perception using two independently moving eye-in-hand manipulators positioned on opposite sides of a shared tabletop workspace. Each arm carries an Intel RealSense sensor that continuously records RGB, depth, and stereo infrared data while synchronized robot joint states are logged for pose recovery. Objects are placed without fixed poses or marked locations, and the acquisition procedure performs automatic localization, cross-arm confirmation, adaptive viewpoint generation, and continuous multimodal recording. DARP contains ten unique tabletop objects and preserves the original sensor recordings, robot-state logs, object-level metadata, and calibration information required to reconstruct camera trajectories in a shared metric frame. To evaluate the geometric consistency of the acquisition, we implement a deterministic multi-view fusion pipeline that converts calibrated RGB-D observations into complementary partial point clouds and measured surface meshes without using learned or generative completion methods. Evaluation on 224 held-out RGB-D keyframes comprising 1,563,466 three-dimensional query points yields a median point-to-mesh distance of 2.13~mm and an RMSE of 4.04~mm, with 96.56\\% of points within 10~mm of the measured-surface mesh. DARP is intended as a reusable resource for multi-view reconstruction, collaborative robotic perception, multimodal fusion, active perception, and future learning-based reasoning over partial object observations.",
+      "url": "https://arxiv.org/abs/2608.31002",
+      "pdf": "https://arxiv.org/pdf/2608.31002",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dual-arm perception dataset",
+        "reason": "Solid infrastructure for table-top dual-arm perception with geometric evaluation, but as a dataset-only contribution it lacks demonstration of downstream impact on learned policies or VLA models."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30983",
+      "title": "Autonomously Acquiring Robot Manipulation Skills with Language-Driven Quality-Diversity",
+      "authors": [
+        "\u00c9miland Garrab\u00e9",
+        "Mahdi Khoramshahi",
+        "St\u00e9phane Doncieux"
+      ],
+      "abstract": "Quality-diversity (QD) algorithms have been gaining traction in robot learning, where diverse motion primitive libraries allow robots to adapt zero-shot to constraints at deployment time. However, such methods typically require expert designers to write the success condition, fitness and diversity metrics, and this strongly limits the robot's autonomy. On the other hand, existing LLM-based reward-shaping techniques allow robots to learn autonomously but only output single high-performing solutions, limiting the robot's adaptability. In this paper, we propose an approach designed to output diverse motion primitive archives by autonomously leveraging quality-diversity algorithms, only requiring a free-form description of the task in common language. To address the difficulty of designing relevant fitness and diversity metrics, we propose an autonomous exploration mechanism able to reliably output sets of functionals covering the fitness and behavior descriptor (BD) space. First, we pose policy exploration as a functional design problem, where the functional spaces are lower-dimensional than the full BD and fitness spaces, and propose an LLM-based exploration scheme to sample from these low-dimensional spaces without any task-specific prompts, fine-tuning or expert intervention. We adapt a multi-BD variant of the MAP-Elites success (MES) algorithm, designed to leverage the heterogeneous BD samples. Finally, through experiments based on the genesis simulator, we show that our method effectively generates archives of diverse motion primitives, outperforming classical QD algorithms with inferred and hand-written parametrizations on a set of $4$ robotic manipulation tasks.",
+      "url": "https://arxiv.org/abs/2608.30983",
+      "pdf": "https://arxiv.org/pdf/2608.30983",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Language-Driven Quality-Diversity Learning",
+        "reason": "Directly addresses autonomous learning of diverse manipulation skills using LLMs to eliminate hand-designed fitness/diversity metrics; novel approach combining QD with LLM-based functional space exploration, though limited to simulation validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30880",
+      "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+      "authors": [
+        "Fu Chen",
+        "Xin Ding",
+        "Bingjia Huang",
+        "Xiangyu Li",
+        "Mingju Wang",
+        "Jiawei He",
+        "Kun Li",
+        "Wei Sun",
+        "Yunxin Liu",
+        "Hao Wu",
+        "Ting Cao"
+      ],
+      "abstract": "Generalizable embodied manipulation remains difficult to achieve through pretraining alone, due to unseen physical conditions in the real world. We argue that robots need to learn from their own physical interactions on the fly during real-world deployment and use this knowledge to inform subsequent actions. We present Zeva, the first framework that enables in-context learning from a robot's own physical interaction experience while keeping the policy model frozen. Zeva employs a Causal Interaction Extractor to encode an executed action and its induced state change into a causal interaction signal, which is stored in a dual-timescale causal memory. For subsequent actions, relevant causal interaction signals are retrieved from memory and injected into the frozen policy model as context. Experiments in simulation and real-world manipulation demonstrate that Zeva achieves the best performance among the compared frontier VLAs and WAMs and, more importantly, enables self-evolution during deployment without gradient updates. Its success rate continues to improve as the robot accumulates interaction experience. Furthermore, the acquired interaction experience can generalize across tasks.",
+      "url": "https://arxiv.org/abs/2608.30880",
+      "pdf": "https://arxiv.org/pdf/2608.30880",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Table-top manipulation",
+        "reason": "Novel in-context learning framework for VLA-based policies enabling deployment-time adaptation without retraining; directly addresses generalization challenges with real-world validation and cross-task transfer."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30773",
+      "title": "Learning to infer and manipulate through distributed whole-arm interaction in a soft robot",
+      "authors": [
+        "Chuhan Zhang",
+        "Ebrahim Shahabi",
+        "Kseniia Khomenko",
+        "Wei Pan",
+        "Cosimo Della Santina"
+      ],
+      "abstract": "In animals such as elephants and octopuses, acquiring non-visual information about an object and physically engaging with it are inseparable processes mediated by rich, large-area interactions between compliant appendages and the environment. Soft robots provide a natural platform for translating this principle into engineered systems. Yet current robotic intelligence makes limited use of physical interaction, treating it primarily as a disturbance to be rejected or, at best, as a means of compensating for object misalignment. Here, we introduce a physical intelligence framework in which distributed compliant interactions jointly reveal task-relevant information and organize manipulation behavior. This results in an intrinsically partially observable problem: key task-relevant information is never measured directly, but must instead be inferred from the history of physical interactions. We propose a reinforcement-learning architecture that addresses this challenge by learning a memory-based control policy end-to-end. The key innovations making this possible are (i) a pretrained exploration policy that provides a reference for broad workspace exploration, (ii) joint optimization that integrates exploration and grasping objectives within a single recurrent policy, and (iii) a two-stage sim-to-real adaptation including observation mapping and policy fine-tuning. We demonstrate this principle through blind whole-arm grasping with a hybrid rigid-soft robotic arm that we equip with IMUs embedded directly within its compliant structure, providing its only source of proprioceptive sensing. The learned policy successfully identifies and grasps various objects by autonomously coordinating workspace exploration, object encounter and localization, inference of grasp-relevant properties, and stable whole-arm wrapping.",
+      "url": "https://arxiv.org/abs/2608.30773",
+      "pdf": "https://arxiv.org/pdf/2608.30773",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Soft robot grasping & proprioceptive learning",
+        "reason": "Directly addresses learned manipulation policies for whole-arm grasping via proprioceptive sensing; strong methodological contribution but lacks vision modality and broader VLA task scope."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30643",
+      "title": "Temporal Forcing: 4D Representation Alignment for Vision-Language-Action Models",
+      "authors": [
+        "Xingyu Ding",
+        "Yuzhong Zhao",
+        "Chunhai Zhao",
+        "Yinghuan Shi",
+        "Chaoyang Zhao",
+        "Yifan Zhang"
+      ],
+      "abstract": "Recent vision-language-action (VLA) methods improve manipulation performance by aligning their representations with 3D scene geometry. However, these methods often struggle with long-horizon manipulation and observation aliasing between visually similar states due to a lack of temporal information: the 3D scene geometry captures only the current state, rather than how it has evolved over time. To resolve this, we present Temporal Forcing, a 4D representation alignment method for VLA models. Specifically, we first introduce a history pathway that enables a vanilla VLA model to summarize observation history into temporally aware latent representations. Then, the latent representations are aligned with the geometric features extracted by a pretrained 4D foundation model, which captures the evolving 3D world through temporally consistent geometric representations, enabling a deeper understanding of dynamic environments. Temporal Forcing reaches 98.8% on LIBERO, outperforming its base model by 2.2 points. On a physical hidden-placement task, it raises full-task success from 20.0% to 43.3%. Code will be publicly available.",
+      "url": "https://arxiv.org/abs/2608.30643",
+      "pdf": "https://arxiv.org/pdf/2608.30643",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Temporal alignment for VLA manipulation",
+        "reason": "Directly addresses temporal limitations in VLAs with 4D geometric alignment; strong empirical gains on LIBERO and especially physical tasks (20%\u219243.3%)."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30536",
+      "title": "Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks",
+      "authors": [
+        "Chunyun Ma",
+        "Lun Luo",
+        "Xingjian Luo",
+        "Xiexing Feng",
+        "Hang Zhang",
+        "Wei Liu",
+        "Feng Qiao",
+        "Yaonan Wang",
+        "Huimin Lu",
+        "Xieyuanli Chen"
+      ],
+      "abstract": "Reliable execution of long-horizon mobile manipulation tasks remains challenging because overall task success depends on the successful completion of multiple constituent skills. Existing benchmarks, however, still rely primarily on full-task rollouts and aggregate task-level metrics, making intermediate failures difficult to observe and analyze. We present Behavior-Skill, a benchmark that reformulates the learning and evaluation of long-horizon tasks around executable constituent skills. It contains 235,492 skill instances from 10,000 demonstrations across 50 household tasks and 34 semantic skill categories. Each instance pairs a skill instruction with an aligned observation-action segment, and is further associated with a restorable intermediate state and a skill success condition to enable independent evaluation under valid preconditions. We further introduce trajectory-level and skill-level metrics to characterize policy capability beyond aggregate task success. Extensive experiments across representative VLA policies including pi0.5 and GR00T on the complete 50-task benchmark show that failures are highly non-uniform across skills, with contact-rich manipulation skills forming persistent bottlenecks. These results demonstrate that Behavior-Skill complements full-task evaluation by exposing intermediate capability profiles for analyzing and improving long-horizon VLA policies. Behavior-Skill is publicly available at https://github.com/nubot-nudt/Behavior-Skill.",
+      "url": "https://arxiv.org/abs/2608.30536",
+      "pdf": "https://arxiv.org/pdf/2608.30536",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA evaluation / skill decomposition",
+        "reason": "Large-scale VLA benchmark identifying skill-level failures in long-horizon manipulation; exposes contact-rich skills as persistent bottlenecks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30378",
+      "title": "PAVE: Predictive Alignment and Value-Guided Evolution for World-Action Policies",
+      "authors": [
+        "Botong Zhao",
+        "Fang Yu",
+        "Tim",
+        "Senhua Zhu",
+        "Xinyuan Chen",
+        "Yue Lu"
+      ],
+      "abstract": "Direct vision-language-action policies generate continuous robot actions efficiently, but standard behavior cloning leaves two complementary gaps: their representations are not explicitly required to describe how the scene evolves over multiple time scales, and deployment trajectories of unequal quality are often reused without separating useful dynamics from undesirable behavior. We introduce \\method, a direct world-action policy that combines outcome-agnostic predictive learning with outcome-aware policy improvement. \\method first retains a local fixed-offset JEPA objective and adds trajectory-relative multi-horizon transition alignment at 25%, 50%, 75%, and 100% of the remaining episode. These training-only targets require the current policy representation to preserve both local physical changes and longer-range task progress, without supplying explicit future tokens to the action head. \\method then trains an independent distributional value critic on cumulative deployment trajectories, computes action-chunk-aligned $N$-step advantages, and converts them into positive, negative, or null text conditions for a flow-matching actor. Thus, every valid trajectory can teach what physically happened, while the actor is deployed only under the condition associated with relatively better actions. The multi-horizon predictor and critic are removed from online execution, preserving direct action generation from the current observation, language instruction, and proprioception. \\redclaim{Across the three simulation benchmarks, \\method achieves the strongest overall performance while preserving the direct actor's online execution path.}",
+      "url": "https://arxiv.org/abs/2608.30378",
+      "pdf": "https://arxiv.org/pdf/2608.30378",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Direct VLA Policies",
+        "reason": "Directly tackles VLA policy learning with principled multi-horizon predictive alignment and value-guided improvement, but primarily integrates existing techniques (JEPA, value critics, flow-matching) with simulation-only evaluation and no apparent real-robot validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30289",
+      "title": "CometVLA: Co-Training on an Embodied Data Pyramid towards Physical Understanding",
+      "authors": [
+        "Hanwen Wan",
+        "Dafeng Chi",
+        "Linbo Zhai",
+        "Tianao Shen",
+        "Yuzheng Zhuang",
+        "Tianle Zhang",
+        "Peidong Liu",
+        "Liang Lin",
+        "Xiaoqiang Ji"
+      ],
+      "abstract": "Vision-language-action (VLA) models remain brittle in manipulation tasks that require physical commonsense. Current physical VQA data is typically disembodied and misaligned with robot action domains. Egocentric videos are used only as auxiliary pre-training. It remains unclear whether improved VLM physical understanding actually benefits downstream action generation. Therefore, we present CometVLA to close this gap. We construct CometData and CometBench, an embodied physical VQA corpus and benchmark strictly aligned with the robot's action data and embodiment. We introduce Global Action Prior (GAP) tokens, a compact learnable bottleneck that isolates task-agnostic motion regularities and lets the action head consume physical commonsense without corrupting the pre-trained VLM backbone. We co-train CometVLA across the embodied data pyramid, spanning teleoperation, simulation, egocentric trajectories, and VQA layers. On real-world manipulation tasks and RoboTwin simulation, CometVLA consistently outperforms strong VLA baselines. Correlation analysis shows that stronger VLM performance on CometBench indicates higher VLA success rates. Results demonstrate that physical understanding pre-training genuinely benefits downstream manipulation.",
+      "url": "https://arxiv.org/abs/2608.30289",
+      "pdf": "https://arxiv.org/pdf/2608.30289",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Robot Manipulation / Physical Understanding",
+        "reason": "Directly addresses core VLA brittleness in manipulation by carefully constructing embodied physical VQA data and proposing GAP tokens to bridge physical understanding to action generation; empirically validates the connection between VLM capability and downstream control success."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.30237",
+      "title": "Motus2: A Self-Evolving General World Model for Dexterous Manipulation",
+      "authors": [
+        "Hongzhe Bi",
+        "Zihao Zhou",
+        "Yihang Tang",
+        "Jingrui Pang",
+        "Shuhe Huang",
+        "Haitian Liu",
+        "Runqing Wang",
+        "Shuai Huang",
+        "Yichen Wang",
+        "Yiming Cheng",
+        "Ruowen Zhao",
+        "Zhenghua Li",
+        "Hengkai Tan",
+        "Xiaolong Liu",
+        "Jinhui Wan",
+        "Jiabao Liu",
+        "Min Zhao",
+        "Fan Bao",
+        "Jun Zhu"
+      ],
+      "abstract": "General embodied agents should perceive, predict, act, evaluate, and improve within a unified system. World models have shown great promise in building such agents, yet existing models typically append an action output head to a world simulator, without coupling them into a closed decision-and-learning loop for policy improvement. We present Motus2, a self-evolving general world model for dexterous manipulation. Motus2 advances world modeling through model scaling and data scaling. For model scaling, a single model with shared weights exposes three control interfaces: a policy (world-action model), a simulator (action-conditioned world model), and an evaluator (value model). The policy proposes candidate action chunks, the simulator predicts their visual consequences, and the evaluator assesses the predicted outcomes. Their coupling forms a closed decision-and-learning loop for policy improvement. This formulation uses curated expert demonstrations for action learning, while failed and suboptimal interactions provide valuable evidence for dynamics modeling and value learning. For data scaling, Motus2 progresses from large-scale monocular egocentric data to synchronized stereo egocentric data, followed by robot-domain adaptation with robot trajectories and supplementary human-robot alignment data. Motus2 further studies global-autoregressive and hybrid-memory extensions of its sliding-window context, adds tactile feedback for contact-aware control, and is instantiated on a fully biomimetic platform with stereo vision, dual arms, dual dexterous hands, and tactile sensing. Together, egocentric data scaling and closed-loop general world model scaling provide a general path toward self-evolving dexterous manipulation.",
+      "url": "https://arxiv.org/abs/2608.30237",
+      "pdf": "https://arxiv.org/pdf/2608.30237",
+      "published": "2026-08-31",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous Manipulation",
+        "reason": "Novel closed-loop world model coupling policy, simulator, and evaluator for dexterous bimanual manipulation; strong empirical approach with biomimetic embodiment (stereo, dual arms, tactile) and thoughtful data scaling strategy."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2608.29967",
+      "title": "Training-Free Action Correction for VLA Model Failures via Language Feedback",
+      "authors": [
+        "Owen Kwon",
+        "Pablo Ortega-Kral",
+        "Arthur Bucker",
+        "Jean Oh"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models demonstrate strong semantic understanding yet exhibit systematic failures during deployment. The conditions under which these failures occur, and whether they can be corrected without retraining, remain poorly understood. In this paper, we take steps toward addressing this gap. We present CorrectVLA, a framework that translates task-level natural language corrections into additive action magnitude adjustments without modifying policy weights. A human provides a single task-level correction, applied uniformly across all rollouts without per-episode intervention. In simulation, CorrectVLA recovers execution misalignment failures across both in-distribution and OOD tasks. In real-robot experiments on a UFactory xArm7 under environment shift, CorrectVLA restores near-perfect success where the base policy almost entirely breaks down, generalizing across object locations and identities. Through a taxonomy of failure modes on LIBERO-90, we find that execution misalignment failures, where the policy reaches the correct target but miscalibrates action magnitudes, represent the correctable subset, while other failure modes where semantic comprehension itself breaks down are not amenable to this approach. The approach succeeds when policies possess strategic correctness and fails when fundamental comprehension is absent, establishing a practical operational boundary for inference-time correction.",
+      "url": "https://arxiv.org/abs/2608.29967",
+      "pdf": "https://arxiv.org/pdf/2608.29967",
+      "published": "2026-08-30",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [
+        "survey"
+      ],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA failure correction",
+        "reason": "Addresses practical VLA deployment failures with training-free language-guided action adjustment; real-robot validation on xArm7 and clear taxonomy of correctable vs. non-correctable failure modes establish useful operational boundaries."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2608.27406",
       "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
