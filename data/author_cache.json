@@ -242,6 +242,12 @@
     "papers": 2
   },
   "nick b. schroeder": null,
+  "nuno gracias": {
+    "citations": 3542,
+    "h_index": 34,
+    "name": "N. Gracias",
+    "papers": 148
+  },
   "oskar von stryk": null,
   "oussama khatib": {
     "citations": 32716,
@@ -302,6 +308,12 @@
     "h_index": 21,
     "name": "T. Aoyama",
     "papers": 283
+  },
+  "taqi hamoda": {
+    "citations": 16,
+    "h_index": 1,
+    "name": "Taqi Hamoda",
+    "papers": 3
   },
   "tleukhan mussin": {
     "citations": 8,
