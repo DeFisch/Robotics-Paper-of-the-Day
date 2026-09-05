@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T16:52:11Z",
+  "updated": "2026-09-05T15:52:24Z",
   "papers": [
     {
       "id": "2609.04193",
@@ -41,8 +41,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA training via structured feature supervision",
-        "reason": "Directly addresses action-sufficiency gap in VLA models through structured intermediate features; strong empirical gains across multiple architectures on standard manipulation benchmarks with real-world validation."
+        "topic": "VLA Policy Learning",
+        "reason": "Addresses action-sufficiency gap in VLA models via structured intermediate feature supervision; substantial gains across multiple model types and benchmarks with real-world validation."
       },
       "verdict": "include"
     },
@@ -82,11 +82,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
         "topic": "Vision-Language Grasping",
-        "reason": "Directly addresses VLG for robotic grasping with a novel modular architecture enabling cross-hand generalization and task-adaptive synthesis through composable foundation model priors."
+        "reason": "Strong fit for VLG/manipulation policy research; decoupling task understanding from physical synthesis is sensible; solid real-world validation and cross-hand generalization results, but architectural contribution is somewhat incremental."
       },
       "verdict": "include"
     },
