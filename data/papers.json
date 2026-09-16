@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T07:38:36Z",
+  "updated": "2026-09-16T17:40:49Z",
   "papers": [
     {
       "id": "2609.17524",
@@ -28,10 +28,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Multi-modal World-Action Models",
-        "reason": "Directly relevant table-top bimanual manipulation work with systematic multi-modal evaluation and real-world results, but novelty is primarily in combining existing techniques rather than conceptual advances."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Multi-modal world models",
+        "reason": "Directly addresses visuomotor prediction for manipulation via systematic multi-modal study; real-world bimanual validation and 20x efficiency gain over pretrained baselines make insights practically valuable."
       },
       "verdict": "include"
     },
@@ -60,11 +60,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 7,
         "quality": 7,
         "novelty": 5,
-        "topic": "Low-data diffusion policy / insertion",
-        "reason": "Rigorous real-robot study of motion priors for data-scarce insertion (15 demos), but improvements are modest and no clear mechanism emerges\u2014minimum jerk performs well but gains over joint regularization are marginal."
+        "topic": "Diffusion Policy / Motion Priors",
+        "reason": "Rigorous real-robot study of motion regularization for data-scarce insertion, but findings are incremental: minimum jerk works as well as joint priors with only marginal gains over baselines."
       },
       "verdict": "include"
     },
@@ -99,9 +99,9 @@
       "scores": {
         "relevance": 8,
         "quality": 7,
-        "novelty": 5,
-        "topic": "Dexterous in-hand manipulation",
-        "reason": "Directly addresses dexterous in-hand manipulation with learned fault adaptation; solid but incremental application of domain randomization and residual policies."
+        "novelty": 6,
+        "topic": "Dexterous manipulation",
+        "reason": "Directly addresses dexterous in-hand manipulation with real-robot fault adaptation and zero-shot deployment, but combines residual learning, domain randomization, and frozen teachers without apparent fundamental novelty."
       },
       "verdict": "include"
     },
@@ -221,11 +221,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 6,
+        "relevance": 7,
+        "quality": 5,
         "novelty": 5,
         "topic": "VLA reward learning",
-        "reason": "Directly applies VLA representations to autonomous reward signals for policy improvement on a robot arm, but the core policy-improvement connection is still future work and the methodology is incremental."
+        "reason": "Directly addresses policy improvement via VLA-based reward for arm manipulation, but approach is incremental (reusing frozen encoders) with vague empirical validation and limited conceptual novelty beyond engineering integration."
       },
       "verdict": "include"
     },
@@ -260,8 +260,8 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 7,
-        "topic": "Latent Action Learning from Demonstration",
-        "reason": "Directly addresses learning robot manipulation action representations from unlabeled human videos using geometric priors; solid technical approach with good motivation, but incremental on prior VLA work."
+        "topic": "Geometry-grounded action learning from video",
+        "reason": "Directly addresses learning manipulation policies from unlabeled human videos using geometric supervision; evaluates on robotic tasks with solid methodology."
       },
       "verdict": "include"
     },
@@ -335,8 +335,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Temporal VLA",
-        "reason": "Directly tackles single-frame inference bottleneck in dynamic VLA manipulation with well-motivated temporal augmentation, strong empirical gains (44\u219274%), and benchmark contribution."
+        "topic": "VLA / Dynamic Manipulation",
+        "reason": "Directly tackles VLA limitations in dynamic tasks (motion ambiguity, state aliasing) with targeted temporal augmentation; strong 44\u219274% improvement on Bottle Handover and TEMPO-Bench contribution."
       },
       "verdict": "include"
     },
@@ -377,8 +377,40 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Visuomotor policy transfer & embodiment-aware learning",
-        "reason": "Directly addresses a fundamental challenge in visuomotor policies: how embodiment-specific visual information affects generalization; proposes principled canonicalization approach enabling human-to-robot transfer without robot demonstrations."
+        "topic": "Visuomotor policy transfer",
+        "reason": "Directly tackles visual embodiment shortcuts in learned manipulation policies with a principled canonicalization approach that improves human-to-robot transfer without demonstrations."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.16745",
+      "title": "The Latent That Never Was: A Forensic Re-run of the CVAE Ablation in Action Chunking Transformer",
+      "authors": [
+        "Bo Kang"
+      ],
+      "abstract": "Action Chunking Transformers (ACT) are widely used to learn robot manipulation from demonstrations. Their conditional variational autoencoder includes an encoder meant to capture differences between demonstrations during training. The original ACT paper reported that encoder removal dropped the mean success rate from 35% to 2% on two simulated tasks with human demonstrations. We re-ran this ablation in the original code and checked whether the findings depend on the implementation or training data. The published drop does not reappear in our tests, although smaller gains or losses in success rate remain uncertain. To investigate the discrepancy, we varied training length and how checkpoints are selected for evaluation. Both can reverse which policy scores higher, but the published drop's cause remains unknown. Success rates alone leave open whether the encoder provides information that helps the policy reconstruct demonstrated actions. On the tested ACT benchmark, the sampled latent provides little reconstruction benefit at every tested nonzero weight of the penalty on latent information. At inference, ACT leaves this latent unused and sets it to zero. Skipping the encoder increases training throughput in both implementations we timed. We release code, evaluation tools and results so others can repeat the comparisons and test the encoder on other tasks.",
+      "url": "https://arxiv.org/abs/2609.16745",
+      "pdf": "https://arxiv.org/pdf/2609.16745",
+      "published": "2026-09-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Robot policy reproducibility",
+        "reason": "Forensic study of ACT's CVAE encoder questioning its necessity in a widely-used robot manipulation architecture; methodologically sound but primarily corrective rather than proposing new methods."
       },
       "verdict": "include"
     },
@@ -428,9 +460,56 @@
       "scores": {
         "relevance": 9,
         "quality": 8,
-        "novelty": 7,
-        "topic": "Robot data infrastructure",
-        "reason": "Core systems paper on scaling robot experience generation for VLA and embodied policies; directly addresses data infrastructure bottleneck with formalized hierarchies and closed Deploy-Measure-Learn-Repeat cycle."
+        "novelty": 8,
+        "topic": "VLA/embodied policy infrastructure",
+        "reason": "Foundational framework for systematically generating and scaling robot experience to train VLA models and embodied manipulation policies, with formal scaling laws connecting fleet size to learning requirements."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.16697",
+      "title": "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable",
+      "authors": [
+        "Nanjie Yao",
+        "Hao Wang",
+        "Chong Cheng",
+        "Zhikang Chen",
+        "Wenzhe Li",
+        "Jiafei Lyu",
+        "Li Shen",
+        "Peilin Zhao",
+        "Zongqing Lu",
+        "Gao Huang",
+        "Steven Hoi",
+        "Dacheng Tao",
+        "Deheng Ye"
+      ],
+      "abstract": "World models connect perception and decision-making in embodied intelligence by maintaining hidden state, anticipating consequences, comparing interventions, and adapting when execution departs from expectations. Although progress is often measured by visual fidelity, their value lies in improving behavior. Before reaching for a cup, a person anticipates its weight and resistance to grasping, shaping the hand before contact. Such anticipation is coarse and rarely pictorial, yet it guides action. This raises a central question: which predictive capabilities improve behavior? Existing surveys, organized by architecture, output modality, or application domain, leave this question implicit. We introduce three progressively stronger capability levels: Plausible models preserve task-relevant temporal, geometric, or physical structure; Controllable models additionally predict how interventions alter that structure; and Actionable models translate predictions into measurable gains in planning, action, learning, evaluation, verification, recovery, or data selection. We complement this hierarchy with a 3 x 4 matrix crossing geometry, physics, and action grounding with improvement loops centered on data, rewards, policies, and the model itself. Using this framework, we survey manipulation, navigation, locomotion, autonomous driving, and general embodied learning, tracing technical progressions, clarifying capability requirements, and examining datasets, benchmarks, and evaluation protocols. We identify challenges in long-horizon consistency, uncertainty calibration, causal intervention testing, latency, verification and recovery, and cross-embodiment transfer. This perspective shifts evaluation from visual plausibility toward whether predictions capture task-relevant state, reflect intervention effects, and improve the closed-loop behavior of embodied agents.",
+      "url": "https://arxiv.org/abs/2609.16697",
+      "pdf": "https://arxiv.org/pdf/2609.16697",
+      "published": "2026-09-15",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision",
+        "General robotics"
+      ],
+      "flags": [
+        "survey"
+      ],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "World Models for Embodied Control",
+        "reason": "Survey introducing Plausible\u2192Controllable\u2192Actionable framework for world models; directly relevant to table-top manipulation and actionability, but broad multi-domain scope and survey nature limit specialized VLA impact."
       },
       "verdict": "include"
     },
@@ -465,8 +544,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA / Table-top Manipulation",
-        "reason": "Principled symmetry-aware approach resolves critical VLA pose-generalization limitation, with substantial empirical gains (41.5%\u219290.4% rotation robustness on LIBERO-Goal)."
+        "topic": "Equivariant vision-language-action models",
+        "reason": "Directly addresses VLA generalization via principled geometric priors; strong empirical results on pose robustness (41.5%\u219290.4% under rotation on LIBERO)."
       },
       "verdict": "include"
     },
@@ -502,8 +581,44 @@
         "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "Dexterous Manipulation",
-        "reason": "Directly tackles contact uncertainty in multi-finger manipulation via hardware-agnostic proximity dynamics, with solid real-robot validation including unseen objects and perturbations."
+        "topic": "Dexterous manipulation",
+        "reason": "Directly addresses contact uncertainty in multi-finger dexterous manipulation with dynamics-guided policy learning and real-world validation, but combines relatively standard techniques (forward models, proximity cues) without major novelty."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.16518",
+      "title": "Beyond Gestures: Estimating Full Hand Pose and Contact Forces from Wrist-Worn Pressure Sensor Array",
+      "authors": [
+        "Svetoslav Kolev",
+        "Lingni Ma",
+        "Michael Goesele",
+        "Renzo De Nardi",
+        "Jakob Engel",
+        "Richard Newcombe"
+      ],
+      "abstract": "Capturing hand motion and interaction forces is critical for interactive computing, VR, and high-fidelity tactile demonstrations for robot learning. We introduce a wrist-worn pressure-sensing wristband that recovers continuous full-hand pose and distributed contact force on a single wearable. The system consists of flexible capacitive sensor arrays around the wrist, which require no electrical skin contact, and a recurrent network that maps the resulting pressure signal to hand state. Our key insight is that muscle contraction and tendon displacement produce pressure patterns, which correlate strongly with hand pose and interaction force. To validate this, we collect synchronized recordings of wrist pressure, optical motion-capture hand pose, and tactile-glove interaction force, covering isolated finger motion, fingertip-force stress tests, and natural hand-object manipulation. On isolated single-user motion the wristband attains $4.6^\\circ$ mean finger-joint MAE, and across four users manipulating everyday objects it estimates per-finger contact force at $R^2=0.57$, which an external pose signal brings up to $0.75$. We see the wristband as one node in a constellation of everyday wearables -- e.g. paired with an egocentric camera -- adding the contact force that vision cannot observe and taking over when the hand is occluded.",
+      "url": "https://arxiv.org/abs/2609.16518",
+      "pdf": "https://arxiv.org/pdf/2609.16518",
+      "published": "2026-09-15",
+      "primary_category": "cs.HC",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Tactile sensing for dexterous manipulation",
+        "reason": "Directly relevant for capturing rich tactile demonstrations to train robot policies, but moderate force-estimation accuracy (R\u00b2=0.57) and unclear cross-user generalization limit immediate impact; perception-focused rather than policy-learning."
       },
       "verdict": "include"
     },
@@ -534,11 +649,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 6,
-        "novelty": 5,
-        "topic": "Visuo-Tactile Dexterous Manipulation Policy",
-        "reason": "Directly targets video-to-robot dexterous manipulation via simulation and tactile feedback; practical execution with decent physical results (66.4%) but somewhat incremental combination of existing techniques (ACT, human-video guidance, simulation-based training)."
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Visuo-Tactile Dexterous Manipulation",
+        "reason": "Directly addresses VLA-based dexterous manipulation with a well-executed system for learning from human video through simulation, validated on real robots with 66.4% success on unseen objects; solid but not groundbreaking."
       },
       "verdict": "include"
     },
@@ -568,11 +683,47 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 7,
         "novelty": 6,
-        "topic": "VLA Model Compression",
-        "reason": "Directly addresses deployment of VLA policies on resource-constrained robots with practical results (40% parameter reduction, 95% LIBERO performance retention), but applies existing MoE compression techniques to the domain rather than introducing fundamental methodological advances."
+        "topic": "VLA compression",
+        "reason": "Sound practical approach to deploying VLA policies on constrained robots, but the technical novelty of adapting MoE is moderate."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.16437",
+      "title": "XRoboToolKit-T: Teleoperation with High Stability and Precision with Tactile Sensing for Contact-rich Manipulation",
+      "authors": [
+        "Xiwen Dengxiong",
+        "Xueting Wang",
+        "Ke Jing",
+        "Rui Li",
+        "Yunbo Zhang"
+      ],
+      "abstract": "Collecting high-quality robot data for contact-rich manipulation tasks is essential for enabling robots to acquire real-world skills. However, existing data collection solutions often lack the capability to obtain stable and high-frequency tactile feedback, limiting their effectiveness in contact-rich manipulation scenarios. In this work, we propose a versatile teleoperation system with tactile-driven assistance to enable high-frequency and stable contact-rich manipulation. The proposed XRoboToolKit-T teleoperation system incorporates a tactile-informed force control architecture, designed to ensure both stable and precise force control in contact-rich manipulation during teleoperation. The stabilizer haptic module rapidly analyzes the normal force distribution and infers pseudo shear force, enabling real-time tactile-based assistance during manipulation. The refiner haptic module integrates a vision-language-action model to predict and refine manipulation actions based on tactile sensing data and task descriptions. We apply the proposed teleoperation system to challenging contact-rich manipulation tasks, including grasping a deformable rubber pipette for liquid transfer and inserting a medical syringe into a vascular training pad, to demonstrate the effectiveness of tactile-informed force control. Furthermore, the system achieves higher data collection efficiency and improved manipulation stability compared to state-of-the-art teleoperation without tactile assistance.",
+      "url": "https://arxiv.org/abs/2609.16437",
+      "pdf": "https://arxiv.org/pdf/2609.16437",
+      "published": "2026-09-14",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Tactile teleoperation for data collection",
+        "reason": "Teleoperation system for contact-rich data collection with VLA integration; useful infrastructure but engineering-focused rather than advancing learned policy or perception models themselves."
       },
       "verdict": "include"
     },
@@ -606,10 +757,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 7,
+        "quality": 8,
         "novelty": 7,
         "topic": "Compositional table-top manipulation",
-        "reason": "Directly addresses core interest (robot arm table-top manipulation, learned policies); real robot dual-arm validation with solid results, but geometric contracts design is somewhat incremental combination of LLMs and motion templates."
+        "reason": "Directly targets demonstration-free compositional manipulation on real dual-arm robot with explicit geometric contracts structuring perception-action; solid real-robot validation and task diversity, though combines established concepts."
       },
       "verdict": "include"
     },
@@ -640,10 +791,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Dexterous grasping synthesis",
-        "reason": "Direct application of constraint-conditioned synthesis to dexterous grasping with practical downstream applications; somewhat incremental extension of GraspXL but with solid technical contributions on control precision."
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dexterous Grasping Motion Synthesis",
+        "reason": "Core arm manipulation topic but incremental extension of GraspXL; practical constraint conditioning lacks significant technical novelty."
       },
       "verdict": "include"
     },
@@ -685,11 +836,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 7,
-        "quality": 8,
-        "novelty": 8,
-        "topic": "Autonomous surgical manipulation",
-        "reason": "Demonstrates vision-guided multi-arm autonomous manipulation with learned 3D perception and adaptive control on deformable structures; highly relevant to manipulation policies, though specialized to surgical domain rather than general tabletop manipulation."
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Surgical robotics",
+        "reason": "Novel closed-loop autonomous surgical system with learned 3D anatomy inference; solid vision-guided dual-arm manipulation, but highly specialized to medical domain and phantom-only validation."
       },
       "verdict": "include"
     },
@@ -721,11 +872,11 @@
         "reason": "curated (Jeannette Bohg)"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Mobile manipulation memory/learning",
-        "reason": "Directly tackles persistent memory and knowledge reuse for mobile manipulators with spatial grounding and interaction-derived properties; strong real-robot validation with significant improvements."
+        "topic": "Mobile manipulation memory systems",
+        "reason": "Directly addresses persistent learning and knowledge reuse for deployed mobile manipulators; combines scene graphs with interaction outcomes to improve performance across multiple tasks, with solid real-hardware validation."
       },
       "verdict": "include"
     },
@@ -753,11 +904,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA Robustness Evaluation",
-        "reason": "Well-designed benchmark revealing how simultaneous perturbations affect VLA policy robustness beyond single-axis predictions; important evaluation study but methodological rather than algorithmic contribution."
+        "topic": "VLA robustness evaluation",
+        "reason": "Solid methodological contribution revealing that compound perturbations cannot be characterized from single-axis robustness metrics alone; important for practitioners deploying VLAs in complex real-world environments."
       },
       "verdict": "include"
     },
@@ -794,9 +945,9 @@
       "scores": {
         "relevance": 8,
         "quality": 8,
-        "novelty": 6,
-        "topic": "Dexterous Manipulation",
-        "reason": "Real-world validation of tactile-driven learned policies for complex dexterous manipulation with systematic parameter study and zero-shot transfer to novel cables."
+        "novelty": 7,
+        "topic": "Tactile-driven dexterous manipulation",
+        "reason": "Core robot manipulation work with learned policies on real hardware; systematic empirical characterization and impressive zero-shot transfer for tactile-driven deformable object handling, though methods are somewhat standard."
       },
       "verdict": "include"
     },
