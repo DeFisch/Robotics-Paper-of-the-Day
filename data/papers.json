@@ -1,6 +1,41 @@
 {
-  "updated": "2026-09-18T17:09:28Z",
+  "updated": "2026-09-19T16:20:32Z",
   "papers": [
+    {
+      "id": "2609.20822",
+      "title": "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation",
+      "authors": [
+        "Bingxin Xu",
+        "Yuzhang Shang",
+        "Zhen Dong",
+        "Emilio Ferrara"
+      ],
+      "abstract": "Coding agents have emerged as a promising paradigm for robot manipulation: a language model writes the robot controller as a program, and agents built in this way now operate robots without robot-specific training.Whether this paradigm is also safe, however, has not been asked. We evaluate coding agent under a safety constraint, where each task pairs a manipulation goal with an obstacle the robot must not touch. The agent pursues the goal but collides with the obstacle in most cases, treating task completion as its sole objective while neglecting safety. The agent reasons about the obstacle in its traces, and the prompt already forbids touching it, so neither perception nor instruction is at fault; the fault lies in the planning, where the stated constraint never becomes a priority. By decomposing manipulation into a route phase and a contact-rich moment, we locate the source of the failure. Along the route, the model cannot prioritize the safety constraint, having no notion of a clearing route and none of replanning once a chosen route becomes infeasible. At the contact, it is unaware that contact execution is bounded by the same constraint. To close this gap, we present SafeHarness, which equips the model with two obstacle-aware harnesses that enable it to prioritize the safety constraint. Obstacle-aware route planning grounds the objects as bounding boxes and draws candidate routes over them as sequences of waypoints. The agent then plans a route in advance, verifies it, replans when necessary, and only then executes it. Obstacle-aware contact execution instead selects the contact position so that the contact itself avoids the obstacle. SafeHarness attains 71.9% task success and 87.5% collision avoidance, surpassing the previous SOTA by 6.5% and 27.0%, respectively. These results are $2.3\\times$ and $1.5\\times$ those of the same agent without harnesses.",
+      "url": "https://arxiv.org/abs/2609.20822",
+      "pdf": "https://arxiv.org/pdf/2609.20822",
+      "published": "2026-09-17",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "LLM-based manipulation",
+        "reason": "Addresses critical safety gap in LLM-based robot control with sound approach and strong empirical results; directly relevant to table-top manipulation but not core to learned-policy focus."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2609.20820",
       "title": "Workspace Models: Lightweight Robotic Memory via Saliency-Driven Supervision",
@@ -32,8 +67,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Table-top manipulation memory & VLM learning",
-        "reason": "Directly addresses long-horizon manipulation via lightweight learned memory distilled from VLM supervision at train-time; hardware validation and strong author contributions (Agrawal, Simchowitz) suggest solid execution."
+        "topic": "Manipulation Memory",
+        "reason": "Direct contribution to learning-based memory for manipulation policies; efficiently distills VLM reasoning at train time into deployable workspace tokens with better policy performance and no in-the-loop overhead."
       },
       "verdict": "include"
     },
@@ -71,8 +106,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA Policy / Adaptive Action Chunking",
-        "reason": "Novel geometric approach to adaptive action horizons in VLA policies with strong real-world validation (53.3%\u219274.4% success) on established manipulation benchmarks."
+        "topic": "Adaptive Action Chunking in VLA Policies",
+        "reason": "Addresses real control challenges in VLA systems with principled uncertainty estimation from denoising geometry; strong simulation and real-world validation."
       },
       "verdict": "include"
     },
@@ -105,11 +140,46 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
+        "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Tactile World Action Model",
-        "reason": "Contact-rich arm manipulation with principled visual-tactile fusion and efficient inference; 29.4% real-world improvement validates the multi-horizon multimodal approach."
+        "topic": "Contact-rich tactile manipulation",
+        "reason": "Tactile-visual multimodal WAM addressing different timescale dynamics; 29.4% real-world improvement on contact-rich manipulation tasks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.20709",
+      "title": "MoWAM: Explicit Future Motion Prediction for Efficient World Action Models",
+      "authors": [
+        "Jiayu Wang",
+        "Bin Zhu",
+        "Yue Yu",
+        "Jingjing Chen"
+      ],
+      "abstract": "World Action Models (WAMs) improve robot policy learning by incorporating future dynamics, yet explicitly generating future videos at inference introduces substantial computational overhead. Removing future generation improves efficiency, but leaves future dynamics only implicitly encoded in observation features, which can limit robustness under distribution shifts. We propose MoWAM, an efficient WAM that replaces future video generation with explicit future motion prediction. Instead of reconstructing the complete future scene, MoWAM models structured robot motion as a compact abstraction of the future, capturing how the robot is expected to evolve under the current scene and interaction constraints. A Mixture-of-Transformer architecture learns future visual dynamics during training while jointly predicting motion and action, allowing video generation to be removed entirely at inference while retaining an explicit representation of the future. The compact motion representation further enables efficient inference-time scaling by sampling multiple candidates of motion and action pairs and selecting among them with a motion-aware task-progress verifier. Experiments on LIBERO, LIBERO-Plus, and real-world manipulation tasks demonstrate that MoWAM achieves strong in-distribution performance, improved out-of-distribution robustness, and higher average real-world success than representative WAM baselines. In addition, performance improves as more candidates are explored, demonstrating that explicit future motion provides an effective and efficient basis for inference-time scaling.",
+      "url": "https://arxiv.org/abs/2609.20709",
+      "pdf": "https://arxiv.org/pdf/2609.20709",
+      "published": "2026-09-17",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Robot Manipulation Policy",
+        "reason": "Directly addresses efficient policy learning for table-top manipulation with strong experimental validation; engineering refinement of WAMs rather than fundamental advance."
       },
       "verdict": "include"
     },
@@ -145,8 +215,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "Diffusion policy, foresight guidance, table-top manipulation",
-        "reason": "Directly addresses a key limitation of 3D diffusion policies by incorporating efficient future-state conditioning; substantial empirical gains across RoboTwin, LIBERO, and real robots with minimal overhead."
+        "topic": "Diffusion Policies for Manipulation",
+        "reason": "Significant empirical improvements to diffusion policies via lightweight future-state conditioning; strong results on LIBERO, RoboTwin2.0, and real robots directly advance table-top manipulation learning."
       },
       "verdict": "include"
     },
@@ -188,8 +258,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA post-training via human-in-the-loop learning",
-        "reason": "Directly addresses practical VLA adaptation for table-top manipulation; novel use of policy-guided data collection with handheld UMI to decouple training from physical robot deployment, validated on real-world tasks."
+        "topic": "VLA Fine-tuning & Interactive Adaptation",
+        "reason": "Directly addresses practical VLA deployment via policy-guided HIL post-training; strong empirical results on real manipulation tasks with a clever decoupling of data collection from robot execution, though the core techniques are incremental combinations rather than fundamental advances."
       },
       "verdict": "include"
     },
@@ -230,8 +300,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Tactile World Models",
-        "reason": "Well-executed work on scaling dexterous manipulation via human-to-robot tactile supervision and action-conditioned world models, with solid cross-embodiment transfer results and comprehensive evaluation for prediction and policy learning."
+        "topic": "Tactile World Models for Dexterous Manipulation",
+        "reason": "Transfers human touch data to robot dexterous manipulation through aligned tactile sensing, demonstrating scalable learning of contact-rich skills with rigorous experiments."
       },
       "verdict": "include"
     },
@@ -265,8 +335,42 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA efficiency / hybrid planning",
-        "reason": "Pragmatic hybrid combining VLA contact-rich skills with classical planning for free-space motion; achieves 2.5x speedup with real 6-DoF arm validation."
+        "topic": "Hybrid VLA-Planning",
+        "reason": "Directly addresses VLA latency via pragmatic hybrid approach (classical planning + VLA for contact-rich tasks); solid hardware validation but conceptually incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.20646",
+      "title": "TraceFlow: Guiding Frozen Flow-Matching Robot Policies with Success and Failure Traces",
+      "authors": [
+        "Jiaxuan Zhang",
+        "Ruizhe Liu",
+        "Yu Zhang",
+        "Yanchao Yang"
+      ],
+      "abstract": "A vision-language-action (VLA) policy with a flow-matching action expert generates each action chunk (a short command sequence) by integrating a learned velocity field; once its weights are fixed, the success or failure of an earlier rollout cannot change the chunk generated now. Concurrent test-time methods give a frozen policy such an input from retrieved successes, a learned critic, a verifier, or a dynamics model, but none uses the robot's own failed rollouts as negative evidence with nothing but a terminal outcome bit. We introduce TraceFlow, a progress-aligned guidance field that turns the action densities of retrieved successful and failed rollouts into a bounded correction to a frozen flow-matching action expert, using one terminal outcome bit per rollout and no other label. Its TraceBank stores traces, time-ordered state-action records with a terminal label, starts from the target-task training traces, and later admits the deployed robot's own rollouts. On an ordered real-robot packing task the base completes 21 of 50 trials in order, TraceFlow 39, and one stacking round without any weight update 47, with wrong-sequence episodes falling from 20 to 0. In simulation the gain is selective: with per-suite selected settings, TraceFlow raises RoboMemArena Sequence from 78.92\\% to 91.50\\% task success and Transferring from 54.41\\% to 62.00\\% at stacking round 2, leaves the 26-task aggregate unchanged, lowers Counting and Occlusion by 1.12 and 1.42 points, and changes LIBERO-Plus (Long) by +1.27 points (p = 0.0733). Stacking gains are finite, every branch peaking before round ten, and the bank's success-to-failure ratio predicts no retrieval allocation.",
+      "url": "https://arxiv.org/abs/2609.20646",
+      "pdf": "https://arxiv.org/pdf/2609.20646",
+      "published": "2026-09-17",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 6,
+        "novelty": 7,
+        "topic": "trace-guided VLA policies",
+        "reason": "Core VLA manipulation with real robot packing validation, but mixed simulation results (improvements on Sequence/Transferring, unchanged aggregate, regressions on Counting/Occlusion) and per-suite hyperparameter tuning undermine claimed impact."
       },
       "verdict": "include"
     },
