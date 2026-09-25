@@ -413,6 +413,12 @@
     "name": "Yi-Jia Shao",
     "papers": 22
   },
+  "yiming li": {
+    "citations": 7,
+    "h_index": 1,
+    "name": "L. Yiming",
+    "papers": 2
+  },
   "yipeng yang": null,
   "yongqiang yu": {
     "citations": 175,
@@ -462,6 +468,12 @@
     "citations": 5,
     "h_index": 1,
     "name": "Ziyu Liu",
+    "papers": 2
+  },
+  "zizhuo wang": {
+    "citations": 2,
+    "h_index": 1,
+    "name": "Zi-Zhu Wang",
     "papers": 2
   }
 }
