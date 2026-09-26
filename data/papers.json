@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T17:59:32Z",
+  "updated": "2026-09-26T16:57:29Z",
   "papers": [
     {
       "id": "2609.30264",
@@ -33,8 +33,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "World models for manipulation MPC",
-        "reason": "Addresses a fundamental mismatch in world-model-based planning (factual accuracy \u2260 action discriminability) with convincing sim and real-robot validation, including strong zero-shot transfer results."
+        "topic": "World models for MPC",
+        "reason": "Addresses action discrimination in world models for manipulation planning with strong sim-to-real validation on pick-and-place tasks."
       },
       "verdict": "include"
     },
@@ -65,11 +65,46 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 7,
         "quality": 8,
-        "novelty": 7,
-        "topic": "Agentic Program Synthesis",
-        "reason": "Directly addresses learning generalizable manipulation policies from demonstrations through automated program generation with object-centric relational reasoning; validated on real robots with exceptional author team (Kaelbling, Lozano-P\u00e9rez, Hsu)."
+        "novelty": 6,
+        "topic": "Program synthesis for manipulation",
+        "reason": "Systematic approach to learning manipulation policies from visual demonstrations with strong real-world validation, but prioritizes symbolic program synthesis over end-to-end learned policies central to VLA research."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2609.30134",
+      "title": "Training-free Behavior Cloning",
+      "authors": [
+        "Maximilian Adang",
+        "Timothy Chen",
+        "Lars Osterberg",
+        "Aiden Swann",
+        "Mac Schwager"
+      ],
+      "abstract": "Neural behavior cloning compresses demonstrations into large models, making individual actions difficult to trace and policy updates costly. Retrieval policies retain access to demonstrations but struggle with mismatch between recorded and live behavior. We introduce Behavior Predictive Control (BPC), which synthesizes policies without end-to-end policy training by combining an action-aware retrieval metric, a Hankel-based action-continuation prior, and a closed-form one-step residual correction. Inspired by behavioral systems theory, BPC predicts future actions by blending stored observation-action data that best reconstructs the recent runtime observation--action history. Across simulated benchmarks and real-robot deployments, BPC is competitive with learned policies such as $\u03c0_{0.5}$ (surpassing it in some cases), while reducing policy fitting from hours to seconds on consumer GPUs and supporting closed-loop control upwards of 75 Hz on a Jetson Orin Nano. The retrieved demonstration windows and their coefficients also provide an intrinsic estimate of task progress. Retaining demonstrations within the deployed policy makes its predictions traceable to supporting trajectories and enables behavior revision through the demonstration bank.",
+      "url": "https://arxiv.org/abs/2609.30134",
+      "pdf": "https://arxiv.org/pdf/2609.30134",
+      "published": "2026-09-24",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Training-free policy retrieval",
+        "reason": "Direct manipulation application with real-robot results and interpretability, but retrieval-based rather than learning-focused and orthogonal to VLA directions."
       },
       "verdict": "include"
     },
@@ -102,10 +137,10 @@
       },
       "scores": {
         "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "Visuomotor Policy / Flow Matching",
-        "reason": "Directly addresses efficient action generation in visuomotor policies with real-world validation; Riemannian geometry applied to flow matching is a solid but somewhat incremental contribution."
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Visuomotor Policy Learning / Flow Matching",
+        "reason": "Directly addresses learned manipulation policy efficiency via principled Riemannian geometry on action manifolds; comprehensive sim-to-real validation across table-top benchmarks, but lacks language grounding for full VLA relevance."
       },
       "verdict": "include"
     },
