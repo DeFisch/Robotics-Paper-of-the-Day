@@ -169,6 +169,12 @@
     "name": "J. Park",
     "papers": 3
   },
+  "jin ge": {
+    "citations": 4,
+    "h_index": 1,
+    "name": "Jing-Qing Ge",
+    "papers": 6
+  },
   "jingbo he": {
     "citations": 15,
     "h_index": 2,
@@ -418,6 +424,12 @@
     "h_index": 1,
     "name": "L. Yiming",
     "papers": 2
+  },
+  "ying yang": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Ying-Yin Yang",
+    "papers": 4
   },
   "yipeng yang": null,
   "yongqiang yu": {
