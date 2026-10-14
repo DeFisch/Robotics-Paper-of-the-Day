@@ -371,6 +371,12 @@
     "name": "Seung-Yong Lee",
     "papers": 7
   },
+  "shikun ban": {
+    "citations": 34,
+    "h_index": 2,
+    "name": "Shikun Ban",
+    "papers": 4
+  },
   "tadayoshi aoyama": {
     "citations": 1471,
     "h_index": 21,
@@ -470,6 +476,12 @@
     "h_index": 2,
     "name": "Yu-Pei Ye",
     "papers": 2
+  },
+  "zackory erickson": {
+    "citations": 2493,
+    "h_index": 28,
+    "name": "Zackory Erickson",
+    "papers": 68
   },
   "zaid mahboob": {
     "citations": 36,
