@@ -170,6 +170,12 @@
     "name": "Humphrey Munn",
     "papers": 6
   },
+  "igor molybog": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Igor Moly-bog",
+    "papers": 5
+  },
   "jaesik park": {
     "citations": 19,
     "h_index": 1,
@@ -469,6 +475,12 @@
     "h_index": 7,
     "name": "Y. Yongqiang",
     "papers": 90
+  },
+  "yosub shin": {
+    "citations": 8,
+    "h_index": 2,
+    "name": "Y. Shin",
+    "papers": 3
   },
   "youssef attia": null,
   "yuqian ye": {
