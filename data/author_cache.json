@@ -30,6 +30,12 @@
     "name": "Alexis Lussier Desbiens",
     "papers": 7
   },
+  "angela p. schoellig": {
+    "citations": 9611,
+    "h_index": 45,
+    "name": "Angela P. Schoellig",
+    "papers": 163
+  },
   "antonio alvarez valdivia": {
     "citations": 52,
     "h_index": 5,
@@ -92,6 +98,12 @@
     "papers": 34
   },
   "davide ceriola": null,
+  "eiichi yoshida": {
+    "citations": 29,
+    "h_index": 3,
+    "name": "E. Yoshida",
+    "papers": 14
+  },
   "elvin yang": {
     "citations": 52,
     "h_index": 2,
@@ -205,6 +217,12 @@
     "h_index": 4,
     "name": "Jing-Yuan Song",
     "papers": 7
+  },
+  "jingxing qian": {
+    "citations": 8,
+    "h_index": 1,
+    "name": "J. Qian",
+    "papers": 4
   },
   "jun ma": {
     "citations": 168,
@@ -389,6 +407,7 @@
     "name": "T. Aoyama",
     "papers": 283
   },
+  "taiga ikeshima": null,
   "tao sun": {
     "citations": 71,
     "h_index": 4,
