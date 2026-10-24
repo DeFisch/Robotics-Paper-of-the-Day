@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T17:53:30Z",
+  "updated": "2026-10-24T16:28:57Z",
   "papers": [
     {
       "id": "2610.31670",
@@ -28,11 +28,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 7,
+        "relevance": 8,
+        "quality": 8,
         "novelty": 7,
-        "topic": "VLA evaluation / embodied model alignment",
-        "reason": "Directly addresses VLA evaluation via principled offline metric grounded in extended Platonic Representation Hypothesis; practical contribution to the costly closed-loop rollout bottleneck."
+        "topic": "VLA Evaluation Metrics",
+        "reason": "Introduces a training-free offline metric for evaluating VLA models before expensive rollouts, with novel theoretical grounding in sensorimotor alignment."
       },
       "verdict": "include"
     },
@@ -77,8 +77,8 @@
         "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Tactile sensing for manipulation",
-        "reason": "Open-source tactile sensor ecosystem with automated CAD design tools enables scalable, customizable tactile feedback for contact-rich manipulation across diverse robot embodiments; directly applicable to learning-based manipulation policies."
+        "topic": "Tactile Sensing Ecosystem for Manipulation",
+        "reason": "Comprehensive open-source tactile sensing platform with novel CAD-driven customization and demonstrated transfer across real robot embodiments; directly applicable to contact-rich manipulation and policy learning."
       },
       "verdict": "include"
     },
@@ -112,11 +112,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
-        "topic": "VLA Runtime Monitoring",
-        "reason": "Practical approach to detecting VLA failures via lightweight internal probes, outperforming external VLM monitors on real manipulation tasks\u2014directly addresses deployment reliability for embodied policies."
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA runtime monitoring",
+        "reason": "Directly addresses VLA reliability for real-world deployment by using lightweight internal probes for failure detection, competitive with more complex baselines."
       },
       "verdict": "include"
     },
@@ -157,11 +157,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
-        "topic": "VLA Task Status Prediction",
-        "reason": "Directly addresses core interest (VLA + table-top manipulation); tackles practical problem of task completion/failure detection with sound approach combining status and action denoising without frame-level annotations; real-world validation, though incremental vs prior work."
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA task-status prediction",
+        "reason": "Elegantly couples task completion/failure signals with action generation in VLA without frame-level supervision, demonstrated on real-world table-top manipulation\u2014directly addresses key robot autonomy requirements."
       },
       "verdict": "include"
     },
