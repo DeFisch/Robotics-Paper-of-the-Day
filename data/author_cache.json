@@ -188,6 +188,7 @@
     "name": "Harry X. Zhang",
     "papers": 57
   },
+  "heng yang": null,
   "hongliang ren": {
     "citations": 1,
     "h_index": 1,
@@ -289,6 +290,12 @@
     "h_index": 1,
     "name": "L. Petit",
     "papers": 23
+  },
+  "luke hollis": {
+    "citations": 3,
+    "h_index": 1,
+    "name": "L. Hollis",
+    "papers": 5
   },
   "luoyang bian": {
     "citations": 0,

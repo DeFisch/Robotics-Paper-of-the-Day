@@ -1,6 +1,587 @@
 {
-  "updated": "2026-10-26T19:04:14Z",
+  "updated": "2026-10-27T18:40:45Z",
   "papers": [
+    {
+      "id": "2610.35832",
+      "title": "Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy",
+      "authors": [
+        "Yifei Yao",
+        "Yude Zou",
+        "Guanbo Jiao",
+        "Xing Gao",
+        "Ning Gao",
+        "Yukai Wang",
+        "Jiantong Chen",
+        "Zihou Zhu",
+        "Xinyu Li",
+        "Ningyu Yan",
+        "Shuai Wang",
+        "Jianming Ma",
+        "Haoyu Guo",
+        "Weinan Zhang",
+        "Chunhua Shen"
+      ],
+      "abstract": "Frontier multimodal large language models (MLLMs) can control robots without robot-specific training, but how their capabilities compare and interact with post-trained vision-language-action (VLA) and world action model (WAM) policies across manipulation demands remains to be thoroughly evaluated. In this report, we evaluate GPT-6-Astra on EBench as the core of an agent that controls a robot through an agent harness under the same visual and proprioceptive observation protocol as post-trained policies. We study two agent configurations: direct control, in which the agent generates waypoint commands directly, and harness with policy, in which it can also invoke a post-trained VLA or WAM policy for action execution. Under direct control, the agent achieves competitive overall performance relative to post-trained policies. It leads on short-horizon tasks and exhibits the least performance variation across generalization dimensions, whereas it underperforms post-trained policies on long-horizon tasks, tabletop manipulation, and high-precision contact-rich tasks. In the harness with policy, invoking a post-trained VLA or WAM combines the complementary strengths of both components, raising overall task success to the level of the strongest compared post-trained policies while substantially reducing token cost. However, performance remains below the per-task upper bound of the standalone components due to suboptimal policy invocation, fixed-instruction execution without subgoals, and grasp disruption when the agent resumes control. Overall, our study characterizes the capability boundary of a frontier MLLM agent and suggests directions for improving future agent harness design. Project page: https://internrobotics.github.io/EBench-Astra-Tech-Report/",
+      "url": "https://arxiv.org/abs/2610.35832",
+      "pdf": "https://arxiv.org/pdf/2610.35832",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "MLLM-Policy Integration",
+        "reason": "Thorough empirical evaluation of frontier LLMs vs. post-trained VLA/WAM policies on manipulation, showing hybrid approaches combine strengths; valuable benchmark insights but primarily a characterization study without novel methodology."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35636",
+      "title": "Adapt for Planning, Not just Prediction: Optimistic Test-Time World Model Adaptation",
+      "authors": [
+        "Akshay Mete",
+        "Dileep Kalathil",
+        "P. R. Kumar"
+      ],
+      "abstract": "Latent world models are typically pre-trained offline and kept frozen at test time, so planning with them can degrade under distribution shift. Test-time adaptation (TTA) can mitigate this degradation by updating the model during deployment. Unlike pre-training on fixed data, TTA for planning is closed-loop: the planner uses model rollouts to select actions, and the resulting transitions drive the next update. This raises the question: which objective should guide TTA for planning? Under a prediction-only objective, the model is fit only to the outcomes of its own actions, so it can remain wrong about the actions that would reach the goal, and low prediction error need not translate into better planning. Inspired by reward-biased maximum likelihood from adaptive control, we introduce Optimistic Test-Time Adaptation (OpTTA). Its objective has two terms, the prediction loss on observed transitions and the planner's goal-reaching cost on its candidate rollouts, both minimized over the model parameters. The planning term biases adaptation toward models that are optimistic about reaching the goal, without any additional environment interaction. Across visual and environment shifts on manipulation, reaching and navigation tasks, OpTTA raises final planning success over the frozen model by 13.5 percentage points on average, compared with 6.9 for the prediction-only objective (AdaJEPA), when only the predictor is adapted. When the encoder is adapted as well, the gains are 13.5 and 7.5 points. These experiments span three JEPA world models with different encoders and training objectives and, for temporal straightening, both CEM and gradient-based planners. Our results suggest that test-time adaptation of world models for planning benefits from an optimistic, task-aware term in addition to the prediction loss.",
+      "url": "https://arxiv.org/abs/2610.35636",
+      "pdf": "https://arxiv.org/pdf/2610.35636",
+      "published": "2026-10-26",
+      "primary_category": "cs.LG",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "World Model Adaptation for Planning",
+        "reason": "Tackles a practical deployment problem for learned manipulation policies\u2014maintaining world model performance under distribution shift\u2014with a well-motivated planning-aware adaptation objective showing consistent gains."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35626",
+      "title": "Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies",
+      "authors": [
+        "Zuoxu Wang",
+        "Xiao Liang"
+      ],
+      "abstract": "Efficient robotic data collection remains a major bottleneck for vision-language-action (VLA) policy learning, especially for tasks requiring accurate end-effector positioning and camera-action alignment. This challenge is particularly severe in electronic-waste disassembly, where robots operate in cluttered assemblies of densely packed, visually similar components. Full digital-twin simulation is difficult because many parts are thin, reflective, or mechanically complex, making accurate object-level meshes and contact models difficult to obtain. In this work, we focus on pre-contact reaching and propose a 3D Gaussian Splatting (3DGS)-based data generation pipeline for wrist-camera VLA adaptation. Our method reconstructs the real workspace with 3DGS and renders diverse wrist-camera observations from robot-aligned poses. These observations are paired with smooth, structured reaching trajectories to provide robot-aligned visual-action supervision for VLA fine-tuning. We further augment the VLA policy with an instruction-conditioned reach verifier that estimates target proximity and provides reliable termination before physical interaction. Experiments in motherboard disassembly demonstrate precise VLA-based reaching using wrist-camera observations alone, without an external side-view camera. With $\u03c0$0.5, 1,500 generated trajectories achieve 80.0\\% precise-reaching success across three targets, compared with 58.7\\% using 150 teleoperated demonstrations, while requiring less than 10 minutes of active human capture. Project website: https://001-wang.github.io/PrecisionReach-GS/",
+      "url": "https://arxiv.org/abs/2610.35626",
+      "pdf": "https://arxiv.org/pdf/2610.35626",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA Data Generation via Neural Rendering",
+        "reason": "Directly addresses data-efficiency bottleneck in VLA learning via 3DGS-based synthetic supervision on real manipulation task; strong empirical gains (80% vs 58.7%) with minimal human capture, but limited to single task and unverified authors."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35604",
+      "title": "RoboDoctor: Training-Free Recursive Self-Improvement for Robot Policies",
+      "authors": [
+        "Heyang Yu",
+        "Haomin Li",
+        "Sihang Li",
+        "Jixin Yan",
+        "Shiyun Peng",
+        "Wanqi Zhong",
+        "Tianyu Xin",
+        "Yuan Yao",
+        "Xiaoyu Tian",
+        "Yiming Li"
+      ],
+      "abstract": "Generalist robot policies and language-model agents provide complementary capabilities, but completing a task also requires adapting their use to the consequences of physical interaction. We study execution as a locus of adaptation: feedback guides the current action and supplies evidence for revising subsequent decisions under fixed model weights. We introduce RoboDoctor, a training-free framework that connects diagnosis, grounded action, and persistent experience across three revision targets. The harness allocates control between policy and agent; intervention determines when to assist while preserving useful policy behavior; and operation refines physical methods through observed effects. Linked experience records retain the reason for a decision, the attempted method, its outcome, and conditions for reuse. On a curated archive of 54 RoboDojo-Sim task entries, RoboDoctor achieves a five-dimension mean score of 57.10, with a native success rate of 49.44%. Recorded interactions illustrate strategy changes, selective correction, and grasp revision. These findings characterize execution-time adaptation in the evaluated system; controlled trials remain necessary to isolate the contribution of cross-episode experience.",
+      "url": "https://arxiv.org/abs/2610.35604",
+      "pdf": "https://arxiv.org/pdf/2610.35604",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Execution-time policy adaptation",
+        "reason": "Training-free LLM-guided policy refinement addresses robot manipulation but relies on simulation with modest success rates (~49%) and lacks rigorous evaluation isolation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35494",
+      "title": "Enhancing Deep Reinforcement Learning for Robotic Motion Planning via Task Decomposition",
+      "authors": [
+        "Yuanzhi He",
+        "Victor Romero-Cano",
+        "Jiayu Xu",
+        "Juan David Hern\u00e1ndez",
+        "Gualtiero Colombo"
+      ],
+      "abstract": "Training robotic manipulation policies in simulation is widely adopted due to safety and cost efficiency; however, tasks involving obstacles remain under-performing and often converge slowly under Deep Reinforcement Learning (DRL). To address this challenge, we propose a task decomposition framework for DRL that integrates Transfer Learning (TL) with Reward Redesign (RR) to improve learning efficiency and robustness in obstacle environments. The TL strategy selectively transfers only the first-layer critic parameters across structurally related tasks, since that layer captures general state--action representations while deeper layers encode reward- and obstacle-specific value geometry; RR decomposes tasks into staged sub-objectives to provide denser optimization signals. Experiments on the PyBullet Panda platform show consistent gains in obstacle settings. On Push with obstacle, our method achieves $0.83 \\pm 0.05$, outperforming the strongest baseline (Truncated Quantile Critics (TQC), $0.77 \\pm 0.06$) by approximately $7.8\\%$. On Slide with obstacle, performance reaches $0.95 \\pm 0.02$, exceeding Soft Actor-Critic (SAC) ($0.84 \\pm 0.06$) by about $11\\%$ success rates. In addition to higher final performance, forward transfer reduces convergence time by up to $70\\%$ in obstacle tasks, and RR shortens sparse-reward Pick-and-Place training from roughly $0.75$M to $0.20$M steps ($\\approx73\\%$ reduction). The best policy is deployed on a real Franka Emika FR3 robot as a qualitative feasibility demonstration.",
+      "url": "https://arxiv.org/abs/2610.35494",
+      "pdf": "https://arxiv.org/pdf/2610.35494",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "DRL Task Decomposition for Manipulation",
+        "reason": "Directly addresses manipulation with real tasks (Push/Slide/Pick-Place) on Franka arms, but uses incremental techniques (selective critic-layer transfer + reward staging); modest empirical gains (~8-11%) and only qualitative real-world demo limit impact."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35462",
+      "title": "DEX-PHD: A Dexterous Portable Handheld Device for Multimodal Data Collection",
+      "authors": [
+        "Jooyoung Hong",
+        "Noboru Myers",
+        "Obin Kwon",
+        "Yixian Yang",
+        "Joohyung Kim"
+      ],
+      "abstract": "Existing manipulation data collection methods typically offer either accurate robot-state acquisition through kinematic-chain-based teleoperation or convenient, portable operation through vision-based approaches. We present DEX-PHD, a portable handheld device that combines these advantages for dexterous manipulation by integrating a dexterous robot hand, continuous per-finger control, and multimodal logging. The system records proprioceptive information, fingertip contact data, and wrist-camera video, while the operator directly controls the robot hand through joint-level mapping. Its untethered design enables data collection across diverse environments. We demonstrate DEX-PHD on contact-rich tasks requiring coordinated multi-finger manipulation and deploy the collected demonstrations through open-loop replay on a physical humanoid robot. The results show that open-loop replay preserves the main temporal patterns of finger motion and task-relevant contact. Therefore, DEX-PHD provides a practical platform for portable, multimodal dexterous manipulation data collection.",
+      "url": "https://arxiv.org/abs/2610.35462",
+      "pdf": "https://arxiv.org/pdf/2610.35462",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dexterous manipulation data collection",
+        "reason": "Well-engineered portable teleoperation device for multimodal dexterous data, but infrastructure-focused rather than advancing policy/VLA research."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35385",
+      "title": "EmbodiedLab: Benchmarking Embodied Agents That Act to Know",
+      "authors": [
+        "Hongcheng Gao",
+        "Zelin Zheng",
+        "Alex Zhou",
+        "Jay Zhu",
+        "Shijia Ge",
+        "Yazhe Wang",
+        "Xiping Li",
+        "Jianshu Zeng",
+        "Di Wu",
+        "Xuan Shangguan",
+        "Yexing Wan",
+        "Lingyu He",
+        "Yongli Wang",
+        "Xiaohan Yu",
+        "Zhiqi Jia",
+        "Yue Liu",
+        "Bryan Hooi",
+        "Yinpeng Dong",
+        "Wentao Zhang",
+        "Sihang Wu",
+        "Xiao He"
+      ],
+      "abstract": "Embodied agents are expected to accomplish real-world goals by deciding for themselves how and when to interact with their surroundings. For many such goals, changing the physical state of the world is the means rather than the end: the agent changes the state of a system through interaction, observes the feedback, and explores until it either achieves the goal itself (e.g., discovering physical laws) or learns what the goal requires; it acts to know. Manipulation benchmarks stop at acting to change, with the target state given; scientific discovery benchmarks evaluate knowing but replace physical experimentation with symbolic actions or numerical queries. We introduce EmbodiedLab, a benchmark in which a robot must act to know. Quantitative science experiments make this setting controllable: the parameters of the system are resampled for every instance, so the result cannot be known in advance, yet it can be scored exactly. Across 30 experiments in five disciplines on 14 apparatus platforms, the agent receives an objective and the apparatus, chooses its own procedure, and operates a physics-based simulated laboratory, reading the instruments through its cameras. Evaluation checks what the agent came to know, grounded in readings recorded during the episode, as well as the physical state the task requires; every experiment is verified to be solvable. We evaluate six frontier models in their developers' coding agents with native observation and control, with added perception and motion planning, and with manipulation skills distilled from the strongest agents. With native control, even the strongest agent succeeds less than half the time; for every agent, most failures arise in interacting with the apparatus, and manipulation skills help weaker agents more than perception and planning. The benchmark and its evaluation code are available at https://github.com/HexaFuture/EmbodiedLab.",
+      "url": "https://arxiv.org/abs/2610.35385",
+      "pdf": "https://arxiv.org/pdf/2610.35385",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Scientific Discovery Benchmark / Table-top Manipulation",
+        "reason": "Well-designed benchmark testing embodied agents on scientific experiments with good insights about apparatus interaction failures, but focused on discovery reasoning rather than manipulation policy learning."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35252",
+      "title": "Labference: Benchmarking the Reasoning-Action Connection in Robotic Laboratories",
+      "authors": [
+        "Shitong Liu",
+        "Jingwei Zhang",
+        "Sheng Lian",
+        "Xinyu Zhuang",
+        "Kaiwen Guo",
+        "Quan Liu",
+        "Chunhai Zhao",
+        "Jiaxin He",
+        "Fan Yang",
+        "Manli Tao",
+        "Tingyu Yuan",
+        "Jinqiao Wang",
+        "Hongwei Shi",
+        "Chaomin Guo",
+        "Xiao-jing Liu",
+        "Xiangyu Zhu",
+        "Zhuang Xiong",
+        "Feichan Yang",
+        "Chaoyang Zhao",
+        "Zhiyong Liu"
+      ],
+      "abstract": "Realizing Embodied AI for Science requires robots to translate experimental goals into reliable physical procedures, reducing hazardous and repetitive human work while generating evidence for scientific discovery. Although language-based planning and learned manipulation provide complementary capabilities, their integration requires robots to adapt subsequent operations to actual execution outcomes. For example, an unsuccessful placement changes what must be done next, even when the experimental goal remains unchanged. Existing benchmarks assess planning, manipulation, and laboratory workflows through task completion and reasoning or execution metrics; however, aggregate performance leaves the connection between outcome-dependent choices and physical execution unresolved. To address this evaluation gap, we introduce Labference, a benchmark for evaluating how observed physical outcomes guide subsequent choices and how those choices translate into robotic laboratory actions. Its evaluation protocol is designed to test outcome-dependent behavioral adaptation through controlled evidence variations, while independently measuring operation selection, physical execution, and task completion. Matched Oracle-assisted continuations from shared checkpoints then assess which forms of support improve subsequent choices and task completion. Initial weighing evaluations reveal target-selection errors in the tested VLA policies despite successful object transfers, whereas GPT-driven control achieves correct selection but encounters execution failures and substantial computation costs. Together, these findings highlight the need to connect task-appropriate reasoning with reliable, timely action. By making this connection measurable and diagnosable, Labference supports targeted improvements toward autonomous experimentation for Embodied AI for Science.",
+      "url": "https://arxiv.org/abs/2610.35252",
+      "pdf": "https://arxiv.org/pdf/2610.35252",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA reasoning-action integration",
+        "reason": "Directly evaluates how VLA policies connect task reasoning to manipulation execution, addressing a critical benchmark gap with diagnostic findings on current approaches' failure modes."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35103",
+      "title": "The Language of Deformation: Semantic Failure Analysis as a Prerequisite for Dexterous Manipulation of Deformable Objects",
+      "authors": [
+        "Ignacio Cuiral-Zueco",
+        "David Hardman",
+        "Michele Pierallini",
+        "Erfan Shahriari"
+      ],
+      "abstract": "Dexterous manipulation of rigid objects has reached a level of maturity where grasp stability, control, and planning strategies are successfully applied in industry and logistics. In contrast, manipulating deformable objects (cables, plastic pieces, cloth) remains far more challenging, as rigid-object methods do not account for their additional complexity. This paper identifies semantic failure analysis as a key step toward mature deformable-object manipulation and supports this claim with proof-of-concept experiments. Unlike rigid-object manipulation, where goals are well-defined in terms of criteria such as force balance and slippage, deformable-object manipulation involves a broader variety of failure modes arising from differences in materials, geometry, and behaviour. Typical failures include buckling, plastic deformation, pressure variations, and tearing. These diverse and often hard-to-detect events require distinct corrective strategies, making semantic failure analysis necessary. We define its key components and challenges and present experimental results supporting its potential as a research direction.",
+      "url": "https://arxiv.org/abs/2610.35103",
+      "pdf": "https://arxiv.org/pdf/2610.35103",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Deformable manipulation",
+        "reason": "Addresses underexplored problem with systematic failure taxonomy, but is primarily characterization work lacking demonstration of complete learned solutions or control strategies for deformable manipulation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.35010",
+      "title": "JevVLA: Jev-Inspired Energy-Based Adaptation for Vision-Language-Action Policies",
+      "authors": [
+        "Wei Wang",
+        "Wenqiao Zhang",
+        "Zheqi Lv",
+        "Zheng Dong",
+        "Yingjie Niu",
+        "Jiaqi Zhu",
+        "Jun Xiao",
+        "Chao Li",
+        "Yueting Zhuang"
+      ],
+      "abstract": "Vision-language-action (VLA) policies can select among discrete candidates for pick-and-place manipulation or generate continuous action chunks for motion control. Improving both forms of decision making through a common mechanism while retaining the capabilities of a pretrained policy is an important adaptation problem. Inspired by Jev's structured, probabilistic decision interface, we propose JevVLA, a lightweight energy-based adaptation framework for VLA policies. JevVLA instantiates this inspiration by modeling the relative quality of action proposals: with the base policy frozen, it learns a differentiable scalar energy conditioned on observations, task context, and actions, using execution feedback, expert corrections, or demonstration-derived preferences. JevVLA uses this single learned action preference function in two ways: its values compare discrete candidates, while its action gradients correct continuous actions or guide their generation. Candidate selection and continuous control thus share one trainable decision core. Each benchmark uses independently trained weights and fixed input/output encodings, while retaining the same core network with approximately 80,000 trainable parameters. On the held-out test sets, JevVLA improves task success over the respective matched base-policy controls by 1.28, 2.31, 1.60, 1.52, and 1.28 percentage points on MetaWorld MT50, VIMA, LanguageTable, LIBERO Plus, and CLIPort, respectively. These results support the feasibility of a lightweight, Jev-inspired energy model for adapting both discrete action selection and continuous action guidance. The JevVLA implementation will be open-sourced at https://github.com/ZJU4EmbodiedAI/JevVLA.",
+      "url": "https://arxiv.org/abs/2610.35010",
+      "pdf": "https://arxiv.org/pdf/2610.35010",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Policy Adaptation",
+        "reason": "Energy-based action preference learning provides practical VLA adaptation with consistent but modest gains; good engineering over fundamental novelty."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.34893",
+      "title": "MMGNet: Multi-Modal 6-DoF Grasp Synthesis for Cluttered Scenes",
+      "authors": [
+        "Rui Cao",
+        "Jia-Hui Pan",
+        "Yichuan Li",
+        "Yunfan Yu",
+        "Chi-Wing Fu",
+        "Jiangliu Wang",
+        "Yun-Hui Liu"
+      ],
+      "abstract": "Grasping is a foundational capability in robotic manipulation. Scene-level 6-DoF grasp synthesis relies on point clouds for metric geometry, yet real-world point observations are often noisy, incomplete, and over-smoothed. RGB images provide object-region, boundary, and appearance cues, yet two bottlenecks limit their effective use in scene representation and local grasp reasoning. We present MMGNet, a Multi-Modal Grasp Synthesis Network that addresses these bottlenecks through hierarchical image-to-3D feature injection and rotational graspness modeling. Hierarchical injection integrates multi-scale image features throughout 3D representation formation, while the rotational graspness jointly predicts the grasp approach direction and in-plane rotation before organizing local image-informed features through grasp-shaded grouping. Ablation studies show that these two modules provide complementary gains. MMGNet achieves a mean AP of 60.34 on GraspNet-1Billion with RealSense, surpassing all compared methods. In real-world experiments with adversarial grasp objects, MMGNet improves the grasp success rate over AnyGrasp by 8.46 percentage points. \\emph{Code, models, and data will be released upon publication.}",
+      "url": "https://arxiv.org/abs/2610.34893",
+      "pdf": "https://arxiv.org/pdf/2610.34893",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "6-DoF Grasp Synthesis",
+        "reason": "Solid table-top grasping work with multi-modal fusion and SOTA benchmark results, but focused on grasp detection rather than policy learning or VLA."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.34649",
+      "title": "RobotAgentBench: Towards Open-world Robot Autonomy",
+      "authors": [
+        "Lingjun Mao",
+        "Jinglin Cao",
+        "Lukun He",
+        "Wenpeng Xu",
+        "Yuchen Yan",
+        "Hengyu Jin",
+        "Zijun Zhang",
+        "Jinzhou Tang",
+        "Songyao Jin",
+        "Ziche Liu",
+        "Yifei Shao",
+        "Junbo Huang",
+        "Fang Nan",
+        "Ruobing Han",
+        "Ziqiao Xi",
+        "Ziming Xu",
+        "Shuang Liang",
+        "Sibo Zhu",
+        "Wenyi Wu",
+        "Xinyue Wang",
+        "Yiming Huang",
+        "Xinkai Zou",
+        "Gao Zhu",
+        "Kun Zhou",
+        "Biwei Huang"
+      ],
+      "abstract": "Recent advances in vision-language-action (VLA) and world-action models (WAMs) have significantly improved robotic manipulation, yet deploying robots in the open world demands a higher level of autonomy beyond executing predefined tasks. Robot agents offer a promising paradigm for this transition, integrating task discovery, contextual reasoning, physical execution, and adaptive recovery into a closed interaction loop. However, existing benchmarks largely evaluate isolated capabilities, failing to capture the complexity of open-world robot autonomy. We introduce RobotAgentBench (RAB), a comprehensive benchmark for evaluating robot agents in realistic, open-world household environments. Through an agent-assisted, human-in-the-loop real-to-sim pipeline, RAB constructs 50 diverse household layouts with interactive objects and physically grounded tasks, encompassing 90 atomic tasks, 18 short-horizon tasks, 8 long-horizon tasks, and 4 open-ended scenarios. RAB provides a multi-level evaluation of robot agent capabilities: (1) task-level assessments systematically examine five complementary dimensions: task discovery, context reasoning, manipulation, failure recovery, and robustness; (2) scenario-level evaluation assesses how agents integrate these capabilities to autonomously fulfill high-level user needs. Furthermore, RAB enables systematic comparisons of standalone VLA/WAM models and diverse robot agent architectures under a unified planning-execution-verification framework. Extensive experiments reveal substantial gaps between manipulation and autonomy, demonstrate the advantages of agentic architectures and recursive self-improvement, and highlight the remaining challenges toward open-world robot autonomy.",
+      "url": "https://arxiv.org/abs/2610.34649",
+      "pdf": "https://arxiv.org/pdf/2610.34649",
+      "published": "2026-10-26",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Robot Agent Benchmark",
+        "reason": "Comprehensive open-world household manipulation benchmark directly aligned with VLA evaluation\u2014useful for systematizing agent autonomy but primarily evaluation-focused rather than advancing core manipulation methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.34527",
+      "title": "How High Can GPT-6 Astra Climb in Contact-Rich Manipulation? PhysLadder: A Hierarchical, Matched Sim-Real Benchmark for Physical Interaction",
+      "authors": [
+        "Haibao Yu",
+        "Jiaqi Meng",
+        "Zijian Zhang",
+        "Bowen Jing",
+        "Lei Yang",
+        "Yue Hu",
+        "Chenchen Ge",
+        "Yiming Hou",
+        "Chenbo Xin",
+        "Dawen Ye",
+        "Haifang Qin",
+        "Jin Li",
+        "Weitao Zhou",
+        "Jianing Qiu",
+        "Jiankai Sun",
+        "Dandan Zhang",
+        "Zaiqing Nie",
+        "Ping Luo",
+        "Ding Zhao"
+      ],
+      "abstract": "We introduce PhysLadder, a hierarchical Sim-Real benchmark for evaluating physical interaction capabilities in contact-rich manipulation. Its 16 household tasks span three cumulative levels: contact selection and geometric alignment (L1), force regulation within sustained contact (L2), and coordinated contact reconfiguration and force regulation (L3). Each task is instantiated in physically and visually matched simulated and real-world environments, with shared task definitions and success criteria. We evaluate GPT-6 Astra zero-shot with three trials per task in each environment. Real-world success rates decline from 80.0% at L1 to 47.6% at L2 and 0.0% at L3, with corresponding simulation rates of 66.7%, 47.6%, and 0.0%. Ten of the 16 tasks have identical success counts across environments; the remaining six differ by one success out of three trials. Across both environments, recurring difficulties in spatial reasoning, contact selection, force regulation, and coordination often prevent local physical progress from accumulating into task completion. These findings characterize Astra's observed capability boundary across increasing interaction demands and, for this model, support matched simulation as a repeatable, scalable testbed for studying the sustained, coordinated physical interactions that limit reliable manipulation.",
+      "url": "https://arxiv.org/abs/2610.34527",
+      "pdf": "https://arxiv.org/pdf/2610.34527",
+      "published": "2026-10-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA evaluation / contact-rich manipulation",
+        "reason": "PhysLadder offers a rigorous hierarchical Sim-Real benchmark directly evaluating a VLA model on contact-rich manipulation with clear capability boundaries, but as primarily an evaluative benchmark without novel methods, its contribution is incremental."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.34519",
+      "title": "TRIAGE: Efficient Vision-Language-Action Inference Needs Both Reuse and Pruning",
+      "authors": [
+        "Sooyoung Kwon",
+        "Carlee Joe-Wong",
+        "Kyunghan Lee"
+      ],
+      "abstract": "Vision-language-action (VLA) models are increasingly used for robot manipulation because they map camera images and a language instruction directly to actions. Robots that cannot be tethered to a workstation, such as mobile manipulators and humanoids, must run them on onboard embedded boards, where the prefill latency of the language backbone grows with the hundreds of visual tokens processed at every control step. To meet real-time limits, training-free accelerators recompute only a subset of the visual tokens and skip the rest, either by pruning them or by reusing their cached key-value (KV) states. The two options save nearly the same computation, yet existing methods apply only one of them to every skipped token. Through a token-level diagnostic, we show that which option keeps the action closer to full recomputation depends on the token's drift, the change in its shallow-layer value since its cache was computed. On both backbones tested, reusing tokens below a drift threshold was no worse than pruning them, whereas beyond it, reuse yields up to 4.4x the action error of pruning; the same diagnostic calibrates this threshold per backbone. Building on this finding, we propose TRIAGE, which deems a cache valid when its drift is below this threshold and it is not too old. TRIAGE recomputes a fixed budget of tokens, prioritizing important tokens with invalid caches, reuses every other token with a valid cache, and prunes the rest; prune-only and reuse-only methods are the two extremes of this partition. Because the budget fixes the number of recomputed tokens, it directly sets the prefill latency. On LIBERO and SimplerEnv, TRIAGE stays within 3 pp of full recomputation in average success rate while cutting prefill latency on a Jetson AGX Orin by up to 48%, and with only 7% of visual tokens recomputed, it beats the strongest baseline by 24.4 pp on LIBERO-Object.",
+      "url": "https://arxiv.org/abs/2610.34519",
+      "pdf": "https://arxiv.org/pdf/2610.34519",
+      "published": "2026-10-25",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "VLA inference optimization",
+        "reason": "Directly addresses practical VLA deployment on embedded robots with a principled drift-based diagnostic that systematically combines reuse and pruning, achieving 48% latency reduction while maintaining task performance."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2610.31670",
       "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
