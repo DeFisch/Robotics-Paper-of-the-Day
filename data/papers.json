@@ -1,6 +1,741 @@
 {
-  "updated": "2026-10-29T18:49:57Z",
+  "updated": "2026-10-30T18:36:20Z",
   "papers": [
+    {
+      "id": "2610.40646",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+      "authors": [
+        "Yunchu Zhang",
+        "Ray Song",
+        "Junhan Jiao",
+        "Liyiming Ke",
+        "Yuchen Yang",
+        "Ruihan Gao",
+        "Emma Romig",
+        "Siddhartha Srinivasa",
+        "Yiyue Luo"
+      ],
+      "abstract": "Robot manipulation in everyday environments inherently involves substantial tool usage. Seemingly simple household tasks, such as cooking pan-fried tofu, require forceful cutting, delicate brushing, and precise placement using different tools under contact-rich interaction. Thus, the ability to autonomously swap and use task-appropriate tools is important for tool-centric manipulation. We introduce SwapBot, a modular, tool-centric end effector system featuring low-cost adapters that quickly convert common household tools into robot end effectors. Rather than pursuing a single universal gripper, SwapBot adopts a unified design principle that combines a fixed robot-side coupling interface with low-cost, tool-side adapters, enabling compatibility with diverse tools, including articulated ones, and multiple robot platforms. Each adapter integrates compact tactile sensors, supports fast autonomous swapping, and interfaces with an intuitive teleoperation system for efficient demonstration collection. User studies show that, during teleoperation, SwapBot reduces task completion time and operator workload. Using collected demonstrations on the robot, we train imitation learning policies to successfully perform tool-centric tasks like cooking tofu, stirring salad, flipping meat. Our ablation study shows that using tactile-augmented demonstrations improves policy performance across contact-rich skills, increasing success rates by 15 to 25 percentage points over RGB-only policies. These results highlight modular, tactile-equipped tools as a practical and extensible pathway toward robust and capable robot manipulation. Project website https://personalrobotics.github.io/SwapBot.",
+      "url": "https://arxiv.org/abs/2610.40646",
+      "pdf": "https://arxiv.org/pdf/2610.40646",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Tool-centric manipulation",
+        "reason": "Well-engineered modular system for tool-use manipulation with tactile-augmented imitation learning\u2014core to table-top manipulation and contact-rich tasks, though the learning approach is standard."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40565",
+      "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+      "authors": [
+        "Pranjal Aggarwal",
+        "Sean Welleck"
+      ],
+      "abstract": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena. The core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations. Our core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations. We select simulations based on U.S. GDP data to cover economically valuable physical work, define what makes a good simulation and a good task, and develop an adversarial creation-audit loop that checks each simulation and task against these definitions. Using this pipeline, we build RoboWorld, a set of 25 simulations with 25 test and 175 training RL environments of varying difficulty. Even the best frontier models fail on every RoboWorld test task, achieving an average reward of only 0.06. Building on RoboWorld, we introduce several new ways for frontier models to improve, including in-context learning across repeated attempts, a privileged teacher that reads the simulator state and teaches a student in context, self-assisted learning from the model's own privileged experience, and code policies that generate demonstrations across varied scenes to train vision-language-action models (VLAs) such as $\u03c0_{0.5}$. Each of these substantially improves performance. We release our pipeline, RL environments, and benchmark to facilitate future research. Code and data are available at https://gym-anything.github.io/robotics",
+      "url": "https://arxiv.org/abs/2610.40565",
+      "pdf": "https://arxiv.org/pdf/2610.40565",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA training simulation",
+        "reason": "Directly tackles scaling VLA policy learning through AI-generated simulations; introduces comprehensive RoboWorld benchmark showing frontier models underperform, plus multiple methods for improvement including VLA training strategies."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40532",
+      "title": "BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing",
+      "authors": [
+        "Xiangyu Xu",
+        "Bangshuai Peng",
+        "Ziyi Liu",
+        "Mengjie Zhao",
+        "Chenhao Lu",
+        "Zhengyang Fan",
+        "Huazhe Xu",
+        "Kaizhe Hu"
+      ],
+      "abstract": "How effectively can vision-language-action (VLA) models learn diverse language-conditioned behaviors as training data scales? Investigating this question requires large and varied robot datasets, whose collection on physical robots remains costly. We introduce BURGER, a language-conditioned robotic drawing benchmark with a scalable, prompt-driven pipeline for generating continuous drawing trajectories, both in simulation and the real world. In BURGER, an agent starts from the same blank canvas and controls a robot arm to draw the object or spatial composition specified by language, while each instruction allows an open-ended variety of valid drawings and stroke orders. Using 28,200 simulated demonstrations spanning 282 drawing tasks, we evaluate five representative VLA models across data scales, language grounding, and multimodal behavior. BURGER supports fine-grained analysis of language grounding, spatial composition, and action generation, revealing distinct failure patterns across VLA models. Our experiments suggest that some VLA models can benefit from greater task diversity and demonstration scale, capture multimodal drawing behaviors, and generalize to unseen compositions of familiar objects. Finally, we deploy a trained policy on a Franka Panda arm, demonstrating the ability to draw reactively under human intervention. Project homepage and code can be found at https://siyingzhao.github.io/BURGER/.",
+      "url": "https://arxiv.org/abs/2610.40532",
+      "pdf": "https://arxiv.org/pdf/2610.40532",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA Benchmarking",
+        "reason": "Large-scale, well-executed benchmark directly evaluating VLA models on language-conditioned manipulation with real robot validation, though the findings about data scale and task diversity benefits are expected rather than surprising."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40401",
+      "title": "Continuous-Action World Models: Learning Cross-Embodiment Spatiotemporal Dynamics Priors",
+      "authors": [
+        "Liangyu Li",
+        "Qingwen Liu"
+      ],
+      "abstract": "We introduce Continuous-Action World Models (CoAWM), a framework for learning cross-embodiment spatiotemporal dynamics priors that support robot action generation across embodiments and execution frequencies. At its core is a shared latent function space that captures the spatial and temporal structure of robot actions. We learn this space through two stages. First, function pretraining brings trajectories from different embodiments and sampling frequencies into a common representation, learning shared dynamics priors through action reconstruction and consistency across temporal sampling views. By accommodating heterogeneous robot trajectories, this stage broadens the range of data sources available for pretraining and facilitates scaling to larger and more diverse datasets. Second, we connect the pretrained function space to a world-model backbone, enabling observations, language instructions, and the current robot state to condition the prediction of a latent action function. A single decoder takes any query time and returns the corresponding end-effector action. By separating shared dynamics priors from task-conditioned action selection and temporal sampling, our approach provides a unified foundation for transferring robot experience across embodiments and control frequencies.",
+      "url": "https://arxiv.org/abs/2610.40401",
+      "pdf": "https://arxiv.org/pdf/2610.40401",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Cross-embodiment manipulation priors",
+        "reason": "Directly targets scaling robot manipulation learning across embodiments via shared continuous action priors; technically sound two-stage approach with clear transfer mechanism, though empirical validation remains to be shown."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40373",
+      "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
+      "authors": [
+        "Rongxing Ding",
+        "Hongyu Qu",
+        "Kehong Wu",
+        "Xudong Wang",
+        "Fan Zhang",
+        "Xinguang Xiang",
+        "Xiangbo Shu"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have demonstrated promising capabilities in robotic manipulation by integrating visual perception, language understanding, and action generation. Recent advances have further incorporated future prediction to enhance the understanding of environmental dynamics and task progression. However, existing methods often model short-term dynamics and long-term task objectives separately, while directly incorporating predicted futures into action policies without sufficiently considering their relevance to current action requirements. To address these limitations, we propose HiFOR, a hierarchical foresight framework with action-guided world retrieval. Specifically, Hierarchical Foresight Prediction jointly predicts short-term state evolution, semantic milestones, and final goal states through a Hierarchical Dependency Mask (HDM), establishing dependencies across temporal horizons. Building upon these predictions, Structure-Aware Latent World Modeling organizes future latent representations along the horizon, view, and spatial dimensions to facilitate fine-grained retrieval. Furthermore, Action-Guided Factorized World Retrieval adaptively retrieves relevant future information from the structured latent world based on evolving action representations during denoising, providing targeted guidance for action generation. Extensive experiments on two simulation benchmarks and six real-world robotic manipulation tasks demonstrate the effectiveness of our approach.",
+      "url": "https://arxiv.org/abs/2610.40373",
+      "pdf": "https://arxiv.org/pdf/2610.40373",
+      "published": "2026-10-29",
+      "primary_category": "cs.CV",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA / hierarchical foresight",
+        "reason": "Directly addresses a real limitation in VLA models by combining hierarchical prediction of short/long-term dynamics with action-guided retrieval; solid execution with real-world validation, but incremental on established VLA foundations."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40349",
+      "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+      "authors": [
+        "Haozhe Zhang",
+        "Gu Zhang",
+        "Zirui Zou",
+        "Yuzheng Chen",
+        "Jinlong Wu",
+        "Zixuan Hu",
+        "Jianke Zhang",
+        "Yucheng Hu",
+        "Zhecheng Yuan",
+        "Huazhe Xu"
+      ],
+      "abstract": "Human demonstrations offer an efficient and scalable source of data for dexterous robot manipulation, but differences in sensing and hand morphology complicate the transfer of contact-rich interactions. We present TouchBridge, a hardware--software co-designed framework for human-to-robot data transformation. A wearable human demonstration interface and a corresponding robot interface establish cross-embodiment correspondence in visual and fingertip tactile sensing. We introduce Tac-Retarget, a tactile-conditioned retargeting method that uses measured contact to align fingertip contact patches and preserve their spatial relations within and across hands. Unlike object-aware or simulation-based transfer pipelines, Tac-Retarget requires no object mesh, object-pose estimate, or physics simulation for retargeting, enabling direct and scalable conversion of human demonstrations into robot-domain training data. Combined with visual synthesis and camera-anchored action conversion, TouchBridge produces robot-domain demonstrations for fine-tuning a pretrained vision-language-action (VLA) model. Across four real-world contact-rich tasks, policies fine-tuned solely on TouchBridge-converted human demonstrations achieve a 72.5% average success rate, compared with 77.5% using an equal number of teleoperated robot demonstrations, while human demonstration collection is 7.0x faster. Under the same policy and training setup, Tac-Retarget outperforms DexPilot and UniDex by 25.0 and 42.5 percentage points, respectively.",
+      "url": "https://arxiv.org/abs/2610.40349",
+      "pdf": "https://arxiv.org/pdf/2610.40349",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Tactile-Conditioned Human-to-Robot Transfer",
+        "reason": "Directly addresses VLA fine-tuning via human demo conversion; tactile-aligned retargeting is clever and achieves solid real-world results (72.5% success, 7x faster collection) with principled improvements over baselines."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40075",
+      "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+      "authors": [
+        "Jianming Ma",
+        "Rongjun Jin",
+        "Yizhi Chen",
+        "Yue Gao"
+      ],
+      "abstract": "Robot foundation models increasingly rely on flow-based action generation for general-purpose manipulation, yet the generated actions are not guaranteed to satisfy physical constraints such as joint limits and collision avoidance. This problem is especially challenging when the feasible set cannot be described analytically and is accessible only through black-box feasibility oracles. We study this practical oracle-only setting and propose an oracle-guided differentiable safeguard for safe flow-matching robot policies. The safeguard uses binary feasibility queries to correct unsafe updates in the forward pass, while extracting local boundary information to provide constraint-aware learning signals in the backward pass. Combined with discrete-time flow matching, the same safeguard is used during training and inference, enabling forward--backward aligned policy learning without explicit or differentiable constraint models. Experiments on obstacle-aware robotic manipulation demonstrate 100% constraint satisfaction while preserving task performance.",
+      "url": "https://arxiv.org/abs/2610.40075",
+      "pdf": "https://arxiv.org/pdf/2610.40075",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Constraint-Safe Flow Matching Policies",
+        "reason": "Directly addresses safe action generation for robot manipulation with a practical oracle-guided approach; strong claim of 100% constraint satisfaction while preserving task performance; highly applicable to foundation model deployment but not a VLA model itself."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40016",
+      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+      "authors": [
+        "Enqiao Lu",
+        "Yuxiang Xie",
+        "Xingrui Yu",
+        "Yuyang Wang",
+        "Yipeng Gu",
+        "Zhenglin Wan",
+        "Pengfei Zhou",
+        "Wangbo Zhao",
+        "Yang You",
+        "Yuxiang Gao",
+        "Ivor Tsang"
+      ],
+      "abstract": "Agentic robots must turn a high-level goal into actions while keeping the physical conditions needed for future steps valid. A completed action does not ensure that its effects will persist: a later disturbance can invalidate support that the remaining plan still assumes. We present LOGIV, a graph engineering framework for agentic robot execution that uses an explicit task graph to connect symbolic planning, observation-based verification, and embodied action. LOGIV compiles a validated plan into condition-support and resource-ordering edges, checks their physical validity during execution, and uses dependency tracing to determine what must be restored after a failure. Repair is constrained by retained unfinished actions, and the combined continuation is symbolically validated before execution resumes. The framework operates above existing Vision-Language-Action (VLA) and World Action Model (WAM) policies without adding trainable components. Across 20 dual-arm tasks from RoboTwin~V2 and BiCoord with three execution backbones, LOGIV improves mean task success without injected disturbances by 10.67 and 15.33 percentage points, respectively. Under predefined perturbations, it achieves higher task completion and condition restoration than three adapted recovery baselines for every backbone on both benchmarks. On three real-robot tasks, successful trials increase from 12/30 to 17/30. These results support explicit, continuously checked task dependencies as a practical interface for reliable agentic robot execution.",
+      "url": "https://arxiv.org/abs/2610.40016",
+      "pdf": "https://arxiv.org/pdf/2610.40016",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Long-horizon dual-arm manipulation, task verification & recovery",
+        "reason": "Directly addresses VLA policy robustness in long-horizon manipulation by verifying and repairing task preconditions; solid empirical improvements (10-15%) with real robot validation, though more systems-oriented than algorithmic innovation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39543",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "authors": [
+        "Yixue Zhang",
+        "Wenke Xia",
+        "Kun Wu",
+        "Wenbo Yu",
+        "Pei Ren",
+        "Junnan Nie",
+        "Di Hu",
+        "Zhengping Che",
+        "Chang Liu"
+      ],
+      "abstract": "Reasoning informs decision-making by connecting intended actions with their expected consequences. Recent vision-language-action (VLA) models incorporate embodied chains of thought (ECoTs) to guide action generation. However, such guidance remains implicit, as actions are conditioned on ECoTs rather than explicitly optimized to align with them. We introduce CoRAct, a consequence-grounded reasoning-to-action alignment framework that explicitly aligns reasoning and action through reward-guided optimization in action noise space. CoRAct formulates two physically grounded ECoT components as verifiable signals: movement specifies intended motion, while waypoints encode expected spatial consequences. A unified Mixture-of-Transformers jointly models ECoT reasoning, action generation, and action-conditioned future prediction. For candidate actions generated from sampled noise, CoRAct computes alignment rewards based on movement consistency and agreement between predicted outcomes and specified waypoints. These rewards guide group-relative optimization of the initial noise distribution, steering action generation toward consistency with intended actions and expected consequences. Experiments across RoboCasa, VLABench, and real-world manipulation tasks demonstrate improvements in task success, generalization, and reasoning-execution alignment over strong ECoT-based VLA baselines. CoRAct also grounds externally provided ECoTs in executable behavior, enabling zero-shot adaptation to novel scenarios by leveraging knowledge from powerful vision-language models. Project page and dataset: https://onlyxingxingzyx.github.io/CoRAct/",
+      "url": "https://arxiv.org/abs/2610.39543",
+      "pdf": "https://arxiv.org/pdf/2610.39543",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA / Robot Manipulation",
+        "reason": "Directly addresses alignment between reasoning and action in VLA models through consequence-grounding; evaluated on table-top manipulation tasks with demonstrated improvements in generalization and reasoning-execution consistency."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39528",
+      "title": "PRIME W0: Physical Priors from World Models for Embodied Manipulation",
+      "authors": [
+        "Huabin Peng",
+        "Fagang Jin",
+        "Yancong Wei",
+        "Tengfei Ma",
+        "Chuhang Liu",
+        "Chao Yu",
+        "Liqing Chen"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models excel at instruction following, yet most remain feed-forward: they condition actions only on the current observation and discard both long-horizon temporal context and the hierarchical structure of VLM representations. We present PRIME W0, a hierarchical conditional flow-matching framework that closes this gap through three synergistic designs: (1)per-layer KV injection from a pretrained VLM into an Adaptive MoE action expert; (2)dynamics-aware conditioning via asynchronous world-model subgoal-image prediction and a DINOv2 historical-frame semantic bridge; and (3)Action Dynamic Manifold (ADM) flow matching with covariance-structured noise that respects robot kinematic coupling. PRIME W0 is trained in four stages---VLM pre-training, DAT/NTP visuomotor pre-training, DiT flow-matching decoder assembly with WM injection, and end-to-end SFT---and achieves state-of-the-art results on LIBERO and real-robot benchmarks, with systematic ablations validating each architectural component.",
+      "url": "https://arxiv.org/abs/2610.39528",
+      "pdf": "https://arxiv.org/pdf/2610.39528",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "VLA with World Models",
+        "reason": "Directly addresses temporal context loss in feed-forward VLAs through hierarchical dynamics-aware conditioning, validated on LIBERO and real robots with systematic ablations of each component."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39451",
+      "title": "Smooth Action Chunking Via Movement-Primitive Representations for Imitation Learning",
+      "authors": [
+        "Shota Nomura",
+        "Takayuki Osa",
+        "Yasuhiro Kato",
+        "Kazuki Ota",
+        "Naoki Shitanda",
+        "Tatsuya Harada"
+      ],
+      "abstract": "Imitation learning has become a widely adopted approach for vision-based robot policies, owing to its conceptual simplicity, scalability, and ability to leverage large-scale datasets. As these policies have grown more capable, action chunking has become their standard interface. At each decision step the policy outputs several future actions at once. Backbones from diffusion policies to large vision-language-action models all share it. Whatever backbone produces the chunk, its temporal structure is learned only implicitly. The commanded trajectory is therefore jerky both within a chunk and between successive chunks. On real hardware this appears as visible vibration and as repeated saturation of the follower's velocity limit. We address this issue by incorporating a movement-primitive-based trajectory representation into action chunking. Specifically, a trajectory segment is represented as a linear combination of smooth basis functions, yielding smooth trajectories by construction while leaving the policy architecture, training objective, and inference procedure unchanged. The same representation also yields a closed-form, inference-time correction for the second source of jerk. We condition the predicted coefficients so that the new chunk passes through a via-point at the previous chunk's last commanded action. This correction needs no retraining and, unlike asynchronous Real-Time Chunking, applies to policies queried in one shot. We instantiate it on a one-shot (ACT) and an iterative (DiT) backbone and evaluate in simulation and on a real bimanual ALOHA platform. The representation lowers within-chunk jerk by an order of magnitude on the one-shot backbone and by 2.4 times on the iterative one, with task success statistically non-inferior. The conditioning then removes 73-84% of the boundary discontinuity, at negligible per-step cost.",
+      "url": "https://arxiv.org/abs/2610.39451",
+      "pdf": "https://arxiv.org/pdf/2610.39451",
+      "published": "2026-10-29",
+      "primary_category": "cs.LG",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Action chunking & trajectory representation",
+        "reason": "Practical work addressing jerk/vibration in real bimanual manipulation via smooth basis-function action representations; applicable across VLA backbones with significant hardware improvements and no retraining required."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39429",
+      "title": "ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning",
+      "authors": [
+        "Neel Jawale",
+        "Stephan Pleines",
+        "Soha Pouya",
+        "Yuke Zhu",
+        "Ajay Mandlekar",
+        "Caelan Garrett"
+      ],
+      "abstract": "Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. The paradigm of training generalist robot policies from massive datasets is a promising approach to address general-purpose multi-arm manipulation, but the acquisition of large multi-arm manipulation datasets remains a bottleneck. Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning & scheduling algorithm for multi-arm demonstration generation. We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. ScheduleGen policies outperform those trained on a state-of-the-art data generation baseline, and achieve 50-80% success across eight real-world variants through zero-shot sim-to-real and real-to-sim-to-real transfer. Videos and more at: https://schedulegen.github.io/",
+      "url": "https://arxiv.org/abs/2610.39429",
+      "pdf": "https://arxiv.org/pdf/2610.39429",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Yuke Zhu",
+        "reason": "curated (Yuke Zhu)"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Bimanual/multi-arm imitation learning",
+        "reason": "Directly addresses scalable demonstration generation for multi-arm manipulation with safety constraints; combines planning & scheduling with policy learning and validates on real systems."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39416",
+      "title": "Decoding Geometry, Not Tokens: Efficient VLMs for Robot Affordance and Trajectory Prediction",
+      "authors": [
+        "Akila Ayanthi",
+        "Darshana Priyasad",
+        "Tharindu Fernando",
+        "Dimity Miller",
+        "Sridha Sridharan",
+        "Clinton Fookes",
+        "Peyman Moghadam"
+      ],
+      "abstract": "Predicting where to grasp and how to move is fundamentally a geometry problem. Vision-language models treat it as language generation instead. They tokenize spatial coordinates into text and decode them autoregressively. This mechanism ignores spatial structure and truncates continuous precision. Errors compound across coordinate tokens during decoding. In this paper, we show that compact off-the-shelf VLMs with 0.5-2B parameters already encode rich spatial information in their intermediate hidden states. Autoregressive decoding is the dominant bottleneck for trajectory prediction, while affordance prediction depends additionally on feature depth and decoder architecture. We expose the latent spatial information with a lightweight, geometry-compatible prediction head that attaches to a frozen backbone. It reads features from an intermediate hidden layer, conditions a learned query on the task instruction and refines it via cross-attention over the visual tokens to regress affordance boxes and trajectory waypoints directly as continuous values, without modifying the backbone. We evaluate on ShareRobot-Bench and AGD20K. Our 2B variant reduces trajectory error by over 60% and improves ShareRobot-Bench affordance mAP by 85% relative to the autoregressive baseline. It approaches RoboBrain on trajectory prediction (0.251 vs 0.191 DFD) at 3.8x higher throughput. These results demonstrate a favorable accuracy-efficiency trade-off for instruction-conditioned 2D geometric prediction.",
+      "url": "https://arxiv.org/abs/2610.39416",
+      "pdf": "https://arxiv.org/pdf/2610.39416",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Efficient VLM Geometry Prediction",
+        "reason": "Directly targets the VLA bottleneck: frozen small VLMs encode rich spatial features that enable continuous geometric prediction via lightweight heads, achieving 60% trajectory error reduction with 3.8x throughput gain on standard benchmarks."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39314",
+      "title": "Language-Grounded Force/Torque Pretraining for Extrinsic Contact Perception",
+      "authors": [
+        "Kazuki Takahashi",
+        "Hiroaki Murakami",
+        "Ryota Sakuma",
+        "Mitsuhiro Kamezaki",
+        "Matthew Ishige",
+        "Yoshihiro Kawahara"
+      ],
+      "abstract": "Fine manipulation requires robots to recognize when a grasped object makes or changes contact with its environment, yet such extrinsic contact is not always directly observable from vision or local contact geometry. Force and torque signals carry this information, but also vary with object weight, grasp configuration, and robot motion, leaving it unclear whether they can provide a reusable representation of physical state. Here we show that bilateral six-axis force/torque histories can be pretrained as a semantically structured physical representation by aligning them with a frozen language space using supervision generated from simulated pick-and-place interactions. On unseen objects in simulation, the learned representation supports text-prototype readout of robot action, object weight, and grasp interaction. In real-world placement, unlabeled calibration enables contact and support-state recognition without updating the encoder, outperforming a vertical-force sign-reversal rule baseline. For connector insertion, an event absent from pretraining, low-rank adaptation improves data-efficient learning over training from scratch. These results show that force/torque histories can support both direct readout of known physical states and efficient adaptation to new extrinsic-contact events.",
+      "url": "https://arxiv.org/abs/2610.39314",
+      "pdf": "https://arxiv.org/pdf/2610.39314",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Language-grounded force perception",
+        "reason": "Directly addresses F/T signal interpretation for fine manipulation via language-aligned pretraining, enabling both zero-shot readout and efficient adaptation\u2014relevant to manipulation policies but with limited real-world task scope."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39076",
+      "title": "Tactus: Tactile & Pose Sensing Glove for Natural Dexterity Data Collection",
+      "authors": [
+        "Li Guan",
+        "Rachael Granberry",
+        "Sahar Aseeri",
+        "Sahar Rostami",
+        "Taylor Niehues",
+        "Sai Dhanooshi Marri",
+        "Mia Huang",
+        "Dingtian Zhang",
+        "Ziyi Kou",
+        "Jason Pursel",
+        "Eric Whitmire",
+        "Vatsal Mehta",
+        "Ashish Deshpande",
+        "Tristan Trutna",
+        "Reed Belcher",
+        "Emelia Black",
+        "Julian Blake",
+        "Roger Boldu",
+        "Sean Bonaventure",
+        "Einar Boyovich",
+        "Jordan Brennan",
+        "Elizabeth Casillas",
+        "David Christensen",
+        "Tyler Christensen",
+        "Nicholas Colonnese",
+        "Stuart Dealey",
+        "Gaige DeHaven",
+        "Katie Doran",
+        "Chris Doughty",
+        "Robert Drury",
+        "Silvia Espino",
+        "Gabriel Geyne",
+        "Beth Goodrich",
+        "Kyra Gould",
+        "Joe Grisso",
+        "Susana Guerrero",
+        "Andrew Gwozdziowski",
+        "Monica Ha",
+        "Ehsan Hajiesmaili",
+        "Kate Healy",
+        "Rose Hope",
+        "Michael Hurst",
+        "Claire Ikemiya",
+        "Daisy Isibor",
+        "Rick James",
+        "Yashasvi Joginapally",
+        "Samuel Johnson",
+        "Tyler Jorgensen",
+        "Kristy Jost",
+        "Ben Kamath",
+        "Slava Karulin",
+        "Alexander Keener",
+        "Woo Kim",
+        "Alison Krauskopf",
+        "Ankit Kumar",
+        "Joshua Lang",
+        "Lizzy Li",
+        "Cameron Lynch",
+        "Daniel Ma",
+        "Hector Martinon",
+        "Christina Matos",
+        "Keagan McCurdy",
+        "Lee Mincey",
+        "Stuart Nezlek",
+        "Tiffany Nguyen",
+        "James O'Hara",
+        "Jason Osborne",
+        "Jacky Pai",
+        "Roham Pardakhtim",
+        "David Perek",
+        "Alexandre Poulin",
+        "Nick Raines",
+        "Salwa Rasheed",
+        "Leah Resneck",
+        "Kevin Rhodes",
+        "Ergys Ristani",
+        "Douglas Roberts",
+        "Anik Sarker",
+        "Harrison Scarborough",
+        "Jonas Schmidtler",
+        "Brian Shieh",
+        "Benjamin Shuman",
+        "Garrett Simard",
+        "Forrest Smith",
+        "Udara Somarathna",
+        "Eliot Sosin",
+        "Jonathan Stewart",
+        "Kristine Strom",
+        "Adam Swett",
+        "Hal Talbot-Mantooth",
+        "Julia Tanner",
+        "Sai Sharan Thirunagari",
+        "Curtis Torrey",
+        "Simge Uzun",
+        "Eileen Wachs",
+        "Rylan Wasson",
+        "Henry Wei",
+        "Jesse White",
+        "Beau Woodbyrne",
+        "Antonio Woods",
+        "Noah Young",
+        "Chandler Yount",
+        "Joseph Zhang",
+        "Sean Keller"
+      ],
+      "abstract": "Collecting naturalistic human manipulation demonstrations with accurate contact force and hand pose is essential for robot dexterous manipulation policy and foundational world model learning - yet no existing wearable platform provides both calibrated fingertip force sensing and occlusion-resilient hand tracking in a form factor that preserves natural manipulation behavior. We present Tactus, a textile-integrated sensing glove that co-optimizes three design pillars: (1) a thin, conformal 3D-knit form factor (1.5 mm fingertip stackup) designed to minimize interference with natural manipulation, (2) strategically placed capacitive tactile sensors at manipulation-relevant regions informed by empirical contact studies, and (3) IMU-fused pose tracking that maintains accuracy through the hand-object occlusions where manipulation data is most valuable. Tactus includes a documented calibration pipeline for cross-glove consistency and per-session calibration for subject-dependent correction. To enable objective comparison, we introduce standardized benchmarking protocols for tactile force regression and hand pose estimation, and apply them to Tactus and two commercially available tactile gloves - to our knowledge the first quantitative cross-platform evaluation of this kind. Tactus resolves a minimum detectable force of 0.59 N at 95% confidence, 1.6 - 2.7x lower than the commercial baselines, and with 0.87 cross-participant consistency, while our pose tracking sustains 11.0 mm fingertip keypoint relative error during manipulation, when occlusion is heaviest. We show that these combined signals support object property estimation, slip detection, and representative recording of hand-object interaction - yielding demonstration data with the fidelity required for contact-aware manipulation policies and world models.",
+      "url": "https://arxiv.org/abs/2610.39076",
+      "pdf": "https://arxiv.org/pdf/2610.39076",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelance": 7,
+        "topic": "Tactile Sensing & Dexterous Data Collection",
+        "reason": "Directly enables high-fidelity demonstration data for contact-aware manipulation policies with quantitative improvements over commercial baselines; strong engineering work addressing a real gap in data collection."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.39044",
+      "title": "Catch It All!: Generalizable Dynamic Catching with a Dexterous Hand",
+      "authors": [
+        "Arth Shukla",
+        "Kehlani Fay",
+        "Huaze Liu",
+        "Darin Djapri",
+        "Alexiy Buynitsky",
+        "Nicklas Hansen"
+      ],
+      "abstract": "Catching arbitrary objects requires generalization to novel projectiles and real-time adaptation to unpredictable contact dynamics under noisy visual observations. This paper presents Catch It All!, a sim-to-real catching framework for humanoid robots that generalizes and adapts to unseen objects with variable physical properties for underhand and overhand catches, using only one egocentric camera. We learn policies which generalize to unseen objects with varying geometry, deformability, elasticity, and physical properties. Effective grasps which adapt real-time to object poses and shapes are learned through careful grasp reward design. We provide safety-aware curricula which enable safe, high-frequency action execution near hardware limits, including wrist torque limits as low as 5 Nm. We validate our system by deploying zero-shot on a Unitree G1. With only one egocentric camera, Catch It All! successfully performs underhand and overhand catches on 9 unseen objects not seen during training, including low-rebound plushes, semi-deformable toys and chip bags, and rigid-elastic objects with high rebound on contact.",
+      "url": "https://arxiv.org/abs/2610.39044",
+      "pdf": "https://arxiv.org/pdf/2610.39044",
+      "published": "2026-10-28",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Dexterous Catching",
+        "reason": "Strong dexterous manipulation work with real-robot generalization to unseen objects, but specialized task and humanoid platform reduce core relevance vs. general arm-manipulation focus."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.38661",
+      "title": "Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models",
+      "authors": [
+        "Jiuyi Xu",
+        "Xiao Hu",
+        "Meida Chen",
+        "Song Wang",
+        "Yang Ye",
+        "Yangming Shi"
+      ],
+      "abstract": "Post-training quantization (PTQ) reduces the memory footprint of vision-language-action (VLA) models, but lowering bit widths while maintaining task performance remains challenging. Existing work has used sensitivity estimates from calibration data to assign bit widths to different model components. However, using task success directly to guide mixed-precision allocation is underexplored because closed-loop evaluations are costly and the effect of quantizing one component depends on the precision of other components. To this end, we propose \\textbf{QbD-VLA}, a task-guided mixed-precision quantization method that uses task success from short closed-loop evaluations to assign weight and activation bit widths while accounting for interactions between model components. Experiments covering four VLA models and all four LIBERO suites show strong task performance at average precisions of approximately 4 bits for weights and fewer than 6 bits for activations. On SIMPLER, the gain over uniform quantization is small. On a Franka Research 3 robot arm, simulation-selected allocations show no detected success-rate loss on X-VLA but fail on $\u03c0_{0.5}$. These findings support using task success to guide mixed-precision VLA quantization, while highlighting the need for real-world evaluation before deployment. Code is available at \\href{https://github.com/jiuyixu25/QbD-VLA}{\\texttt{github.com/jiuyixu25/QbD-VLA}}.",
+      "url": "https://arxiv.org/abs/2610.38661",
+      "pdf": "https://arxiv.org/pdf/2610.38661",
+      "published": "2026-10-28",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "VLA model compression & deployment",
+        "reason": "Directly tackles VLA quantization with task-guided mixed-precision allocation and real robot tests, but mixed real-world results (X-VLA succeeds, \u03c0_0.5 fails) limit practical deployment readiness."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2610.37666",
       "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
