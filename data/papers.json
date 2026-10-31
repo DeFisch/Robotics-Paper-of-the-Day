@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:36:20Z",
+  "updated": "2026-10-31T17:33:37Z",
   "papers": [
     {
       "id": "2610.40646",
@@ -33,11 +33,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 8,
-        "quality": 7,
-        "novelty": 6,
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
         "topic": "Tool-centric manipulation",
-        "reason": "Well-engineered modular system for tool-use manipulation with tactile-augmented imitation learning\u2014core to table-top manipulation and contact-rich tasks, though the learning approach is standard."
+        "reason": "Well-executed system for autonomous tool swapping with tactile-augmented imitation learning on contact-rich household tasks; directly addresses practical tool usage in table-top manipulation."
       },
       "verdict": "include"
     },
@@ -68,8 +68,41 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA training simulation",
-        "reason": "Directly tackles scaling VLA policy learning through AI-generated simulations; introduces comprehensive RoboWorld benchmark showing frontier models underperform, plus multiple methods for improvement including VLA training strategies."
+        "topic": "VLA/Simulation/Benchmark",
+        "reason": "Directly addresses VLA training with a novel LLM-based simulation generation pipeline and substantial benchmark; demonstrates frontier models struggle on generated manipulation tasks, establishing important baselines."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2610.40537",
+      "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+      "authors": [
+        "Hemant Kumar",
+        "Piyush Goenka",
+        "Nikhil Chopra"
+      ],
+      "abstract": "We present DAWN (Diffusion-based Alignment and unfastening Workflow Network), a hierarchical robotic framework designed to perform real-world, unfastening tasks through multi-modal sensory integration. Autonomous robotic unfastening is crucial for improving recycling processes, enhancing safety, and reducing operational costs; yet, it remains predominantly manual due to inherent challenges in precise screwdriver engagement with fasteners, detailed force execution, and robustness to environmental variability. To address the complexity of learning long-horizon, contact-rich manipulation tasks, we subdivide the unfastening task procedure into two sequential stages: (1) alignment & insertion, and (2) unfastening. DAWN consists of three key components: AlignNet, a diffusion-based policy ensuring precise screwdriver tip engagement; LatchNet, a multi-modal classifier reliably detecting successful stage transitions; and UnfastNet, which achieves stable, force-controlled screw removal. Experimental validation on a Franka Emika robot demonstrates that DAWN achieves alignment & insertion success rates comparable to trained human operators, robustly transitions between stages, and attains an impressive success rate in unfastening across various unseen scenarios. Ablation studies further elucidate critical input modalities and effective training strategies, highlighting DAWN's scalability, robustness, and data efficiency.",
+      "url": "https://arxiv.org/abs/2610.40537",
+      "pdf": "https://arxiv.org/pdf/2610.40537",
+      "published": "2026-10-29",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Diffusion-based contact-rich manipulation",
+        "reason": "Real-world unfastening via hierarchical diffusion policies addresses a practical manipulation challenge, but applies established techniques to a narrow task domain without advancing general VLA capabilities."
       },
       "verdict": "include"
     },
@@ -105,10 +138,10 @@
       },
       "scores": {
         "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
-        "topic": "VLA Benchmarking",
-        "reason": "Large-scale, well-executed benchmark directly evaluating VLA models on language-conditioned manipulation with real robot validation, though the findings about data scale and task diversity benefits are expected rather than surprising."
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Benchmark / Language-conditioned Manipulation",
+        "reason": "Directly addresses VLA generalization with a scalable benchmark for language-conditioned robotic drawing, supporting systematic evaluation across models and scales with real-world validation."
       },
       "verdict": "include"
     },
