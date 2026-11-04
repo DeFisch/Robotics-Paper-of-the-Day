@@ -110,6 +110,12 @@
     "name": "Domenico Campolo",
     "papers": 17
   },
+  "donggeon kim": {
+    "citations": 27,
+    "h_index": 3,
+    "name": "Donggeun Kim",
+    "papers": 3
+  },
   "eiichi yoshida": {
     "citations": 29,
     "h_index": 3,
@@ -219,6 +225,12 @@
     "name": "J. Park",
     "papers": 3
   },
+  "jemin hwangbo": {
+    "citations": 9446,
+    "h_index": 26,
+    "name": "Jemin Hwangbo",
+    "papers": 54
+  },
   "jin ge": {
     "citations": 4,
     "h_index": 1,
@@ -278,6 +290,12 @@
     "h_index": 2,
     "name": "Lan-lan Wei",
     "papers": 3
+  },
+  "li yi": {
+    "citations": 20,
+    "h_index": 2,
+    "name": "Yi-Ling Li",
+    "papers": 132
   },
   "long cheng": {
     "citations": 7,
@@ -363,6 +381,7 @@
     "name": "M. Grimaldi",
     "papers": 4
   },
+  "mingyu wang": null,
   "mohammed abusadeh": null,
   "nathaniel hanson": {
     "citations": 1,
@@ -377,6 +396,7 @@
     "name": "N. Gracias",
     "papers": 148
   },
+  "omid mohareri": null,
   "oskar von stryk": null,
   "oussama khatib": {
     "citations": 32716,
@@ -444,6 +464,12 @@
     "h_index": 2,
     "name": "Shikun Ban",
     "papers": 4
+  },
+  "sierra bonilla": {
+    "citations": 249,
+    "h_index": 5,
+    "name": "V. Bonilla-Sierra",
+    "papers": 10
   },
   "siming bayer": {
     "citations": 0,
