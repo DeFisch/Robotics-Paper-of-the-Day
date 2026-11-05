@@ -1,6 +1,679 @@
 {
-  "updated": "2026-11-04T20:28:17Z",
+  "updated": "2026-11-05T20:35:24Z",
   "papers": [
+    {
+      "id": "2611.06905",
+      "title": "Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement",
+      "authors": [
+        "Michal Korniak",
+        "Marco Bagatella",
+        "Ralf R\u00f6mer",
+        "Michal Nauman",
+        "Yarden As",
+        "Pranav Vignesh",
+        "Manan Agarwal",
+        "Leander Diaz-Bone",
+        "Piotr Zalewski",
+        "Miko\u0142aj Czarnecki",
+        "Lenart Treven",
+        "Shashwat Saxena",
+        "Sreyas Venkataraman",
+        "Sarvesh Patil",
+        "Zhiyuan Zhou",
+        "Daniel Marta",
+        "Oier Mees",
+        "Nur Muhammad Mahi Shafiullah",
+        "Carmelo Sferrazza",
+        "Bhavya Sukhija",
+        "Angela P. Schoellig",
+        "Andreas Krause",
+        "Max Simchowitz",
+        "Andrew Wagenmaker"
+      ],
+      "abstract": "The introduction of generalist robot policies has enabled a single, large model to learn to perform a variety of tasks from a vast pre-training corpus. While these models often exhibit powerful zero-shot generalization capabilities, they typically require an adaptation phase to achieve sufficient performance in deployment. Iterated self-improvement via reinforcement learning (RL) has demonstrated promise in enabling this adaptation, yet such approaches have been largely explored in single-task settings - where the goal is to simply improve on a narrow deployment task - which lies in stark contrast to the multi-task capabilities of the base policy. In this work we ask whether generalist robot policies are capable of multi-task, generalist improvement in deployment - targeting many diverse tasks simultaneously - and what algorithmic recipe enables this. To answer this question, we first develop a set of structured evaluations to test generalist improvement capabilities, and systematically evaluate algorithmic and practical design choices regarding value estimation, policy extraction and resource allocation. We show that not only can generalist policies be improved online across diverse tasks, but that the right recipe can enable generalization and increase performance on tasks not considered during online training. We characterize when this generalization occurs and show that both the training task distribution and the use of value-based RL are critical. To the best of our knowledge, this is among the first evidence for online generalist improvement for robot foundation models.",
+      "url": "https://arxiv.org/abs/2611.06905",
+      "pdf": "https://arxiv.org/pdf/2611.06905",
+      "published": "2026-11-04",
+      "primary_category": "cs.LG",
+      "topic_tags": [
+        "VLA / robot policy",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Oier Mees",
+        "reason": "curated (Oier Mees)"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "Generalist policy improvement via RL",
+        "reason": "Directly addresses multi-task online adaptation for generalist robot policies; systematic evaluation of algorithmic design choices with evidence for generalization to unseen tasks\u2014a key deployment challenge for foundation models."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06881",
+      "title": "VABAR: A Variational Automation Benchmark for Agentic Robotics",
+      "authors": [
+        "Shuangyu Xie",
+        "Kaiyuan Chen",
+        "Uksang Yoo",
+        "Xinyue Zhu",
+        "Meadow Shen",
+        "Jaimyn Drake",
+        "Eugen Solowjow",
+        "Lionel Gulich",
+        "Alexander Millane",
+        "Rafael Cathomen",
+        "Tuur Stuyck",
+        "Sangeeta Subramanian",
+        "Yichao Pan",
+        "Bruce McGowan",
+        "Michael Benedict",
+        "Linxi Fan",
+        "Yuke Zhu",
+        "Spencer Huang",
+        "Ken Goldberg"
+      ],
+      "abstract": "For robots to operate reliably in commercial and industrial applications, they must persistently perform specific tasks with known variations in object shape and pose. We call this Variational Automation (VA) to differentiate these settings from fixed automation. Inspired by recent papers on Agentic Robotics, where pretrained LLM and VLM coding agents combine interpretable robot programming with the open-world adaptability of model free policies, we propose a general set of agentic robotics benchmark design criteria that includes accessibility, repeatability, diversity, relevance to agentic robotics and practical applications, physical realizability, resistance to benchmark saturation, and computational efficiency. We instantiate these principles in six manipulation task classes spanning industrial, medical, and infrastructure applications: tool sorting, tool hanging, gear meshing, syringe packing, cable insertion, and cable routing. We introduce the Variational Automation Benchmark for Agentic Robotics (VABAR), an open, easily replicable, simulation-based manipulation benchmark to systematically evaluating agentic robotics systems. Built fully on open-source tools, VABAR features detailed implementations using the Newton physics engine, standardized task variations, difficulty tiers, success metrics, and a library of 33 generalizable skills with human-authored programmatic reference solutions. We provide initial baseline evaluations using an open agentic manipulation harness, Graph-as-Policy (GaP), and Isaac Lab Arena.",
+      "url": "https://arxiv.org/abs/2611.06881",
+      "pdf": "https://arxiv.org/pdf/2611.06881",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": true,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": "Yuke Zhu",
+        "reason": "curated (Yuke Zhu)"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Table-top manipulation benchmark",
+        "reason": "Well-designed benchmark for variational automation tasks directly relevant to table-top arm manipulation, but benchmark papers rate lower novelty than core VLA/policy methodology work."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06768",
+      "title": "PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World",
+      "authors": [
+        "Qiang Wang",
+        "Jianxin Bi",
+        "Shulong Jiang",
+        "Ruiyang Si",
+        "Wenbo Huang",
+        "Kaiqi Chen",
+        "Jiaxin Li",
+        "Liyun Li",
+        "Xuanyi Li",
+        "Daquan Zhou"
+      ],
+      "abstract": "Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction. In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Our empirical study places physical manipulation at the center of the improvement process, examining how agents collaborate, what kinds of execution feedback support effective code refinement, and how task specifications and previously acquired skills influence robustness and task transfer. We further investigate the efficiency and capability of the resulting programs when deployed without involving an online agent for decision-making. Across eight real-world tasks, PyRUA-REAL achieves an average success rate of 91.1%. In complementary evaluation on 42 tasks from the RoboDojo benchmark, it achieves an average success rate of 84.4%. This study provides empirical guidance for turning physical exploration into reusable robot skills that support continued improvement and robust, efficient deployment.",
+      "url": "https://arxiv.org/abs/2611.06768",
+      "pdf": "https://arxiv.org/pdf/2611.06768",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Table-top Manipulation & Code-Based Learning",
+        "reason": "Directly tackles real-world manipulation with strong empirical results (91.1% success), but emphasizes code generation/refinement rather than end-to-end VLA policy learning, making it adjacent rather than central to vision-language-action research."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06724",
+      "title": "Dexterous Robotic Hands in the Foundation-Model Era: A Full-Stack Survey of Hardware, Data, Cross-Embodiment Transfer, Learning, and Evaluation",
+      "authors": [
+        "Ji Pei"
+      ],
+      "abstract": "Dexterous robotic hands are increasingly coupled to large-scale human data and foundation models, yet progress in hardware, representation learning and evaluation is often assessed separately. This survey reviews work from January 2024 to early November 2026, with earlier studies included to establish technical lineages. We organize the literature into five interdependent layers: hardware; data collection and curation; cross-embodiment transfer; learning and foundation models; and evaluation and applications. Human hand-object understanding and tactile sensing provide two cross-cutting perspectives. A system-level architecture, comparative tables and five case analyses connect design choices across these layers. We distinguish within-study experimental comparisons from heterogeneous corpus statistics, vendor specifications and company-reported results. Three conclusions emerge. First, the value of human data depends on kinematic, visual and contact alignment, not recording volume alone. Second, shared action representations and foundation policies do not remove embodiment-specific constraints on force, latency and contact. Third, task completion is insufficient to establish physical correctness or deployment readiness. Evidence remains limited for zero-shot transfer of contact-rich skills between morphologically different hands, long-duration reliability, and cross-sensor tactile generalization. We identify eleven open problems and propose reporting interfaces and controlled comparisons that can make full-stack progress more measurable. The review is a structured narrative synthesis rather than a pooled performance ranking or an exhaustive systematic review.",
+      "url": "https://arxiv.org/abs/2611.06724",
+      "pdf": "https://arxiv.org/pdf/2611.06724",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [
+        "survey"
+      ],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Dexterous Manipulation Survey",
+        "reason": "Recent comprehensive survey on dexterous hands and foundation models\u2014directly on your core focus\u2014but survey novelty is inherently limited; rigorous full-stack methodology and open-problem synthesis add value."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06710",
+      "title": "Where Is VLA Inference Time Spent? Bottlenecks and Optimization Interactions Across GPUs",
+      "authors": [
+        "Muhammad Danish Waseem",
+        "Ahmed Ali-Eldin Hassan"
+      ],
+      "abstract": "Vision-language-action (VLA) models map camera observations and language instructions to robot actions. However, their large backbones and repeated action generation can make inference take longer than the robot's real-time requirements for its next action. To reduce the load of VLA computations, researchers have proposed multiple optimization approaches, including quantization and pruning. These optimizations can be combined with other general optimizations such as better kernel compilation or using CUDA graphs instead of the eager mode. However, most of these optimization results are usually reported on a single GPU type, typically for a few VLA models, with no analysis of what the real bottlenecks are for a model on a particular hardware or how these optimizations would generalize beyond the reported results. In this paper, we provide a comprehensive measurement study of seven families of inference optimization methods, from CUDA graphs and compilation to token pruning and quantization, on seven state-of-the-art VLAs evaluated on four GPU families ranging from a datacenter H100 to an embedded Jetson Thor. We analyse how CPU launch overhead, memory bandwidth, and kernel efficiency jointly shape optimization gains, and how applying one method changes the benefit of another. From this analysis, we derive VLA-Triage, guidelines for stacking optimizations under latency budgets. The guidelines identify which stages can provide the required savings and which combinations need testing in the deployed execution mode.",
+      "url": "https://arxiv.org/abs/2611.06710",
+      "pdf": "https://arxiv.org/pdf/2611.06710",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "VLA Inference Optimization",
+        "reason": "Empirical characterization of VLA inference bottlenecks across hardware; useful systems work but incremental rather than advancing policy or perception innovation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06673",
+      "title": "Which Physical Tactile Cues Matter for Contact-Rich Imitation Learning? A Controlled Real-Robot Study",
+      "authors": [
+        "Xuhao Qin",
+        "Xiyan Huang",
+        "Haoyu Dong",
+        "Xi Zhang",
+        "Chenxi Xiao"
+      ],
+      "abstract": "Vision-based tactile sensors capture multiple aspects of physical interaction within a single image stream, including contact appearance, geometry, indentation depth, and tangential deformation. However, existing visuo-tactile policies often directly process tactile observations as images, making it difficult to determine which physical cues contribute to policy learning. This paper presents a controlled real-robot study that compares physically interpretable tactile signals using the LeRobot platform, enhanced with our visuo-tactile perception system. From the same tactile stream, we derive tactile RGB images, normal/depth maps, and marker-flow fields, representing contact appearance, geometry, and tangential deformation, respectively. Using identical task demonstrations and the same policy backbone, we evaluate the individual and combined contributions of these tactile cues. We further compare tactile encoders and visuo-tactile fusion strategies. Evaluation across 720 real-robot trials yields four key findings: (1) tactile perception substantially improves the overall success rate from 57.8% to 78.9%, although its contribution varies across task stages; (2) marker flow is the most effective individual cue, achieving a success rate of 74.4% and playing a particularly important role in regulating established contact; (3) cue-factorized encoding consistently improves performance, highlighting that different physical cues require tailored processing techniques; and (4) although the effectiveness of tactile fusion is task-dependent, cross-attention offers a lightweight solution with performance comparable to that of pretrained tactile encoders.",
+      "url": "https://arxiv.org/abs/2611.06673",
+      "pdf": "https://arxiv.org/pdf/2611.06673",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Tactile perception for manipulation",
+        "reason": "Rigorous real-robot study (720 trials) systematically analyzing which tactile cues matter for contact-rich manipulation; clear findings on cue importance and fusion strategies, though primarily empirical analysis rather than novel methods."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06654",
+      "title": "Compounding Physical RSI: Turning Execution Failure into Inherited Capability",
+      "authors": [
+        "Yixuan Yang",
+        "Qiang Chen",
+        "Run Shao",
+        "Shuwei Dong",
+        "Wenhao Li",
+        "Yunpeng Wang",
+        "Wenhan Fang",
+        "Haomiao Wu",
+        "Xingyu Wang",
+        "Lichen Man",
+        "Rong Zhang",
+        "Xuezhi Cui",
+        "Yuan Liu",
+        "Bingyan Lu",
+        "Jiawei Ma",
+        "Xiaoyang Ma",
+        "Zhemin Sun",
+        "Zhuorui Yao",
+        "Yutong Dong",
+        "Yuxuan Zhao",
+        "Yichong Mu",
+        "Jiabao Jiang",
+        "Wenxuan Deng",
+        "Junling Zhou",
+        "Yi Chen",
+        "Deyu Zhang",
+        "Yiming Yan",
+        "Yige Yuan",
+        "Shan You",
+        "Fei Wang",
+        "Haifeng Li",
+        "Hongyan Xu",
+        "Yichao Cao",
+        "Xiu Su"
+      ],
+      "abstract": "Generalist robot policies are trained on static offline datasets, yet physical manipulation unfolds sequentially across stages. Because a weakness in a downstream stage remains unobservable until the policy passes earlier ones, each resolved bottleneck exposes the next hidden failure mode. This staged structure calls for Recursive Self-Improvement (RSI), in which a policy iteratively executes, diagnoses failures, and updates itself. Moreover, because task completion behaves like a product of stage-level pass rates, recursive gains can multiply across generations. In physical environments, three bottlenecks obstruct compounding: terminal execution feedback rarely localizes the stage that caused a failure, failed trajectories do not supply the corrective action, and updating shared parameters can degrade previously mastered skills. We propose Compounding Physical RSI, a self-evolving policy framework that turns execution failures into heritable capability. First, automated capability-gap assessment traces failed rollouts to the task stage where progression breaks down and formulates a structured improvement objective. Second, conditioned on this objective, our remedy stage curates validated, stage-relevant experience and refines the policy via behavior-regularized offline reinforcement learning, without requiring costly online rollouts at each optimization step. Third, to safeguard existing skills, our retention stage constructs weight-space candidates between the inherited reference policy and the refined policy, evaluates them across the task suite, and promotes the best candidate as the reference state for the next generation. Evaluated across all 42 tasks of the RoboDojo-Sim benchmark, CSU-AI-07 ranks first on the leaderboard with a three-seed mean Overall Score of 26.15 and Success Rate of 20.70%, outperforming the next-best entry by 5.92 points and 5.82 percentage points.",
+      "url": "https://arxiv.org/abs/2611.06654",
+      "pdf": "https://arxiv.org/pdf/2611.06654",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Staged manipulation policy learning",
+        "reason": "Directly addresses compounding failures in sequential manipulation tasks through recursive self-improvement; strong benchmark results but limited to simulation and offline RL without physical validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06475",
+      "title": "Robocasa-Mem: Benchmarking Environment and Process Memory in Long-Horizon Mobile Manipulation",
+      "authors": [
+        "Sihang Chen",
+        "Chen Ye",
+        "Wei Chen",
+        "Xiaohan Lei",
+        "Zhipeng Tang",
+        "Sha Zhang",
+        "Yuan Zhang",
+        "Zixuan Chen",
+        "Jiajun Deng",
+        "Houqiang Li",
+        "Yanyong Zhang"
+      ],
+      "abstract": "In the real world, mobile manipulation robots must perform complex object interactions and make multi-step decisions, often relying on task-relevant information that is no longer observable. However, existing benchmarks provide limited evaluation of such memory-dependent decision-making in mobile manipulation. To address this gap, we introduce RoboCasa-Mem, a new benchmark comprising nine mobile manipulation tasks that require agents to use interaction history at key decision points. Specifically, the tasks are grouped into two categories of memory: One is environment memory, which captures spatial locations, object attributes, and object relationships. The other is process memory, which captures single-task progress and multi-task scheduling. Particularly, we introduce Behavior-Conditioned Evaluation. For tasks with multiple valid execution paths, instead of fixing a single target or trajectory, the evaluator derives later task constraints from the robot's earlier actions. This allows us to evaluate whether later behavior is consistent with the robot's own interaction history while reducing shortcuts based on fixed target assignments. We provide 1,800 successful demonstrations for policy training. We also develop a baseline on our benchmark, namely Hierarchical Memory-Augmented Policy(HMAP). Its high-level planner uses structured entity and process memories to generate subtasks. Its low-level VLA controller uses subgoal-conditioned queries to incorporate VGGT-Omega geometry into action generation. Together, RoboCasa-Mem and HMAP baseline support systematic evaluation of memory-dependent behavior and the development of memory-aware mobile manipulation policies.",
+      "url": "https://arxiv.org/abs/2611.06475",
+      "pdf": "https://arxiv.org/pdf/2611.06475",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Memory-Augmented Mobile Manipulation",
+        "reason": "Systematic benchmark for memory-dependent manipulation with innovative behavior-conditioned evaluation; VLA-focused but mobile scope extends beyond table-top arm manipulation focus."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06447",
+      "title": "$A^3$-VLA: Automatic Perception-Guided Attention Alignment for Robot Manipulation",
+      "authors": [
+        "Shengzhe Zhang",
+        "Qi Zhang",
+        "Dazhong Shen",
+        "Chao Wang",
+        "Shaopeng Zhai",
+        "Hui Xiong"
+      ],
+      "abstract": "Vision-Language-Action Models (VLAs) enable robots to perform manipulation tasks by leveraging Vision-Language Models (VLMs) to process visual observations and language instructions. However, the action prediction objective itself lacks fine-grained task-specific perceptual supervision, making it prone to relying on task-irrelevant visual shortcuts, leading attention away from target objects and key interaction areas, thereby limiting its operational performance and generalization ability. To address this, we propose Automatic Perception-Guided Attention Alignment for Robot Manipulation ($A^3$-VLA), a framework that derives task-specific visual guidance from the manipulation process itself. Specifically, $A^3$-VLA first generates heuristic candidate regions for target objects and the robot from interaction-induced visual changes, and refines them with a visual segmentation model offline. These regions serve as explicit perceptual guidance through two complementary objectives: an attention allocation loss that encourages sufficient focus on task-critical regions when language or robot state tokens query the visual input, and a contrastive learning loss that aligns the representations of candidate target regions with language instructions while separating them from task-irrelevant regions. Extensive experiments on simulated and real-world manipulation tasks demonstrate that $A^3$-VLA consistently improves multiple VLA backbones, with an average success rate gain of 6.5% - 25.2% across benchmarks.",
+      "url": "https://arxiv.org/abs/2611.06447",
+      "pdf": "https://arxiv.org/pdf/2611.06447",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "Perception / vision"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "VLA Attention Alignment",
+        "reason": "Directly addresses a real VLA limitation (spurious attention to task-irrelevant regions) with concrete perceptual supervision; solid real-world validation and consistent gains across backbones, but somewhat incremental refinement rather than novel direction."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06442",
+      "title": "TwinBridge: Digital Twin-Driven Policy and Reward Transfer for Real-World Reinforcement Learning in Laboratory Robotics",
+      "authors": [
+        "Shu'ang Sun",
+        "Yibo Qiu",
+        "Haoliang Ye",
+        "Zan Huang",
+        "Ao Tian",
+        "Kan Ding",
+        "Ronald Xu",
+        "Mingzhai Sun"
+      ],
+      "abstract": "Online reinforcement learning offers an effective approach to precise laboratory manipulation, yet costly real-world demonstrations and limited access to dense process rewards hinder its practical application. We present TwinBridge, a digital twin-driven framework that supplies policy initialization and dense visual rewards for real-world online learning. We construct digital twins by combining 3D Gaussian splatting with physics simulation. Here, simulator states provide task events and geometric progress under physical prerequisites and ordering constraints, yielding rewards for policy pretraining with simulated demonstrations and reinforcement learning. We distill this supervision into a visual reward model. During real-world interaction, its predictions are combined with execution history to compute dense rewards for human-in-the-loop policy refinement. Across five real-world laboratory tasks, TwinBridge achieves a final mean autonomous success rate of 98% with at most 25 minutes of real-world interaction per task. Experiments show that dense rewards improve interaction efficiency over sparse rewards, and simulation-based policy initialization further accelerates learning.",
+      "url": "https://arxiv.org/abs/2611.06442",
+      "pdf": "https://arxiv.org/pdf/2611.06442",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "Perception / vision",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Lab manipulation / Sim-to-real RL",
+        "reason": "Directly addresses table-top manipulation with learned RL policies and strong real-world empirical results, but combines established techniques (digital twins, Gaussian splatting, visual rewards) without major novelty."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06184",
+      "title": "Can Astra Solve RoboMME without Breaking the Bank?",
+      "authors": [
+        "Bingao Chen",
+        "Haoquan Fang",
+        "C. Karen Liu"
+      ],
+      "abstract": "Robotic manipulation often requires remembering information that is no longer visible, such as an object's location before occlusion or the order of a demonstrated action sequence. A large vision-language planner can read this history, but calling it before every action chunk is slow and costly. We present a three-tier system for the RoboMME benchmark. GPT-6 Astra (System 2) selects a grounded subtask from stored visual history, a $\u03c0_{0.5}$ vision-language-action policy (System 1) executes it, and a fine-tuned Qwen3-VL-4B monitor (System 1.5) checks after each action chunk whether the subtask is finished. The instruction is kept until the monitor reports completion or a task-specific event occurs, while the policy keeps acting on new observations. On RoboMME, the system succeeds in 79.13% of episodes with an average of 3.63 Astra calls and 80.84 seconds per episode. This is 34.62 points above the best published non-oracle baseline and 4.95 points below GroundSG+Oracle, which gives the low-level policy ground-truth subgoals.",
+      "url": "https://arxiv.org/abs/2611.06184",
+      "pdf": "https://arxiv.org/pdf/2611.06184",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Hierarchical VLA for Memory-Augmented Manipulation",
+        "reason": "Directly addresses memory and occlusion challenges in table-top manipulation via hierarchical VLA with strong RoboMME results, but achieves this by engineering existing models rather than novel learning mechanisms for history integration."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.06118",
+      "title": "Online Adaptation to Latent Physical Properties for Learning from Demonstration",
+      "authors": [
+        "Kotaro Kajitsuka",
+        "Masaki Murooka",
+        "Fumio Kanehiro"
+      ],
+      "abstract": "Manipulating visually identical objects with different physical properties requires adapting actions based on information acquired through interaction. We address the problem of learning from demonstrations how to adapt manipulation actions, such as regrasping and changing contact locations, based on physical-property information acquired during interaction. To this end, we propose a learning-from-demonstration method that learns latent representations of physical properties needed to predict object responses and conditions a policy on online estimates of these representations. A dynamics model and object-specific latent representations are jointly learned from demonstrations that include behaviors adapting to the objects' physical properties, and the learned representations are then used to condition an imitation policy. During execution, the dynamics model and policy weights remain fixed, while the latent representation is updated based on the discrepancy between predicted and actual observations, allowing interaction with the object to inform action generation. Real-world and simulation experiments with objects whose centers of mass differ suggest that online adaptation through latent representations of physical properties can improve task success rates. However, in simulation, success rates on center-of-mass locations absent from the demonstrations remained around 30%, indicating limited adaptation to unseen physical properties. Project page: https://isri-aist.github.io/latent-dynamics-project-page/",
+      "url": "https://arxiv.org/abs/2611.06118",
+      "pdf": "https://arxiv.org/pdf/2611.06118",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Physical property adaptation",
+        "reason": "Online adaptation to physical properties shows real-world promise but remains incremental with limited generalization to unseen variations."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.05979",
+      "title": "Learning Object-Centric Motion Priors from Human for Robotic Dexterous Manipulation",
+      "authors": [
+        "Zhengdong Hong",
+        "Guofeng Zhang"
+      ],
+      "abstract": "Manipulating diverse objects with multi-fingered dexterous hands is challenging due to the high dimensionality and complex dynamics. Human-Object Interaction (HOI) datasets provide rich knowledge about task information and embodied interactions. Instead of solely imitating the human demonstrations, our method learns to holistically predict future hand-object states by leveraging these datasets. The predicted future states of the object can serve as a general-purpose reward term for reinforcement learning, reducing reliance on task-specific reward engineering and enhancing generalization across tasks. We conduct extensive experiments on three manipulation tasks in simulation and the real world. Our approach outperforms existing SOTA methods in both success rate and generalizability on novel objects. Furthermore, we validate the cross-embodiment compatibility of our methods by successfully deploying the skills on different robot hands.",
+      "url": "https://arxiv.org/abs/2611.05979",
+      "pdf": "https://arxiv.org/pdf/2611.05979",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Dexterous manipulation",
+        "reason": "Directly relevant table-top arm work using human-grounded motion priors and RL; real-world validated with cross-embodiment transfer, but methodology is incremental and authors lack established reputation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.05897",
+      "title": "FWIK: Multi-Waypoint IK Selection via Lookahead Graph Search",
+      "authors": [
+        "Jinglan Cao",
+        "Guohui Zhong",
+        "Chengwei Zhang"
+      ],
+      "abstract": "An ordered sequence of end-effector poses can give a redundant robot arm multiple valid joint configurations at each waypoint. Inverse kinematics (IK) computes these configurations. Choosing a configuration only for the next waypoint can leave the arm poorly placed for later waypoints. This may increase planned motion time or cause a later planning failure. This paper presents Future-Window Inverse Kinematics (FWIK), an online method that selects IK solutions by considering a small window of future waypoints. FWIK generates several IK candidates, connects them in a layered joint-space graph, and ranks candidate paths with a simple motion-time estimate. A learned model removes paths whose transitions are likely to cause self-collision. A standard MoveIt 2 planner then checks the next-waypoint IK goals from the remaining paths in ranked order, and the first goal that yields a valid trajectory is selected for execution. We evaluate FWIK in simulation on two 7-DoF manipulators, the Franka Emika Panda and the KUKA LBR iiwa. Each method-planner setting contains five repetitions of 100 sequences with 50 waypoints. Across Pilz, RRT-Connect, CHOMP, and STOMP, FWIK completes 96.8-100% of sequences and gives the shortest planned trajectory duration in all eight robot-planner settings. Its mean duration is 12.8-13.1% lower than STAMPEDE, 22.5-25.6% lower than IKLink, and 27.5-37.2% lower than retry-based TRAC-IK. The results show that a small future window can improve sequence completion and reduce planned motion time while leaving final trajectory validation to the motion planner.",
+      "url": "https://arxiv.org/abs/2611.05897",
+      "pdf": "https://arxiv.org/pdf/2611.05897",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "IK Selection & Trajectory Planning",
+        "reason": "Solid trajectory optimization for redundant arms, but incremental lookahead-based IK selection\u2014lacks the policy learning and perception focus central to VLA work."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.05847",
+      "title": "Time-to-Goal: Learned Temporal Metrics for Long-Horizon Planning with JEPA World Models",
+      "authors": [
+        "Ruilong Yu",
+        "Fei Ye"
+      ],
+      "abstract": "Joint-Embedding Predictive Architectures (JEPAs) support planning by comparing predicted latent states with an encoded goal. For this comparison to guide temporal progress, states closer in time to the goal should receive lower costs. However, training representations for prediction and distribution regularization does not directly enforce this ordering. We examine this mismatch in flat LeWorldModel (LeWM) by analyzing how its Euclidean goal cost changes with temporal separation. Our analysis identifies conditions under which states at different long offsets receive similar average costs, weakening their temporal distinction. To learn the missing ordering explicitly, we introduce Time-to-Goal (T2G), a lightweight metric trained on latent triples from offline trajectories. A margin ranking loss encourages smaller distances for temporally nearer states, requiring no rewards or policy labels. The learned metric then replaces the Euclidean planning cost while the JEPA encoder and predictor remain frozen. Diagnostics on AntMaze and FourRoom show that T2G preserves stronger temporal contrast and improves near--far ranking at long offsets. Across four navigation and manipulation benchmarks, T2G improves the average planning success rate from 32.7\\% (flat LeWM) to 63.0\\% and approaches or even surpasses the performance of the hierarchical H-JEPA baselines. These results show that learning temporal ordering for the goal cost can substantially improve latent planning even with a flat world model.",
+      "url": "https://arxiv.org/abs/2611.05847",
+      "pdf": "https://arxiv.org/pdf/2611.05847",
+      "published": "2026-11-04",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "World model planning",
+        "reason": "Improves JEPA-based planning with learned temporal metrics, 2x gains on manipulation benchmarks; solid technical work but incremental to JEPA framework and not VLA-specific."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.05754",
+      "title": "GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting",
+      "authors": [
+        "Yang Liu",
+        "Tong Wang",
+        "Yiming Bao",
+        "Heng Yang"
+      ],
+      "abstract": "We study physics-based retargeting of human demonstrations for robot learning: finding robot controls that reproduce reference motions under contact dynamics. We propose GRASP (Gradient Recovery from Archived Samples for Proposals), which combines sampling-based exploration with gradient-guided refinement without requiring a differentiable simulator. GRASP-TO extends tempered sequential Monte Carlo by fitting local quadratic cost models to archived rollouts and using their gradients to guide Markov chain Monte Carlo rejuvenation. Metropolis-Hastings correction preserves the target distribution for each fixed proposal kernel, and a population analysis connects the recovered gradients to Gaussian smoothing. GRASP-MPC scales this optimizer to long demonstrations through warm-started receding-horizon planning. Experiments on dexterous hands and humanoids show accurate retargeting with a shared tracking objective and no task-specific contact rewards, including 92.8% success on 1352 bimanual OakInk2 demonstrations. The refined references improve PPO tracking in pen spinning and humanoid-object interaction. We also demonstrate dexterous manipulation and whole-body humanoid motion on real hardware.",
+      "url": "https://arxiv.org/abs/2611.05754",
+      "pdf": "https://arxiv.org/pdf/2611.05754",
+      "published": "2026-11-03",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation",
+        "General robotics"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous manipulation from demonstrations",
+        "reason": "Strong real hardware results on bimanual dexterous manipulation learning with contact dynamics, but combines existing sampling/gradient techniques incrementally without VLA foundation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.05667",
+      "title": "Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning",
+      "authors": [
+        "Xinkai Jiang",
+        "Jing Jiang",
+        "Hongyi Zhou",
+        "Pankhuri Vanjani",
+        "Ahmad Baki",
+        "Jakub Suliga",
+        "Ge Li",
+        "Zhuoyue Li",
+        "Gerhard Neumann",
+        "Rudolf Lioutikov"
+      ],
+      "abstract": "This paper presents Proactive Human-in-the-Loop (PHIL), a framework for proactive policy correction and preference-based post-training. PHIL enables operators to preview policy-predicted future motion and intervene before anticipated undesirable actions. During takeover, PHIL continues querying the policy and displaying its predicted trajectories in the physical workspace through an extended reality (XR) interface. PHIL pairs rejected policy predictions with corrective action chunks subsequently executed from the same physical state over the same horizon, and preference-based post-training encourages the policy to favor these corrections. This paper evaluates PHIL on four real-world manipulation tasks using a diffusion policy and a pretrained vision-language-action policy. With five correction episodes per condition, PHIL increases mean success rates across the evaluated tasks and demonstration budgets from 44.0% to 70.3% for the diffusion policy and from 57.8% to 76.9% for X-VLA, compared with HG-DAgger. Separately, policies trained with proactive corrections show fewer unnecessary recovery behaviors in successful episodes. Project page: https://intuitive-robots.github.io/PHIL-page/.",
+      "url": "https://arxiv.org/abs/2611.05667",
+      "pdf": "https://arxiv.org/pdf/2611.05667",
+      "published": "2026-11-03",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 8,
+        "novelty": 6,
+        "topic": "Interactive policy correction",
+        "reason": "Direct VLA + table-top manipulation work with proactive human-in-the-loop learning showing strong real-world results (44\u219270%, 57\u219276% success), though human-in-the-loop and preference learning are incremental; practical XR-based intervention mechanism is the novel contribution."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2611.05368",
       "title": "GUILD: Guided Iterative Data Collection for Imitation Learning",
