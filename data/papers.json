@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T20:00:34Z",
+  "updated": "2026-11-07T17:58:43Z",
   "papers": [
     {
       "id": "2611.08462",
@@ -31,11 +31,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
+        "relevance": 8,
+        "quality": 7,
         "novelty": 7,
         "topic": "VLA failure recovery",
-        "reason": "Directly tackles VLA deployment failures via semantic-grounded correction learning; novel use of abduction to infer intent enables strong generalization from minimal demonstrations across manipulation tasks."
+        "reason": "Directly addresses practical VLA failure recovery using semantic reasoning to enable transfer from minimal corrective data; core to deploying robot manipulation policies."
       },
       "verdict": "include"
     },
@@ -68,11 +68,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
+        "relevance": 8,
         "quality": 8,
         "novelty": 7,
-        "topic": "Dexterous manipulation, visual policy learning",
-        "reason": "Directly targets data-efficient visual learning for dexterous/bimanual manipulation using RL priors; strong empirical results (10x fewer demos) with ablations showing retained control knowledge and training stability improvements."
+        "topic": "Dexterous Manipulation, Visual Adaptation",
+        "reason": "Directly addresses data-efficient dexterous/bimanual manipulation via RL-informed visual learning with significant sample-efficiency gains; well-executed but orthogonal to VLA models."
       },
       "verdict": "include"
     },
@@ -111,8 +111,8 @@
         "relevance": 9,
         "quality": 8,
         "novelty": 7,
-        "topic": "VLA failure detection",
-        "reason": "Directly addresses critical safety gap in VLA deployment with calibrated failure prediction and mode classification, demonstrating strong generalization to unseen tasks with lightweight edge-deployable inference."
+        "topic": "VLA failure detection and monitoring",
+        "reason": "Directly addresses critical real-world VLA deployment safety with calibrated failure detection, mode classification, and practical lightweight monitoring; well-executed with strong empirical results and dataset release."
       },
       "verdict": "include"
     },
@@ -147,11 +147,11 @@
         "reason": "not checked"
       },
       "scores": {
-        "relevance": 9,
-        "quality": 8,
-        "novelty": 7,
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
         "topic": "VLA efficiency / inference optimization",
-        "reason": "Direct VLA contribution with practical training-free token refinement achieving 85% token reduction and 3.3x speedup while improving OOD robustness; well-executed across LIBERO/SIMPLER/RoboTwin benchmarks."
+        "reason": "Directly tackles VLA inference bottlenecks with a practical training-free approach, comprehensive benchmark validation, and clear robustness gains; limited technical novelty in core methods."
       },
       "verdict": "include"
     },
