@@ -194,6 +194,12 @@
     "name": "Hangong Chen",
     "papers": 4
   },
+  "hangxin liu": {
+    "citations": 86,
+    "h_index": 5,
+    "name": "Hang Liu",
+    "papers": 6
+  },
   "haofeng chen": {
     "citations": 7,
     "h_index": 1,
@@ -302,6 +308,12 @@
     "h_index": 2,
     "name": "Lan-lan Wei",
     "papers": 3
+  },
+  "lexing zhang": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Zhang Le-xing",
+    "papers": 5
   },
   "li yi": {
     "citations": 20,
@@ -477,6 +489,12 @@
     "name": "Shikun Ban",
     "papers": 4
   },
+  "shujian yu": {
+    "citations": 38,
+    "h_index": 2,
+    "name": "Shujian Yu",
+    "papers": 7
+  },
   "sierra bonilla": {
     "citations": 249,
     "h_index": 5,
@@ -544,6 +562,12 @@
     "h_index": 3,
     "name": "Xincheng Yao",
     "papers": 8
+  },
+  "xinrui zu": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "MSc Xinrui Zu",
+    "papers": 1
   },
   "yancy diaz-mercado": {
     "citations": 809,
