@@ -1,6 +1,503 @@
 {
-  "updated": "2026-11-10T20:26:49Z",
+  "updated": "2026-11-11T20:08:08Z",
   "papers": [
+    {
+      "id": "2611.14488",
+      "title": "Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies",
+      "authors": [
+        "Chubin Zhang",
+        "Bo An"
+      ],
+      "abstract": "Memory-augmented vision-language-action (VLA) policies are meant to remember what happened. Many of them, however, fill memory by time: they sample frames uniformly across the episode and stamp each frame with its time step. Because time passes even when nothing happens, such a memory may not tell waiting from working. We show that it does not. On the counting tasks of RoboMME, we make the robot briefly pause or fidget its wrist. Such a null event changes nothing the task depends on, yet a released memory VLA counts the interval as work done and stops early. We call this failure phantom progress. It cuts success from 47 to 16 of 50 on one task and from 44 to 10 on the other. When the same frames are withheld from memory, success returns, so the cause lies in memory rather than in the interruption itself. We trace the failure to a temporal shortcut: because demonstrations proceed at a steady pace, elapsed time predicts progress. Indeed, rescaling the time stamps alone makes the policy stop early when the clock runs fast and repeat when it runs slow. Surprisingly, removing the time encoding does not cure the failure, because the frames of a null event still occupy slots of the time-sampled memory. Across RoboMME's released designs, vulnerability follows how memory is indexed. Of the fixes the diagnosis suggests, training with injected pauses does not remove the failure and impairs counting, whereas indexing memory by events recovers half or more of the loss without retraining. A memory meant to remember what happened should count events rather than clock ticks.",
+      "url": "https://arxiv.org/abs/2611.14488",
+      "pdf": "https://arxiv.org/pdf/2611.14488",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 8,
+        "topic": "VLA memory mechanisms",
+        "reason": "Identifies a fundamental temporal shortcut flaw in memory-augmented VLAs with clear diagnostic evidence; event-based indexing offers practical improvement for policy robustness."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.14432",
+      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+      "authors": [
+        "Ilia Larchenko",
+        "Gleb Zarin",
+        "Atindra Nair",
+        "Keerti Manney",
+        "Vitaly Kleban",
+        "Mirko Kiefer",
+        "Anjana Yodaiken"
+      ],
+      "abstract": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks in the OmniGibson simulator. We placed 9th on the final leaderboard, the only independent team in the top 10. The core of the solution is a single vision-language-action (VLA) model, one checkpoint for all 100 tasks, built on our 1st-place 2025 solution, which is based on $\u03c0_{0.5}$. On the 50 tasks shared with 2025, its Q rises from 0.260 to 0.371; across all 100 tasks it scores 0.392. Our main conclusion from 2025 was that the model was undertrained, so most of the 2026 work went into training the model for longer, optimizing some training parameters, making each training step slightly faster and reducing the gradient noise: a migration from 50 to 100 tasks (semantic stages built from the demonstrations' skill annotations, task and stage embeddings of new tasks warm-started from similar old ones, and a 21-dimensional action space matching the teleoperation controls); variance-reduced multi-sample flow matching with a simple noise-vs-compute model that picks the number of action-expert samples per observation without ablations; and a 200k-step training run, about one pass over the 211M frames of the demonstrations. A cloud evaluation infrastructure keeps a shared record with provenance, episode diagnostics and restorable simulator states, and runs six simulators on one GPU together faster than real time. On top of the learned policy, 14 tasks are routed to a GPT-6 Astra coding agent that controls the robot through observation and motion tools, starting every episode from a frozen copy of its own practice session on training instances. Across these 14 tasks, Astra's mean Q is 0.639, against 0.108 for the learned policy. The public submission included only part of the Astra results and scored 0.446 Q with 27.3% full-task success.",
+      "url": "https://arxiv.org/abs/2611.14432",
+      "pdf": "https://arxiv.org/pdf/2611.14432",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 6,
+        "novelty": 4,
+        "topic": "VLA / household task policy",
+        "reason": "Directly addresses VLA for 100-task household manipulation, but improvements are incremental (longer training, parameter tuning) on \u03c0_0.5; learned policy performs moderately (0.392 Q) and relies heavily on GPT-6 Astra for best results."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.14274",
+      "title": "From Prediction to Action: Learning Physical Context for Deformable Linear Object Manipulation",
+      "authors": [
+        "Chengxiao Dong",
+        "Alessio Caporali",
+        "Hongyu Lan",
+        "Gianluca Palli"
+      ],
+      "abstract": "A representation that accurately predicts a deformable object's response is not necessarily the one most useful for choosing manipulation actions. We study this distinction between predictive utility and decision utility in planar single-grasp shape control of Deformable Linear Objects (DLOs). As a common decision backbone, we introduce Geometry-Pointer-Flow (GPF), a geometry-grounded policy that separates grasp-location selection from grasp-conditioned motion generation. Its geometry-only variant reduces one-step executed shape error by 32.8% relative to a DLO-specific diffusion policy, while using 18.7 times fewer parameters and achieving approximately 193 times faster inference. On this backbone, we compare physical context represented by ground-truth parameters, estimated parameters, and learned interaction-history representations, for both forward prediction and executed control. For prediction, ground-truth physical parameters reduce next-shape error by 15.8% over geometry alone, and estimated parameters are slightly more predictive than interaction history. This ordering does not carry over to control: estimated parameters provide no detectable one-step control gain, whereas history-conditioned GPF reduces executed error by 9.9% relative to geometry-only GPF across 470 paired simulation trials. In closed loop, interaction history improves strict-threshold attainment in simulation and yields the strongest zero-shot performance on hardware. All policies are trained exclusively in simulation and transferred to the physical robot without real-world training or fine-tuning. These results show that physical context should be evaluated by the decisions it supports rather than by predictive accuracy alone. Code will be released upon acceptance.",
+      "url": "https://arxiv.org/abs/2611.14274",
+      "pdf": "https://arxiv.org/pdf/2611.14274",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 7,
+        "topic": "Deformable Object Manipulation",
+        "reason": "Addresses learned manipulation of deformable objects with non-obvious insight that prediction utility diverges from control utility; strong sim-to-real results."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.14257",
+      "title": "Elastic-WAM: Adaptive Spatiotemporal Imagination for Efficient Robot Control",
+      "authors": [
+        "Haitian Li",
+        "Tianfu Li",
+        "Xuxi Zhao",
+        "Zizheng Liu",
+        "Yangcheng Yu",
+        "Yiwen Hou",
+        "Zeyu Xiao",
+        "Mutian Xu",
+        "Ziqian Yang",
+        "Haonan Chen",
+        "Lin Shao"
+      ],
+      "abstract": "World-Action Models improve robot control by predicting future visual dynamics, but iterative video denoising incurs substantial inference overhead. Recent approaches reduce this cost through partial future denoising, yet typically rely on fixed refinement budgets. Our empirical observations reveal that preferred refinement depths vary across tasks and states, while different future regions exhibit varying relevance to action generation. Motivated by these findings, we propose Elastic-WAM, which adaptively allocates world refinement computation across temporal denoising time and spatial future space. A unified spatiotemporal refinement demand field governs when to stop world refinement, how far to advance each denoising step, and which regions to refresh. We parameterize this field with a shared temporal basis and spatial amplitudes, and learn it through a three-stage action-grounded supervised procedure. At inference, the learned field guides recurrent sparse world refinement to improve task success while reducing inference overhead. Evaluations across diverse simulation benchmarks and real-world long-horizon manipulation demonstrate state-of-the-art control performance with reduced inference latency.",
+      "url": "https://arxiv.org/abs/2611.14257",
+      "pdf": "https://arxiv.org/pdf/2611.14257",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "World-Action Models",
+        "reason": "Directly addresses efficient learned control for table-top manipulation via adaptive spatiotemporal reasoning; real-world validation is strong, but adaptive refinement budgets are incremental over existing partial-denoising approaches."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.14092",
+      "title": "DexSeed: Expanding Human Hand-Object Interactions into Robot Demonstrations for Dexterous Policy Learning",
+      "authors": [
+        "Huaijin Pi",
+        "Zehong Shen",
+        "Yong Wang",
+        "Kechun Xu",
+        "Changpeng Wang",
+        "Dingkun Wei",
+        "Xueyang Wang",
+        "Wenjia Wang",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Taku Komura"
+      ],
+      "abstract": "We study how to generate diverse, physically executable robot demonstrations for dexterous vision-language-action (VLA) learning. Existing demonstration-generation methods typically rely on costly teleoperated examples. Meanwhile, human hand--object datasets provide a reusable source, but existing transfer methods mainly reproduce given interactions. Turning these interactions into VLA training data further requires coverage of different objects and manipulation locations, together with executable arm and finger actions, and visual observations. To achieve this, we present DexSeed, a framework for low-cost generation of dexterous robot data from human hand--object interactions. Our key idea is to expand human sequences while preserving their grasps and realizing the resulting motions under arm-tracking dynamics in physics simulation. Specifically, we organize source sequences by grasp mode with shared language descriptions. InteractionMesh-based retargeting and arm trajectory augmentation adapt these sequences to the robot hand, different object geometries, and pick-and-place locations while preserving local hand--object relationships. An RL finger-control policy produces executable rollouts, while the arm tracks precomputed trajectories. Rendered observations and recorded actions from successful rollouts are paired with grasp descriptions to fine-tune a VLA. Experiments show improved contact fidelity in retargeting and more reliable whole-arm execution than the evaluated baselines. Simulation evaluation and real-world deployment further demonstrate that a VLA fine-tuned solely on the generated demonstrations can execute language-specified grasps. Project page: https://robbyant-research.github.io/DexSeed/.",
+      "url": "https://arxiv.org/abs/2611.14092",
+      "pdf": "https://arxiv.org/pdf/2611.14092",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Dexterous manipulation / VLA policy learning",
+        "reason": "Directly tackles dexterous VLA policy learning with a practical framework for scaling robot demonstrations through human-to-sim transfer, combining retargeting, trajectory augmentation, and RL with real-world validation."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.14048",
+      "title": "LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning",
+      "authors": [
+        "Xuheng Zhang",
+        "Yiming Zhang",
+        "Jialin Gao",
+        "Hao Chen",
+        "Jiaming Liu",
+        "Ji Li",
+        "Runzhong Huang",
+        "Yinxi Wang",
+        "Chenyang Gu",
+        "Zihan Yang",
+        "Yaowei Liu",
+        "Zhonghao Yan",
+        "Ziyu Guo",
+        "Renrui Zhang",
+        "Peng Jia",
+        "Pheng-Ann Heng",
+        "Shanghang Zhang"
+      ],
+      "abstract": "World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation, endowing policies with strong capabilities for modeling temporal and physical dynamics. Existing WAMs, encompassing both video-first action prediction and joint video-action modeling, directly transfer global physical representations from world models to action generation. However, global scene representations may underemphasize local robot-object interactions, creating a mismatch between representations optimized for world evolution and those required for manipulation. To bridge this gap, we propose LaST0.5, a novel WAM that introduces an interaction-centric physical representation between world modeling and action generation. Specifically, LaST0.5 learns a compact interaction-centric latent space under the supervision of visual interaction cues between the robot and the environment. This reasoning space is instantiated as a latent expert that bridges the world expert and the action expert within a Mixture-of-Transformers architecture. Furthermore, LaST0.5 performs adaptive world-to-action transfer by jointly predicting future representations and progress values, using progress consistency to adjust action execution and trigger future resampling. Finally, we pretrain LaST0.5 on a large-scale robotic data corpus comprising over 14k hours of data, establishing interaction-centric physical reasoning as a scalable and effective paradigm. LaST0.5 achieves 99.5% on LIBERO, surpasses the previous state of the art on ten evaluated RLBench tasks, and demonstrates robust long-horizon execution and precise dexterous manipulation in real-world experiments.",
+      "url": "https://arxiv.org/abs/2611.14048",
+      "pdf": "https://arxiv.org/pdf/2611.14048",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Interaction-Centric World Action Models",
+        "reason": "Novel interaction-centric latent space in WAMs with strong LIBERO performance and real-world dexterous manipulation results."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13818",
+      "title": "WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge",
+      "authors": [
+        "Yelin He",
+        "Jiaquan Ye",
+        "Xinming Wei",
+        "Wenjie Xiao",
+        "Gengming Zhang",
+        "Guoting Wei",
+        "Xianbiao Qi",
+        "Rong Xiao"
+      ],
+      "abstract": "This work presents the 2nd-place solution (Team IF1001) to the 2026 BEHAVIOR Challenge, which evaluates mobile manipulation across 100 household tasks. Our method is built on a powerful world action model (WAM), Cosmos 3. We improve Cosmos 3 by using richer visual history, task-progress conditioning, and task-group and skill-specific LoRA adapters. During inference, we apply a separate progress estimator to supply task-progress context, and use task- and progress-conditioned routing to select a task-group or skill-specific policy, complemented by action-candidate aggregation, rolling inpainting, and task-specific temporal and gripper control. To meet the minimum inference requirement of 1 FPS, we use neither recursive self-improvement (RSI) nor agentic harness methods and rely on no closed-source models; during official private-test evaluation, our system handled concurrent requests across 100 evaluation ports with limited hardware resources, sustaining an average end-to-end inference rate above 2 FPS per port. Our method achieves a mean Q-score of 0.613 and a full-task success rate of 40.9%, averaged over 3 self-evaluation rounds across all 100 tasks. On the official private test set, with 20 instances per task, our system achieves a mean Q-score of 0.615 and a full-task success rate of 41.2%.",
+      "url": "https://arxiv.org/abs/2611.13818",
+      "pdf": "https://arxiv.org/pdf/2611.13818",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 6,
+        "novelty": 5,
+        "topic": "Mobile manipulation challenge solution",
+        "reason": "Incremental adaptation of Cosmos 3 with standard techniques (LoRA, task routing); solid engineering but limited methodological novelty for core research."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13810",
+      "title": "Camera equalisation of an 11.5x drop in environmental illuminance: four imitation-learning policies on an SO-101 arm",
+      "authors": [
+        "Simon Cowling"
+      ],
+      "abstract": "Real-robot benchmarks of learned visuomotor policies often record room illuminance as the lighting condition. We show that, on a typical low-cost rig, room light and image light can be almost unrelated. Four imitation-learning policies (ACT, SmolVLA, Diffusion Policy and pi0.5) were trained on the same 50 demonstrations of a pick-and-place task on an SO-101 arm. Each was run for ten rollouts at about 520 lux and again at about 45 lux, an 11.5x reduction. Success was 20/40 in normal light and 19/40 in low light: a change of -2.5 percentage points (95% CI -23 to +19), with no evidence that the policies differed in sensitivity (interaction p = 0.86). The recorded video shows why: mean image brightness was only 3% lower in low light on the front camera and 19% lower on the wrist camera. Both cameras were set to automatic exposure and white balance, which most likely absorbed the difference; exposure was not locked in this experiment. An accidental repeat of one 10-rollout block reproduced its success count (7/10) but matched the first block at only 6 of 10 placements, consistent with chance. We conclude that lux alone does not describe what a policy sees. Camera settings, and image statistics compared with the training recordings, are the quantities to report and control. Data and code are public.",
+      "url": "https://arxiv.org/abs/2611.13810",
+      "pdf": "https://arxiv.org/pdf/2611.13810",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy",
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "Camera robustness in learned manipulation",
+        "reason": "Rigorous empirical study demonstrating camera settings matter more than ambient illuminance for learned policy robustness; useful for benchmarking rigor but not methodologically novel."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13732",
+      "title": "CIALLO: Learning Shared Intent Representations for Cross-Embodiment Manipulation",
+      "authors": [
+        "Choo Sin Wai",
+        "Dake Zhong",
+        "Jingye Zhang",
+        "Zhifang Liu",
+        "Siyao Xiao",
+        "Zirong Ding",
+        "Yuhong Zhang",
+        "Kangjie Chen",
+        "Dongbin Zhang",
+        "Guorui Song",
+        "Guocun Wang",
+        "Peng Jiao",
+        "Haoqian Wang"
+      ],
+      "abstract": "Robot demonstrations contain reusable manipulation knowledge, but transferring this knowledge across embodiments requires representations that bridge differences in control interfaces. Action reconstruction alone does not ensure that similar behaviors across robots share a representation. To address this gap, we introduce CIALLO, an action codec that aligns actions, visual changes, and observation-grounded language in a shared space of short-horizon behavioral intent. An embodiment-conditioned decoder maps this intent back to robot-specific actions, allowing a shared representation to support different control interfaces. After pretraining on eight embodiments, CIALLO adapts to a new robot from one recording of at most 10 seconds by updating only its embodiment embeddings. The calibrated codec then remains frozen while a policy learns to predict intent from observations and instructions. We instantiate this policy with Qwen3.5-4B to form Qwen-CIALLO, whose backbone requires no large-scale robot-action pretraining before policy finetuning. With 20 demonstrations per task, Qwen-CIALLO achieves 76.7\\% average success across real SO-101 and single-arm Piper robots, compared with 70.0\\% for fully finetuned $\u03c0_0$. In simulation, we additionally finetune the action decoder, achieving 97.3\\% success on LIBERO and 52.7\\% on RoboTwin 2.0. The LIBERO policy also achieves 80.8\\% on LIBERO-Plus without further finetuning. Together, these results support a shared action codec as a transferable control interface that separates embodiment calibration from task learning.",
+      "url": "https://arxiv.org/abs/2611.13732",
+      "pdf": "https://arxiv.org/pdf/2611.13732",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 9,
+        "quality": 8,
+        "novelty": 7,
+        "topic": "Cross-embodiment VLA transfer",
+        "reason": "Direct match for VLA + manipulation with real robot validation; shared intent representation & embodiment-conditioned decoding is sound but somewhat incremental, though practical few-shot adaptation is impressive."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13685",
+      "title": "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos",
+      "authors": [
+        "Lin Long",
+        "Tianren Ma",
+        "Zhong Chu",
+        "Di Wu",
+        "Maosong Cao",
+        "Qixiang Ye",
+        "Junbo Zhao",
+        "Shanghang Zhang"
+      ],
+      "abstract": "In this paper, we investigate how human egocentric videos can benefit robot policy learning without action supervision. Building on a pretrained VLM, we propose Shared Prediction on Action and Representation (SPAR), an MoT architecture in which future visual state prediction can provide independent and complementary learning signals alongside action prediction. We find that representations learned from egocentric videos improve downstream performance on out-of-distribution robot tasks, with further gains as video data scales. We also study the effects of objective choices and data curation, providing insights into how to leverage action-free videos for scalable robot learning.",
+      "url": "https://arxiv.org/abs/2611.13685",
+      "pdf": "https://arxiv.org/pdf/2611.13685",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Egocentric VLA",
+        "reason": "Directly tackles scaling robot policy via unlabeled human egocentric video with VLA foundations; SPAR's dual-objective approach is methodologically sound but incremental on established egocentric learning themes."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13610",
+      "title": "From Egocentric Human Video to Robot Manipulation in the Era of Embodied Intelligence",
+      "authors": [
+        "Yi Wang",
+        "Jingqiu Wu",
+        "Lei Yao",
+        "Zhaoshuo Li",
+        "Haoyu Zhu",
+        "Yirui Zhou",
+        "Huaiyuan Xu",
+        "Ying Zheng",
+        "Chuang Yang",
+        "Lap-Pui Chau"
+      ],
+      "abstract": "Egocentric human video (EHV) records close-range hand-object interaction (HOI) and the temporal structure of everyday activities, offering a potentially scalable source of experience for robot manipulation. Using this experience for robot control requires recovering useful supervision without recorded robot actions and accounting for differences in morphology, viewpoint, and action space. We define Ego2Robot learning as the process of learning or adapting robot manipulation policies from EHV, organized into four learning paradigms: explicit embodiment transfer, explicit action and task supervision, egocentric video representation pretraining, and latent action and dynamics modeling. The four paradigms differ in what they derive from human video: robot-format demonstrations, interpretable supervision, visual representations, or predictive models of actions and dynamics. For each paradigm, we trace what EHV information is extracted, how robot policies use it, and when the additional data is required. Besides, we review the benchmark datasets that cover EHV, robot demonstrations, and synthetic and simulated resources. This paper links EHV data's contribution to the task information preserved and the robot-specific grounding used during training or deployment. Finally, we identify challenges in physical feasibility, agent coordination, in-context adaptation, controlled evaluation, and predictive control.",
+      "url": "https://arxiv.org/abs/2611.13610",
+      "pdf": "https://arxiv.org/pdf/2611.13610",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [
+        "survey"
+      ],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 7,
+        "quality": 7,
+        "novelty": 5,
+        "topic": "embodied learning from human video",
+        "reason": "Comprehensive survey organizing EHV-to-robot transfer paradigms directly relevant to VLA and learned manipulation; valuable for taxonomy but survey format limits novelty."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13592",
+      "title": "Few-Shot Residual Adaptation of Pretrained Latent World Models",
+      "authors": [
+        "Jakub Suliga",
+        "Pankhuri Vanjani",
+        "Nisarga Nilavadi",
+        "Wolfram Burgard",
+        "Rudolf Lioutikov"
+      ],
+      "abstract": "Pretrained latent world models can support visual planning and control, but their predictions may fail when physical dynamics change at deployment. We study whether such models can adapt from only a few interactions without modifying their pretrained weights or identifying the changed physical parameters. We introduce a few-shot residual adaptation approach that learns self-supervised corrections from latent prediction errors. The corrections are applied both inside the latent predictor and directly to its predicted latent state, while the pretrained world model remains frozen. We evaluate the approach in simulation and on a real robot under center-of-mass and friction shifts. These changes reduce the success of the frozen model to near zero. Using three interaction episodes for adaptation, our dual-site approach recovers 90\\% success under the center-of-mass shift and 100\\% under the modified friction on the real robot. Ablations show that correcting both locations outperforms single-site adaptation. Our diagnostics further suggest that much of the learned correction reduces a general prediction mismatch, while successful control also depends on shift-specific information captured during adaptation.",
+      "url": "https://arxiv.org/abs/2611.13592",
+      "pdf": "https://arxiv.org/pdf/2611.13592",
+      "published": "2026-11-10",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "VLA / robot policy"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 8,
+        "quality": 7,
+        "novelty": 6,
+        "topic": "Latent World Model Adaptation",
+        "reason": "Tackles practical deployment problem for visual planning with strong real-robot arm validation; residual correction technique is straightforward but dual-site application shows merit."
+      },
+      "verdict": "include"
+    },
+    {
+      "id": "2611.13251",
+      "title": "Curie's Jarvis: Autonomous Robotic Chemistry Experiments from Printed Protocols",
+      "authors": [
+        "Rumi Loghmani",
+        "Bozhang Song",
+        "Victor Alvarado",
+        "Aliyah Redding",
+        "Amir Barati Farimani"
+      ],
+      "abstract": "A person running a bench experiment works from a printed instruction sheet, tells identical containers apart by the labels written on them, and looks at the bench again before each step. Lab automation usually works the other way around: the procedure is written as a script, and containers stand at fixed positions or carry fiducial markers. We present Curie's Jarvis, a system that lets a robot arm carry out a chemistry experiment on a bench set up for people. It reads the steps from a photo of the printed sheet, finds containers on an ordinary bench with no fixed positions or markers, tells identical-looking containers apart by reading their labels in four camera views, locates its target again before every step, and sets how each step is carried out, including its speed, from what is being handled. On a Franka Panda arm, Curie's Jarvis completed 5 of 5 runs of one protocol from a children's chemistry kit and 4 of 5 runs of another, with no human intervention, and in 160 locates on printed and handwritten labels it identified every container correctly. This brings robots a step closer to doing bench chemistry the way people do.",
+      "url": "https://arxiv.org/abs/2611.13251",
+      "pdf": "https://arxiv.org/pdf/2611.13251",
+      "published": "2026-11-09",
+      "primary_category": "cs.RO",
+      "topic_tags": [
+        "Table-top manipulation"
+      ],
+      "flags": [],
+      "reputation": {
+        "reputable": false,
+        "max_h_index": null,
+        "max_citations": null,
+        "top_author": null,
+        "reason": "not checked"
+      },
+      "scores": {
+        "relevance": 6,
+        "quality": 6,
+        "novelty": 6,
+        "topic": "Lab automation",
+        "reason": "Practical robot system adapting to human-like workspaces via perception and scripted control, but engineering-focused rather than advancing learned manipulation policies or VLA models."
+      },
+      "verdict": "include"
+    },
     {
       "id": "2611.12885",
       "title": "World In-Context Learning for Agentic Robot Manipulation",
