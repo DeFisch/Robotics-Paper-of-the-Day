@@ -66,6 +66,12 @@
     "name": "B. Weng",
     "papers": 23
   },
+  "carlos mastalli": {
+    "citations": 1913,
+    "h_index": 20,
+    "name": "Carlos Mastalli",
+    "papers": 54
+  },
   "chenxi xiao": {
     "citations": 1,
     "h_index": 1,
@@ -217,6 +223,12 @@
     "h_index": 7,
     "name": "Harry X. Zhang",
     "papers": 57
+  },
+  "hefan wang": {
+    "citations": 58,
+    "h_index": 1,
+    "name": "Hefan Wang",
+    "papers": 3
   },
   "heng yang": null,
   "hongliang ren": {
