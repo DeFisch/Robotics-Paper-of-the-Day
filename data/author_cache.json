@@ -243,6 +243,12 @@
     "name": "Huaizu Chen",
     "papers": 6
   },
+  "huichan zhao": {
+    "citations": 0,
+    "h_index": 0,
+    "name": "Huirong Zhao",
+    "papers": 3
+  },
   "humphrey munn": {
     "citations": 15,
     "h_index": 3,
@@ -647,6 +653,12 @@
     "h_index": 0,
     "name": "Ying-Yin Yang",
     "papers": 4
+  },
+  "yinglei zhu": {
+    "citations": 63,
+    "h_index": 4,
+    "name": "Ying Zhu",
+    "papers": 12
   },
   "yipeng yang": null,
   "yongqiang yu": {
